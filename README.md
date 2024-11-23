@@ -3,6 +3,9 @@
 **The first (un)official Python client for the [Coolify](https://coolify.io/).**  
 Coolipy simplifies programmatically interacting with Coolify by providing wrappers around [Coolify API](https://coolify.io/docs/api), enabling you to manage projects, deployments, servers, services, and more with python scripts.
 
+- Lib docs: https://coolipydocs.gabrielbocchini.com.br/
+- Coolify API docs: https://coolify.io/docs/api
+
 ## Installation
 
 Install Coolipy using pip:
@@ -14,11 +17,15 @@ pip install coolipy
 ## Features
 - Manage Coolify projects, servers, applications, deployments and more (everything the Coolify App offers)ç
 - Infra as code;
-- 1 dependency: requests>=2.32.3.
+- 1 dependency: requests>=2.32.3;
+- Datamodels for all endpoints;
+- Datamodels specific for creation with only the required fields;
+- All responses come from Datamodels;
 
 TO DO:
 
 - Async support.
+
 
 
 # Quick Start Guide
@@ -88,7 +95,7 @@ postgres_db = PostgreSQLModelCreate(
     postgres_initdb_args="-"
 )
 
-coolify_client.databases.create(database_model_create=postgres_db)
+my_database = coolify_client.databases.create(database_model_create=postgres_db)
 ```
 
 - Create an App
@@ -108,8 +115,17 @@ app_data = ApplicationPrivateGHModelCreate(
     name="MyApp"
 )
 
-new_app = coolify.applications.create(app_data)
+new_app = coolify_client.applications.create(app_data)
 ```
+
+# Contributing
+
+- Before opening a pull request or issue, take some time to understand if the issue should be treated at 
+this client level OR the Coolify REST API;
+- Create a fork of this repo and then submit a pull request;
+- Respect Python PEPs and type inference;
+- Test your code or changes introduced and deliver unit tests on the PR;
+- No breaking changes unless if necessary due Coolipy REST API change (please provide Coolipy PR/commits of the change).
 
 
 # License
