@@ -1,6 +1,6 @@
 # Coolipy
 
-**The first unofficial Python client for the [Coolify](https://coolify.io/).**  
+**The first (un)official Python client for the [Coolify](https://coolify.io/).**  
 Coolipy simplifies programmatically interacting with Coolify by providing wrappers around [Coolify API](https://coolify.io/docs/api), enabling you to manage projects, deployments, servers, services, and more with python scripts.
 
 ## Installation

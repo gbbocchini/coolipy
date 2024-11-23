@@ -1,4 +1,7 @@
 class COOLIFY_BUILD_PACKS:
+    """
+    Coolify build packs types.
+    """
     nixpacks = "nixpacks"
     static = "static"
     dockerfile = "dockerfile"
@@ -6,12 +9,18 @@ class COOLIFY_BUILD_PACKS:
 
 
 class COOLIFY_REDIRECT:
+    """
+    Coolify web redirect types.
+    """
     www = "www"
     non_www = "non-www"
     both = "both"
 
 
 class COOLIFY_PROXY_TYPES:
+    """
+    Coolify proxy types.
+    """
     traefik = "traefik"
     caddy = "caddy"
 
@@ -19,6 +28,9 @@ class COOLIFY_PROXY_TYPES:
 
 
 class COOLIFY_SERVICE_TYPES:
+    """
+    Coolify services types.
+    """
     activepieces = "activepieces"
     appsmith = "appsmith"
     appwrite = "appwrite"
@@ -111,6 +123,9 @@ class COOLIFY_SERVICE_TYPES:
 
 
 class URL_MAP:
+    """
+    Coolipy URL map.
+    """
     version = "/version"
     servers = "/servers"
     projects = "/projects"
