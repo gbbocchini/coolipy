@@ -1,0 +1,1503 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>coolipy.models.databases API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>coolipy.models.databases</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="coolipy.models.databases.ClickHouseModelCreate"><code class="flex name class">
+<span>class <span class="ident">ClickHouseModelCreate</span></span>
+<span>(</span><span>server_uuid: str, project_uuid: str, environment_name: str, name: str, is_public: bool, limits_memory: int, limits_memory_swap: int, limits_memory_swappiness: int, limits_memory_reservation: int, limits_cpus: int, limits_cpu_shares: int, instant_deploy: bool, clickhouse_admin_user: str, clickhouse_admin_password: str, image: str = 'clickhouse', description: Optional[str] = None, destination_uuid: Optional[str] = None, public_port: Optional[int] = None, limits_cpuset: Optional[str] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>ClickHouseModelCreate(server_uuid: str, project_uuid: str, environment_name: str, name: str, is_public: bool, limits_memory: int, limits_memory_swap: int, limits_memory_swappiness: int, limits_memory_reservation: int, limits_cpus: int, limits_cpu_shares: int, instant_deploy: bool, clickhouse_admin_user: str, clickhouse_admin_password: str, image: str = 'clickhouse', description: Optional[str] = None, destination_uuid: Optional[str] = None, public_port: Optional[int] = None, limits_cpuset: Optional[str] = None)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class ClickHouseModelCreate(DatabaseTypeCreateModelBase):
+    clickhouse_admin_user: str
+    clickhouse_admin_password: str
+    image: str = &#34;clickhouse&#34;
+    description: Optional[str] = None
+    destination_uuid: Optional[str] = None
+    public_port: Optional[int] = None
+    limits_cpuset: Optional[str] = None</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.databases.DatabaseTypeCreateModelBase" href="#coolipy.models.databases.DatabaseTypeCreateModelBase">DatabaseTypeCreateModelBase</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.databases.ClickHouseModelCreate.clickhouse_admin_password"><code class="name">var <span class="ident">clickhouse_admin_password</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.ClickHouseModelCreate.clickhouse_admin_user"><code class="name">var <span class="ident">clickhouse_admin_user</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.ClickHouseModelCreate.description"><code class="name">var <span class="ident">description</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.ClickHouseModelCreate.destination_uuid"><code class="name">var <span class="ident">destination_uuid</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.ClickHouseModelCreate.image"><code class="name">var <span class="ident">image</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.ClickHouseModelCreate.limits_cpuset"><code class="name">var <span class="ident">limits_cpuset</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.ClickHouseModelCreate.public_port"><code class="name">var <span class="ident">public_port</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel"><code class="flex name class">
+<span>class <span class="ident">DatabaseModel</span></span>
+<span>(</span><span>uuid: Optional[str] = None, name: Optional[str] = None, config_hash: Optional[str] = None, custom_docker_run_options: Optional[str] = None, database_type: Optional[str] = None, deleted_at: Union[str, datetime.datetime, ForwardRef(None)] = None, description: Optional[str] = None, destination: Optional[<a title="coolipy.models.databases.DestinationModel" href="#coolipy.models.databases.DestinationModel">DestinationModel</a>] = &lt;factory&gt;, destination_id: Optional[int] = None, destination_type: Optional[str] = None, environment_id: Optional[int] = None, external_db_url: Optional[str] = None, image: Optional[str] = None, init_scripts: Optional[str] = None, internal_db_url: Optional[str] = None, is_include_timestamps: Optional[bool] = None, is_log_drain_enabled: Optional[bool] = None, is_public: Optional[bool] = None, last_online_at: Optional[str] = None, limits_cpu_shares: Optional[int] = None, limits_cpus: Optional[str] = None, limits_cpuset: Optional[str] = None, limits_memory: Optional[str] = None, limits_memory_reservation: Optional[str] = None, limits_memory_swap: Optional[str] = None, limits_memory_swappiness: Optional[int] = None, ports_mappings: Optional[str] = None, clickhouse_admin_user: Optional[str] = None, clickhouse_admin_password: Optional[str] = None, dragonfly_password: Optional[str] = None, postgres_conf: Optional[str] = None, postgres_user: Optional[str] = None, postgres_password: Optional[str] = None, postgres_db: Optional[str] = None, postgres_initdb_args: Optional[str] = None, postgres_host_auth_method: Optional[str] = None, mongo_conf: Optional[str] = None, mongo_initdb_database: Optional[str] = None, mongo_initdb_root_password: Optional[str] = None, mongo_initdb_root_username: Optional[str] = None, redis_conf: Optional[str] = None, redis_password: Optional[str] = None, keydb_password: Optional[str] = None, keydb_conf: Optional[str] = None, mariadb_conf: Optional[str] = None, mariadb_root_password: Optional[str] = None, mariadb_user: Optional[str] = None, mariadb_password: Optional[str] = None, mariadb_database: Optional[str] = None, mysql_conf: Optional[str] = None, mysql_root_password: Optional[str] = None, mysql_user: Optional[str] = None, mysql_database: Optional[str] = None, public_port: Optional[int] = None, server_status: Optional[bool] = None, started_at: Union[str, datetime.datetime, ForwardRef(None)] = None, status: Optional[str] = None, created_at: Union[str, datetime.datetime, ForwardRef(None)] = None, updated_at: Union[str, datetime.datetime, ForwardRef(None)] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>DatabaseModel(uuid: Optional[str] = None, name: Optional[str] = None, config_hash: Optional[str] = None, custom_docker_run_options: Optional[str] = None, database_type: Optional[str] = None, deleted_at: Union[str, datetime.datetime, NoneType] = None, description: Optional[str] = None, destination: Optional[coolipy.models.databases.DestinationModel] = <factory>, destination_id: Optional[int] = None, destination_type: Optional[str] = None, environment_id: Optional[int] = None, external_db_url: Optional[str] = None, image: Optional[str] = None, init_scripts: Optional[str] = None, internal_db_url: Optional[str] = None, is_include_timestamps: Optional[bool] = None, is_log_drain_enabled: Optional[bool] = None, is_public: Optional[bool] = None, last_online_at: Optional[str] = None, limits_cpu_shares: Optional[int] = None, limits_cpus: Optional[str] = None, limits_cpuset: Optional[str] = None, limits_memory: Optional[str] = None, limits_memory_reservation: Optional[str] = None, limits_memory_swap: Optional[str] = None, limits_memory_swappiness: Optional[int] = None, ports_mappings: Optional[str] = None, clickhouse_admin_user: Optional[str] = None, clickhouse_admin_password: Optional[str] = None, dragonfly_password: Optional[str] = None, postgres_conf: Optional[str] = None, postgres_user: Optional[str] = None, postgres_password: Optional[str] = None, postgres_db: Optional[str] = None, postgres_initdb_args: Optional[str] = None, postgres_host_auth_method: Optional[str] = None, mongo_conf: Optional[str] = None, mongo_initdb_database: Optional[str] = None, mongo_initdb_root_password: Optional[str] = None, mongo_initdb_root_username: Optional[str] = None, redis_conf: Optional[str] = None, redis_password: Optional[str] = None, keydb_password: Optional[str] = None, keydb_conf: Optional[str] = None, mariadb_conf: Optional[str] = None, mariadb_root_password: Optional[str] = None, mariadb_user: Optional[str] = None, mariadb_password: Optional[str] = None, mariadb_database: Optional[str] = None, mysql_conf: Optional[str] = None, mysql_root_password: Optional[str] = None, mysql_user: Optional[str] = None, mysql_database: Optional[str] = None, public_port: Optional[int] = None, server_status: Optional[bool] = None, started_at: Union[str, datetime.datetime, NoneType] = None, status: Optional[str] = None, created_at: Union[str, datetime.datetime, NoneType] = None, updated_at: Union[str, datetime.datetime, NoneType] = None)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class DatabaseModel(CoolipyBaseModel):
+    uuid: Optional[str] = None
+    name: Optional[str] = None
+    config_hash: Optional[str] = None
+    custom_docker_run_options: Optional[str] = None
+    database_type: Optional[str] = None
+    deleted_at: Optional[Union[str, datetime]] = None
+    description: Optional[str] = None
+    destination: Optional[DestinationModel] = field(default_factory=dict)
+    destination_id: Optional[int] = None
+    destination_type: Optional[str] = None
+    environment_id: Optional[int] = None
+    external_db_url: Optional[str] = None
+    image: Optional[str] = None
+    init_scripts: Optional[str] = None
+    internal_db_url: Optional[str] = None
+    is_include_timestamps: Optional[bool] = None
+    is_log_drain_enabled: Optional[bool] = None
+    is_public: Optional[bool] = None
+    last_online_at: Optional[str] = None
+    limits_cpu_shares: Optional[int] = None
+    limits_cpus: Optional[str] = None
+    limits_cpuset: Optional[str] = None
+    limits_memory: Optional[str] = None
+    limits_memory_reservation: Optional[str] = None
+    limits_memory_swap: Optional[str] = None
+    limits_memory_swappiness: Optional[int] = None
+    ports_mappings: Optional[str] = None
+    clickhouse_admin_user: Optional[str] = None
+    clickhouse_admin_password: Optional[str] = None
+    dragonfly_password: Optional[str] = None
+    postgres_conf: Optional[str] = None
+    postgres_user: Optional[str] = None
+    postgres_password: Optional[str] = None
+    postgres_db: Optional[str] = None
+    postgres_initdb_args: Optional[str] = None
+    postgres_host_auth_method: Optional[str] = None
+    mongo_conf: Optional[str] = None
+    mongo_initdb_database: Optional[str] = None
+    mongo_initdb_root_password: Optional[str] = None
+    mongo_initdb_root_username: Optional[str] = None
+    redis_conf: Optional[str] = None
+    redis_password: Optional[str] = None
+    postgres_db: Optional[str] = None
+    keydb_password: Optional[str] = None
+    keydb_conf: Optional[str] = None
+    mariadb_conf: Optional[str] = None
+    mariadb_conf: Optional[str] = None
+    mariadb_root_password: Optional[str] = None
+    mariadb_user: Optional[str] = None
+    mariadb_password: Optional[str] = None
+    mariadb_database: Optional[str] = None
+    mysql_conf: Optional[str] = None
+    mysql_root_password: Optional[str] = None
+    mysql_user: Optional[str] = None
+    mysql_database: Optional[str] = None
+    postgres_host_auth_method: Optional[str] = None
+    postgres_initdb_args: Optional[str] = None
+    postgres_password: Optional[str] = None
+    postgres_user: Optional[str] = None
+    public_port: Optional[int] = None
+    server_status: Optional[bool] = None
+    started_at: Optional[Union[str, datetime]] = None
+    status: Optional[str] = None
+    created_at: Optional[Union[str, datetime]] = None
+    updated_at: Optional[Union[str, datetime]] = None
+
+    @override
+    def _adjust_nested(self):
+        if isinstance(self.destination, dict) and self.destination:
+            raw_dest = self.destination
+            self.destination = DestinationModel(**raw_dest).pythonify()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.databases.DatabaseModel.clickhouse_admin_password"><code class="name">var <span class="ident">clickhouse_admin_password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.clickhouse_admin_user"><code class="name">var <span class="ident">clickhouse_admin_user</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.config_hash"><code class="name">var <span class="ident">config_hash</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.created_at"><code class="name">var <span class="ident">created_at</span> : Union[str, datetime.datetime, ForwardRef(None)]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.custom_docker_run_options"><code class="name">var <span class="ident">custom_docker_run_options</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.database_type"><code class="name">var <span class="ident">database_type</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.deleted_at"><code class="name">var <span class="ident">deleted_at</span> : Union[str, datetime.datetime, ForwardRef(None)]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.description"><code class="name">var <span class="ident">description</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.destination"><code class="name">var <span class="ident">destination</span> : Optional[<a title="coolipy.models.databases.DestinationModel" href="#coolipy.models.databases.DestinationModel">DestinationModel</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.destination_id"><code class="name">var <span class="ident">destination_id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.destination_type"><code class="name">var <span class="ident">destination_type</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.dragonfly_password"><code class="name">var <span class="ident">dragonfly_password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.environment_id"><code class="name">var <span class="ident">environment_id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.external_db_url"><code class="name">var <span class="ident">external_db_url</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.image"><code class="name">var <span class="ident">image</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.init_scripts"><code class="name">var <span class="ident">init_scripts</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.internal_db_url"><code class="name">var <span class="ident">internal_db_url</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.is_include_timestamps"><code class="name">var <span class="ident">is_include_timestamps</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.is_log_drain_enabled"><code class="name">var <span class="ident">is_log_drain_enabled</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.is_public"><code class="name">var <span class="ident">is_public</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.keydb_conf"><code class="name">var <span class="ident">keydb_conf</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.keydb_password"><code class="name">var <span class="ident">keydb_password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.last_online_at"><code class="name">var <span class="ident">last_online_at</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.limits_cpu_shares"><code class="name">var <span class="ident">limits_cpu_shares</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.limits_cpus"><code class="name">var <span class="ident">limits_cpus</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.limits_cpuset"><code class="name">var <span class="ident">limits_cpuset</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.limits_memory"><code class="name">var <span class="ident">limits_memory</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.limits_memory_reservation"><code class="name">var <span class="ident">limits_memory_reservation</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.limits_memory_swap"><code class="name">var <span class="ident">limits_memory_swap</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.limits_memory_swappiness"><code class="name">var <span class="ident">limits_memory_swappiness</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.mariadb_conf"><code class="name">var <span class="ident">mariadb_conf</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.mariadb_database"><code class="name">var <span class="ident">mariadb_database</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.mariadb_password"><code class="name">var <span class="ident">mariadb_password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.mariadb_root_password"><code class="name">var <span class="ident">mariadb_root_password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.mariadb_user"><code class="name">var <span class="ident">mariadb_user</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.mongo_conf"><code class="name">var <span class="ident">mongo_conf</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.mongo_initdb_database"><code class="name">var <span class="ident">mongo_initdb_database</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.mongo_initdb_root_password"><code class="name">var <span class="ident">mongo_initdb_root_password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.mongo_initdb_root_username"><code class="name">var <span class="ident">mongo_initdb_root_username</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.mysql_conf"><code class="name">var <span class="ident">mysql_conf</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.mysql_database"><code class="name">var <span class="ident">mysql_database</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.mysql_root_password"><code class="name">var <span class="ident">mysql_root_password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.mysql_user"><code class="name">var <span class="ident">mysql_user</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.name"><code class="name">var <span class="ident">name</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.ports_mappings"><code class="name">var <span class="ident">ports_mappings</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.postgres_conf"><code class="name">var <span class="ident">postgres_conf</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.postgres_db"><code class="name">var <span class="ident">postgres_db</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.postgres_host_auth_method"><code class="name">var <span class="ident">postgres_host_auth_method</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.postgres_initdb_args"><code class="name">var <span class="ident">postgres_initdb_args</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.postgres_password"><code class="name">var <span class="ident">postgres_password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.postgres_user"><code class="name">var <span class="ident">postgres_user</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.public_port"><code class="name">var <span class="ident">public_port</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.redis_conf"><code class="name">var <span class="ident">redis_conf</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.redis_password"><code class="name">var <span class="ident">redis_password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.server_status"><code class="name">var <span class="ident">server_status</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.started_at"><code class="name">var <span class="ident">started_at</span> : Union[str, datetime.datetime, ForwardRef(None)]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.status"><code class="name">var <span class="ident">status</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.updated_at"><code class="name">var <span class="ident">updated_at</span> : Union[str, datetime.datetime, ForwardRef(None)]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseModel.uuid"><code class="name">var <span class="ident">uuid</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></b></code>:
+<ul class="hlist">
+<li><code><a title="coolipy.models.base.CoolipyBaseModel.pythonify" href="base.html#coolipy.models.base.CoolipyBaseModel.pythonify">pythonify</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="coolipy.models.databases.DatabaseTypeCreateModelBase"><code class="flex name class">
+<span>class <span class="ident">DatabaseTypeCreateModelBase</span></span>
+<span>(</span><span>server_uuid: str, project_uuid: str, environment_name: str, name: str, is_public: bool, limits_memory: int, limits_memory_swap: int, limits_memory_swappiness: int, limits_memory_reservation: int, limits_cpus: int, limits_cpu_shares: int, instant_deploy: bool)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>DatabaseTypeCreateModelBase(server_uuid: str, project_uuid: str, environment_name: str, name: str, is_public: bool, limits_memory: int, limits_memory_swap: int, limits_memory_swappiness: int, limits_memory_reservation: int, limits_cpus: int, limits_cpu_shares: int, instant_deploy: bool)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class DatabaseTypeCreateModelBase:
+    server_uuid: str
+    project_uuid: str
+    environment_name: str
+    name: str
+    is_public: bool
+    limits_memory: int
+    limits_memory_swap: int
+    limits_memory_swappiness: int
+    limits_memory_reservation: int
+    limits_cpus: int
+    limits_cpu_shares: int
+    instant_deploy: bool</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.databases.ClickHouseModelCreate" href="#coolipy.models.databases.ClickHouseModelCreate">ClickHouseModelCreate</a></li>
+<li><a title="coolipy.models.databases.DragonFlyModelCreate" href="#coolipy.models.databases.DragonFlyModelCreate">DragonFlyModelCreate</a></li>
+<li><a title="coolipy.models.databases.KeyDBModelCreate" href="#coolipy.models.databases.KeyDBModelCreate">KeyDBModelCreate</a></li>
+<li><a title="coolipy.models.databases.MariaDBModelCreate" href="#coolipy.models.databases.MariaDBModelCreate">MariaDBModelCreate</a></li>
+<li><a title="coolipy.models.databases.MongoDBModelCreate" href="#coolipy.models.databases.MongoDBModelCreate">MongoDBModelCreate</a></li>
+<li><a title="coolipy.models.databases.MySQLModelCreate" href="#coolipy.models.databases.MySQLModelCreate">MySQLModelCreate</a></li>
+<li><a title="coolipy.models.databases.PostgreSQLModelCreate" href="#coolipy.models.databases.PostgreSQLModelCreate">PostgreSQLModelCreate</a></li>
+<li><a title="coolipy.models.databases.RedisModelCreate" href="#coolipy.models.databases.RedisModelCreate">RedisModelCreate</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.databases.DatabaseTypeCreateModelBase.environment_name"><code class="name">var <span class="ident">environment_name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseTypeCreateModelBase.instant_deploy"><code class="name">var <span class="ident">instant_deploy</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseTypeCreateModelBase.is_public"><code class="name">var <span class="ident">is_public</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseTypeCreateModelBase.limits_cpu_shares"><code class="name">var <span class="ident">limits_cpu_shares</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseTypeCreateModelBase.limits_cpus"><code class="name">var <span class="ident">limits_cpus</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseTypeCreateModelBase.limits_memory"><code class="name">var <span class="ident">limits_memory</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseTypeCreateModelBase.limits_memory_reservation"><code class="name">var <span class="ident">limits_memory_reservation</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseTypeCreateModelBase.limits_memory_swap"><code class="name">var <span class="ident">limits_memory_swap</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseTypeCreateModelBase.limits_memory_swappiness"><code class="name">var <span class="ident">limits_memory_swappiness</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseTypeCreateModelBase.name"><code class="name">var <span class="ident">name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseTypeCreateModelBase.project_uuid"><code class="name">var <span class="ident">project_uuid</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseTypeCreateModelBase.server_uuid"><code class="name">var <span class="ident">server_uuid</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel"><code class="flex name class">
+<span>class <span class="ident">DatabaseUpdateModel</span></span>
+<span>(</span><span>name: Optional[str] = None, description: Optional[str] = None, image: Optional[str] = None, is_public: Optional[bool] = None, public_port: Optional[int] = None, limits_memory: Optional[str] = None, limits_memory_swap: Optional[str] = None, limits_memory_swappiness: Optional[int] = None, limits_memory_reservation: Optional[str] = None, limits_cpus: Optional[str] = None, limits_cpuset: Optional[str] = None, limits_cpu_shares: Optional[int] = None, postgres_user: Optional[str] = None, postgres_password: Optional[str] = None, postgres_db: Optional[str] = None, postgres_initdb_args: Optional[str] = None, postgres_host_auth_method: Optional[str] = None, postgres_conf: Optional[str] = None, clickhouse_admin_user: Optional[str] = None, clickhouse_admin_password: Optional[str] = None, dragonfly_password: Optional[str] = None, redis_password: Optional[str] = None, redis_conf: Optional[str] = None, keydb_password: Optional[str] = None, keydb_conf: Optional[str] = None, mariadb_conf: Optional[str] = None, mariadb_root_password: Optional[str] = None, mariadb_user: Optional[str] = None, mariadb_password: Optional[str] = None, mariadb_database: Optional[str] = None, mongo_conf: Optional[str] = None, mongo_initdb_root_username: Optional[str] = None, mongo_initdb_root_password: Optional[str] = None, mongo_initdb_init_database: Optional[str] = None, mysql_root_password: Optional[str] = None, mysql_user: Optional[str] = None, mysql_database: Optional[str] = None, mysql_conf: Optional[str] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>DatabaseUpdateModel(name: Optional[str] = None, description: Optional[str] = None, image: Optional[str] = None, is_public: Optional[bool] = None, public_port: Optional[int] = None, limits_memory: Optional[str] = None, limits_memory_swap: Optional[str] = None, limits_memory_swappiness: Optional[int] = None, limits_memory_reservation: Optional[str] = None, limits_cpus: Optional[str] = None, limits_cpuset: Optional[str] = None, limits_cpu_shares: Optional[int] = None, postgres_user: Optional[str] = None, postgres_password: Optional[str] = None, postgres_db: Optional[str] = None, postgres_initdb_args: Optional[str] = None, postgres_host_auth_method: Optional[str] = None, postgres_conf: Optional[str] = None, clickhouse_admin_user: Optional[str] = None, clickhouse_admin_password: Optional[str] = None, dragonfly_password: Optional[str] = None, redis_password: Optional[str] = None, redis_conf: Optional[str] = None, keydb_password: Optional[str] = None, keydb_conf: Optional[str] = None, mariadb_conf: Optional[str] = None, mariadb_root_password: Optional[str] = None, mariadb_user: Optional[str] = None, mariadb_password: Optional[str] = None, mariadb_database: Optional[str] = None, mongo_conf: Optional[str] = None, mongo_initdb_root_username: Optional[str] = None, mongo_initdb_root_password: Optional[str] = None, mongo_initdb_init_database: Optional[str] = None, mysql_root_password: Optional[str] = None, mysql_user: Optional[str] = None, mysql_database: Optional[str] = None, mysql_conf: Optional[str] = None)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class DatabaseUpdateModel:
+    name: Optional[str] = None
+    description: Optional[str] = None
+    image: Optional[str] = None
+    is_public: Optional[bool] = None
+    public_port: Optional[int] = None
+    limits_memory: Optional[str] = None
+    limits_memory_swap: Optional[str] = None
+    limits_memory_swappiness: Optional[int] = None
+    limits_memory_reservation: Optional[str] = None
+    limits_cpus: Optional[str] = None
+    limits_cpuset: Optional[str] = None
+    limits_cpu_shares: Optional[int] = None
+    postgres_user: Optional[str] = None
+    postgres_password: Optional[str] = None
+    postgres_db: Optional[str] = None
+    postgres_initdb_args: Optional[str] = None
+    postgres_host_auth_method: Optional[str] = None
+    postgres_conf: Optional[str] = None
+    clickhouse_admin_user: Optional[str] = None
+    clickhouse_admin_password: Optional[str] = None
+    dragonfly_password: Optional[str] = None
+    redis_password: Optional[str] = None
+    redis_conf: Optional[str] = None
+    keydb_password: Optional[str] = None
+    keydb_conf: Optional[str] = None
+    mariadb_conf: Optional[str] = None
+    mariadb_root_password: Optional[str] = None
+    mariadb_user: Optional[str] = None
+    mariadb_password: Optional[str] = None
+    mariadb_database: Optional[str] = None
+    mongo_conf: Optional[str] = None
+    mongo_initdb_root_username: Optional[str] = None
+    mongo_initdb_root_password: Optional[str] = None
+    mongo_initdb_init_database: Optional[str] = None
+    mysql_root_password: Optional[str] = None
+    mysql_user: Optional[str] = None
+    mysql_database: Optional[str] = None
+    mysql_conf: Optional[str] = None</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.clickhouse_admin_password"><code class="name">var <span class="ident">clickhouse_admin_password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.clickhouse_admin_user"><code class="name">var <span class="ident">clickhouse_admin_user</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.description"><code class="name">var <span class="ident">description</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.dragonfly_password"><code class="name">var <span class="ident">dragonfly_password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.image"><code class="name">var <span class="ident">image</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.is_public"><code class="name">var <span class="ident">is_public</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.keydb_conf"><code class="name">var <span class="ident">keydb_conf</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.keydb_password"><code class="name">var <span class="ident">keydb_password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.limits_cpu_shares"><code class="name">var <span class="ident">limits_cpu_shares</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.limits_cpus"><code class="name">var <span class="ident">limits_cpus</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.limits_cpuset"><code class="name">var <span class="ident">limits_cpuset</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.limits_memory"><code class="name">var <span class="ident">limits_memory</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.limits_memory_reservation"><code class="name">var <span class="ident">limits_memory_reservation</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.limits_memory_swap"><code class="name">var <span class="ident">limits_memory_swap</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.limits_memory_swappiness"><code class="name">var <span class="ident">limits_memory_swappiness</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.mariadb_conf"><code class="name">var <span class="ident">mariadb_conf</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.mariadb_database"><code class="name">var <span class="ident">mariadb_database</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.mariadb_password"><code class="name">var <span class="ident">mariadb_password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.mariadb_root_password"><code class="name">var <span class="ident">mariadb_root_password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.mariadb_user"><code class="name">var <span class="ident">mariadb_user</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.mongo_conf"><code class="name">var <span class="ident">mongo_conf</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.mongo_initdb_init_database"><code class="name">var <span class="ident">mongo_initdb_init_database</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.mongo_initdb_root_password"><code class="name">var <span class="ident">mongo_initdb_root_password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.mongo_initdb_root_username"><code class="name">var <span class="ident">mongo_initdb_root_username</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.mysql_conf"><code class="name">var <span class="ident">mysql_conf</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.mysql_database"><code class="name">var <span class="ident">mysql_database</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.mysql_root_password"><code class="name">var <span class="ident">mysql_root_password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.mysql_user"><code class="name">var <span class="ident">mysql_user</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.name"><code class="name">var <span class="ident">name</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.postgres_conf"><code class="name">var <span class="ident">postgres_conf</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.postgres_db"><code class="name">var <span class="ident">postgres_db</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.postgres_host_auth_method"><code class="name">var <span class="ident">postgres_host_auth_method</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.postgres_initdb_args"><code class="name">var <span class="ident">postgres_initdb_args</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.postgres_password"><code class="name">var <span class="ident">postgres_password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.postgres_user"><code class="name">var <span class="ident">postgres_user</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.public_port"><code class="name">var <span class="ident">public_port</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.redis_conf"><code class="name">var <span class="ident">redis_conf</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DatabaseUpdateModel.redis_password"><code class="name">var <span class="ident">redis_password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.databases.DestinationModel"><code class="flex name class">
+<span>class <span class="ident">DestinationModel</span></span>
+<span>(</span><span>id: Optional[int] = None, name: Optional[str] = None, uuid: Optional[str] = None, network: Optional[str] = None, server_id: Optional[int] = None, created_at: Union[str, datetime.datetime, ForwardRef(None)] = None, updated_at: Union[str, datetime.datetime, ForwardRef(None)] = None, server: Optional[<a title="coolipy.models.servers.ServerModel" href="servers.html#coolipy.models.servers.ServerModel">ServerModel</a>] = &lt;factory&gt;)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>DestinationModel(id: Optional[int] = None, name: Optional[str] = None, uuid: Optional[str] = None, network: Optional[str] = None, server_id: Optional[int] = None, created_at: Union[str, datetime.datetime, NoneType] = None, updated_at: Union[str, datetime.datetime, NoneType] = None, server: Optional[coolipy.models.servers.ServerModel] = <factory>)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class DestinationModel(CoolipyBaseModel):
+    id: Optional[int] = None
+    name: Optional[str] = None
+    uuid: Optional[str] = None
+    network: Optional[str] = None
+    server_id: Optional[int] = None
+    created_at: Optional[Union[str, datetime]] = None
+    updated_at: Optional[Union[str, datetime]] = None
+    server: Optional[ServerModel] = field(default_factory=dict)
+
+    @override
+    def _adjust_nested(self):
+        if isinstance(self.server, dict) and self.server:
+            raw_server = self.server
+            self.server = ServerModel(**raw_server).pythonify()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.databases.DestinationModel.created_at"><code class="name">var <span class="ident">created_at</span> : Union[str, datetime.datetime, ForwardRef(None)]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DestinationModel.id"><code class="name">var <span class="ident">id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DestinationModel.name"><code class="name">var <span class="ident">name</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DestinationModel.network"><code class="name">var <span class="ident">network</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DestinationModel.server"><code class="name">var <span class="ident">server</span> : Optional[<a title="coolipy.models.servers.ServerModel" href="servers.html#coolipy.models.servers.ServerModel">ServerModel</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DestinationModel.server_id"><code class="name">var <span class="ident">server_id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DestinationModel.updated_at"><code class="name">var <span class="ident">updated_at</span> : Union[str, datetime.datetime, ForwardRef(None)]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DestinationModel.uuid"><code class="name">var <span class="ident">uuid</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></b></code>:
+<ul class="hlist">
+<li><code><a title="coolipy.models.base.CoolipyBaseModel.pythonify" href="base.html#coolipy.models.base.CoolipyBaseModel.pythonify">pythonify</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="coolipy.models.databases.DragonFlyModelCreate"><code class="flex name class">
+<span>class <span class="ident">DragonFlyModelCreate</span></span>
+<span>(</span><span>server_uuid: str, project_uuid: str, environment_name: str, name: str, is_public: bool, limits_memory: int, limits_memory_swap: int, limits_memory_swappiness: int, limits_memory_reservation: int, limits_cpus: int, limits_cpu_shares: int, instant_deploy: bool, dragonfly_password: str, image: str = 'chainguard/dragonfly', description: Optional[str] = None, destination_uuid: Optional[str] = None, public_port: Optional[int] = None, limits_cpuset: Optional[str] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>DragonFlyModelCreate(server_uuid: str, project_uuid: str, environment_name: str, name: str, is_public: bool, limits_memory: int, limits_memory_swap: int, limits_memory_swappiness: int, limits_memory_reservation: int, limits_cpus: int, limits_cpu_shares: int, instant_deploy: bool, dragonfly_password: str, image: str = 'chainguard/dragonfly', description: Optional[str] = None, destination_uuid: Optional[str] = None, public_port: Optional[int] = None, limits_cpuset: Optional[str] = None)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class DragonFlyModelCreate(DatabaseTypeCreateModelBase):
+    dragonfly_password: str
+    image: str = &#34;chainguard/dragonfly&#34;
+    description: Optional[str] = None
+    destination_uuid: Optional[str] = None
+    public_port: Optional[int] = None
+    limits_cpuset: Optional[str] = None</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.databases.DatabaseTypeCreateModelBase" href="#coolipy.models.databases.DatabaseTypeCreateModelBase">DatabaseTypeCreateModelBase</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.databases.DragonFlyModelCreate.description"><code class="name">var <span class="ident">description</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DragonFlyModelCreate.destination_uuid"><code class="name">var <span class="ident">destination_uuid</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DragonFlyModelCreate.dragonfly_password"><code class="name">var <span class="ident">dragonfly_password</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DragonFlyModelCreate.image"><code class="name">var <span class="ident">image</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DragonFlyModelCreate.limits_cpuset"><code class="name">var <span class="ident">limits_cpuset</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.DragonFlyModelCreate.public_port"><code class="name">var <span class="ident">public_port</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.databases.KeyDBModelCreate"><code class="flex name class">
+<span>class <span class="ident">KeyDBModelCreate</span></span>
+<span>(</span><span>server_uuid: str, project_uuid: str, environment_name: str, name: str, is_public: bool, limits_memory: int, limits_memory_swap: int, limits_memory_swappiness: int, limits_memory_reservation: int, limits_cpus: int, limits_cpu_shares: int, instant_deploy: bool, keydb_password: str, image: str = 'bitnami/keydb', keydb_conf: Optional[str] = None, description: Optional[str] = None, destination_uuid: Optional[str] = None, public_port: Optional[int] = None, limits_cpuset: Optional[str] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>KeyDBModelCreate(server_uuid: str, project_uuid: str, environment_name: str, name: str, is_public: bool, limits_memory: int, limits_memory_swap: int, limits_memory_swappiness: int, limits_memory_reservation: int, limits_cpus: int, limits_cpu_shares: int, instant_deploy: bool, keydb_password: str, image: str = 'bitnami/keydb', keydb_conf: Optional[str] = None, description: Optional[str] = None, destination_uuid: Optional[str] = None, public_port: Optional[int] = None, limits_cpuset: Optional[str] = None)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class KeyDBModelCreate(DatabaseTypeCreateModelBase):
+    keydb_password: str
+    image: str = &#34;bitnami/keydb&#34;
+    keydb_conf: Optional[str] = None
+    description: Optional[str] = None
+    destination_uuid: Optional[str] = None
+    public_port: Optional[int] = None
+    limits_cpuset: Optional[str] = None</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.databases.DatabaseTypeCreateModelBase" href="#coolipy.models.databases.DatabaseTypeCreateModelBase">DatabaseTypeCreateModelBase</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.databases.KeyDBModelCreate.description"><code class="name">var <span class="ident">description</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.KeyDBModelCreate.destination_uuid"><code class="name">var <span class="ident">destination_uuid</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.KeyDBModelCreate.image"><code class="name">var <span class="ident">image</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.KeyDBModelCreate.keydb_conf"><code class="name">var <span class="ident">keydb_conf</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.KeyDBModelCreate.keydb_password"><code class="name">var <span class="ident">keydb_password</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.KeyDBModelCreate.limits_cpuset"><code class="name">var <span class="ident">limits_cpuset</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.KeyDBModelCreate.public_port"><code class="name">var <span class="ident">public_port</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.databases.MariaDBModelCreate"><code class="flex name class">
+<span>class <span class="ident">MariaDBModelCreate</span></span>
+<span>(</span><span>server_uuid: str, project_uuid: str, environment_name: str, name: str, is_public: bool, limits_memory: int, limits_memory_swap: int, limits_memory_swappiness: int, limits_memory_reservation: int, limits_cpus: int, limits_cpu_shares: int, instant_deploy: bool, mariadb_root_password: str, mariadb_user: str, mariadb_password: str, mariadb_database: str, image: str = 'mariadb', mariadb_conf: Optional[str] = None, description: Optional[str] = None, destination_uuid: Optional[str] = None, public_port: Optional[int] = None, limits_cpuset: Optional[str] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>MariaDBModelCreate(server_uuid: str, project_uuid: str, environment_name: str, name: str, is_public: bool, limits_memory: int, limits_memory_swap: int, limits_memory_swappiness: int, limits_memory_reservation: int, limits_cpus: int, limits_cpu_shares: int, instant_deploy: bool, mariadb_root_password: str, mariadb_user: str, mariadb_password: str, mariadb_database: str, image: str = 'mariadb', mariadb_conf: Optional[str] = None, description: Optional[str] = None, destination_uuid: Optional[str] = None, public_port: Optional[int] = None, limits_cpuset: Optional[str] = None)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class MariaDBModelCreate(DatabaseTypeCreateModelBase):
+    mariadb_root_password: str
+    mariadb_user: str
+    mariadb_password: str
+    mariadb_database: str
+    image: str = &#34;mariadb&#34;
+    mariadb_conf: Optional[str] = None
+    description: Optional[str] = None
+    destination_uuid: Optional[str] = None
+    public_port: Optional[int] = None
+    limits_cpuset: Optional[str] = None</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.databases.DatabaseTypeCreateModelBase" href="#coolipy.models.databases.DatabaseTypeCreateModelBase">DatabaseTypeCreateModelBase</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.databases.MariaDBModelCreate.description"><code class="name">var <span class="ident">description</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MariaDBModelCreate.destination_uuid"><code class="name">var <span class="ident">destination_uuid</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MariaDBModelCreate.image"><code class="name">var <span class="ident">image</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MariaDBModelCreate.limits_cpuset"><code class="name">var <span class="ident">limits_cpuset</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MariaDBModelCreate.mariadb_conf"><code class="name">var <span class="ident">mariadb_conf</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MariaDBModelCreate.mariadb_database"><code class="name">var <span class="ident">mariadb_database</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MariaDBModelCreate.mariadb_password"><code class="name">var <span class="ident">mariadb_password</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MariaDBModelCreate.mariadb_root_password"><code class="name">var <span class="ident">mariadb_root_password</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MariaDBModelCreate.mariadb_user"><code class="name">var <span class="ident">mariadb_user</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MariaDBModelCreate.public_port"><code class="name">var <span class="ident">public_port</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.databases.MongoDBModelCreate"><code class="flex name class">
+<span>class <span class="ident">MongoDBModelCreate</span></span>
+<span>(</span><span>server_uuid: str, project_uuid: str, environment_name: str, name: str, is_public: bool, limits_memory: int, limits_memory_swap: int, limits_memory_swappiness: int, limits_memory_reservation: int, limits_cpus: int, limits_cpu_shares: int, instant_deploy: bool, mongo_initdb_root_username: str, mongo_conf: Optional[str] = None, image: str = 'mongo', description: Optional[str] = None, destination_uuid: Optional[str] = None, public_port: Optional[int] = None, limits_cpuset: Optional[str] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>MongoDBModelCreate(server_uuid: str, project_uuid: str, environment_name: str, name: str, is_public: bool, limits_memory: int, limits_memory_swap: int, limits_memory_swappiness: int, limits_memory_reservation: int, limits_cpus: int, limits_cpu_shares: int, instant_deploy: bool, mongo_initdb_root_username: str, mongo_conf: Optional[str] = None, image: str = 'mongo', description: Optional[str] = None, destination_uuid: Optional[str] = None, public_port: Optional[int] = None, limits_cpuset: Optional[str] = None)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class MongoDBModelCreate(DatabaseTypeCreateModelBase):
+    mongo_initdb_root_username: str
+    mongo_conf: Optional[str] = None
+    image: str = &#34;mongo&#34;   
+    description: Optional[str] = None
+    destination_uuid: Optional[str] = None
+    public_port: Optional[int] = None
+    limits_cpuset: Optional[str] = None</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.databases.DatabaseTypeCreateModelBase" href="#coolipy.models.databases.DatabaseTypeCreateModelBase">DatabaseTypeCreateModelBase</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.databases.MongoDBModelCreate.description"><code class="name">var <span class="ident">description</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MongoDBModelCreate.destination_uuid"><code class="name">var <span class="ident">destination_uuid</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MongoDBModelCreate.image"><code class="name">var <span class="ident">image</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MongoDBModelCreate.limits_cpuset"><code class="name">var <span class="ident">limits_cpuset</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MongoDBModelCreate.mongo_conf"><code class="name">var <span class="ident">mongo_conf</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MongoDBModelCreate.mongo_initdb_root_username"><code class="name">var <span class="ident">mongo_initdb_root_username</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MongoDBModelCreate.public_port"><code class="name">var <span class="ident">public_port</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.databases.MySQLModelCreate"><code class="flex name class">
+<span>class <span class="ident">MySQLModelCreate</span></span>
+<span>(</span><span>server_uuid: str, project_uuid: str, environment_name: str, name: str, is_public: bool, limits_memory: int, limits_memory_swap: int, limits_memory_swappiness: int, limits_memory_reservation: int, limits_cpus: int, limits_cpu_shares: int, instant_deploy: bool, mysql_root_password: str, mysql_user: str, mysql_database: str, mysql_conf: Optional[str] = None, image: str = 'mysql', description: Optional[str] = None, destination_uuid: Optional[str] = None, public_port: Optional[int] = None, limits_cpuset: Optional[str] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>MySQLModelCreate(server_uuid: str, project_uuid: str, environment_name: str, name: str, is_public: bool, limits_memory: int, limits_memory_swap: int, limits_memory_swappiness: int, limits_memory_reservation: int, limits_cpus: int, limits_cpu_shares: int, instant_deploy: bool, mysql_root_password: str, mysql_user: str, mysql_database: str, mysql_conf: Optional[str] = None, image: str = 'mysql', description: Optional[str] = None, destination_uuid: Optional[str] = None, public_port: Optional[int] = None, limits_cpuset: Optional[str] = None)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class MySQLModelCreate(DatabaseTypeCreateModelBase):
+    mysql_root_password: str
+    mysql_user: str
+    mysql_database: str
+    mysql_conf: Optional[str] = None   
+    image: str = &#34;mysql&#34;
+    description: Optional[str] = None
+    destination_uuid: Optional[str] = None
+    public_port: Optional[int] = None
+    limits_cpuset: Optional[str] = None</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.databases.DatabaseTypeCreateModelBase" href="#coolipy.models.databases.DatabaseTypeCreateModelBase">DatabaseTypeCreateModelBase</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.databases.MySQLModelCreate.description"><code class="name">var <span class="ident">description</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MySQLModelCreate.destination_uuid"><code class="name">var <span class="ident">destination_uuid</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MySQLModelCreate.image"><code class="name">var <span class="ident">image</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MySQLModelCreate.limits_cpuset"><code class="name">var <span class="ident">limits_cpuset</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MySQLModelCreate.mysql_conf"><code class="name">var <span class="ident">mysql_conf</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MySQLModelCreate.mysql_database"><code class="name">var <span class="ident">mysql_database</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MySQLModelCreate.mysql_root_password"><code class="name">var <span class="ident">mysql_root_password</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MySQLModelCreate.mysql_user"><code class="name">var <span class="ident">mysql_user</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.MySQLModelCreate.public_port"><code class="name">var <span class="ident">public_port</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.databases.PostgreSQLModelCreate"><code class="flex name class">
+<span>class <span class="ident">PostgreSQLModelCreate</span></span>
+<span>(</span><span>server_uuid: str, project_uuid: str, environment_name: str, name: str, is_public: bool, limits_memory: int, limits_memory_swap: int, limits_memory_swappiness: int, limits_memory_reservation: int, limits_cpus: int, limits_cpu_shares: str, instant_deploy: bool, postgres_user: str, postgres_password: str, postgres_db: str, postgres_initdb_args: str, postgres_host_auth_method: str, postgres_conf: str, image: str = 'postgresql', description: Optional[str] = None, destination_uuid: Optional[str] = None, public_port: Optional[int] = None, limits_cpuset: Optional[str] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>PostgreSQLModelCreate(server_uuid: str, project_uuid: str, environment_name: str, name: str, is_public: bool, limits_memory: int, limits_memory_swap: int, limits_memory_swappiness: int, limits_memory_reservation: int, limits_cpus: int, limits_cpu_shares: str, instant_deploy: bool, postgres_user: str, postgres_password: str, postgres_db: str, postgres_initdb_args: str, postgres_host_auth_method: str, postgres_conf: str, image: str = 'postgresql', description: Optional[str] = None, destination_uuid: Optional[str] = None, public_port: Optional[int] = None, limits_cpuset: Optional[str] = None)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class PostgreSQLModelCreate(DatabaseTypeCreateModelBase):
+    postgres_user: str
+    postgres_password: str
+    postgres_db: str
+    limits_cpu_shares: str
+    postgres_initdb_args: str
+    postgres_host_auth_method: str
+    postgres_conf: str
+    image: str = &#34;postgresql&#34;
+    description: Optional[str] = None
+    destination_uuid: Optional[str] = None
+    public_port: Optional[int] = None
+    limits_cpuset: Optional[str] = None</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.databases.DatabaseTypeCreateModelBase" href="#coolipy.models.databases.DatabaseTypeCreateModelBase">DatabaseTypeCreateModelBase</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.databases.PostgreSQLModelCreate.description"><code class="name">var <span class="ident">description</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.PostgreSQLModelCreate.destination_uuid"><code class="name">var <span class="ident">destination_uuid</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.PostgreSQLModelCreate.image"><code class="name">var <span class="ident">image</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.PostgreSQLModelCreate.limits_cpu_shares"><code class="name">var <span class="ident">limits_cpu_shares</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.PostgreSQLModelCreate.limits_cpuset"><code class="name">var <span class="ident">limits_cpuset</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.PostgreSQLModelCreate.postgres_conf"><code class="name">var <span class="ident">postgres_conf</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.PostgreSQLModelCreate.postgres_db"><code class="name">var <span class="ident">postgres_db</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.PostgreSQLModelCreate.postgres_host_auth_method"><code class="name">var <span class="ident">postgres_host_auth_method</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.PostgreSQLModelCreate.postgres_initdb_args"><code class="name">var <span class="ident">postgres_initdb_args</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.PostgreSQLModelCreate.postgres_password"><code class="name">var <span class="ident">postgres_password</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.PostgreSQLModelCreate.postgres_user"><code class="name">var <span class="ident">postgres_user</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.PostgreSQLModelCreate.public_port"><code class="name">var <span class="ident">public_port</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.databases.RedisModelCreate"><code class="flex name class">
+<span>class <span class="ident">RedisModelCreate</span></span>
+<span>(</span><span>server_uuid: str, project_uuid: str, environment_name: str, name: str, is_public: bool, limits_memory: int, limits_memory_swap: int, limits_memory_swappiness: int, limits_memory_reservation: int, limits_cpus: int, limits_cpu_shares: int, instant_deploy: bool, redis_password: str, image: str = 'redis', redis_conf: Optional[str] = None, description: Optional[str] = None, destination_uuid: Optional[str] = None, public_port: Optional[int] = None, limits_cpuset: Optional[str] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>RedisModelCreate(server_uuid: str, project_uuid: str, environment_name: str, name: str, is_public: bool, limits_memory: int, limits_memory_swap: int, limits_memory_swappiness: int, limits_memory_reservation: int, limits_cpus: int, limits_cpu_shares: int, instant_deploy: bool, redis_password: str, image: str = 'redis', redis_conf: Optional[str] = None, description: Optional[str] = None, destination_uuid: Optional[str] = None, public_port: Optional[int] = None, limits_cpuset: Optional[str] = None)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class RedisModelCreate(DatabaseTypeCreateModelBase):
+    redis_password: str
+    image: str = &#34;redis&#34;
+    redis_conf: Optional[str] = None
+    description: Optional[str] = None
+    destination_uuid: Optional[str] = None
+    public_port: Optional[int] = None
+    limits_cpuset: Optional[str] = None</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.databases.DatabaseTypeCreateModelBase" href="#coolipy.models.databases.DatabaseTypeCreateModelBase">DatabaseTypeCreateModelBase</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.databases.RedisModelCreate.description"><code class="name">var <span class="ident">description</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.RedisModelCreate.destination_uuid"><code class="name">var <span class="ident">destination_uuid</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.RedisModelCreate.image"><code class="name">var <span class="ident">image</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.RedisModelCreate.limits_cpuset"><code class="name">var <span class="ident">limits_cpuset</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.RedisModelCreate.public_port"><code class="name">var <span class="ident">public_port</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.RedisModelCreate.redis_conf"><code class="name">var <span class="ident">redis_conf</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.databases.RedisModelCreate.redis_password"><code class="name">var <span class="ident">redis_password</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="coolipy.models" href="index.html">coolipy.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="coolipy.models.databases.ClickHouseModelCreate" href="#coolipy.models.databases.ClickHouseModelCreate">ClickHouseModelCreate</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.databases.ClickHouseModelCreate.clickhouse_admin_password" href="#coolipy.models.databases.ClickHouseModelCreate.clickhouse_admin_password">clickhouse_admin_password</a></code></li>
+<li><code><a title="coolipy.models.databases.ClickHouseModelCreate.clickhouse_admin_user" href="#coolipy.models.databases.ClickHouseModelCreate.clickhouse_admin_user">clickhouse_admin_user</a></code></li>
+<li><code><a title="coolipy.models.databases.ClickHouseModelCreate.description" href="#coolipy.models.databases.ClickHouseModelCreate.description">description</a></code></li>
+<li><code><a title="coolipy.models.databases.ClickHouseModelCreate.destination_uuid" href="#coolipy.models.databases.ClickHouseModelCreate.destination_uuid">destination_uuid</a></code></li>
+<li><code><a title="coolipy.models.databases.ClickHouseModelCreate.image" href="#coolipy.models.databases.ClickHouseModelCreate.image">image</a></code></li>
+<li><code><a title="coolipy.models.databases.ClickHouseModelCreate.limits_cpuset" href="#coolipy.models.databases.ClickHouseModelCreate.limits_cpuset">limits_cpuset</a></code></li>
+<li><code><a title="coolipy.models.databases.ClickHouseModelCreate.public_port" href="#coolipy.models.databases.ClickHouseModelCreate.public_port">public_port</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.databases.DatabaseModel" href="#coolipy.models.databases.DatabaseModel">DatabaseModel</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.databases.DatabaseModel.clickhouse_admin_password" href="#coolipy.models.databases.DatabaseModel.clickhouse_admin_password">clickhouse_admin_password</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.clickhouse_admin_user" href="#coolipy.models.databases.DatabaseModel.clickhouse_admin_user">clickhouse_admin_user</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.config_hash" href="#coolipy.models.databases.DatabaseModel.config_hash">config_hash</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.created_at" href="#coolipy.models.databases.DatabaseModel.created_at">created_at</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.custom_docker_run_options" href="#coolipy.models.databases.DatabaseModel.custom_docker_run_options">custom_docker_run_options</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.database_type" href="#coolipy.models.databases.DatabaseModel.database_type">database_type</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.deleted_at" href="#coolipy.models.databases.DatabaseModel.deleted_at">deleted_at</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.description" href="#coolipy.models.databases.DatabaseModel.description">description</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.destination" href="#coolipy.models.databases.DatabaseModel.destination">destination</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.destination_id" href="#coolipy.models.databases.DatabaseModel.destination_id">destination_id</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.destination_type" href="#coolipy.models.databases.DatabaseModel.destination_type">destination_type</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.dragonfly_password" href="#coolipy.models.databases.DatabaseModel.dragonfly_password">dragonfly_password</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.environment_id" href="#coolipy.models.databases.DatabaseModel.environment_id">environment_id</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.external_db_url" href="#coolipy.models.databases.DatabaseModel.external_db_url">external_db_url</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.image" href="#coolipy.models.databases.DatabaseModel.image">image</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.init_scripts" href="#coolipy.models.databases.DatabaseModel.init_scripts">init_scripts</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.internal_db_url" href="#coolipy.models.databases.DatabaseModel.internal_db_url">internal_db_url</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.is_include_timestamps" href="#coolipy.models.databases.DatabaseModel.is_include_timestamps">is_include_timestamps</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.is_log_drain_enabled" href="#coolipy.models.databases.DatabaseModel.is_log_drain_enabled">is_log_drain_enabled</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.is_public" href="#coolipy.models.databases.DatabaseModel.is_public">is_public</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.keydb_conf" href="#coolipy.models.databases.DatabaseModel.keydb_conf">keydb_conf</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.keydb_password" href="#coolipy.models.databases.DatabaseModel.keydb_password">keydb_password</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.last_online_at" href="#coolipy.models.databases.DatabaseModel.last_online_at">last_online_at</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.limits_cpu_shares" href="#coolipy.models.databases.DatabaseModel.limits_cpu_shares">limits_cpu_shares</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.limits_cpus" href="#coolipy.models.databases.DatabaseModel.limits_cpus">limits_cpus</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.limits_cpuset" href="#coolipy.models.databases.DatabaseModel.limits_cpuset">limits_cpuset</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.limits_memory" href="#coolipy.models.databases.DatabaseModel.limits_memory">limits_memory</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.limits_memory_reservation" href="#coolipy.models.databases.DatabaseModel.limits_memory_reservation">limits_memory_reservation</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.limits_memory_swap" href="#coolipy.models.databases.DatabaseModel.limits_memory_swap">limits_memory_swap</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.limits_memory_swappiness" href="#coolipy.models.databases.DatabaseModel.limits_memory_swappiness">limits_memory_swappiness</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.mariadb_conf" href="#coolipy.models.databases.DatabaseModel.mariadb_conf">mariadb_conf</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.mariadb_database" href="#coolipy.models.databases.DatabaseModel.mariadb_database">mariadb_database</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.mariadb_password" href="#coolipy.models.databases.DatabaseModel.mariadb_password">mariadb_password</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.mariadb_root_password" href="#coolipy.models.databases.DatabaseModel.mariadb_root_password">mariadb_root_password</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.mariadb_user" href="#coolipy.models.databases.DatabaseModel.mariadb_user">mariadb_user</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.mongo_conf" href="#coolipy.models.databases.DatabaseModel.mongo_conf">mongo_conf</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.mongo_initdb_database" href="#coolipy.models.databases.DatabaseModel.mongo_initdb_database">mongo_initdb_database</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.mongo_initdb_root_password" href="#coolipy.models.databases.DatabaseModel.mongo_initdb_root_password">mongo_initdb_root_password</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.mongo_initdb_root_username" href="#coolipy.models.databases.DatabaseModel.mongo_initdb_root_username">mongo_initdb_root_username</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.mysql_conf" href="#coolipy.models.databases.DatabaseModel.mysql_conf">mysql_conf</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.mysql_database" href="#coolipy.models.databases.DatabaseModel.mysql_database">mysql_database</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.mysql_root_password" href="#coolipy.models.databases.DatabaseModel.mysql_root_password">mysql_root_password</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.mysql_user" href="#coolipy.models.databases.DatabaseModel.mysql_user">mysql_user</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.name" href="#coolipy.models.databases.DatabaseModel.name">name</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.ports_mappings" href="#coolipy.models.databases.DatabaseModel.ports_mappings">ports_mappings</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.postgres_conf" href="#coolipy.models.databases.DatabaseModel.postgres_conf">postgres_conf</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.postgres_db" href="#coolipy.models.databases.DatabaseModel.postgres_db">postgres_db</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.postgres_host_auth_method" href="#coolipy.models.databases.DatabaseModel.postgres_host_auth_method">postgres_host_auth_method</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.postgres_initdb_args" href="#coolipy.models.databases.DatabaseModel.postgres_initdb_args">postgres_initdb_args</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.postgres_password" href="#coolipy.models.databases.DatabaseModel.postgres_password">postgres_password</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.postgres_user" href="#coolipy.models.databases.DatabaseModel.postgres_user">postgres_user</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.public_port" href="#coolipy.models.databases.DatabaseModel.public_port">public_port</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.redis_conf" href="#coolipy.models.databases.DatabaseModel.redis_conf">redis_conf</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.redis_password" href="#coolipy.models.databases.DatabaseModel.redis_password">redis_password</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.server_status" href="#coolipy.models.databases.DatabaseModel.server_status">server_status</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.started_at" href="#coolipy.models.databases.DatabaseModel.started_at">started_at</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.status" href="#coolipy.models.databases.DatabaseModel.status">status</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.updated_at" href="#coolipy.models.databases.DatabaseModel.updated_at">updated_at</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseModel.uuid" href="#coolipy.models.databases.DatabaseModel.uuid">uuid</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.databases.DatabaseTypeCreateModelBase" href="#coolipy.models.databases.DatabaseTypeCreateModelBase">DatabaseTypeCreateModelBase</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.databases.DatabaseTypeCreateModelBase.environment_name" href="#coolipy.models.databases.DatabaseTypeCreateModelBase.environment_name">environment_name</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseTypeCreateModelBase.instant_deploy" href="#coolipy.models.databases.DatabaseTypeCreateModelBase.instant_deploy">instant_deploy</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseTypeCreateModelBase.is_public" href="#coolipy.models.databases.DatabaseTypeCreateModelBase.is_public">is_public</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseTypeCreateModelBase.limits_cpu_shares" href="#coolipy.models.databases.DatabaseTypeCreateModelBase.limits_cpu_shares">limits_cpu_shares</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseTypeCreateModelBase.limits_cpus" href="#coolipy.models.databases.DatabaseTypeCreateModelBase.limits_cpus">limits_cpus</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseTypeCreateModelBase.limits_memory" href="#coolipy.models.databases.DatabaseTypeCreateModelBase.limits_memory">limits_memory</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseTypeCreateModelBase.limits_memory_reservation" href="#coolipy.models.databases.DatabaseTypeCreateModelBase.limits_memory_reservation">limits_memory_reservation</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseTypeCreateModelBase.limits_memory_swap" href="#coolipy.models.databases.DatabaseTypeCreateModelBase.limits_memory_swap">limits_memory_swap</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseTypeCreateModelBase.limits_memory_swappiness" href="#coolipy.models.databases.DatabaseTypeCreateModelBase.limits_memory_swappiness">limits_memory_swappiness</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseTypeCreateModelBase.name" href="#coolipy.models.databases.DatabaseTypeCreateModelBase.name">name</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseTypeCreateModelBase.project_uuid" href="#coolipy.models.databases.DatabaseTypeCreateModelBase.project_uuid">project_uuid</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseTypeCreateModelBase.server_uuid" href="#coolipy.models.databases.DatabaseTypeCreateModelBase.server_uuid">server_uuid</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.databases.DatabaseUpdateModel" href="#coolipy.models.databases.DatabaseUpdateModel">DatabaseUpdateModel</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.clickhouse_admin_password" href="#coolipy.models.databases.DatabaseUpdateModel.clickhouse_admin_password">clickhouse_admin_password</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.clickhouse_admin_user" href="#coolipy.models.databases.DatabaseUpdateModel.clickhouse_admin_user">clickhouse_admin_user</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.description" href="#coolipy.models.databases.DatabaseUpdateModel.description">description</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.dragonfly_password" href="#coolipy.models.databases.DatabaseUpdateModel.dragonfly_password">dragonfly_password</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.image" href="#coolipy.models.databases.DatabaseUpdateModel.image">image</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.is_public" href="#coolipy.models.databases.DatabaseUpdateModel.is_public">is_public</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.keydb_conf" href="#coolipy.models.databases.DatabaseUpdateModel.keydb_conf">keydb_conf</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.keydb_password" href="#coolipy.models.databases.DatabaseUpdateModel.keydb_password">keydb_password</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.limits_cpu_shares" href="#coolipy.models.databases.DatabaseUpdateModel.limits_cpu_shares">limits_cpu_shares</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.limits_cpus" href="#coolipy.models.databases.DatabaseUpdateModel.limits_cpus">limits_cpus</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.limits_cpuset" href="#coolipy.models.databases.DatabaseUpdateModel.limits_cpuset">limits_cpuset</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.limits_memory" href="#coolipy.models.databases.DatabaseUpdateModel.limits_memory">limits_memory</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.limits_memory_reservation" href="#coolipy.models.databases.DatabaseUpdateModel.limits_memory_reservation">limits_memory_reservation</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.limits_memory_swap" href="#coolipy.models.databases.DatabaseUpdateModel.limits_memory_swap">limits_memory_swap</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.limits_memory_swappiness" href="#coolipy.models.databases.DatabaseUpdateModel.limits_memory_swappiness">limits_memory_swappiness</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.mariadb_conf" href="#coolipy.models.databases.DatabaseUpdateModel.mariadb_conf">mariadb_conf</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.mariadb_database" href="#coolipy.models.databases.DatabaseUpdateModel.mariadb_database">mariadb_database</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.mariadb_password" href="#coolipy.models.databases.DatabaseUpdateModel.mariadb_password">mariadb_password</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.mariadb_root_password" href="#coolipy.models.databases.DatabaseUpdateModel.mariadb_root_password">mariadb_root_password</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.mariadb_user" href="#coolipy.models.databases.DatabaseUpdateModel.mariadb_user">mariadb_user</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.mongo_conf" href="#coolipy.models.databases.DatabaseUpdateModel.mongo_conf">mongo_conf</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.mongo_initdb_init_database" href="#coolipy.models.databases.DatabaseUpdateModel.mongo_initdb_init_database">mongo_initdb_init_database</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.mongo_initdb_root_password" href="#coolipy.models.databases.DatabaseUpdateModel.mongo_initdb_root_password">mongo_initdb_root_password</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.mongo_initdb_root_username" href="#coolipy.models.databases.DatabaseUpdateModel.mongo_initdb_root_username">mongo_initdb_root_username</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.mysql_conf" href="#coolipy.models.databases.DatabaseUpdateModel.mysql_conf">mysql_conf</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.mysql_database" href="#coolipy.models.databases.DatabaseUpdateModel.mysql_database">mysql_database</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.mysql_root_password" href="#coolipy.models.databases.DatabaseUpdateModel.mysql_root_password">mysql_root_password</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.mysql_user" href="#coolipy.models.databases.DatabaseUpdateModel.mysql_user">mysql_user</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.name" href="#coolipy.models.databases.DatabaseUpdateModel.name">name</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.postgres_conf" href="#coolipy.models.databases.DatabaseUpdateModel.postgres_conf">postgres_conf</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.postgres_db" href="#coolipy.models.databases.DatabaseUpdateModel.postgres_db">postgres_db</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.postgres_host_auth_method" href="#coolipy.models.databases.DatabaseUpdateModel.postgres_host_auth_method">postgres_host_auth_method</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.postgres_initdb_args" href="#coolipy.models.databases.DatabaseUpdateModel.postgres_initdb_args">postgres_initdb_args</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.postgres_password" href="#coolipy.models.databases.DatabaseUpdateModel.postgres_password">postgres_password</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.postgres_user" href="#coolipy.models.databases.DatabaseUpdateModel.postgres_user">postgres_user</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.public_port" href="#coolipy.models.databases.DatabaseUpdateModel.public_port">public_port</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.redis_conf" href="#coolipy.models.databases.DatabaseUpdateModel.redis_conf">redis_conf</a></code></li>
+<li><code><a title="coolipy.models.databases.DatabaseUpdateModel.redis_password" href="#coolipy.models.databases.DatabaseUpdateModel.redis_password">redis_password</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.databases.DestinationModel" href="#coolipy.models.databases.DestinationModel">DestinationModel</a></code></h4>
+<ul class="two-column">
+<li><code><a title="coolipy.models.databases.DestinationModel.created_at" href="#coolipy.models.databases.DestinationModel.created_at">created_at</a></code></li>
+<li><code><a title="coolipy.models.databases.DestinationModel.id" href="#coolipy.models.databases.DestinationModel.id">id</a></code></li>
+<li><code><a title="coolipy.models.databases.DestinationModel.name" href="#coolipy.models.databases.DestinationModel.name">name</a></code></li>
+<li><code><a title="coolipy.models.databases.DestinationModel.network" href="#coolipy.models.databases.DestinationModel.network">network</a></code></li>
+<li><code><a title="coolipy.models.databases.DestinationModel.server" href="#coolipy.models.databases.DestinationModel.server">server</a></code></li>
+<li><code><a title="coolipy.models.databases.DestinationModel.server_id" href="#coolipy.models.databases.DestinationModel.server_id">server_id</a></code></li>
+<li><code><a title="coolipy.models.databases.DestinationModel.updated_at" href="#coolipy.models.databases.DestinationModel.updated_at">updated_at</a></code></li>
+<li><code><a title="coolipy.models.databases.DestinationModel.uuid" href="#coolipy.models.databases.DestinationModel.uuid">uuid</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.databases.DragonFlyModelCreate" href="#coolipy.models.databases.DragonFlyModelCreate">DragonFlyModelCreate</a></code></h4>
+<ul class="two-column">
+<li><code><a title="coolipy.models.databases.DragonFlyModelCreate.description" href="#coolipy.models.databases.DragonFlyModelCreate.description">description</a></code></li>
+<li><code><a title="coolipy.models.databases.DragonFlyModelCreate.destination_uuid" href="#coolipy.models.databases.DragonFlyModelCreate.destination_uuid">destination_uuid</a></code></li>
+<li><code><a title="coolipy.models.databases.DragonFlyModelCreate.dragonfly_password" href="#coolipy.models.databases.DragonFlyModelCreate.dragonfly_password">dragonfly_password</a></code></li>
+<li><code><a title="coolipy.models.databases.DragonFlyModelCreate.image" href="#coolipy.models.databases.DragonFlyModelCreate.image">image</a></code></li>
+<li><code><a title="coolipy.models.databases.DragonFlyModelCreate.limits_cpuset" href="#coolipy.models.databases.DragonFlyModelCreate.limits_cpuset">limits_cpuset</a></code></li>
+<li><code><a title="coolipy.models.databases.DragonFlyModelCreate.public_port" href="#coolipy.models.databases.DragonFlyModelCreate.public_port">public_port</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.databases.KeyDBModelCreate" href="#coolipy.models.databases.KeyDBModelCreate">KeyDBModelCreate</a></code></h4>
+<ul class="two-column">
+<li><code><a title="coolipy.models.databases.KeyDBModelCreate.description" href="#coolipy.models.databases.KeyDBModelCreate.description">description</a></code></li>
+<li><code><a title="coolipy.models.databases.KeyDBModelCreate.destination_uuid" href="#coolipy.models.databases.KeyDBModelCreate.destination_uuid">destination_uuid</a></code></li>
+<li><code><a title="coolipy.models.databases.KeyDBModelCreate.image" href="#coolipy.models.databases.KeyDBModelCreate.image">image</a></code></li>
+<li><code><a title="coolipy.models.databases.KeyDBModelCreate.keydb_conf" href="#coolipy.models.databases.KeyDBModelCreate.keydb_conf">keydb_conf</a></code></li>
+<li><code><a title="coolipy.models.databases.KeyDBModelCreate.keydb_password" href="#coolipy.models.databases.KeyDBModelCreate.keydb_password">keydb_password</a></code></li>
+<li><code><a title="coolipy.models.databases.KeyDBModelCreate.limits_cpuset" href="#coolipy.models.databases.KeyDBModelCreate.limits_cpuset">limits_cpuset</a></code></li>
+<li><code><a title="coolipy.models.databases.KeyDBModelCreate.public_port" href="#coolipy.models.databases.KeyDBModelCreate.public_port">public_port</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.databases.MariaDBModelCreate" href="#coolipy.models.databases.MariaDBModelCreate">MariaDBModelCreate</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.databases.MariaDBModelCreate.description" href="#coolipy.models.databases.MariaDBModelCreate.description">description</a></code></li>
+<li><code><a title="coolipy.models.databases.MariaDBModelCreate.destination_uuid" href="#coolipy.models.databases.MariaDBModelCreate.destination_uuid">destination_uuid</a></code></li>
+<li><code><a title="coolipy.models.databases.MariaDBModelCreate.image" href="#coolipy.models.databases.MariaDBModelCreate.image">image</a></code></li>
+<li><code><a title="coolipy.models.databases.MariaDBModelCreate.limits_cpuset" href="#coolipy.models.databases.MariaDBModelCreate.limits_cpuset">limits_cpuset</a></code></li>
+<li><code><a title="coolipy.models.databases.MariaDBModelCreate.mariadb_conf" href="#coolipy.models.databases.MariaDBModelCreate.mariadb_conf">mariadb_conf</a></code></li>
+<li><code><a title="coolipy.models.databases.MariaDBModelCreate.mariadb_database" href="#coolipy.models.databases.MariaDBModelCreate.mariadb_database">mariadb_database</a></code></li>
+<li><code><a title="coolipy.models.databases.MariaDBModelCreate.mariadb_password" href="#coolipy.models.databases.MariaDBModelCreate.mariadb_password">mariadb_password</a></code></li>
+<li><code><a title="coolipy.models.databases.MariaDBModelCreate.mariadb_root_password" href="#coolipy.models.databases.MariaDBModelCreate.mariadb_root_password">mariadb_root_password</a></code></li>
+<li><code><a title="coolipy.models.databases.MariaDBModelCreate.mariadb_user" href="#coolipy.models.databases.MariaDBModelCreate.mariadb_user">mariadb_user</a></code></li>
+<li><code><a title="coolipy.models.databases.MariaDBModelCreate.public_port" href="#coolipy.models.databases.MariaDBModelCreate.public_port">public_port</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.databases.MongoDBModelCreate" href="#coolipy.models.databases.MongoDBModelCreate">MongoDBModelCreate</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.databases.MongoDBModelCreate.description" href="#coolipy.models.databases.MongoDBModelCreate.description">description</a></code></li>
+<li><code><a title="coolipy.models.databases.MongoDBModelCreate.destination_uuid" href="#coolipy.models.databases.MongoDBModelCreate.destination_uuid">destination_uuid</a></code></li>
+<li><code><a title="coolipy.models.databases.MongoDBModelCreate.image" href="#coolipy.models.databases.MongoDBModelCreate.image">image</a></code></li>
+<li><code><a title="coolipy.models.databases.MongoDBModelCreate.limits_cpuset" href="#coolipy.models.databases.MongoDBModelCreate.limits_cpuset">limits_cpuset</a></code></li>
+<li><code><a title="coolipy.models.databases.MongoDBModelCreate.mongo_conf" href="#coolipy.models.databases.MongoDBModelCreate.mongo_conf">mongo_conf</a></code></li>
+<li><code><a title="coolipy.models.databases.MongoDBModelCreate.mongo_initdb_root_username" href="#coolipy.models.databases.MongoDBModelCreate.mongo_initdb_root_username">mongo_initdb_root_username</a></code></li>
+<li><code><a title="coolipy.models.databases.MongoDBModelCreate.public_port" href="#coolipy.models.databases.MongoDBModelCreate.public_port">public_port</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.databases.MySQLModelCreate" href="#coolipy.models.databases.MySQLModelCreate">MySQLModelCreate</a></code></h4>
+<ul class="two-column">
+<li><code><a title="coolipy.models.databases.MySQLModelCreate.description" href="#coolipy.models.databases.MySQLModelCreate.description">description</a></code></li>
+<li><code><a title="coolipy.models.databases.MySQLModelCreate.destination_uuid" href="#coolipy.models.databases.MySQLModelCreate.destination_uuid">destination_uuid</a></code></li>
+<li><code><a title="coolipy.models.databases.MySQLModelCreate.image" href="#coolipy.models.databases.MySQLModelCreate.image">image</a></code></li>
+<li><code><a title="coolipy.models.databases.MySQLModelCreate.limits_cpuset" href="#coolipy.models.databases.MySQLModelCreate.limits_cpuset">limits_cpuset</a></code></li>
+<li><code><a title="coolipy.models.databases.MySQLModelCreate.mysql_conf" href="#coolipy.models.databases.MySQLModelCreate.mysql_conf">mysql_conf</a></code></li>
+<li><code><a title="coolipy.models.databases.MySQLModelCreate.mysql_database" href="#coolipy.models.databases.MySQLModelCreate.mysql_database">mysql_database</a></code></li>
+<li><code><a title="coolipy.models.databases.MySQLModelCreate.mysql_root_password" href="#coolipy.models.databases.MySQLModelCreate.mysql_root_password">mysql_root_password</a></code></li>
+<li><code><a title="coolipy.models.databases.MySQLModelCreate.mysql_user" href="#coolipy.models.databases.MySQLModelCreate.mysql_user">mysql_user</a></code></li>
+<li><code><a title="coolipy.models.databases.MySQLModelCreate.public_port" href="#coolipy.models.databases.MySQLModelCreate.public_port">public_port</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.databases.PostgreSQLModelCreate" href="#coolipy.models.databases.PostgreSQLModelCreate">PostgreSQLModelCreate</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.databases.PostgreSQLModelCreate.description" href="#coolipy.models.databases.PostgreSQLModelCreate.description">description</a></code></li>
+<li><code><a title="coolipy.models.databases.PostgreSQLModelCreate.destination_uuid" href="#coolipy.models.databases.PostgreSQLModelCreate.destination_uuid">destination_uuid</a></code></li>
+<li><code><a title="coolipy.models.databases.PostgreSQLModelCreate.image" href="#coolipy.models.databases.PostgreSQLModelCreate.image">image</a></code></li>
+<li><code><a title="coolipy.models.databases.PostgreSQLModelCreate.limits_cpu_shares" href="#coolipy.models.databases.PostgreSQLModelCreate.limits_cpu_shares">limits_cpu_shares</a></code></li>
+<li><code><a title="coolipy.models.databases.PostgreSQLModelCreate.limits_cpuset" href="#coolipy.models.databases.PostgreSQLModelCreate.limits_cpuset">limits_cpuset</a></code></li>
+<li><code><a title="coolipy.models.databases.PostgreSQLModelCreate.postgres_conf" href="#coolipy.models.databases.PostgreSQLModelCreate.postgres_conf">postgres_conf</a></code></li>
+<li><code><a title="coolipy.models.databases.PostgreSQLModelCreate.postgres_db" href="#coolipy.models.databases.PostgreSQLModelCreate.postgres_db">postgres_db</a></code></li>
+<li><code><a title="coolipy.models.databases.PostgreSQLModelCreate.postgres_host_auth_method" href="#coolipy.models.databases.PostgreSQLModelCreate.postgres_host_auth_method">postgres_host_auth_method</a></code></li>
+<li><code><a title="coolipy.models.databases.PostgreSQLModelCreate.postgres_initdb_args" href="#coolipy.models.databases.PostgreSQLModelCreate.postgres_initdb_args">postgres_initdb_args</a></code></li>
+<li><code><a title="coolipy.models.databases.PostgreSQLModelCreate.postgres_password" href="#coolipy.models.databases.PostgreSQLModelCreate.postgres_password">postgres_password</a></code></li>
+<li><code><a title="coolipy.models.databases.PostgreSQLModelCreate.postgres_user" href="#coolipy.models.databases.PostgreSQLModelCreate.postgres_user">postgres_user</a></code></li>
+<li><code><a title="coolipy.models.databases.PostgreSQLModelCreate.public_port" href="#coolipy.models.databases.PostgreSQLModelCreate.public_port">public_port</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.databases.RedisModelCreate" href="#coolipy.models.databases.RedisModelCreate">RedisModelCreate</a></code></h4>
+<ul class="two-column">
+<li><code><a title="coolipy.models.databases.RedisModelCreate.description" href="#coolipy.models.databases.RedisModelCreate.description">description</a></code></li>
+<li><code><a title="coolipy.models.databases.RedisModelCreate.destination_uuid" href="#coolipy.models.databases.RedisModelCreate.destination_uuid">destination_uuid</a></code></li>
+<li><code><a title="coolipy.models.databases.RedisModelCreate.image" href="#coolipy.models.databases.RedisModelCreate.image">image</a></code></li>
+<li><code><a title="coolipy.models.databases.RedisModelCreate.limits_cpuset" href="#coolipy.models.databases.RedisModelCreate.limits_cpuset">limits_cpuset</a></code></li>
+<li><code><a title="coolipy.models.databases.RedisModelCreate.public_port" href="#coolipy.models.databases.RedisModelCreate.public_port">public_port</a></code></li>
+<li><code><a title="coolipy.models.databases.RedisModelCreate.redis_conf" href="#coolipy.models.databases.RedisModelCreate.redis_conf">redis_conf</a></code></li>
+<li><code><a title="coolipy.models.databases.RedisModelCreate.redis_password" href="#coolipy.models.databases.RedisModelCreate.redis_password">redis_password</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

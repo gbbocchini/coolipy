@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>coolipy.models.teams API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>coolipy.models.teams</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="coolipy.models.teams.TeamMemberModel"><code class="flex name class">
+<span>class <span class="ident">TeamMemberModel</span></span>
+<span>(</span><span>id: Optional[int] = None, name: Optional[str] = None, email: Optional[str] = None, email_verified_at: Union[str, datetime.datetime, ForwardRef(None)] = None, force_password_reset: Optional[bool] = None, marketing_emails: Optional[bool] = None, two_factor_confirmed_at: Union[str, datetime.datetime, ForwardRef(None)] = None, created_at: Union[str, datetime.datetime, ForwardRef(None)] = None, updated_at: Union[str, datetime.datetime, ForwardRef(None)] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Coolify Team Members data model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class TeamMemberModel(CoolipyBaseModel):
+    &#34;&#34;&#34;
+    Coolify Team Members data model.
+    &#34;&#34;&#34;
+
+    id: Optional[int] = None
+    name: Optional[str] = None
+    email: Optional[str] = None
+    email_verified_at: Optional[Union[str, datetime]] = None
+    force_password_reset: Optional[bool] = None
+    marketing_emails: Optional[bool] = None
+    two_factor_confirmed_at: Optional[Union[str, datetime]] = None
+    created_at: Optional[Union[str, datetime]] = None
+    updated_at: Optional[Union[str, datetime]] = None</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.teams.TeamMemberModel.created_at"><code class="name">var <span class="ident">created_at</span> : Union[str, datetime.datetime, ForwardRef(None)]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamMemberModel.email"><code class="name">var <span class="ident">email</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamMemberModel.email_verified_at"><code class="name">var <span class="ident">email_verified_at</span> : Union[str, datetime.datetime, ForwardRef(None)]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamMemberModel.force_password_reset"><code class="name">var <span class="ident">force_password_reset</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamMemberModel.id"><code class="name">var <span class="ident">id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamMemberModel.marketing_emails"><code class="name">var <span class="ident">marketing_emails</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamMemberModel.name"><code class="name">var <span class="ident">name</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamMemberModel.two_factor_confirmed_at"><code class="name">var <span class="ident">two_factor_confirmed_at</span> : Union[str, datetime.datetime, ForwardRef(None)]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamMemberModel.updated_at"><code class="name">var <span class="ident">updated_at</span> : Union[str, datetime.datetime, ForwardRef(None)]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></b></code>:
+<ul class="hlist">
+<li><code><a title="coolipy.models.base.CoolipyBaseModel.pythonify" href="base.html#coolipy.models.base.CoolipyBaseModel.pythonify">pythonify</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="coolipy.models.teams.TeamModel"><code class="flex name class">
+<span>class <span class="ident">TeamModel</span></span>
+<span>(</span><span>id: Optional[int] = None, name: Optional[str] = None, description: Optional[str] = None, discord_enabled: Optional[bool] = None, discord_notifications_database_backups: Optional[bool] = None, discord_notifications_deployments: Optional[bool] = None, discord_notifications_scheduled_tasks: Optional[bool] = None, discord_notifications_server_disk_usage: Optional[bool] = None, discord_notifications_status_changes: Optional[bool] = None, discord_notifications_test: Optional[bool] = None, discord_webhook_url: Optional[str] = None, personal_team: Optional[bool] = None, resend_api_key: Optional[str] = None, resend_enabled: Optional[bool] = None, show_boarding: Optional[bool] = None, smtp_enabled: Optional[bool] = None, smtp_encryption: Optional[str] = None, smtp_from_address: Optional[str] = None, smtp_from_name: Optional[str] = None, smtp_host: Optional[str] = None, smtp_notifications_database_backups: Optional[bool] = None, smtp_notifications_deployments: Optional[bool] = None, smtp_notifications_scheduled_tasks: Optional[bool] = None, smtp_notifications_server_disk_usage: Optional[bool] = None, smtp_notifications_status_changes: Optional[bool] = None, smtp_notifications_test: Optional[bool] = None, smtp_password: Optional[str] = None, smtp_port: Optional[int] = None, smtp_recipients: Optional[str] = None, smtp_timeout: Optional[int] = None, smtp_username: Optional[str] = None, telegram_chat_id: Optional[int] = None, telegram_enabled: Optional[bool] = None, telegram_notifications_database_backups: Optional[bool] = None, telegram_notifications_database_backups_message_thread_id: Optional[int] = None, telegram_notifications_deployments: Optional[bool] = None, telegram_notifications_deployments_message_thread_id: Optional[int] = None, telegram_notifications_scheduled_tasks: Optional[bool] = None, telegram_notifications_scheduled_tasks_thread_id: Optional[int] = None, telegram_notifications_server_disk_usage: Optional[bool] = None, telegram_notifications_status_changes: Optional[bool] = None, telegram_notifications_status_changes_message_thread_id: Optional[int] = None, telegram_notifications_test: Optional[bool] = None, telegram_notifications_test_message_thread_id: Optional[int] = None, telegram_token: Optional[str] = None, use_instance_email_settings: Optional[bool] = None, created_at: Union[str, datetime.datetime, ForwardRef(None)] = None, updated_at: Union[str, datetime.datetime, ForwardRef(None)] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Coolify Teams data model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class TeamModel(CoolipyBaseModel):
+    &#34;&#34;&#34;
+    Coolify Teams data model.
+    &#34;&#34;&#34;
+
+    id: Optional[int] = None
+    name: Optional[str] = None
+    description: Optional[str] = None
+    discord_enabled: Optional[bool] = None
+    discord_notifications_database_backups: Optional[bool] = None
+    discord_notifications_deployments: Optional[bool] = None
+    discord_notifications_scheduled_tasks: Optional[bool] = None
+    discord_notifications_server_disk_usage: Optional[bool] = None
+    discord_notifications_status_changes: Optional[bool] = None
+    discord_notifications_test: Optional[bool] = None
+    discord_webhook_url: Optional[str] = None
+    personal_team: Optional[bool] = None
+    resend_api_key: Optional[str] = None
+    resend_enabled: Optional[bool] = None
+    show_boarding: Optional[bool] = None
+    smtp_enabled: Optional[bool] = None
+    smtp_encryption: Optional[str] = None
+    smtp_from_address: Optional[str] = None
+    smtp_from_name: Optional[str] = None
+    smtp_host: Optional[str] = None
+    smtp_notifications_database_backups: Optional[bool] = None
+    smtp_notifications_deployments: Optional[bool] = None
+    smtp_notifications_scheduled_tasks: Optional[bool] = None
+    smtp_notifications_server_disk_usage: Optional[bool] = None
+    smtp_notifications_status_changes: Optional[bool] = None
+    smtp_notifications_test: Optional[bool] = None
+    smtp_password: Optional[str] = None
+    smtp_port: Optional[int] = None
+    smtp_recipients: Optional[str] = None
+    smtp_timeout: Optional[int] = None
+    smtp_username: Optional[str] = None
+    telegram_chat_id: Optional[int] = None
+    telegram_enabled: Optional[bool] = None
+    telegram_notifications_database_backups: Optional[bool] = None
+    telegram_notifications_database_backups_message_thread_id: Optional[int] = None
+    telegram_notifications_deployments: Optional[bool] = None
+    telegram_notifications_deployments_message_thread_id: Optional[int] = None
+    telegram_notifications_scheduled_tasks: Optional[bool] = None
+    telegram_notifications_scheduled_tasks_thread_id: Optional[int] = None
+    telegram_notifications_server_disk_usage: Optional[bool] = None
+    telegram_notifications_status_changes: Optional[bool] = None
+    telegram_notifications_status_changes_message_thread_id: Optional[int] = None
+    telegram_notifications_test: Optional[bool] = None
+    telegram_notifications_test_message_thread_id: Optional[int] = None
+    telegram_token: Optional[str] = None
+    use_instance_email_settings: Optional[bool] = None
+    created_at: Optional[Union[str, datetime]] = None
+    updated_at: Optional[Union[str, datetime]] = None</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.teams.TeamModel.created_at"><code class="name">var <span class="ident">created_at</span> : Union[str, datetime.datetime, ForwardRef(None)]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.description"><code class="name">var <span class="ident">description</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.discord_enabled"><code class="name">var <span class="ident">discord_enabled</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.discord_notifications_database_backups"><code class="name">var <span class="ident">discord_notifications_database_backups</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.discord_notifications_deployments"><code class="name">var <span class="ident">discord_notifications_deployments</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.discord_notifications_scheduled_tasks"><code class="name">var <span class="ident">discord_notifications_scheduled_tasks</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.discord_notifications_server_disk_usage"><code class="name">var <span class="ident">discord_notifications_server_disk_usage</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.discord_notifications_status_changes"><code class="name">var <span class="ident">discord_notifications_status_changes</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.discord_notifications_test"><code class="name">var <span class="ident">discord_notifications_test</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.discord_webhook_url"><code class="name">var <span class="ident">discord_webhook_url</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.id"><code class="name">var <span class="ident">id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.name"><code class="name">var <span class="ident">name</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.personal_team"><code class="name">var <span class="ident">personal_team</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.resend_api_key"><code class="name">var <span class="ident">resend_api_key</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.resend_enabled"><code class="name">var <span class="ident">resend_enabled</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.show_boarding"><code class="name">var <span class="ident">show_boarding</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.smtp_enabled"><code class="name">var <span class="ident">smtp_enabled</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.smtp_encryption"><code class="name">var <span class="ident">smtp_encryption</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.smtp_from_address"><code class="name">var <span class="ident">smtp_from_address</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.smtp_from_name"><code class="name">var <span class="ident">smtp_from_name</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.smtp_host"><code class="name">var <span class="ident">smtp_host</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.smtp_notifications_database_backups"><code class="name">var <span class="ident">smtp_notifications_database_backups</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.smtp_notifications_deployments"><code class="name">var <span class="ident">smtp_notifications_deployments</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.smtp_notifications_scheduled_tasks"><code class="name">var <span class="ident">smtp_notifications_scheduled_tasks</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.smtp_notifications_server_disk_usage"><code class="name">var <span class="ident">smtp_notifications_server_disk_usage</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.smtp_notifications_status_changes"><code class="name">var <span class="ident">smtp_notifications_status_changes</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.smtp_notifications_test"><code class="name">var <span class="ident">smtp_notifications_test</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.smtp_password"><code class="name">var <span class="ident">smtp_password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.smtp_port"><code class="name">var <span class="ident">smtp_port</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.smtp_recipients"><code class="name">var <span class="ident">smtp_recipients</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.smtp_timeout"><code class="name">var <span class="ident">smtp_timeout</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.smtp_username"><code class="name">var <span class="ident">smtp_username</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.telegram_chat_id"><code class="name">var <span class="ident">telegram_chat_id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.telegram_enabled"><code class="name">var <span class="ident">telegram_enabled</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.telegram_notifications_database_backups"><code class="name">var <span class="ident">telegram_notifications_database_backups</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.telegram_notifications_database_backups_message_thread_id"><code class="name">var <span class="ident">telegram_notifications_database_backups_message_thread_id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.telegram_notifications_deployments"><code class="name">var <span class="ident">telegram_notifications_deployments</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.telegram_notifications_deployments_message_thread_id"><code class="name">var <span class="ident">telegram_notifications_deployments_message_thread_id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.telegram_notifications_scheduled_tasks"><code class="name">var <span class="ident">telegram_notifications_scheduled_tasks</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.telegram_notifications_scheduled_tasks_thread_id"><code class="name">var <span class="ident">telegram_notifications_scheduled_tasks_thread_id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.telegram_notifications_server_disk_usage"><code class="name">var <span class="ident">telegram_notifications_server_disk_usage</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.telegram_notifications_status_changes"><code class="name">var <span class="ident">telegram_notifications_status_changes</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.telegram_notifications_status_changes_message_thread_id"><code class="name">var <span class="ident">telegram_notifications_status_changes_message_thread_id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.telegram_notifications_test"><code class="name">var <span class="ident">telegram_notifications_test</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.telegram_notifications_test_message_thread_id"><code class="name">var <span class="ident">telegram_notifications_test_message_thread_id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.telegram_token"><code class="name">var <span class="ident">telegram_token</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.updated_at"><code class="name">var <span class="ident">updated_at</span> : Union[str, datetime.datetime, ForwardRef(None)]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.teams.TeamModel.use_instance_email_settings"><code class="name">var <span class="ident">use_instance_email_settings</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></b></code>:
+<ul class="hlist">
+<li><code><a title="coolipy.models.base.CoolipyBaseModel.pythonify" href="base.html#coolipy.models.base.CoolipyBaseModel.pythonify">pythonify</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="coolipy.models" href="index.html">coolipy.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="coolipy.models.teams.TeamMemberModel" href="#coolipy.models.teams.TeamMemberModel">TeamMemberModel</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.teams.TeamMemberModel.created_at" href="#coolipy.models.teams.TeamMemberModel.created_at">created_at</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamMemberModel.email" href="#coolipy.models.teams.TeamMemberModel.email">email</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamMemberModel.email_verified_at" href="#coolipy.models.teams.TeamMemberModel.email_verified_at">email_verified_at</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamMemberModel.force_password_reset" href="#coolipy.models.teams.TeamMemberModel.force_password_reset">force_password_reset</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamMemberModel.id" href="#coolipy.models.teams.TeamMemberModel.id">id</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamMemberModel.marketing_emails" href="#coolipy.models.teams.TeamMemberModel.marketing_emails">marketing_emails</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamMemberModel.name" href="#coolipy.models.teams.TeamMemberModel.name">name</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamMemberModel.two_factor_confirmed_at" href="#coolipy.models.teams.TeamMemberModel.two_factor_confirmed_at">two_factor_confirmed_at</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamMemberModel.updated_at" href="#coolipy.models.teams.TeamMemberModel.updated_at">updated_at</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.teams.TeamModel" href="#coolipy.models.teams.TeamModel">TeamModel</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.teams.TeamModel.created_at" href="#coolipy.models.teams.TeamModel.created_at">created_at</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.description" href="#coolipy.models.teams.TeamModel.description">description</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.discord_enabled" href="#coolipy.models.teams.TeamModel.discord_enabled">discord_enabled</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.discord_notifications_database_backups" href="#coolipy.models.teams.TeamModel.discord_notifications_database_backups">discord_notifications_database_backups</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.discord_notifications_deployments" href="#coolipy.models.teams.TeamModel.discord_notifications_deployments">discord_notifications_deployments</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.discord_notifications_scheduled_tasks" href="#coolipy.models.teams.TeamModel.discord_notifications_scheduled_tasks">discord_notifications_scheduled_tasks</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.discord_notifications_server_disk_usage" href="#coolipy.models.teams.TeamModel.discord_notifications_server_disk_usage">discord_notifications_server_disk_usage</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.discord_notifications_status_changes" href="#coolipy.models.teams.TeamModel.discord_notifications_status_changes">discord_notifications_status_changes</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.discord_notifications_test" href="#coolipy.models.teams.TeamModel.discord_notifications_test">discord_notifications_test</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.discord_webhook_url" href="#coolipy.models.teams.TeamModel.discord_webhook_url">discord_webhook_url</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.id" href="#coolipy.models.teams.TeamModel.id">id</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.name" href="#coolipy.models.teams.TeamModel.name">name</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.personal_team" href="#coolipy.models.teams.TeamModel.personal_team">personal_team</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.resend_api_key" href="#coolipy.models.teams.TeamModel.resend_api_key">resend_api_key</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.resend_enabled" href="#coolipy.models.teams.TeamModel.resend_enabled">resend_enabled</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.show_boarding" href="#coolipy.models.teams.TeamModel.show_boarding">show_boarding</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.smtp_enabled" href="#coolipy.models.teams.TeamModel.smtp_enabled">smtp_enabled</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.smtp_encryption" href="#coolipy.models.teams.TeamModel.smtp_encryption">smtp_encryption</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.smtp_from_address" href="#coolipy.models.teams.TeamModel.smtp_from_address">smtp_from_address</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.smtp_from_name" href="#coolipy.models.teams.TeamModel.smtp_from_name">smtp_from_name</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.smtp_host" href="#coolipy.models.teams.TeamModel.smtp_host">smtp_host</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.smtp_notifications_database_backups" href="#coolipy.models.teams.TeamModel.smtp_notifications_database_backups">smtp_notifications_database_backups</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.smtp_notifications_deployments" href="#coolipy.models.teams.TeamModel.smtp_notifications_deployments">smtp_notifications_deployments</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.smtp_notifications_scheduled_tasks" href="#coolipy.models.teams.TeamModel.smtp_notifications_scheduled_tasks">smtp_notifications_scheduled_tasks</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.smtp_notifications_server_disk_usage" href="#coolipy.models.teams.TeamModel.smtp_notifications_server_disk_usage">smtp_notifications_server_disk_usage</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.smtp_notifications_status_changes" href="#coolipy.models.teams.TeamModel.smtp_notifications_status_changes">smtp_notifications_status_changes</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.smtp_notifications_test" href="#coolipy.models.teams.TeamModel.smtp_notifications_test">smtp_notifications_test</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.smtp_password" href="#coolipy.models.teams.TeamModel.smtp_password">smtp_password</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.smtp_port" href="#coolipy.models.teams.TeamModel.smtp_port">smtp_port</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.smtp_recipients" href="#coolipy.models.teams.TeamModel.smtp_recipients">smtp_recipients</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.smtp_timeout" href="#coolipy.models.teams.TeamModel.smtp_timeout">smtp_timeout</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.smtp_username" href="#coolipy.models.teams.TeamModel.smtp_username">smtp_username</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.telegram_chat_id" href="#coolipy.models.teams.TeamModel.telegram_chat_id">telegram_chat_id</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.telegram_enabled" href="#coolipy.models.teams.TeamModel.telegram_enabled">telegram_enabled</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.telegram_notifications_database_backups" href="#coolipy.models.teams.TeamModel.telegram_notifications_database_backups">telegram_notifications_database_backups</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.telegram_notifications_database_backups_message_thread_id" href="#coolipy.models.teams.TeamModel.telegram_notifications_database_backups_message_thread_id">telegram_notifications_database_backups_message_thread_id</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.telegram_notifications_deployments" href="#coolipy.models.teams.TeamModel.telegram_notifications_deployments">telegram_notifications_deployments</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.telegram_notifications_deployments_message_thread_id" href="#coolipy.models.teams.TeamModel.telegram_notifications_deployments_message_thread_id">telegram_notifications_deployments_message_thread_id</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.telegram_notifications_scheduled_tasks" href="#coolipy.models.teams.TeamModel.telegram_notifications_scheduled_tasks">telegram_notifications_scheduled_tasks</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.telegram_notifications_scheduled_tasks_thread_id" href="#coolipy.models.teams.TeamModel.telegram_notifications_scheduled_tasks_thread_id">telegram_notifications_scheduled_tasks_thread_id</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.telegram_notifications_server_disk_usage" href="#coolipy.models.teams.TeamModel.telegram_notifications_server_disk_usage">telegram_notifications_server_disk_usage</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.telegram_notifications_status_changes" href="#coolipy.models.teams.TeamModel.telegram_notifications_status_changes">telegram_notifications_status_changes</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.telegram_notifications_status_changes_message_thread_id" href="#coolipy.models.teams.TeamModel.telegram_notifications_status_changes_message_thread_id">telegram_notifications_status_changes_message_thread_id</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.telegram_notifications_test" href="#coolipy.models.teams.TeamModel.telegram_notifications_test">telegram_notifications_test</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.telegram_notifications_test_message_thread_id" href="#coolipy.models.teams.TeamModel.telegram_notifications_test_message_thread_id">telegram_notifications_test_message_thread_id</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.telegram_token" href="#coolipy.models.teams.TeamModel.telegram_token">telegram_token</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.updated_at" href="#coolipy.models.teams.TeamModel.updated_at">updated_at</a></code></li>
+<li><code><a title="coolipy.models.teams.TeamModel.use_instance_email_settings" href="#coolipy.models.teams.TeamModel.use_instance_email_settings">use_instance_email_settings</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

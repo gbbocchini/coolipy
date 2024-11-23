@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>coolipy.models.resources API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>coolipy.models.resources</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="coolipy.models.resources.ResourceModel"><code class="flex name class">
+<span>class <span class="ident">ResourceModel</span></span>
+<span>(</span><span>id: Optional[int] = None, repository_project_id: Optional[int] = None, uuid: Optional[str] = None, name: Optional[str] = None, fqdn: Optional[str] = None, config_hash: Optional[str] = None, git_repository: Optional[str] = None, git_branch: Optional[str] = None, git_commit_sha: Optional[str] = None, git_full_url: Optional[str] = None, docker_registry_image_name: Optional[str] = None, docker_registry_image_tag: Optional[str] = None, build_pack: Optional[str] = None, static_image: Optional[str] = None, install_command: Optional[str] = None, build_command: Optional[str] = None, start_command: Optional[str] = None, ports_exposes: Optional[str] = None, ports_mappings: Optional[str] = None, base_directory: Optional[str] = None, publish_directory: Optional[str] = None, health_check_path: Optional[str] = None, health_check_port: Optional[int] = None, health_check_host: Optional[str] = None, health_check_method: Optional[str] = None, health_check_return_code: Optional[int] = None, health_check_scheme: Optional[str] = None, health_check_response_text: Optional[str] = None, health_check_interval: Optional[int] = None, health_check_timeout: Optional[int] = None, health_check_retries: Optional[int] = None, health_check_start_period: Optional[int] = None, limits_memory: Optional[str] = None, limits_memory_swap: Optional[str] = None, limits_memory_swappiness: Optional[int] = None, limits_memory_reservation: Optional[str] = None, limits_cpus: Optional[str] = None, limits_cpuset: Optional[str] = None, limits_cpu_shares: Optional[int] = None, status: Optional[str] = None, preview_url_template: Optional[str] = None, destination_type: Optional[str] = None, destination_id: Optional[int] = None, source_type: Optional[str] = None, source_id: Optional[int] = None, private_key_id: Optional[int] = None, environment_id: Optional[int] = None, created_at: Optional[str] = None, updated_at: Optional[str] = None, description: Optional[str] = None, dockerfile: Optional[str] = None, health_check_enabled: Optional[bool] = None, dockerfile_location: Optional[str] = None, custom_labels: Optional[str] = None, dockerfile_target_build: Optional[str] = None, manual_webhook_secret_github: Optional[str] = None, manual_webhook_secret_gitlab: Optional[str] = None, docker_compose_location: Optional[str] = None, docker_compose: Optional[str] = None, docker_compose_raw: Optional[str] = None, docker_compose_domains: Optional[str] = None, deleted_at: Optional[str] = None, docker_compose_custom_start_command: Optional[str] = None, docker_compose_custom_build_command: Optional[str] = None, swarm_replicas: Optional[int] = None, swarm_placement_constraints: Optional[str] = None, manual_webhook_secret_bitbucket: Optional[str] = None, custom_docker_run_options: Optional[str] = None, post_deployment_command: Optional[str] = None, post_deployment_command_container: Optional[str] = None, pre_deployment_command: Optional[str] = None, pre_deployment_command_container: Optional[str] = None, watch_paths: Optional[str] = None, custom_healthcheck_found: Optional[bool] = None, manual_webhook_secret_gitea: Optional[str] = None, redirect: Optional[str] = None, compose_parsing_version: Optional[str] = None, last_online_at: Optional[str] = None, custom_nginx_configuration: Optional[str] = None, laravel_through_key: Optional[int] = None, server_status: Optional[bool] = None, additional_servers: Optional[List[<a title="coolipy.models.servers.ServerModel" href="servers.html#coolipy.models.servers.ServerModel">ServerModel</a>]] = None, destination: Optional[<a title="coolipy.models.databases.DestinationModel" href="databases.html#coolipy.models.databases.DestinationModel">DestinationModel</a>] = None, service_type: Optional[str] = None, connect_to_docker_network: Optional[bool] = None, is_container_label_escape_enabled: Optional[bool] = None, server: Optional[<a title="coolipy.models.servers.ServerModel" href="servers.html#coolipy.models.servers.ServerModel">ServerModel</a>] = None, services: Optional[<a title="coolipy.models.service.ServiceModel" href="service.html#coolipy.models.service.ServiceModel">ServiceModel</a>] = None, deployment_environment: Optional[<a title="coolipy.models.environs.EnvironmentsModel" href="environs.html#coolipy.models.environs.EnvironmentsModel">EnvironmentsModel</a>] = None, type: Optional[str] = None, server_id: Optional[str] = None, mongo_conf: Optional[str] = None, mongo_initdb_root_username: Optional[str] = None, mongo_initdb_root_password: Optional[str] = None, mongo_initdb_database: Optional[str] = None, image: Optional[str] = None, is_public: Optional[str] = None, public_port: Optional[int] = None, started_at: Optional[str] = None, is_log_drain_enabled: Optional[str] = None, is_include_timestamps: Optional[bool] = None, internal_db_url: Optional[str] = None, external_db_url: Optional[str] = None, database_type: Optional[str] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Coolify Resource data model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class ResourceModel(CoolipyBaseModel):
+    &#34;&#34;&#34;
+    Coolify Resource data model.
+    &#34;&#34;&#34;
+    id: Optional[int] = None
+    repository_project_id: Optional[int] = None
+    uuid: Optional[str] = None
+    name: Optional[str] = None
+    fqdn: Optional[str] = None
+    config_hash: Optional[str] = None
+    git_repository: Optional[str] = None
+    git_branch: Optional[str] = None
+    git_commit_sha: Optional[str] = None
+    git_full_url: Optional[str] = None
+    docker_registry_image_name: Optional[str] = None
+    docker_registry_image_tag: Optional[str] = None
+    build_pack: Optional[str] = None
+    static_image: Optional[str] = None
+    install_command: Optional[str] = None
+    build_command: Optional[str] = None
+    start_command: Optional[str] = None
+    ports_exposes: Optional[str] = None
+    ports_mappings: Optional[str] = None
+    base_directory: Optional[str] = None
+    publish_directory: Optional[str] = None
+    health_check_path: Optional[str] = None
+    health_check_port: Optional[int] = None
+    health_check_host: Optional[str] = None
+    health_check_method: Optional[str] = None
+    health_check_return_code: Optional[int] = None
+    health_check_scheme: Optional[str] = None
+    health_check_response_text: Optional[str] = None
+    health_check_interval: Optional[int] = None
+    health_check_timeout: Optional[int] = None
+    health_check_retries: Optional[int] = None
+    health_check_start_period: Optional[int] = None
+    limits_memory: Optional[str] = None
+    limits_memory_swap: Optional[str] = None
+    limits_memory_swappiness: Optional[int] = None
+    limits_memory_reservation: Optional[str] = None
+    limits_cpus: Optional[str] = None
+    limits_cpuset: Optional[str] = None
+    limits_cpu_shares: Optional[int] = None
+    status: Optional[str] = None
+    preview_url_template: Optional[str] = None
+    destination_type: Optional[str] = None
+    destination_id: Optional[int] = None
+    source_type: Optional[str] = None
+    source_id: Optional[int] = None
+    private_key_id: Optional[int] = None
+    environment_id: Optional[int] = None
+    created_at: Optional[str] = None
+    updated_at: Optional[str] = None
+    description: Optional[str] = None
+    dockerfile: Optional[str] = None
+    health_check_enabled: Optional[bool] = None
+    dockerfile_location: Optional[str] = None
+    custom_labels: Optional[str] = None
+    dockerfile_target_build: Optional[str] = None
+    manual_webhook_secret_github: Optional[str] = None
+    manual_webhook_secret_gitlab: Optional[str] = None
+    docker_compose_location: Optional[str] = None
+    docker_compose: Optional[str] = None
+    docker_compose_raw: Optional[str] = None
+    docker_compose_domains: Optional[str] = None
+    deleted_at: Optional[str] = None
+    docker_compose_custom_start_command: Optional[str] = None
+    docker_compose_custom_build_command: Optional[str] = None
+    swarm_replicas: Optional[int] = None
+    swarm_placement_constraints: Optional[str] = None
+    manual_webhook_secret_bitbucket: Optional[str] = None
+    custom_docker_run_options: Optional[str] = None
+    post_deployment_command: Optional[str] = None
+    post_deployment_command_container: Optional[str] = None
+    pre_deployment_command: Optional[str] = None
+    pre_deployment_command_container: Optional[str] = None
+    watch_paths: Optional[str] = None
+    custom_healthcheck_found: Optional[bool] = None
+    manual_webhook_secret_gitea: Optional[str] = None
+    redirect: Optional[str] = None
+    compose_parsing_version: Optional[str] = None
+    last_online_at: Optional[str] = None
+    custom_nginx_configuration: Optional[str] = None
+    laravel_through_key: Optional[int] = None
+    server_status: Optional[bool] = None
+    additional_servers: Optional[List[ServerModel]] = None
+    destination: Optional[DestinationModel] = None
+    service_type: Optional[str] = None
+    connect_to_docker_network: Optional[bool] = None
+    is_container_label_escape_enabled: Optional[bool] = None
+    server: Optional[ServerModel] = None
+    services: Optional[ServiceModel] = None
+    deployment_environment: Optional[EnvironmentsModel] = None
+    type: Optional[str] = None
+    server_id: Optional[str] = None
+    mongo_conf: Optional[str] = None
+    mongo_initdb_root_username: Optional[str] = None
+    mongo_initdb_root_password: Optional[str] = None
+    mongo_initdb_database: Optional[str] = None
+    image: Optional[str] = None
+    is_public: Optional[str] = None
+    public_port: Optional[int] = None
+    started_at: Optional[str] = None
+    is_log_drain_enabled: Optional[str] = None
+    is_include_timestamps: Optional[bool] = None
+    internal_db_url: Optional[str] = None
+    external_db_url: Optional[str] = None
+    database_type: Optional[str] = None
+
+
+
+    def _adjust_nested(self):
+        raw_server = self.server
+        raw_dest = self.destination
+        raw_env = self.deployment_environment
+
+        if isinstance(raw_server, dict) and raw_server:
+            self.server = ServerModel(**raw_server).pythonify()
+        
+        if isinstance(raw_dest, dict) and raw_dest:
+            self.destination = DestinationModel(**raw_dest).pythonify()
+        
+        if isinstance(raw_env, dict) and raw_env:
+            self.deployment_environment = EnvironmentsModel(**raw_env).pythonify()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.resources.ResourceModel.additional_servers"><code class="name">var <span class="ident">additional_servers</span> : Optional[List[<a title="coolipy.models.servers.ServerModel" href="servers.html#coolipy.models.servers.ServerModel">ServerModel</a>]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.base_directory"><code class="name">var <span class="ident">base_directory</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.build_command"><code class="name">var <span class="ident">build_command</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.build_pack"><code class="name">var <span class="ident">build_pack</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.compose_parsing_version"><code class="name">var <span class="ident">compose_parsing_version</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.config_hash"><code class="name">var <span class="ident">config_hash</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.connect_to_docker_network"><code class="name">var <span class="ident">connect_to_docker_network</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.created_at"><code class="name">var <span class="ident">created_at</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.custom_docker_run_options"><code class="name">var <span class="ident">custom_docker_run_options</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.custom_healthcheck_found"><code class="name">var <span class="ident">custom_healthcheck_found</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.custom_labels"><code class="name">var <span class="ident">custom_labels</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.custom_nginx_configuration"><code class="name">var <span class="ident">custom_nginx_configuration</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.database_type"><code class="name">var <span class="ident">database_type</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.deleted_at"><code class="name">var <span class="ident">deleted_at</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.deployment_environment"><code class="name">var <span class="ident">deployment_environment</span> : Optional[<a title="coolipy.models.environs.EnvironmentsModel" href="environs.html#coolipy.models.environs.EnvironmentsModel">EnvironmentsModel</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.description"><code class="name">var <span class="ident">description</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.destination"><code class="name">var <span class="ident">destination</span> : Optional[<a title="coolipy.models.databases.DestinationModel" href="databases.html#coolipy.models.databases.DestinationModel">DestinationModel</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.destination_id"><code class="name">var <span class="ident">destination_id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.destination_type"><code class="name">var <span class="ident">destination_type</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.docker_compose"><code class="name">var <span class="ident">docker_compose</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.docker_compose_custom_build_command"><code class="name">var <span class="ident">docker_compose_custom_build_command</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.docker_compose_custom_start_command"><code class="name">var <span class="ident">docker_compose_custom_start_command</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.docker_compose_domains"><code class="name">var <span class="ident">docker_compose_domains</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.docker_compose_location"><code class="name">var <span class="ident">docker_compose_location</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.docker_compose_raw"><code class="name">var <span class="ident">docker_compose_raw</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.docker_registry_image_name"><code class="name">var <span class="ident">docker_registry_image_name</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.docker_registry_image_tag"><code class="name">var <span class="ident">docker_registry_image_tag</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.dockerfile"><code class="name">var <span class="ident">dockerfile</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.dockerfile_location"><code class="name">var <span class="ident">dockerfile_location</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.dockerfile_target_build"><code class="name">var <span class="ident">dockerfile_target_build</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.environment_id"><code class="name">var <span class="ident">environment_id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.external_db_url"><code class="name">var <span class="ident">external_db_url</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.fqdn"><code class="name">var <span class="ident">fqdn</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.git_branch"><code class="name">var <span class="ident">git_branch</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.git_commit_sha"><code class="name">var <span class="ident">git_commit_sha</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.git_full_url"><code class="name">var <span class="ident">git_full_url</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.git_repository"><code class="name">var <span class="ident">git_repository</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.health_check_enabled"><code class="name">var <span class="ident">health_check_enabled</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.health_check_host"><code class="name">var <span class="ident">health_check_host</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.health_check_interval"><code class="name">var <span class="ident">health_check_interval</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.health_check_method"><code class="name">var <span class="ident">health_check_method</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.health_check_path"><code class="name">var <span class="ident">health_check_path</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.health_check_port"><code class="name">var <span class="ident">health_check_port</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.health_check_response_text"><code class="name">var <span class="ident">health_check_response_text</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.health_check_retries"><code class="name">var <span class="ident">health_check_retries</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.health_check_return_code"><code class="name">var <span class="ident">health_check_return_code</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.health_check_scheme"><code class="name">var <span class="ident">health_check_scheme</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.health_check_start_period"><code class="name">var <span class="ident">health_check_start_period</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.health_check_timeout"><code class="name">var <span class="ident">health_check_timeout</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.id"><code class="name">var <span class="ident">id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.image"><code class="name">var <span class="ident">image</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.install_command"><code class="name">var <span class="ident">install_command</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.internal_db_url"><code class="name">var <span class="ident">internal_db_url</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.is_container_label_escape_enabled"><code class="name">var <span class="ident">is_container_label_escape_enabled</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.is_include_timestamps"><code class="name">var <span class="ident">is_include_timestamps</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.is_log_drain_enabled"><code class="name">var <span class="ident">is_log_drain_enabled</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.is_public"><code class="name">var <span class="ident">is_public</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.laravel_through_key"><code class="name">var <span class="ident">laravel_through_key</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.last_online_at"><code class="name">var <span class="ident">last_online_at</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.limits_cpu_shares"><code class="name">var <span class="ident">limits_cpu_shares</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.limits_cpus"><code class="name">var <span class="ident">limits_cpus</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.limits_cpuset"><code class="name">var <span class="ident">limits_cpuset</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.limits_memory"><code class="name">var <span class="ident">limits_memory</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.limits_memory_reservation"><code class="name">var <span class="ident">limits_memory_reservation</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.limits_memory_swap"><code class="name">var <span class="ident">limits_memory_swap</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.limits_memory_swappiness"><code class="name">var <span class="ident">limits_memory_swappiness</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.manual_webhook_secret_bitbucket"><code class="name">var <span class="ident">manual_webhook_secret_bitbucket</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.manual_webhook_secret_gitea"><code class="name">var <span class="ident">manual_webhook_secret_gitea</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.manual_webhook_secret_github"><code class="name">var <span class="ident">manual_webhook_secret_github</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.manual_webhook_secret_gitlab"><code class="name">var <span class="ident">manual_webhook_secret_gitlab</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.mongo_conf"><code class="name">var <span class="ident">mongo_conf</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.mongo_initdb_database"><code class="name">var <span class="ident">mongo_initdb_database</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.mongo_initdb_root_password"><code class="name">var <span class="ident">mongo_initdb_root_password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.mongo_initdb_root_username"><code class="name">var <span class="ident">mongo_initdb_root_username</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.name"><code class="name">var <span class="ident">name</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.ports_exposes"><code class="name">var <span class="ident">ports_exposes</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.ports_mappings"><code class="name">var <span class="ident">ports_mappings</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.post_deployment_command"><code class="name">var <span class="ident">post_deployment_command</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.post_deployment_command_container"><code class="name">var <span class="ident">post_deployment_command_container</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.pre_deployment_command"><code class="name">var <span class="ident">pre_deployment_command</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.pre_deployment_command_container"><code class="name">var <span class="ident">pre_deployment_command_container</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.preview_url_template"><code class="name">var <span class="ident">preview_url_template</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.private_key_id"><code class="name">var <span class="ident">private_key_id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.public_port"><code class="name">var <span class="ident">public_port</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.publish_directory"><code class="name">var <span class="ident">publish_directory</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.redirect"><code class="name">var <span class="ident">redirect</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.repository_project_id"><code class="name">var <span class="ident">repository_project_id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.server"><code class="name">var <span class="ident">server</span> : Optional[<a title="coolipy.models.servers.ServerModel" href="servers.html#coolipy.models.servers.ServerModel">ServerModel</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.server_id"><code class="name">var <span class="ident">server_id</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.server_status"><code class="name">var <span class="ident">server_status</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.service_type"><code class="name">var <span class="ident">service_type</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.services"><code class="name">var <span class="ident">services</span> : Optional[<a title="coolipy.models.service.ServiceModel" href="service.html#coolipy.models.service.ServiceModel">ServiceModel</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.source_id"><code class="name">var <span class="ident">source_id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.source_type"><code class="name">var <span class="ident">source_type</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.start_command"><code class="name">var <span class="ident">start_command</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.started_at"><code class="name">var <span class="ident">started_at</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.static_image"><code class="name">var <span class="ident">static_image</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.status"><code class="name">var <span class="ident">status</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.swarm_placement_constraints"><code class="name">var <span class="ident">swarm_placement_constraints</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.swarm_replicas"><code class="name">var <span class="ident">swarm_replicas</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.type"><code class="name">var <span class="ident">type</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.updated_at"><code class="name">var <span class="ident">updated_at</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.uuid"><code class="name">var <span class="ident">uuid</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.resources.ResourceModel.watch_paths"><code class="name">var <span class="ident">watch_paths</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></b></code>:
+<ul class="hlist">
+<li><code><a title="coolipy.models.base.CoolipyBaseModel.pythonify" href="base.html#coolipy.models.base.CoolipyBaseModel.pythonify">pythonify</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="coolipy.models" href="index.html">coolipy.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="coolipy.models.resources.ResourceModel" href="#coolipy.models.resources.ResourceModel">ResourceModel</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.resources.ResourceModel.additional_servers" href="#coolipy.models.resources.ResourceModel.additional_servers">additional_servers</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.base_directory" href="#coolipy.models.resources.ResourceModel.base_directory">base_directory</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.build_command" href="#coolipy.models.resources.ResourceModel.build_command">build_command</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.build_pack" href="#coolipy.models.resources.ResourceModel.build_pack">build_pack</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.compose_parsing_version" href="#coolipy.models.resources.ResourceModel.compose_parsing_version">compose_parsing_version</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.config_hash" href="#coolipy.models.resources.ResourceModel.config_hash">config_hash</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.connect_to_docker_network" href="#coolipy.models.resources.ResourceModel.connect_to_docker_network">connect_to_docker_network</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.created_at" href="#coolipy.models.resources.ResourceModel.created_at">created_at</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.custom_docker_run_options" href="#coolipy.models.resources.ResourceModel.custom_docker_run_options">custom_docker_run_options</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.custom_healthcheck_found" href="#coolipy.models.resources.ResourceModel.custom_healthcheck_found">custom_healthcheck_found</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.custom_labels" href="#coolipy.models.resources.ResourceModel.custom_labels">custom_labels</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.custom_nginx_configuration" href="#coolipy.models.resources.ResourceModel.custom_nginx_configuration">custom_nginx_configuration</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.database_type" href="#coolipy.models.resources.ResourceModel.database_type">database_type</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.deleted_at" href="#coolipy.models.resources.ResourceModel.deleted_at">deleted_at</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.deployment_environment" href="#coolipy.models.resources.ResourceModel.deployment_environment">deployment_environment</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.description" href="#coolipy.models.resources.ResourceModel.description">description</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.destination" href="#coolipy.models.resources.ResourceModel.destination">destination</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.destination_id" href="#coolipy.models.resources.ResourceModel.destination_id">destination_id</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.destination_type" href="#coolipy.models.resources.ResourceModel.destination_type">destination_type</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.docker_compose" href="#coolipy.models.resources.ResourceModel.docker_compose">docker_compose</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.docker_compose_custom_build_command" href="#coolipy.models.resources.ResourceModel.docker_compose_custom_build_command">docker_compose_custom_build_command</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.docker_compose_custom_start_command" href="#coolipy.models.resources.ResourceModel.docker_compose_custom_start_command">docker_compose_custom_start_command</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.docker_compose_domains" href="#coolipy.models.resources.ResourceModel.docker_compose_domains">docker_compose_domains</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.docker_compose_location" href="#coolipy.models.resources.ResourceModel.docker_compose_location">docker_compose_location</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.docker_compose_raw" href="#coolipy.models.resources.ResourceModel.docker_compose_raw">docker_compose_raw</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.docker_registry_image_name" href="#coolipy.models.resources.ResourceModel.docker_registry_image_name">docker_registry_image_name</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.docker_registry_image_tag" href="#coolipy.models.resources.ResourceModel.docker_registry_image_tag">docker_registry_image_tag</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.dockerfile" href="#coolipy.models.resources.ResourceModel.dockerfile">dockerfile</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.dockerfile_location" href="#coolipy.models.resources.ResourceModel.dockerfile_location">dockerfile_location</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.dockerfile_target_build" href="#coolipy.models.resources.ResourceModel.dockerfile_target_build">dockerfile_target_build</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.environment_id" href="#coolipy.models.resources.ResourceModel.environment_id">environment_id</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.external_db_url" href="#coolipy.models.resources.ResourceModel.external_db_url">external_db_url</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.fqdn" href="#coolipy.models.resources.ResourceModel.fqdn">fqdn</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.git_branch" href="#coolipy.models.resources.ResourceModel.git_branch">git_branch</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.git_commit_sha" href="#coolipy.models.resources.ResourceModel.git_commit_sha">git_commit_sha</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.git_full_url" href="#coolipy.models.resources.ResourceModel.git_full_url">git_full_url</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.git_repository" href="#coolipy.models.resources.ResourceModel.git_repository">git_repository</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.health_check_enabled" href="#coolipy.models.resources.ResourceModel.health_check_enabled">health_check_enabled</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.health_check_host" href="#coolipy.models.resources.ResourceModel.health_check_host">health_check_host</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.health_check_interval" href="#coolipy.models.resources.ResourceModel.health_check_interval">health_check_interval</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.health_check_method" href="#coolipy.models.resources.ResourceModel.health_check_method">health_check_method</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.health_check_path" href="#coolipy.models.resources.ResourceModel.health_check_path">health_check_path</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.health_check_port" href="#coolipy.models.resources.ResourceModel.health_check_port">health_check_port</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.health_check_response_text" href="#coolipy.models.resources.ResourceModel.health_check_response_text">health_check_response_text</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.health_check_retries" href="#coolipy.models.resources.ResourceModel.health_check_retries">health_check_retries</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.health_check_return_code" href="#coolipy.models.resources.ResourceModel.health_check_return_code">health_check_return_code</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.health_check_scheme" href="#coolipy.models.resources.ResourceModel.health_check_scheme">health_check_scheme</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.health_check_start_period" href="#coolipy.models.resources.ResourceModel.health_check_start_period">health_check_start_period</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.health_check_timeout" href="#coolipy.models.resources.ResourceModel.health_check_timeout">health_check_timeout</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.id" href="#coolipy.models.resources.ResourceModel.id">id</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.image" href="#coolipy.models.resources.ResourceModel.image">image</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.install_command" href="#coolipy.models.resources.ResourceModel.install_command">install_command</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.internal_db_url" href="#coolipy.models.resources.ResourceModel.internal_db_url">internal_db_url</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.is_container_label_escape_enabled" href="#coolipy.models.resources.ResourceModel.is_container_label_escape_enabled">is_container_label_escape_enabled</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.is_include_timestamps" href="#coolipy.models.resources.ResourceModel.is_include_timestamps">is_include_timestamps</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.is_log_drain_enabled" href="#coolipy.models.resources.ResourceModel.is_log_drain_enabled">is_log_drain_enabled</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.is_public" href="#coolipy.models.resources.ResourceModel.is_public">is_public</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.laravel_through_key" href="#coolipy.models.resources.ResourceModel.laravel_through_key">laravel_through_key</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.last_online_at" href="#coolipy.models.resources.ResourceModel.last_online_at">last_online_at</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.limits_cpu_shares" href="#coolipy.models.resources.ResourceModel.limits_cpu_shares">limits_cpu_shares</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.limits_cpus" href="#coolipy.models.resources.ResourceModel.limits_cpus">limits_cpus</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.limits_cpuset" href="#coolipy.models.resources.ResourceModel.limits_cpuset">limits_cpuset</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.limits_memory" href="#coolipy.models.resources.ResourceModel.limits_memory">limits_memory</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.limits_memory_reservation" href="#coolipy.models.resources.ResourceModel.limits_memory_reservation">limits_memory_reservation</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.limits_memory_swap" href="#coolipy.models.resources.ResourceModel.limits_memory_swap">limits_memory_swap</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.limits_memory_swappiness" href="#coolipy.models.resources.ResourceModel.limits_memory_swappiness">limits_memory_swappiness</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.manual_webhook_secret_bitbucket" href="#coolipy.models.resources.ResourceModel.manual_webhook_secret_bitbucket">manual_webhook_secret_bitbucket</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.manual_webhook_secret_gitea" href="#coolipy.models.resources.ResourceModel.manual_webhook_secret_gitea">manual_webhook_secret_gitea</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.manual_webhook_secret_github" href="#coolipy.models.resources.ResourceModel.manual_webhook_secret_github">manual_webhook_secret_github</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.manual_webhook_secret_gitlab" href="#coolipy.models.resources.ResourceModel.manual_webhook_secret_gitlab">manual_webhook_secret_gitlab</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.mongo_conf" href="#coolipy.models.resources.ResourceModel.mongo_conf">mongo_conf</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.mongo_initdb_database" href="#coolipy.models.resources.ResourceModel.mongo_initdb_database">mongo_initdb_database</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.mongo_initdb_root_password" href="#coolipy.models.resources.ResourceModel.mongo_initdb_root_password">mongo_initdb_root_password</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.mongo_initdb_root_username" href="#coolipy.models.resources.ResourceModel.mongo_initdb_root_username">mongo_initdb_root_username</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.name" href="#coolipy.models.resources.ResourceModel.name">name</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.ports_exposes" href="#coolipy.models.resources.ResourceModel.ports_exposes">ports_exposes</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.ports_mappings" href="#coolipy.models.resources.ResourceModel.ports_mappings">ports_mappings</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.post_deployment_command" href="#coolipy.models.resources.ResourceModel.post_deployment_command">post_deployment_command</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.post_deployment_command_container" href="#coolipy.models.resources.ResourceModel.post_deployment_command_container">post_deployment_command_container</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.pre_deployment_command" href="#coolipy.models.resources.ResourceModel.pre_deployment_command">pre_deployment_command</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.pre_deployment_command_container" href="#coolipy.models.resources.ResourceModel.pre_deployment_command_container">pre_deployment_command_container</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.preview_url_template" href="#coolipy.models.resources.ResourceModel.preview_url_template">preview_url_template</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.private_key_id" href="#coolipy.models.resources.ResourceModel.private_key_id">private_key_id</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.public_port" href="#coolipy.models.resources.ResourceModel.public_port">public_port</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.publish_directory" href="#coolipy.models.resources.ResourceModel.publish_directory">publish_directory</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.redirect" href="#coolipy.models.resources.ResourceModel.redirect">redirect</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.repository_project_id" href="#coolipy.models.resources.ResourceModel.repository_project_id">repository_project_id</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.server" href="#coolipy.models.resources.ResourceModel.server">server</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.server_id" href="#coolipy.models.resources.ResourceModel.server_id">server_id</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.server_status" href="#coolipy.models.resources.ResourceModel.server_status">server_status</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.service_type" href="#coolipy.models.resources.ResourceModel.service_type">service_type</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.services" href="#coolipy.models.resources.ResourceModel.services">services</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.source_id" href="#coolipy.models.resources.ResourceModel.source_id">source_id</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.source_type" href="#coolipy.models.resources.ResourceModel.source_type">source_type</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.start_command" href="#coolipy.models.resources.ResourceModel.start_command">start_command</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.started_at" href="#coolipy.models.resources.ResourceModel.started_at">started_at</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.static_image" href="#coolipy.models.resources.ResourceModel.static_image">static_image</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.status" href="#coolipy.models.resources.ResourceModel.status">status</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.swarm_placement_constraints" href="#coolipy.models.resources.ResourceModel.swarm_placement_constraints">swarm_placement_constraints</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.swarm_replicas" href="#coolipy.models.resources.ResourceModel.swarm_replicas">swarm_replicas</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.type" href="#coolipy.models.resources.ResourceModel.type">type</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.updated_at" href="#coolipy.models.resources.ResourceModel.updated_at">updated_at</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.uuid" href="#coolipy.models.resources.ResourceModel.uuid">uuid</a></code></li>
+<li><code><a title="coolipy.models.resources.ResourceModel.watch_paths" href="#coolipy.models.resources.ResourceModel.watch_paths">watch_paths</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>coolipy.models.servers API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>coolipy.models.servers</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="coolipy.models.servers.ServerModel"><code class="flex name class">
+<span>class <span class="ident">ServerModel</span></span>
+<span>(</span><span>id: Optional[str] = None, description: Optional[str] = None, name: Optional[str] = None, ip: Optional[str] = None, port: Optional[int] = None, user: Optional[str] = None, private_key_id: Optional[int] = None, uuid: Optional[str] = None, team_id: Optional[int] = None, sentinel_updated_at: Optional[str] = None, created_at: Union[str, datetime.datetime, ForwardRef(None)] = None, updated_at: Union[str, datetime.datetime, ForwardRef(None)] = None, deleted_at: Union[str, datetime.datetime, ForwardRef(None)] = None, high_disk_usage_notification_sent: Optional[bool] = False, log_drain_notification_sent: Optional[bool] = False, swarm_cluster: Optional[bool] = False, validation_logs: Optional[str] = None, unreachable_count: Optional[int] = None, unreachable_notification_sent: Optional[bool] = False, proxy: Optional[<a title="coolipy.models.servers.ServerProxyModel" href="#coolipy.models.servers.ServerProxyModel">ServerProxyModel</a>] = None, settings: Optional[<a title="coolipy.models.servers.ServerSettingsModel" href="#coolipy.models.servers.ServerSettingsModel">ServerSettingsModel</a>] = None, is_reachable: Optional[bool] = None, is_usable: Optional[bool] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Coolify Server data model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class ServerModel(CoolipyBaseModel):
+    &#34;&#34;&#34;
+    Coolify Server data model.
+    &#34;&#34;&#34;
+
+    id: Optional[str] = None
+    description: Optional[str] = None
+    name: Optional[str] = None
+    ip: Optional[str] = None
+    port: Optional[int] = None
+    user: Optional[str] = None
+    private_key_id: Optional[int] = None
+    uuid: Optional[str] = None
+    team_id: Optional[int] = None
+    sentinel_updated_at: Optional[str] = None
+    created_at: Optional[Union[str, datetime]] = None
+    updated_at: Optional[Union[str, datetime]] = None
+    deleted_at: Optional[Union[str, datetime]] = None
+    high_disk_usage_notification_sent: Optional[bool] = False
+    log_drain_notification_sent: Optional[bool] = False
+    swarm_cluster: Optional[bool] = False
+    validation_logs: Optional[str] = None
+    unreachable_count: Optional[int] = None
+    unreachable_notification_sent: Optional[bool] = False
+    proxy: Optional[ServerProxyModel] = None
+    settings: Optional[ServerSettingsModel] = None
+    is_reachable: Optional[bool] = None
+    is_usable: Optional[bool] = None
+
+    @override
+    def _adjust_nested(self):
+        if isinstance(self.settings, dict) and self.settings:
+            raw_sets = self.settings
+            parsed = ServerSettingsModel(**raw_sets).pythonify()
+            self.settings = parsed
+
+        raw_proxy = self.proxy
+
+        if raw_proxy and isinstance(raw_proxy, dict):
+            self.proxy = ServerProxyModel(**raw_proxy)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.servers.ServerModel.created_at"><code class="name">var <span class="ident">created_at</span> : Union[str, datetime.datetime, ForwardRef(None)]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.deleted_at"><code class="name">var <span class="ident">deleted_at</span> : Union[str, datetime.datetime, ForwardRef(None)]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.description"><code class="name">var <span class="ident">description</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.high_disk_usage_notification_sent"><code class="name">var <span class="ident">high_disk_usage_notification_sent</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.id"><code class="name">var <span class="ident">id</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.ip"><code class="name">var <span class="ident">ip</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.is_reachable"><code class="name">var <span class="ident">is_reachable</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.is_usable"><code class="name">var <span class="ident">is_usable</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.log_drain_notification_sent"><code class="name">var <span class="ident">log_drain_notification_sent</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.name"><code class="name">var <span class="ident">name</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.port"><code class="name">var <span class="ident">port</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.private_key_id"><code class="name">var <span class="ident">private_key_id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.proxy"><code class="name">var <span class="ident">proxy</span> : Optional[<a title="coolipy.models.servers.ServerProxyModel" href="#coolipy.models.servers.ServerProxyModel">ServerProxyModel</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.sentinel_updated_at"><code class="name">var <span class="ident">sentinel_updated_at</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.settings"><code class="name">var <span class="ident">settings</span> : Optional[<a title="coolipy.models.servers.ServerSettingsModel" href="#coolipy.models.servers.ServerSettingsModel">ServerSettingsModel</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.swarm_cluster"><code class="name">var <span class="ident">swarm_cluster</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.team_id"><code class="name">var <span class="ident">team_id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.unreachable_count"><code class="name">var <span class="ident">unreachable_count</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.unreachable_notification_sent"><code class="name">var <span class="ident">unreachable_notification_sent</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.updated_at"><code class="name">var <span class="ident">updated_at</span> : Union[str, datetime.datetime, ForwardRef(None)]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.user"><code class="name">var <span class="ident">user</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.uuid"><code class="name">var <span class="ident">uuid</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.validation_logs"><code class="name">var <span class="ident">validation_logs</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></b></code>:
+<ul class="hlist">
+<li><code><a title="coolipy.models.base.CoolipyBaseModel.pythonify" href="base.html#coolipy.models.base.CoolipyBaseModel.pythonify">pythonify</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="coolipy.models.servers.ServerModelCreate"><code class="flex name class">
+<span>class <span class="ident">ServerModelCreate</span></span>
+<span>(</span><span>name: str, description: str, ip: str, port: int, user: str, private_key_uuid: str, is_build_server: bool, instant_validate: bool, proxy_type: str = 'traefik')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>ServerModelCreate(name: str, description: str, ip: str, port: int, user: str, private_key_uuid: str, is_build_server: bool, instant_validate: bool, proxy_type: str = 'traefik')</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class ServerModelCreate:
+    name: str
+    description: str
+    ip: str
+    port: int
+    user: str
+    private_key_uuid: str
+    is_build_server: bool
+    instant_validate: bool
+    proxy_type: str = COOLIFY_DEFAULT_PROXY</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.servers.ServerModelCreate.description"><code class="name">var <span class="ident">description</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModelCreate.instant_validate"><code class="name">var <span class="ident">instant_validate</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModelCreate.ip"><code class="name">var <span class="ident">ip</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModelCreate.is_build_server"><code class="name">var <span class="ident">is_build_server</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModelCreate.name"><code class="name">var <span class="ident">name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModelCreate.port"><code class="name">var <span class="ident">port</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModelCreate.private_key_uuid"><code class="name">var <span class="ident">private_key_uuid</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModelCreate.proxy_type"><code class="name">var <span class="ident">proxy_type</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModelCreate.user"><code class="name">var <span class="ident">user</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.servers.ServerProxyModel"><code class="flex name class">
+<span>class <span class="ident">ServerProxyModel</span></span>
+<span>(</span><span>type: Optional[str] = 'traefik', status: Optional[str] = None, last_saved_settings: Optional[str] = None, last_applied_settings: Optional[str] = None, force_stop: Optional[bool] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Coolify Server Proxy data model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class ServerProxyModel:
+    &#34;&#34;&#34;
+    Coolify Server Proxy data model.
+    &#34;&#34;&#34;
+
+    type: Optional[str] = COOLIFY_DEFAULT_PROXY
+    status: Optional[str] = None
+    last_saved_settings: Optional[str] = None
+    last_applied_settings: Optional[str] = None
+    force_stop: Optional[bool] = None</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.servers.ServerProxyModel.force_stop"><code class="name">var <span class="ident">force_stop</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerProxyModel.last_applied_settings"><code class="name">var <span class="ident">last_applied_settings</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerProxyModel.last_saved_settings"><code class="name">var <span class="ident">last_saved_settings</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerProxyModel.status"><code class="name">var <span class="ident">status</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerProxyModel.type"><code class="name">var <span class="ident">type</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel"><code class="flex name class">
+<span>class <span class="ident">ServerSettingsModel</span></span>
+<span>(</span><span>id: Optional[int] = None, concurrent_builds: Optional[int] = None, delete_unused_networks: Optional[bool] = None, delete_unused_volumes: Optional[bool] = None, docker_cleanup_frequency: Optional[str] = None, docker_cleanup_threshold: Optional[int] = None, dynamic_timeout: Optional[int] = None, force_disabled: Optional[bool] = None, force_docker_cleanup: Optional[bool] = None, generate_exact_labels: Optional[bool] = None, is_build_server: Optional[bool] = None, is_cloudflare_tunnel: Optional[bool] = None, is_jump_server: Optional[bool] = None, is_logdrain_axiom_enabled: Optional[bool] = None, is_logdrain_custom_enabled: Optional[bool] = None, is_logdrain_highlight_enabled: Optional[bool] = None, is_logdrain_newrelic_enabled: Optional[bool] = None, is_metrics_enabled: Optional[bool] = None, is_reachable: Optional[bool] = None, is_sentinel_debug_enabled: Optional[bool] = None, is_sentinel_enabled: Optional[bool] = None, is_swarm_manager: Optional[bool] = None, is_swarm_worker: Optional[bool] = None, is_usable: Optional[bool] = None, sentinel_custom_url: Optional[str] = None, sentinel_metrics_history_days: Optional[int] = None, sentinel_metrics_refresh_rate_seconds: Optional[int] = None, sentinel_push_interval_seconds: Optional[int] = None, sentinel_token: Optional[str] = None, server_disk_usage_notification_threshold: Optional[int] = None, server_id: Optional[int] = None, server_timezone: Optional[str] = None, created_at: Union[str, datetime.datetime, ForwardRef(None)] = None, updated_at: Union[str, datetime.datetime, ForwardRef(None)] = None, logdrain_axiom_api_key: Optional[str] = None, logdrain_axiom_dataset_name: Optional[str] = None, logdrain_custom_config: Optional[str] = None, logdrain_custom_config_parser: Optional[str] = None, logdrain_highlight_project_id: Optional[str] = None, logdrain_newrelic_base_uri: Optional[str] = None, logdrain_newrelic_license_key: Optional[str] = None, wildcard_domain: Optional[str] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Coolify Server Settings data model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class ServerSettingsModel(CoolipyBaseModel):
+    &#34;&#34;&#34;
+    Coolify Server Settings data model.
+    &#34;&#34;&#34;
+
+    id: Optional[int] = None
+    concurrent_builds: Optional[int] = None
+    delete_unused_networks: Optional[bool] = None
+    delete_unused_volumes: Optional[bool] = None
+    docker_cleanup_frequency: Optional[str] = None
+    docker_cleanup_threshold: Optional[int] = None
+    dynamic_timeout: Optional[int] = None
+    force_disabled: Optional[bool] = None
+    force_docker_cleanup: Optional[bool] = None
+    generate_exact_labels: Optional[bool] = None
+    is_build_server: Optional[bool] = None
+    is_cloudflare_tunnel: Optional[bool] = None
+    is_jump_server: Optional[bool] = None
+    is_logdrain_axiom_enabled: Optional[bool] = None
+    is_logdrain_custom_enabled: Optional[bool] = None
+    is_logdrain_highlight_enabled: Optional[bool] = None
+    is_logdrain_newrelic_enabled: Optional[bool] = None
+    is_metrics_enabled: Optional[bool] = None
+    is_reachable: Optional[bool] = None
+    is_sentinel_debug_enabled: Optional[bool] = None
+    is_sentinel_enabled: Optional[bool] = None
+    is_swarm_manager: Optional[bool] = None
+    is_swarm_worker: Optional[bool] = None
+    is_usable: Optional[bool] = None
+    sentinel_custom_url: Optional[str] = None
+    sentinel_metrics_history_days: Optional[int] = None
+    sentinel_metrics_refresh_rate_seconds: Optional[int] = None
+    sentinel_push_interval_seconds: Optional[int] = None
+    sentinel_token: Optional[str] = None
+    server_disk_usage_notification_threshold: Optional[int] = None
+    server_id: Optional[int] = None
+    server_timezone: Optional[str] = None
+    created_at: Optional[Union[str, datetime]] = None
+    updated_at: Optional[Union[str, datetime]] = None
+    logdrain_axiom_api_key: Optional[str] = None
+    logdrain_axiom_dataset_name: Optional[str] = None
+    logdrain_custom_config: Optional[str] = None
+    logdrain_custom_config_parser: Optional[str] = None
+    logdrain_highlight_project_id: Optional[str] = None
+    logdrain_newrelic_base_uri: Optional[str] = None
+    logdrain_newrelic_license_key: Optional[str] = None
+    wildcard_domain: Optional[str] = None</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.servers.ServerSettingsModel.concurrent_builds"><code class="name">var <span class="ident">concurrent_builds</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.created_at"><code class="name">var <span class="ident">created_at</span> : Union[str, datetime.datetime, ForwardRef(None)]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.delete_unused_networks"><code class="name">var <span class="ident">delete_unused_networks</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.delete_unused_volumes"><code class="name">var <span class="ident">delete_unused_volumes</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.docker_cleanup_frequency"><code class="name">var <span class="ident">docker_cleanup_frequency</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.docker_cleanup_threshold"><code class="name">var <span class="ident">docker_cleanup_threshold</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.dynamic_timeout"><code class="name">var <span class="ident">dynamic_timeout</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.force_disabled"><code class="name">var <span class="ident">force_disabled</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.force_docker_cleanup"><code class="name">var <span class="ident">force_docker_cleanup</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.generate_exact_labels"><code class="name">var <span class="ident">generate_exact_labels</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.id"><code class="name">var <span class="ident">id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.is_build_server"><code class="name">var <span class="ident">is_build_server</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.is_cloudflare_tunnel"><code class="name">var <span class="ident">is_cloudflare_tunnel</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.is_jump_server"><code class="name">var <span class="ident">is_jump_server</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.is_logdrain_axiom_enabled"><code class="name">var <span class="ident">is_logdrain_axiom_enabled</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.is_logdrain_custom_enabled"><code class="name">var <span class="ident">is_logdrain_custom_enabled</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.is_logdrain_highlight_enabled"><code class="name">var <span class="ident">is_logdrain_highlight_enabled</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.is_logdrain_newrelic_enabled"><code class="name">var <span class="ident">is_logdrain_newrelic_enabled</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.is_metrics_enabled"><code class="name">var <span class="ident">is_metrics_enabled</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.is_reachable"><code class="name">var <span class="ident">is_reachable</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.is_sentinel_debug_enabled"><code class="name">var <span class="ident">is_sentinel_debug_enabled</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.is_sentinel_enabled"><code class="name">var <span class="ident">is_sentinel_enabled</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.is_swarm_manager"><code class="name">var <span class="ident">is_swarm_manager</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.is_swarm_worker"><code class="name">var <span class="ident">is_swarm_worker</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.is_usable"><code class="name">var <span class="ident">is_usable</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.logdrain_axiom_api_key"><code class="name">var <span class="ident">logdrain_axiom_api_key</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.logdrain_axiom_dataset_name"><code class="name">var <span class="ident">logdrain_axiom_dataset_name</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.logdrain_custom_config"><code class="name">var <span class="ident">logdrain_custom_config</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.logdrain_custom_config_parser"><code class="name">var <span class="ident">logdrain_custom_config_parser</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.logdrain_highlight_project_id"><code class="name">var <span class="ident">logdrain_highlight_project_id</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.logdrain_newrelic_base_uri"><code class="name">var <span class="ident">logdrain_newrelic_base_uri</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.logdrain_newrelic_license_key"><code class="name">var <span class="ident">logdrain_newrelic_license_key</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.sentinel_custom_url"><code class="name">var <span class="ident">sentinel_custom_url</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.sentinel_metrics_history_days"><code class="name">var <span class="ident">sentinel_metrics_history_days</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.sentinel_metrics_refresh_rate_seconds"><code class="name">var <span class="ident">sentinel_metrics_refresh_rate_seconds</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.sentinel_push_interval_seconds"><code class="name">var <span class="ident">sentinel_push_interval_seconds</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.sentinel_token"><code class="name">var <span class="ident">sentinel_token</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.server_disk_usage_notification_threshold"><code class="name">var <span class="ident">server_disk_usage_notification_threshold</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.server_id"><code class="name">var <span class="ident">server_id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.server_timezone"><code class="name">var <span class="ident">server_timezone</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.updated_at"><code class="name">var <span class="ident">updated_at</span> : Union[str, datetime.datetime, ForwardRef(None)]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.wildcard_domain"><code class="name">var <span class="ident">wildcard_domain</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></b></code>:
+<ul class="hlist">
+<li><code><a title="coolipy.models.base.CoolipyBaseModel.pythonify" href="base.html#coolipy.models.base.CoolipyBaseModel.pythonify">pythonify</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="coolipy.models" href="index.html">coolipy.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="coolipy.models.servers.ServerModel" href="#coolipy.models.servers.ServerModel">ServerModel</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.servers.ServerModel.created_at" href="#coolipy.models.servers.ServerModel.created_at">created_at</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.deleted_at" href="#coolipy.models.servers.ServerModel.deleted_at">deleted_at</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.description" href="#coolipy.models.servers.ServerModel.description">description</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.high_disk_usage_notification_sent" href="#coolipy.models.servers.ServerModel.high_disk_usage_notification_sent">high_disk_usage_notification_sent</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.id" href="#coolipy.models.servers.ServerModel.id">id</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.ip" href="#coolipy.models.servers.ServerModel.ip">ip</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.is_reachable" href="#coolipy.models.servers.ServerModel.is_reachable">is_reachable</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.is_usable" href="#coolipy.models.servers.ServerModel.is_usable">is_usable</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.log_drain_notification_sent" href="#coolipy.models.servers.ServerModel.log_drain_notification_sent">log_drain_notification_sent</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.name" href="#coolipy.models.servers.ServerModel.name">name</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.port" href="#coolipy.models.servers.ServerModel.port">port</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.private_key_id" href="#coolipy.models.servers.ServerModel.private_key_id">private_key_id</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.proxy" href="#coolipy.models.servers.ServerModel.proxy">proxy</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.sentinel_updated_at" href="#coolipy.models.servers.ServerModel.sentinel_updated_at">sentinel_updated_at</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.settings" href="#coolipy.models.servers.ServerModel.settings">settings</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.swarm_cluster" href="#coolipy.models.servers.ServerModel.swarm_cluster">swarm_cluster</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.team_id" href="#coolipy.models.servers.ServerModel.team_id">team_id</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.unreachable_count" href="#coolipy.models.servers.ServerModel.unreachable_count">unreachable_count</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.unreachable_notification_sent" href="#coolipy.models.servers.ServerModel.unreachable_notification_sent">unreachable_notification_sent</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.updated_at" href="#coolipy.models.servers.ServerModel.updated_at">updated_at</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.user" href="#coolipy.models.servers.ServerModel.user">user</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.uuid" href="#coolipy.models.servers.ServerModel.uuid">uuid</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.validation_logs" href="#coolipy.models.servers.ServerModel.validation_logs">validation_logs</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.servers.ServerModelCreate" href="#coolipy.models.servers.ServerModelCreate">ServerModelCreate</a></code></h4>
+<ul class="two-column">
+<li><code><a title="coolipy.models.servers.ServerModelCreate.description" href="#coolipy.models.servers.ServerModelCreate.description">description</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModelCreate.instant_validate" href="#coolipy.models.servers.ServerModelCreate.instant_validate">instant_validate</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModelCreate.ip" href="#coolipy.models.servers.ServerModelCreate.ip">ip</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModelCreate.is_build_server" href="#coolipy.models.servers.ServerModelCreate.is_build_server">is_build_server</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModelCreate.name" href="#coolipy.models.servers.ServerModelCreate.name">name</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModelCreate.port" href="#coolipy.models.servers.ServerModelCreate.port">port</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModelCreate.private_key_uuid" href="#coolipy.models.servers.ServerModelCreate.private_key_uuid">private_key_uuid</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModelCreate.proxy_type" href="#coolipy.models.servers.ServerModelCreate.proxy_type">proxy_type</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModelCreate.user" href="#coolipy.models.servers.ServerModelCreate.user">user</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.servers.ServerProxyModel" href="#coolipy.models.servers.ServerProxyModel">ServerProxyModel</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.servers.ServerProxyModel.force_stop" href="#coolipy.models.servers.ServerProxyModel.force_stop">force_stop</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerProxyModel.last_applied_settings" href="#coolipy.models.servers.ServerProxyModel.last_applied_settings">last_applied_settings</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerProxyModel.last_saved_settings" href="#coolipy.models.servers.ServerProxyModel.last_saved_settings">last_saved_settings</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerProxyModel.status" href="#coolipy.models.servers.ServerProxyModel.status">status</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerProxyModel.type" href="#coolipy.models.servers.ServerProxyModel.type">type</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.servers.ServerSettingsModel" href="#coolipy.models.servers.ServerSettingsModel">ServerSettingsModel</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.concurrent_builds" href="#coolipy.models.servers.ServerSettingsModel.concurrent_builds">concurrent_builds</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.created_at" href="#coolipy.models.servers.ServerSettingsModel.created_at">created_at</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.delete_unused_networks" href="#coolipy.models.servers.ServerSettingsModel.delete_unused_networks">delete_unused_networks</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.delete_unused_volumes" href="#coolipy.models.servers.ServerSettingsModel.delete_unused_volumes">delete_unused_volumes</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.docker_cleanup_frequency" href="#coolipy.models.servers.ServerSettingsModel.docker_cleanup_frequency">docker_cleanup_frequency</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.docker_cleanup_threshold" href="#coolipy.models.servers.ServerSettingsModel.docker_cleanup_threshold">docker_cleanup_threshold</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.dynamic_timeout" href="#coolipy.models.servers.ServerSettingsModel.dynamic_timeout">dynamic_timeout</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.force_disabled" href="#coolipy.models.servers.ServerSettingsModel.force_disabled">force_disabled</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.force_docker_cleanup" href="#coolipy.models.servers.ServerSettingsModel.force_docker_cleanup">force_docker_cleanup</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.generate_exact_labels" href="#coolipy.models.servers.ServerSettingsModel.generate_exact_labels">generate_exact_labels</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.id" href="#coolipy.models.servers.ServerSettingsModel.id">id</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.is_build_server" href="#coolipy.models.servers.ServerSettingsModel.is_build_server">is_build_server</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.is_cloudflare_tunnel" href="#coolipy.models.servers.ServerSettingsModel.is_cloudflare_tunnel">is_cloudflare_tunnel</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.is_jump_server" href="#coolipy.models.servers.ServerSettingsModel.is_jump_server">is_jump_server</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.is_logdrain_axiom_enabled" href="#coolipy.models.servers.ServerSettingsModel.is_logdrain_axiom_enabled">is_logdrain_axiom_enabled</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.is_logdrain_custom_enabled" href="#coolipy.models.servers.ServerSettingsModel.is_logdrain_custom_enabled">is_logdrain_custom_enabled</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.is_logdrain_highlight_enabled" href="#coolipy.models.servers.ServerSettingsModel.is_logdrain_highlight_enabled">is_logdrain_highlight_enabled</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.is_logdrain_newrelic_enabled" href="#coolipy.models.servers.ServerSettingsModel.is_logdrain_newrelic_enabled">is_logdrain_newrelic_enabled</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.is_metrics_enabled" href="#coolipy.models.servers.ServerSettingsModel.is_metrics_enabled">is_metrics_enabled</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.is_reachable" href="#coolipy.models.servers.ServerSettingsModel.is_reachable">is_reachable</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.is_sentinel_debug_enabled" href="#coolipy.models.servers.ServerSettingsModel.is_sentinel_debug_enabled">is_sentinel_debug_enabled</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.is_sentinel_enabled" href="#coolipy.models.servers.ServerSettingsModel.is_sentinel_enabled">is_sentinel_enabled</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.is_swarm_manager" href="#coolipy.models.servers.ServerSettingsModel.is_swarm_manager">is_swarm_manager</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.is_swarm_worker" href="#coolipy.models.servers.ServerSettingsModel.is_swarm_worker">is_swarm_worker</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.is_usable" href="#coolipy.models.servers.ServerSettingsModel.is_usable">is_usable</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.logdrain_axiom_api_key" href="#coolipy.models.servers.ServerSettingsModel.logdrain_axiom_api_key">logdrain_axiom_api_key</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.logdrain_axiom_dataset_name" href="#coolipy.models.servers.ServerSettingsModel.logdrain_axiom_dataset_name">logdrain_axiom_dataset_name</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.logdrain_custom_config" href="#coolipy.models.servers.ServerSettingsModel.logdrain_custom_config">logdrain_custom_config</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.logdrain_custom_config_parser" href="#coolipy.models.servers.ServerSettingsModel.logdrain_custom_config_parser">logdrain_custom_config_parser</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.logdrain_highlight_project_id" href="#coolipy.models.servers.ServerSettingsModel.logdrain_highlight_project_id">logdrain_highlight_project_id</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.logdrain_newrelic_base_uri" href="#coolipy.models.servers.ServerSettingsModel.logdrain_newrelic_base_uri">logdrain_newrelic_base_uri</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.logdrain_newrelic_license_key" href="#coolipy.models.servers.ServerSettingsModel.logdrain_newrelic_license_key">logdrain_newrelic_license_key</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.sentinel_custom_url" href="#coolipy.models.servers.ServerSettingsModel.sentinel_custom_url">sentinel_custom_url</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.sentinel_metrics_history_days" href="#coolipy.models.servers.ServerSettingsModel.sentinel_metrics_history_days">sentinel_metrics_history_days</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.sentinel_metrics_refresh_rate_seconds" href="#coolipy.models.servers.ServerSettingsModel.sentinel_metrics_refresh_rate_seconds">sentinel_metrics_refresh_rate_seconds</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.sentinel_push_interval_seconds" href="#coolipy.models.servers.ServerSettingsModel.sentinel_push_interval_seconds">sentinel_push_interval_seconds</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.sentinel_token" href="#coolipy.models.servers.ServerSettingsModel.sentinel_token">sentinel_token</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.server_disk_usage_notification_threshold" href="#coolipy.models.servers.ServerSettingsModel.server_disk_usage_notification_threshold">server_disk_usage_notification_threshold</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.server_id" href="#coolipy.models.servers.ServerSettingsModel.server_id">server_id</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.server_timezone" href="#coolipy.models.servers.ServerSettingsModel.server_timezone">server_timezone</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.updated_at" href="#coolipy.models.servers.ServerSettingsModel.updated_at">updated_at</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.wildcard_domain" href="#coolipy.models.servers.ServerSettingsModel.wildcard_domain">wildcard_domain</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

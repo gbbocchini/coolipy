@@ -12,9 +12,9 @@ pip install coolipy
 ```
 
 ## Features
-- Manage Coolify projects, servers, and deployments.
-- Simplify service creation and environment management.
-- 1 dependency: requests.
+- Manage Coolify projects, servers, applications, deployments and more (everything the Coolify App offers)ç
+- Infra as code;
+- 1 dependency: requests>=2.32.3.
 
 TO DO:
 
@@ -27,7 +27,7 @@ TO DO:
 ```python
 from coolipy import Coolipy
 
-coolify = Coolipy(
+coolify_client = Coolipy(
     coolify_api_key="your_coolify_api_key",
     coolify_endpoint="your_coolify_instance_address",
 )
@@ -37,11 +37,13 @@ coolify = Coolipy(
 
 - Get Project Information
 ```python
-coolify.projects.get(project_uuid="your_project_uuid")
+my_project = coolify_client.projects.get(project_uuid="your_project_uuid")
 ```
 
 - Create a Service
 ```python
+from coolipy.models.service import ServiceModelCreate
+
 service_data = ServiceModelCreate(
     type=COOLIFY_SERVICE_TYPES.glance,
     name="Example Service",
@@ -51,17 +53,19 @@ service_data = ServiceModelCreate(
     instant_deploy=True,
     environment_name="production"
 )
-new_service = coolify.services.create(service_data)
+new_service = coolify_client.services.create(service_data)
 ```
 
 
 - List Servers
 ```python
-servers = coolify.servers.list()
+servers = coolify_client.servers.list()
 ```
 
 - Create a DB:
 ```python
+from coolipy.models.databases import PostgreSQLModelCreate
+
 postgres_db = PostgreSQLModelCreate(
     project_uuid="your_project_uuid",
     server_uuid="your_server_uuid",
@@ -84,11 +88,13 @@ postgres_db = PostgreSQLModelCreate(
     postgres_initdb_args="-"
 )
 
-coolify.databases.create(database_model_create=postgres_db)
+coolify_client.databases.create(database_model_create=postgres_db)
 ```
 
 - Create an App
 ```python
+from coolipy.models.applications import ApplicationPrivateGHModelCreate
+
 app_data = ApplicationPrivateGHModelCreate(
     project_uuid="your_project_uuid",
     server_uuid="your_server_uuid",

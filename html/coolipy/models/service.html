@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>coolipy.models.service API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>coolipy.models.service</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="coolipy.models.service.ServiceModel"><code class="flex name class">
+<span>class <span class="ident">ServiceModel</span></span>
+<span>(</span><span>id: Optional[str] = None, uuid: Optional[str] = None, name: Optional[str] = None, applications: Optional[List[<a title="coolipy.models.applications.ServiceApplicationModel" href="applications.html#coolipy.models.applications.ServiceApplicationModel">ServiceApplicationModel</a>]] = &lt;factory&gt;, compose_parsing_version: Optional[str] = None, config_hash: Optional[str] = None, connect_to_docker_network: Optional[bool] = None, databases: Optional[List[str]] = &lt;factory&gt;, deleted_at: Union[str, datetime.datetime, ForwardRef(None)] = None, description: Optional[str] = None, destination_id: Optional[int] = None, destination_type: Optional[str] = None, docker_compose: Optional[str] = None, docker_compose_raw: Optional[str] = None, environment_id: Optional[int] = None, laravel_through_key: Optional[str] = None, is_container_label_escape_enabled: Optional[bool] = None, server: Optional[<a title="coolipy.models.servers.ServerModel" href="servers.html#coolipy.models.servers.ServerModel">ServerModel</a>] = &lt;factory&gt;, server_id: Optional[int] = None, server_status: Optional[bool] = None, domains: Optional[List[str]] = &lt;factory&gt;, service_type: Optional[str] = None, created_at: Union[str, datetime.datetime, ForwardRef(None)] = None, updated_at: Union[str, datetime.datetime, ForwardRef(None)] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>ServiceModel(id: Optional[str] = None, uuid: Optional[str] = None, name: Optional[str] = None, applications: Optional[List[coolipy.models.applications.ServiceApplicationModel]] = <factory>, compose_parsing_version: Optional[str] = None, config_hash: Optional[str] = None, connect_to_docker_network: Optional[bool] = None, databases: Optional[List[str]] = <factory>, deleted_at: Union[str, datetime.datetime, NoneType] = None, description: Optional[str] = None, destination_id: Optional[int] = None, destination_type: Optional[str] = None, docker_compose: Optional[str] = None, docker_compose_raw: Optional[str] = None, environment_id: Optional[int] = None, laravel_through_key: Optional[str] = None, is_container_label_escape_enabled: Optional[bool] = None, server: Optional[coolipy.models.servers.ServerModel] = <factory>, server_id: Optional[int] = None, server_status: Optional[bool] = None, domains: Optional[List[str]] = <factory>, service_type: Optional[str] = None, created_at: Union[str, datetime.datetime, NoneType] = None, updated_at: Union[str, datetime.datetime, NoneType] = None)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class ServiceModel(CoolipyBaseModel):
+    id: Optional[str] = None
+    uuid: Optional[str] = None
+    name: Optional[str] = None
+    applications: Optional[List[ServiceApplicationModel]] = field(default_factory=list)
+    compose_parsing_version: Optional[str] = None
+    config_hash: Optional[str] = None
+    connect_to_docker_network: Optional[bool] = None
+    databases: Optional[List[str]] = field(default_factory=list)
+    deleted_at: Optional[Union[str, datetime]] = None
+    description: Optional[str] = None
+    destination_id: Optional[int] = None
+    destination_type: Optional[str] = None
+    docker_compose: Optional[str] = None
+    docker_compose_raw: Optional[str] = None
+    environment_id: Optional[int] = None
+    laravel_through_key: Optional[str] = None
+    is_container_label_escape_enabled: Optional[bool] = None
+    server: Optional[ServerModel] = field(default_factory=dict)
+    server_id: Optional[int] = None
+    server_status: Optional[bool] = None
+    domains: Optional[List[str]] = field(default_factory=list)
+    service_type: Optional[str] = None
+    created_at: Optional[Union[str, datetime]] = None
+    updated_at: Optional[Union[str, datetime]] = None
+
+    @override
+    def _adjust_nested(self):
+        if isinstance(self.applications, list) and len(self.applications):
+            raw_apps = self.applications
+            parsed_apps = [ServiceApplicationModel(**i).pythonify() for i in raw_apps]
+            self.applications = parsed_apps
+
+        if isinstance(self.server, dict) and self.server:
+            raw_server = self.server
+            parsed_server = ServerModel(**raw_server).pythonify()
+            self.server = parsed_server</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.service.ServiceModel.applications"><code class="name">var <span class="ident">applications</span> : Optional[List[<a title="coolipy.models.applications.ServiceApplicationModel" href="applications.html#coolipy.models.applications.ServiceApplicationModel">ServiceApplicationModel</a>]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.compose_parsing_version"><code class="name">var <span class="ident">compose_parsing_version</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.config_hash"><code class="name">var <span class="ident">config_hash</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.connect_to_docker_network"><code class="name">var <span class="ident">connect_to_docker_network</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.created_at"><code class="name">var <span class="ident">created_at</span> : Union[str, datetime.datetime, ForwardRef(None)]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.databases"><code class="name">var <span class="ident">databases</span> : Optional[List[str]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.deleted_at"><code class="name">var <span class="ident">deleted_at</span> : Union[str, datetime.datetime, ForwardRef(None)]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.description"><code class="name">var <span class="ident">description</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.destination_id"><code class="name">var <span class="ident">destination_id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.destination_type"><code class="name">var <span class="ident">destination_type</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.docker_compose"><code class="name">var <span class="ident">docker_compose</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.docker_compose_raw"><code class="name">var <span class="ident">docker_compose_raw</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.domains"><code class="name">var <span class="ident">domains</span> : Optional[List[str]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.environment_id"><code class="name">var <span class="ident">environment_id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.id"><code class="name">var <span class="ident">id</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.is_container_label_escape_enabled"><code class="name">var <span class="ident">is_container_label_escape_enabled</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.laravel_through_key"><code class="name">var <span class="ident">laravel_through_key</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.name"><code class="name">var <span class="ident">name</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.server"><code class="name">var <span class="ident">server</span> : Optional[<a title="coolipy.models.servers.ServerModel" href="servers.html#coolipy.models.servers.ServerModel">ServerModel</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.server_id"><code class="name">var <span class="ident">server_id</span> : Optional[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.server_status"><code class="name">var <span class="ident">server_status</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.service_type"><code class="name">var <span class="ident">service_type</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.updated_at"><code class="name">var <span class="ident">updated_at</span> : Union[str, datetime.datetime, ForwardRef(None)]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.uuid"><code class="name">var <span class="ident">uuid</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></b></code>:
+<ul class="hlist">
+<li><code><a title="coolipy.models.base.CoolipyBaseModel.pythonify" href="base.html#coolipy.models.base.CoolipyBaseModel.pythonify">pythonify</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="coolipy.models.service.ServiceModelCreate"><code class="flex name class">
+<span>class <span class="ident">ServiceModelCreate</span></span>
+<span>(</span><span>type: <a title="coolipy.constants.COOLIFY_SERVICE_TYPES" href="../constants.html#coolipy.constants.COOLIFY_SERVICE_TYPES">COOLIFY_SERVICE_TYPES</a>, name: str, environment_name: str, project_uuid: str, server_uuid: str, destination_uuid: str, instant_deploy: bool, description: Optional[str] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>ServiceModelCreate(type: coolipy.constants.COOLIFY_SERVICE_TYPES, name: str, environment_name: str, project_uuid: str, server_uuid: str, destination_uuid: str, instant_deploy: bool, description: Optional[str] = None)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class ServiceModelCreate(CoolipyBaseModel):
+    type: COOLIFY_SERVICE_TYPES
+    name: str
+    environment_name: str
+    project_uuid: str
+    server_uuid: str
+    destination_uuid: str
+    instant_deploy: bool
+    destination_uuid: str
+    description: Optional[str] = None</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.service.ServiceModelCreate.description"><code class="name">var <span class="ident">description</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModelCreate.destination_uuid"><code class="name">var <span class="ident">destination_uuid</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModelCreate.environment_name"><code class="name">var <span class="ident">environment_name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModelCreate.instant_deploy"><code class="name">var <span class="ident">instant_deploy</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModelCreate.name"><code class="name">var <span class="ident">name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModelCreate.project_uuid"><code class="name">var <span class="ident">project_uuid</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModelCreate.server_uuid"><code class="name">var <span class="ident">server_uuid</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModelCreate.type"><code class="name">var <span class="ident">type</span> : <a title="coolipy.constants.COOLIFY_SERVICE_TYPES" href="../constants.html#coolipy.constants.COOLIFY_SERVICE_TYPES">COOLIFY_SERVICE_TYPES</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></b></code>:
+<ul class="hlist">
+<li><code><a title="coolipy.models.base.CoolipyBaseModel.pythonify" href="base.html#coolipy.models.base.CoolipyBaseModel.pythonify">pythonify</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="coolipy.models" href="index.html">coolipy.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="coolipy.models.service.ServiceModel" href="#coolipy.models.service.ServiceModel">ServiceModel</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.service.ServiceModel.applications" href="#coolipy.models.service.ServiceModel.applications">applications</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.compose_parsing_version" href="#coolipy.models.service.ServiceModel.compose_parsing_version">compose_parsing_version</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.config_hash" href="#coolipy.models.service.ServiceModel.config_hash">config_hash</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.connect_to_docker_network" href="#coolipy.models.service.ServiceModel.connect_to_docker_network">connect_to_docker_network</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.created_at" href="#coolipy.models.service.ServiceModel.created_at">created_at</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.databases" href="#coolipy.models.service.ServiceModel.databases">databases</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.deleted_at" href="#coolipy.models.service.ServiceModel.deleted_at">deleted_at</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.description" href="#coolipy.models.service.ServiceModel.description">description</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.destination_id" href="#coolipy.models.service.ServiceModel.destination_id">destination_id</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.destination_type" href="#coolipy.models.service.ServiceModel.destination_type">destination_type</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.docker_compose" href="#coolipy.models.service.ServiceModel.docker_compose">docker_compose</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.docker_compose_raw" href="#coolipy.models.service.ServiceModel.docker_compose_raw">docker_compose_raw</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.domains" href="#coolipy.models.service.ServiceModel.domains">domains</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.environment_id" href="#coolipy.models.service.ServiceModel.environment_id">environment_id</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.id" href="#coolipy.models.service.ServiceModel.id">id</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.is_container_label_escape_enabled" href="#coolipy.models.service.ServiceModel.is_container_label_escape_enabled">is_container_label_escape_enabled</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.laravel_through_key" href="#coolipy.models.service.ServiceModel.laravel_through_key">laravel_through_key</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.name" href="#coolipy.models.service.ServiceModel.name">name</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.server" href="#coolipy.models.service.ServiceModel.server">server</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.server_id" href="#coolipy.models.service.ServiceModel.server_id">server_id</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.server_status" href="#coolipy.models.service.ServiceModel.server_status">server_status</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.service_type" href="#coolipy.models.service.ServiceModel.service_type">service_type</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.updated_at" href="#coolipy.models.service.ServiceModel.updated_at">updated_at</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.uuid" href="#coolipy.models.service.ServiceModel.uuid">uuid</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.service.ServiceModelCreate" href="#coolipy.models.service.ServiceModelCreate">ServiceModelCreate</a></code></h4>
+<ul class="two-column">
+<li><code><a title="coolipy.models.service.ServiceModelCreate.description" href="#coolipy.models.service.ServiceModelCreate.description">description</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModelCreate.destination_uuid" href="#coolipy.models.service.ServiceModelCreate.destination_uuid">destination_uuid</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModelCreate.environment_name" href="#coolipy.models.service.ServiceModelCreate.environment_name">environment_name</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModelCreate.instant_deploy" href="#coolipy.models.service.ServiceModelCreate.instant_deploy">instant_deploy</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModelCreate.name" href="#coolipy.models.service.ServiceModelCreate.name">name</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModelCreate.project_uuid" href="#coolipy.models.service.ServiceModelCreate.project_uuid">project_uuid</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModelCreate.server_uuid" href="#coolipy.models.service.ServiceModelCreate.server_uuid">server_uuid</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModelCreate.type" href="#coolipy.models.service.ServiceModelCreate.type">type</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>
