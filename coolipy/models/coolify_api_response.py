@@ -1,14 +1,14 @@
 from dataclasses import dataclass
 from typing import Any, Dict, List, Union
 
-from models.databases import DatabaseModel
-from models.deployments import DeploymentsModel
-from models.environs import EnvironmentsModel
-from models.private_keys import PrivateKeysModel
-from models.projects import ProjectsModel
-from models.resources import ResourceModel
-from models.servers import ServerModel, ServerSettingsModel
-from models.teams import TeamMemberModel, TeamModel
+from coolipy.models.databases import DatabaseModel
+from coolipy.models.deployments import DeploymentsModel
+from coolipy.models.environs import EnvironmentsModel
+from coolipy.models.private_keys import PrivateKeysModel
+from coolipy.models.projects import ProjectsModel
+from coolipy.models.resources import ResourceModel
+from coolipy.models.servers import ServerModel, ServerSettingsModel
+from coolipy.models.teams import TeamMemberModel, TeamModel
 
 
 @dataclass

@@ -2,8 +2,8 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Optional, Union, override
 
-from constants import COOLIFY_DEFAULT_PROXY
-from models.base import CoolipyBaseModel
+from coolipy.constants import COOLIFY_DEFAULT_PROXY
+from coolipy.models.base import CoolipyBaseModel
 
 
 @dataclass

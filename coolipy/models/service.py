@@ -1,10 +1,10 @@
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import List, Optional, Union, override
-from constants import COOLIFY_SERVICE_TYPES
-from models.applications import ServiceApplicationModel
-from models.base import CoolipyBaseModel
-from models.servers import ServerModel
+from coolipy.constants import COOLIFY_SERVICE_TYPES
+from coolipy.models.applications import ServiceApplicationModel
+from coolipy.models.base import CoolipyBaseModel
+from coolipy.models.servers import ServerModel
 
 
 @dataclass

@@ -1,8 +1,8 @@
 from typing import List, Optional
-from constants import COOLIFY_RETURN_TYPES, URL_MAP
-from models.coolify_api_response import CoolifyAPIResponse
+from coolipy.constants import COOLIFY_RETURN_TYPES, URL_MAP
+from coolipy.models.coolify_api_response import CoolifyAPIResponse
 from .base import CoolifyApiBase
-from models.deployments import DeploymentsModel
+from coolipy.models.deployments import DeploymentsModel
 
 
 class Deployments(CoolifyApiBase):

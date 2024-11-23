@@ -1,11 +1,8 @@
 import json
 import requests
-from models.coolify_api_response import CoolifyAPIResponse
+from coolipy.exceptions import CoolipyHttpServiceException
+from coolipy.models.coolify_api_response import CoolifyAPIResponse
 from typing import Dict, Optional
-
-
-class CoolipyHttpServiceException(Exception):
-    pass
 
 
 class HttpService:

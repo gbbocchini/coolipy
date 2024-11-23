@@ -1,9 +1,9 @@
 from dataclasses import asdict
 import json
-from constants import COOLIFY_RETURN_TYPES, URL_MAP
-from models.coolify_api_response import CoolifyAPIResponse
-from models.resources import ResourceModel
-from models.servers import ServerModel, ServerModelCreate
+from coolipy.constants import COOLIFY_RETURN_TYPES, URL_MAP
+from coolipy.models.coolify_api_response import CoolifyAPIResponse
+from coolipy.models.resources import ResourceModel
+from coolipy.models.servers import ServerModel, ServerModelCreate
 from .base import CoolifyApiBase
 
 

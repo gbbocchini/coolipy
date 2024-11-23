@@ -1,7 +1,7 @@
-from constants import COOLIFY_RETURN_TYPES, URL_MAP
-from models.coolify_api_response import CoolifyAPIResponse
-from models.teams import TeamMemberModel, TeamModel
-from services.coolify_api.base import CoolifyApiBase
+from coolipy.constants import COOLIFY_RETURN_TYPES, URL_MAP
+from coolipy.models.coolify_api_response import CoolifyAPIResponse
+from coolipy.models.teams import TeamMemberModel, TeamModel
+from coolipy.services.coolify_api.base import CoolifyApiBase
 
 
 class Teams(CoolifyApiBase):

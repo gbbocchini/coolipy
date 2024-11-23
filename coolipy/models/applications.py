@@ -2,9 +2,9 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Dict, List, Optional, Union
 
-from constants import COOLIFY_BUILD_PACKS, COOLIFY_REDIRECT
-from models.base import CoolipyBaseModel
-from models.databases import DestinationModel
+from coolipy.constants import COOLIFY_BUILD_PACKS, COOLIFY_REDIRECT
+from coolipy.models.base import CoolipyBaseModel
+from coolipy.models.databases import DestinationModel
 
 
 @dataclass

@@ -3,7 +3,7 @@ from dataclasses import dataclass, field
 from typing import Optional, Union, override
 
 from .base import CoolipyBaseModel
-from models.environs import EnvironmentsModel
+from coolipy.models.environs import EnvironmentsModel
 
 
 @dataclass

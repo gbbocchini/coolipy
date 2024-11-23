@@ -4,3 +4,7 @@ class CoolipyHttpException(Exception):
 
 class CoolipyAPIServiceException(Exception):
     pass
+
+
+class CoolipyHttpServiceException(Exception):
+    pass

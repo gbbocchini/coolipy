@@ -1,8 +1,8 @@
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Optional, Union, override
-from models.base import CoolipyBaseModel
-from models.servers import ServerModel
+from coolipy.models.base import CoolipyBaseModel
+from coolipy.models.servers import ServerModel
 
 
 @dataclass

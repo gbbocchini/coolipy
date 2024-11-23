@@ -1,10 +1,10 @@
 from dataclasses import asdict
 import json
 from typing import Union
-from constants import COOLIFY_RETURN_TYPES, URL_MAP
-from exceptions import CoolipyAPIServiceException
-from models.coolify_api_response import CoolifyAPIResponse
-from models.databases import (
+from coolipy.constants import COOLIFY_RETURN_TYPES, URL_MAP
+from coolipy.exceptions import CoolipyAPIServiceException
+from coolipy.models.coolify_api_response import CoolifyAPIResponse
+from coolipy.models.databases import (
     ClickHouseModelCreate,
     DatabaseModel,
     DatabaseUpdateModel,
@@ -17,7 +17,7 @@ from models.databases import (
     RedisModelCreate,
     DATABASE_TYPES_MAP,
 )
-from services.coolify_api.base import CoolifyApiBase
+from coolipy.services.coolify_api.base import CoolifyApiBase
 
 
 class Databases(CoolifyApiBase):

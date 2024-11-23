@@ -2,11 +2,11 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import List, Optional, Union
 
-from models.base import CoolipyBaseModel
-from models.databases import DestinationModel
-from models.environs import EnvironmentsModel
-from models.servers import ServerModel
-from models.service import ServiceModel
+from coolipy.models.base import CoolipyBaseModel
+from coolipy.models.databases import DestinationModel
+from coolipy.models.environs import EnvironmentsModel
+from coolipy.models.servers import ServerModel
+from coolipy.models.service import ServiceModel
 
 
 @dataclass

@@ -1,16 +1,16 @@
 from dataclasses import asdict
 from typing import Any, Dict, Optional, Union
-from constants import COOLIFY_RETURN_TYPES
-from exceptions import CoolipyAPIServiceException
-from models.environs import EnvironmentsModel
-from models.private_keys import PrivateKeysModel
-from models.teams import TeamMemberModel, TeamModel
-from services.http_service import HttpService
-from models.deployments import DeploymentsModel
-from models.coolify_api_response import CoolifyAPIResponse
-from models.projects import ProjectsModel
-from models.resources import ResourceModel
-from models.servers import ServerModel
+from coolipy.constants import COOLIFY_RETURN_TYPES
+from coolipy.exceptions import CoolipyAPIServiceException
+from coolipy.models.environs import EnvironmentsModel
+from coolipy.models.private_keys import PrivateKeysModel
+from coolipy.models.teams import TeamMemberModel, TeamModel
+from coolipy.services.http_service import HttpService
+from coolipy.models.deployments import DeploymentsModel
+from coolipy.models.coolify_api_response import CoolifyAPIResponse
+from coolipy.models.projects import ProjectsModel
+from coolipy.models.resources import ResourceModel
+from coolipy.models.servers import ServerModel
 
 
 class CoolifyApiBase:

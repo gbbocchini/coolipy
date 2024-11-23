@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Optional, Union
 
-from models.base import CoolipyBaseModel
+from coolipy.models.base import CoolipyBaseModel
 
 
 @dataclass

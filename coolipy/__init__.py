@@ -1,15 +1,15 @@
-from models.coolify_api_response import CoolifyAPIResponse
-from services.coolify_api.applications import Applications
-from services.coolify_api.deployments import Deployments
-from services.coolify_api.private_keys import PrivatetKeys
-from services.coolify_api.projects import Projects
-from services.coolify_api.resources import Resources
-from services.coolify_api.servers import Servers
-from services.coolify_api.services import Services
-from services.coolify_api.teams import Teams
-from services.coolify_api.databases import Databases
-from services.http_service import HttpService
-from constants import API_BASE_ENTRYPOINT, URL_MAP
+from coolipy.models.coolify_api_response import CoolifyAPIResponse
+from coolipy.services.coolify_api.applications import Applications
+from coolipy.services.coolify_api.deployments import Deployments
+from coolipy.services.coolify_api.private_keys import PrivatetKeys
+from coolipy.services.coolify_api.projects import Projects
+from coolipy.services.coolify_api.resources import Resources
+from coolipy.services.coolify_api.servers import Servers
+from coolipy.services.coolify_api.services import Services
+from coolipy.services.coolify_api.teams import Teams
+from coolipy.services.coolify_api.databases import Databases
+from coolipy.services.http_service import HttpService
+from coolipy.constants import API_BASE_ENTRYPOINT, URL_MAP
 
 
 class Coolipy:

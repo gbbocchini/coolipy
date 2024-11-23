@@ -1,11 +1,11 @@
 from dataclasses import asdict
 import json
 from typing import List
-from constants import COOLIFY_RETURN_TYPES, URL_MAP
-from models.env_vars import EnvVarModel, EnvVarModelsCreate
-from services.coolify_api.base import CoolifyApiBase
-from models.coolify_api_response import CoolifyAPIResponse
-from models.service import ServiceModel, ServiceModelCreate
+from coolipy.constants import COOLIFY_RETURN_TYPES, URL_MAP
+from coolipy.models.env_vars import EnvVarModel, EnvVarModelsCreate
+from coolipy.services.coolify_api.base import CoolifyApiBase
+from coolipy.models.coolify_api_response import CoolifyAPIResponse
+from coolipy.models.service import ServiceModel, ServiceModelCreate
 
 
 class Services(CoolifyApiBase):

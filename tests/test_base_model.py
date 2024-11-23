@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import MagicMock
 from datetime import datetime
-from models.base import CoolipyBaseModel
+from coolipy.models.base import CoolipyBaseModel
 
 class TestCoolipyBaseModel(unittest.TestCase):
     def setUp(self):

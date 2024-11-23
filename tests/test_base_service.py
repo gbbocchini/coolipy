@@ -1,8 +1,8 @@
 import unittest
 from unittest.mock import MagicMock
-from constants import COOLIFY_RETURN_TYPES
-from exceptions import CoolipyAPIServiceException
-from services.coolify_api.base import CoolifyApiBase
+from coolipy.constants import COOLIFY_RETURN_TYPES
+from coolipy.exceptions import CoolipyAPIServiceException
+from coolipy.services.coolify_api.base import CoolifyApiBase
 
 class TestCoolifyApiBase(unittest.TestCase):
     def setUp(self):

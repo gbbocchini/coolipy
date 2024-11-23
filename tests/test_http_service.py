@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch, MagicMock
-from services.http_service import HttpService, CoolipyHttpServiceException
+from coolipy.services.http_service import HttpService, CoolipyHttpServiceException
 
 class TestHttpService(unittest.TestCase):
     def setUp(self):

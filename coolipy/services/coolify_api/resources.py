@@ -1,7 +1,7 @@
-from constants import COOLIFY_RETURN_TYPES
-from models.coolify_api_response import CoolifyAPIResponse
+from coolipy.constants import COOLIFY_RETURN_TYPES
+from coolipy.models.coolify_api_response import CoolifyAPIResponse
 from .base import CoolifyApiBase
-from models.resources import ResourceModel
+from coolipy.models.resources import ResourceModel
 
 
 class Resources(CoolifyApiBase):

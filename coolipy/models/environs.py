@@ -2,8 +2,8 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Any, Optional, Union
 
-from models.base import CoolipyBaseModel
-from models.service import ServiceModel
+from coolipy.models.base import CoolipyBaseModel
+from coolipy.models.service import ServiceModel
 
 
 @dataclass

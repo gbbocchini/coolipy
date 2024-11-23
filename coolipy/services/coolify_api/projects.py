@@ -1,10 +1,10 @@
 import json
-from models.coolify_api_response import CoolifyAPIResponse
-from services.coolify_api.base import CoolifyApiBase
-from constants import COOLIFY_RETURN_TYPES
+from coolipy.models.coolify_api_response import CoolifyAPIResponse
+from coolipy.services.coolify_api.base import CoolifyApiBase
+from coolipy.constants import COOLIFY_RETURN_TYPES
 
-from models.projects import ProjectsModel
-from models.environs import EnvironmentsModel
+from coolipy.models.projects import ProjectsModel
+from coolipy.models.environs import EnvironmentsModel
 
 
 class Projects(CoolifyApiBase):

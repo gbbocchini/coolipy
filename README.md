@@ -14,7 +14,11 @@ pip install coolipy
 ## Features
 - Manage Coolify projects, servers, and deployments.
 - Simplify service creation and environment management.
-- Easily handle API interactions through an intuitive Python interface.
+- 1 dependency: requests.
+
+TO DO:
+
+- Async support.
 
 
 # Quick Start Guide

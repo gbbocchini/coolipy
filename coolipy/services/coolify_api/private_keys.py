@@ -1,9 +1,9 @@
 from dataclasses import asdict
 import json
 from typing import List
-from constants import COOLIFY_RETURN_TYPES
-from models.coolify_api_response import CoolifyAPIResponse
-from models.private_keys import PrivateKeysModel, PrivateKeysModelCreate
+from coolipy.constants import COOLIFY_RETURN_TYPES
+from coolipy.models.coolify_api_response import CoolifyAPIResponse
+from coolipy.models.private_keys import PrivateKeysModel, PrivateKeysModelCreate
 from .base import CoolifyApiBase
 from copy import deepcopy
 
