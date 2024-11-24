@@ -27,8 +27,14 @@ TO DO:
 - Async support.
 
 
+## Lib Assets
 
-# Quick Start Guide
+- `coolipy.models`: hold all data models used to hold retrieved data. Create methods use models names following the pattern: `<service>ModelCreate`;
+- `coolipy.services`: methods used to interact with the Coolify API.
+
+
+
+# Quick Start Guide/Examples
 
 - Import and Initialize
 ```python

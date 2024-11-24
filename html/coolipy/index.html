@@ -17,6 +17,7 @@
 hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
 hljs.highlightAll();
 })</script>
+<script></script>
 </head>
 <body>
 <main>
@@ -59,12 +60,95 @@ hljs.highlightAll();
 <span>(</span><span>coolify_api_key: str, coolify_endpoint: str, coolify_port: int = 8000, http_protocol: str = 'http')</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>The main entry point for interacting with the Coolify API using Coolipy.</p>
+<p>This class provides methods and modules to access various Coolify resources,
+such as projects, deployments, servers, and more. It handles authentication,
+API requests, and resource management for easy integration with the Coolify
+platform.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>projects</code></strong> :&ensp;<code>Projects</code></dt>
+<dd>Manages operations related to projects.</dd>
+<dt><strong><code>deployments</code></strong> :&ensp;<code>Deployments</code></dt>
+<dd>Handles deployment-related functionalities.</dd>
+<dt><strong><code>resources</code></strong> :&ensp;<code>Resources</code></dt>
+<dd>Provides access to resource management.</dd>
+<dt><strong><code>servers</code></strong> :&ensp;<code>Servers</code></dt>
+<dd>Facilitates interactions with server-related endpoints.</dd>
+<dt><strong><code>private_keys</code></strong> :&ensp;<code>PrivateKeys</code></dt>
+<dd>Manages private keys.</dd>
+<dt><strong><code>teams</code></strong> :&ensp;<code>Teams</code></dt>
+<dd>Handles team-related operations.</dd>
+<dt><strong><code>services</code></strong> :&ensp;<code>Services</code></dt>
+<dd>Accesses Coolify services.</dd>
+<dt><strong><code>databases</code></strong> :&ensp;<code>Databases</code></dt>
+<dd>Interacts with database functionalities.</dd>
+<dt><strong><code>applications</code></strong> :&ensp;<code>Applications</code></dt>
+<dd>Manages application-related operations.</dd>
+</dl>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>coolify_api_key</code></strong> :&ensp;<code>str</code></dt>
+<dd>The API key for authenticating with the Coolify API.</dd>
+<dt><strong><code>coolify_endpoint</code></strong> :&ensp;<code>str</code></dt>
+<dd>The endpoint URL of the Coolify server.</dd>
+<dt><strong><code>coolify_port</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>The port number for the Coolify server. Defaults to 8000.</dd>
+<dt><strong><code>http_protocol</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The HTTP protocol (e.g., "http" or "https"). Defaults to "http".</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<p>enable_api() -&gt; CoolifyAPIResponse:
+Enables the Coolify API.</p>
+<p>disable_api() -&gt; CoolifyAPIResponse:
+Disables the Coolify API.</p>
+<p>healthcheck() -&gt; CoolifyAPIResponse:
+Checks the health status of the Coolify server.</p>
+<p>version() -&gt; CoolifyAPIResponse:
+Retrieves the current version of the Coolify server.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class Coolipy:
+    &#34;&#34;&#34;
+    The main entry point for interacting with the Coolify API using Coolipy.
+
+    This class provides methods and modules to access various Coolify resources, 
+    such as projects, deployments, servers, and more. It handles authentication, 
+    API requests, and resource management for easy integration with the Coolify 
+    platform.
+
+    Attributes:
+        projects (Projects): Manages operations related to projects.
+        deployments (Deployments): Handles deployment-related functionalities.
+        resources (Resources): Provides access to resource management.
+        servers (Servers): Facilitates interactions with server-related endpoints.
+        private_keys (PrivateKeys): Manages private keys.
+        teams (Teams): Handles team-related operations.
+        services (Services): Accesses Coolify services.
+        databases (Databases): Interacts with database functionalities.
+        applications (Applications): Manages application-related operations.
+
+    Args:
+        coolify_api_key (str): The API key for authenticating with the Coolify API.
+        coolify_endpoint (str): The endpoint URL of the Coolify server.
+        coolify_port (int, optional): The port number for the Coolify server. Defaults to 8000.
+        http_protocol (str, optional): The HTTP protocol (e.g., &#34;http&#34; or &#34;https&#34;). Defaults to &#34;http&#34;.
+
+    Methods:
+        enable_api() -&gt; CoolifyAPIResponse:
+            Enables the Coolify API.
+
+        disable_api() -&gt; CoolifyAPIResponse:
+            Disables the Coolify API.
+
+        healthcheck() -&gt; CoolifyAPIResponse:
+            Checks the health status of the Coolify server.
+
+        version() -&gt; CoolifyAPIResponse:
+            Retrieves the current version of the Coolify server.
+    &#34;&#34;&#34;
     def __init__(
         self,
         coolify_api_key: str,

@@ -13,6 +13,44 @@ from coolipy.constants import API_BASE_ENTRYPOINT, URL_MAP
 
 
 class Coolipy:
+    """
+    The main entry point for interacting with the Coolify API using Coolipy.
+
+    This class provides methods and modules to access various Coolify resources, 
+    such as projects, deployments, servers, and more. It handles authentication, 
+    API requests, and resource management for easy integration with the Coolify 
+    platform.
+
+    Attributes:
+        projects (Projects): Manages operations related to projects.
+        deployments (Deployments): Handles deployment-related functionalities.
+        resources (Resources): Provides access to resource management.
+        servers (Servers): Facilitates interactions with server-related endpoints.
+        private_keys (PrivateKeys): Manages private keys.
+        teams (Teams): Handles team-related operations.
+        services (Services): Accesses Coolify services.
+        databases (Databases): Interacts with database functionalities.
+        applications (Applications): Manages application-related operations.
+
+    Args:
+        coolify_api_key (str): The API key for authenticating with the Coolify API.
+        coolify_endpoint (str): The endpoint URL of the Coolify server.
+        coolify_port (int, optional): The port number for the Coolify server. Defaults to 8000.
+        http_protocol (str, optional): The HTTP protocol (e.g., "http" or "https"). Defaults to "http".
+
+    Methods:
+        enable_api() -> CoolifyAPIResponse:
+            Enables the Coolify API.
+
+        disable_api() -> CoolifyAPIResponse:
+            Disables the Coolify API.
+
+        healthcheck() -> CoolifyAPIResponse:
+            Checks the health status of the Coolify server.
+
+        version() -> CoolifyAPIResponse:
+            Retrieves the current version of the Coolify server.
+    """
     def __init__(
         self,
         coolify_api_key: str,
