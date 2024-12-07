@@ -187,6 +187,7 @@ class ApplicationPublicModelCreate:
     ports_exposes: str
     instant_deploy: bool
 
+
 @dataclass
 class ApplicationPublicGHModelCreate(ApplicationPublicModelCreate):
     github_app_uuid: int
@@ -202,18 +203,22 @@ class ApplicationPrivateGHModelCreate(ApplicationPublicModelCreate):
     git_branch: str
     build_pack: COOLIFY_BUILD_PACKS
 
+
 @dataclass
 class ApplicationPublicPrivatePvtKeyGHModelCreate(ApplicationPublicModelCreate):
     private_key_uuid: str
+
 
 @dataclass
 class ApplicationDockerfileModelCreate(ApplicationPublicModelCreate):
     dockerfile: str
 
+
 @dataclass
 class ApplicationDockerImageModelCreate(ApplicationPublicModelCreate):
     docker_registry_image_name: str
     docker_registry_image_tag: Optional[str] = ""
+
 
 @dataclass
 class ApplicationDockerComposeModelCreate(ApplicationPublicModelCreate):

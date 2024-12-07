@@ -24,6 +24,7 @@ class Databases(CoolifyApiBase):
     """
     Provides methods for managing databases via the Coolify API.
     """
+
     def list(self) -> CoolifyAPIResponse:
         """
         Retrieves a list of all databases.
@@ -109,9 +110,13 @@ class Databases(CoolifyApiBase):
         content = self._http.post(
             f"{self._base_url}/{url_complement}", data=json.dumps(db_as_dict)
         )
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.single, DatabaseModel)
+        return self._handle_response(
+            content, COOLIFY_RETURN_TYPES.single, DatabaseModel
+        )
 
-    def update(self, database_uuid: str, database_model_update: DatabaseUpdateModel) -> CoolifyAPIResponse:
+    def update(
+        self, database_uuid: str, database_model_update: DatabaseUpdateModel
+    ) -> CoolifyAPIResponse:
         """
         Updates an existing database with new data.
 
@@ -127,7 +132,6 @@ class Databases(CoolifyApiBase):
             f"{self._base_url}/{database_uuid}", data=json.dumps(as_dict)
         )
         return self._handle_response(content, COOLIFY_RETURN_TYPES.raw)
-
 
     def start(self, database_uuid: str) -> CoolifyAPIResponse:
         """

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/constants.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/exceptions.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/models/index.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/services/index.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/models/coolify_api_response.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/index.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/models/applications.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/models/base.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/models/databases.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/models/deployments.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/models/env_vars.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/models/environs.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/models/private_keys.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/models/projects.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/models/resources.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/models/servers.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/models/service.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/models/teams.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/services/coolify_api/index.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/services/http_service.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/services/coolify_api/applications.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/services/coolify_api/base.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/services/coolify_api/databases.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/services/coolify_api/deployments.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/services/coolify_api/private_keys.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/services/coolify_api/projects.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/services/coolify_api/resources.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/services/coolify_api/servers.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/services/coolify_api/services.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://coolipydocs.gabrielbocchini.com.br/services/coolify_api/teams.html</loc>
+  <lastmod>2024-11-24T13:00:27+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>

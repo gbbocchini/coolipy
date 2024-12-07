@@ -129,6 +129,7 @@ class PostgreSQLModelCreate(DatabaseTypeCreateModelBase):
     public_port: Optional[int] = None
     limits_cpuset: Optional[str] = None
 
+
 @dataclass
 class ClickHouseModelCreate(DatabaseTypeCreateModelBase):
     clickhouse_admin_user: str
@@ -139,6 +140,7 @@ class ClickHouseModelCreate(DatabaseTypeCreateModelBase):
     public_port: Optional[int] = None
     limits_cpuset: Optional[str] = None
 
+
 @dataclass
 class DragonFlyModelCreate(DatabaseTypeCreateModelBase):
     dragonfly_password: str
@@ -147,6 +149,7 @@ class DragonFlyModelCreate(DatabaseTypeCreateModelBase):
     destination_uuid: Optional[str] = None
     public_port: Optional[int] = None
     limits_cpuset: Optional[str] = None
+
 
 @dataclass
 class RedisModelCreate(DatabaseTypeCreateModelBase):
@@ -158,6 +161,7 @@ class RedisModelCreate(DatabaseTypeCreateModelBase):
     public_port: Optional[int] = None
     limits_cpuset: Optional[str] = None
 
+
 @dataclass
 class KeyDBModelCreate(DatabaseTypeCreateModelBase):
     keydb_password: str
@@ -167,6 +171,7 @@ class KeyDBModelCreate(DatabaseTypeCreateModelBase):
     destination_uuid: Optional[str] = None
     public_port: Optional[int] = None
     limits_cpuset: Optional[str] = None
+
 
 @dataclass
 class MariaDBModelCreate(DatabaseTypeCreateModelBase):
@@ -181,23 +186,25 @@ class MariaDBModelCreate(DatabaseTypeCreateModelBase):
     public_port: Optional[int] = None
     limits_cpuset: Optional[str] = None
 
+
 @dataclass
 class MySQLModelCreate(DatabaseTypeCreateModelBase):
     mysql_root_password: str
     mysql_user: str
     mysql_database: str
-    mysql_conf: Optional[str] = None   
+    mysql_conf: Optional[str] = None
     image: str = "mysql"
     description: Optional[str] = None
     destination_uuid: Optional[str] = None
     public_port: Optional[int] = None
     limits_cpuset: Optional[str] = None
 
+
 @dataclass
 class MongoDBModelCreate(DatabaseTypeCreateModelBase):
     mongo_initdb_root_username: str
     mongo_conf: Optional[str] = None
-    image: str = "mongo"   
+    image: str = "mongo"
     description: Optional[str] = None
     destination_uuid: Optional[str] = None
     public_port: Optional[int] = None
@@ -256,5 +263,3 @@ DATABASE_TYPES_MAP = {
     MySQLModelCreate: "mysql",
     MongoDBModelCreate: "mongodb",
 }
-
-

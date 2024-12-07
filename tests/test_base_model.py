@@ -3,6 +3,7 @@ from unittest.mock import MagicMock
 from datetime import datetime
 from coolipy.models.base import CoolipyBaseModel
 
+
 class TestCoolipyBaseModel(unittest.TestCase):
     def setUp(self):
         self.model = CoolipyBaseModel()
@@ -20,14 +21,17 @@ class TestCoolipyBaseModel(unittest.TestCase):
 
     def test_dates_iso_to_datetime_valid(self):
         self.model.sentinel_updated_at = "2024-11-22T10:00:00"
-        
+
         self.model._dates_iso_to_datetime()
 
-        self.assertEqual(self.model.sentinel_updated_at, datetime.fromisoformat("2024-11-22T10:00:00"))
+        self.assertEqual(
+            self.model.sentinel_updated_at,
+            datetime.fromisoformat("2024-11-22T10:00:00"),
+        )
 
     def test_dates_iso_to_datetime_invalid(self):
         self.model.sentinel_updated_at = "invalid-date"
-        
+
         self.model._dates_iso_to_datetime()
 
         self.assertEqual(self.model.sentinel_updated_at, "invalid-date")
@@ -38,4 +42,3 @@ class TestCoolipyBaseModel(unittest.TestCase):
         self.model._adjust_nested()
 
         self.model._adjust_nested.assert_called_once()
-

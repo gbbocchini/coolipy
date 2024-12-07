@@ -1,6 +1,7 @@
 import unittest
 from unittest.mock import patch, MagicMock
-from coolipy import Coolipy
+from coolipy.coolipy import Coolipy
+
 
 class TestCoolipy(unittest.TestCase):
     def setUp(self):

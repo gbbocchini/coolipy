@@ -16,9 +16,9 @@ class Coolipy:
     """
     The main entry point for interacting with the Coolify API using Coolipy.
 
-    This class provides methods and modules to access various Coolify resources, 
-    such as projects, deployments, servers, and more. It handles authentication, 
-    API requests, and resource management for easy integration with the Coolify 
+    This class provides methods and modules to access various Coolify resources,
+    such as projects, deployments, servers, and more. It handles authentication,
+    API requests, and resource management for easy integration with the Coolify
     platform.
 
     Attributes:
@@ -51,12 +51,13 @@ class Coolipy:
         version() -> CoolifyAPIResponse:
             Retrieves the current version of the Coolify server.
     """
+
     def __init__(
         self,
         coolify_api_key: str,
         coolify_endpoint: str,
         coolify_port: int = 8000,
-        http_protocol: str = "http"
+        http_protocol: str = "http",
     ):
         self._coolify_url = f"{http_protocol}://{coolify_endpoint}:{coolify_port}"
         self._api_base_endpoint = f"{self._coolify_url}{API_BASE_ENTRYPOINT}"
@@ -92,18 +93,49 @@ class Coolipy:
         )
 
     def enable_api(self) -> CoolifyAPIResponse:
+        """
+        Enables the Coolify API.
+
+        This method sends a request to enable the Coolify API on the target server.
+
+        Returns:
+            CoolifyAPIResponse: The response object containing the status of the operation.
+        """
         content = self._http.get(f"{self._coolify_url}{URL_MAP.enable}")
         return content
 
     def disable_api(self) -> CoolifyAPIResponse:
+        """
+        Disables the Coolify API.
+
+        This method sends a request to disable the Coolify API on the target server.
+
+        Returns:
+            CoolifyAPIResponse: The response object containing the status of the operation.
+        """
         content = self._http.get(f"{self._coolify_url}{URL_MAP.disable}")
         return content
 
     def healthcheck(self) -> CoolifyAPIResponse:
+        """
+        Performs a health check on the Coolify server.
+
+        This method verifies the server's status and ensures it is operational.
+
+        Returns:
+            CoolifyAPIResponse: The response object containing the server's health status.
+        """
         content = self._http.get(f"{self._coolify_url}{URL_MAP.health}")
         return content
-    
+
     def version(self) -> CoolifyAPIResponse:
+        """
+        Retrieves the current version of the Coolify server.
+
+        This method fetches version details from the server, including the API version.
+
+        Returns:
+            CoolifyAPIResponse: The response object containing the server version information.
+        """
         content = self._http.get(f"{self._coolify_url}{URL_MAP.version}")
         return content
-

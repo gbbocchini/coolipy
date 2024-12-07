@@ -56,7 +56,7 @@ class CoolifyApiBase:
             CoolipyAPIServiceException: If the model type is not found in the model_map.
         """
         url_complement = None
-        
+
         for model_type, url in model_map.items():
             if isinstance(model, model_type):
                 url_complement = url

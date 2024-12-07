@@ -2,6 +2,7 @@ import unittest
 from unittest.mock import patch, MagicMock
 from coolipy.services.http_service import HttpService, CoolipyHttpServiceException
 
+
 class TestHttpService(unittest.TestCase):
     def setUp(self):
         self.api_base_endpoint = "http://example.com/api"
@@ -16,7 +17,7 @@ class TestHttpService(unittest.TestCase):
         mock_get.return_value = mock_response
 
         response = self.http_service.get("/endpoint")
-        
+
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.data, {"key": "value"})
 
@@ -52,7 +53,7 @@ class TestHttpService(unittest.TestCase):
         mock_delete.return_value = mock_response
 
         response = self.http_service.delete("/endpoint")
-        
+
         self.assertEqual(response.status_code, 204)
         self.assertEqual(response.data, "")
 

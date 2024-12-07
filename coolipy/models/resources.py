@@ -14,6 +14,7 @@ class ResourceModel(CoolipyBaseModel):
     """
     Coolify Resource data model.
     """
+
     id: Optional[int] = None
     repository_project_id: Optional[int] = None
     uuid: Optional[str] = None
@@ -119,8 +120,6 @@ class ResourceModel(CoolipyBaseModel):
     external_db_url: Optional[str] = None
     database_type: Optional[str] = None
 
-
-
     def _adjust_nested(self):
         raw_server = self.server
         raw_dest = self.destination
@@ -128,9 +127,9 @@ class ResourceModel(CoolipyBaseModel):
 
         if isinstance(raw_server, dict) and raw_server:
             self.server = ServerModel(**raw_server).pythonify()
-        
+
         if isinstance(raw_dest, dict) and raw_dest:
             self.destination = DestinationModel(**raw_dest).pythonify()
-        
+
         if isinstance(raw_env, dict) and raw_env:
             self.deployment_environment = EnvironmentsModel(**raw_env).pythonify()

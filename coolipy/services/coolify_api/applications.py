@@ -20,7 +20,8 @@ from coolipy.models.coolify_api_response import CoolifyAPIResponse
 class Applications(CoolifyApiBase):
     """
     Provides methods for managing applications via the Coolify API.
-    """    
+    """
+
     def list(self) -> CoolifyAPIResponse:
         """
         Retrieves a list of all applications.
@@ -60,7 +61,9 @@ class Applications(CoolifyApiBase):
         content = self._http.post(
             f"{self._base_url}/{url_complement}", data=json.dumps(model_as_dict)
         )
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.single, ApplicationModel)
+        return self._handle_response(
+            content, COOLIFY_RETURN_TYPES.single, ApplicationModel
+        )
 
     def get(self, application_uuid: str) -> CoolifyAPIResponse:
         """
