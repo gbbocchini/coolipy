@@ -497,6 +497,13 @@
             hljs.configure({ languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml'] });
             hljs.highlightAll();
         })</script>
+    <script src="https://coolipy-rum.s3.us-east-1.amazonaws.com/elastic-apm-rum.umd.min.js" crossorigin></script>
+    <script>
+        elasticApm.init({
+            serviceName: 'coolipy-docs',
+            serverUrl: 'https://84b3afd273634acabe46950fe95c9687.apm.southamerica-east1.gcp.elastic-cloud.com:443',
+        })
+    </script>
 </head>
 
 <body>
