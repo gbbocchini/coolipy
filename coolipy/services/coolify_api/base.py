@@ -11,6 +11,10 @@ from coolipy.models.coolify_api_response import CoolifyAPIResponse
 from coolipy.models.projects import ProjectsModel
 from coolipy.models.resources import ResourceModel
 from coolipy.models.servers import ServerModel
+from models.applications import ApplicationModel
+from models.databases import DatabaseModel
+from models.env_vars import EnvVarModel
+from models.service import ServiceModel
 
 
 class CoolifyApiBase:
@@ -83,6 +87,10 @@ class CoolifyApiBase:
                 EnvironmentsModel,
                 TeamModel,
                 TeamMemberModel,
+                ApplicationModel,
+                EnvVarModel,
+                DatabaseModel,
+                ServiceModel,
             ]
         ] = None,
     ) -> CoolifyAPIResponse:
