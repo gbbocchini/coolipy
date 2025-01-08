@@ -1,6 +1,6 @@
 # Coolipy
 
-**The first (un)official Python client for the [Coolify](https://coolify.io/).**  
+**The first (un)official Python client for the [Coolify](https://coolify.io/).**
 Coolipy simplifies programmatically interacting with Coolify by providing wrappers around [Coolify API](https://coolify.io/docs/api), enabling you to manage projects, deployments, servers, services, and more with python scripts.
 
 - Lib docs: https://coolipydocs.gabrielbocchini.com.br/
@@ -15,7 +15,7 @@ pip install coolipy
 ```
 
 ## Features
-- Manage Coolify projects, servers, applications, deployments and more (everything the Coolify App offers)ç
+- Manage Coolify projects, servers, applications, deployments and more (everything the Coolify App offers);
 - Infra as code;
 - 1 dependency: requests>=2.32.3;
 - Datamodels for all endpoints;
@@ -126,7 +126,7 @@ new_app = coolify_client.applications.create(app_data)
 
 # Contributing
 
-- Before opening a pull request or issue, take some time to understand if the issue should be treated at 
+- Before opening a pull request or issue, take some time to understand if the issue should be treated at
 this client level OR the Coolify REST API;
 - Create a fork of this repo and then submit a pull request;
 - Respect Python PEPs and type inference;
@@ -137,4 +137,3 @@ this client level OR the Coolify REST API;
 # License
 
 This project is licensed under the Apache License 2.0. See the [LICENSE](./LICENSE) file for details.
-
