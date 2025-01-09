@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "coolipy"
-version = "0.0.4"
+version = "0.0.6"
 authors = [
   { name="Gabriel Bocchini", email="gabrielbocchini@gmail.com" },
 ]
@@ -26,9 +26,5 @@ dependencies = [
 Homepage = "https://github.com/gbbocchini/coolipy"
 Documentation = "https://coolipydocs.gabrielbocchini.com.br/"
 
-
-[tool.setuptools.packages.find]
-where = ["."]  
-include = ['models', 'services']
-exclude = []
-namespaces = false
+[tool.setuptools]
+packages = ["coolipy", "coolipy.models", "coolipy.services", "coolipy.services.coolify_api"]
