@@ -64,7 +64,7 @@ class CoolifyApiBase:
 
         if not url_complement:
             raise CoolipyAPIServiceException(
-                f"model argument must be one of: {[i for i in model_map.keys()]}."
+                f"model argument must be one of: {model_map.keys()}."
             )
 
         return url_complement
