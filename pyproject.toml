@@ -6,14 +6,21 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "coolipy"
-version = "0.0.6"
+version = "0.0.7"
 authors = [
   { name="Gabriel Bocchini", email="gabrielbocchini@gmail.com" },
 ]
-description = "Coolipy - (Un)oficial Coolify - coolify.io - Python client!"
+maintainers = [
+  { name="Gabriel Bocchini", email="gabrielbocchini@gmail.com" },
+]
+description = "Coolipy - (Un)official Coolify - coolify.io - Python client!"
+keywords = ["coolify", "rest client", "api client"]
 readme = "README.md"
 requires-python = ">=3.10"
 classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
@@ -25,6 +32,7 @@ dependencies = [
 [project.urls]
 Homepage = "https://github.com/gbbocchini/coolipy"
 Documentation = "https://coolipydocs.gabrielbocchini.com.br/"
+Repository = "https://github.com/gbbocchini/coolipy"
 
 [tool.setuptools]
 packages = ["coolipy", "coolipy.models", "coolipy.services", "coolipy.services.coolify_api"]
