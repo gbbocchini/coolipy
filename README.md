@@ -31,7 +31,7 @@ TO DO:
 
 - `coolipy.models`: hold all data models used to hold retrieved data. Create methods use models names following the pattern: `<service>ModelCreate`;
 - `coolipy.services`: methods used to interact with the Coolify API.
-
+-
 
 
 # Quick Start Guide/Examples
@@ -48,14 +48,122 @@ coolify_client = Coolipy(
 
 ## Example Usage
 
-- Get Project Information
+- Create a Project
 ```python
-my_project = coolify_client.projects.get(project_uuid="your_project_uuid")
+my_project = coolify_client.projects.create(project_name="MyProject", project_description="This is MyProject description")
+```
+
+The response will be a [CoolipyAPIResponse](https://github.com/gbbocchini/coolipy/blob/main/coolipy/models/coolify_api_response.py) containing the Coolify api response code and `data`, in this case, will be a [ProjectsModel](https://github.com/gbbocchini/coolipy/blob/main/coolipy/models/projects.py).
+
+```bash
+>print(my_project)
+
+CoolifyAPIResponse(
+    status_code=201,
+    data=ProjectsModel(
+        name=MyProject,
+        description=This is MyProject description,
+        id=None,
+        uuid='b84skk8c4owskskogko40s44',
+        default_environment=None,
+        environments=[],
+        team_id=None,
+        created_at=None,
+        updated_at=None
+    )
+)
+```
+
+- List Servers
+```python
+servers = coolify_client.servers.list()
+
+>print(servers)
+
+CoolifyAPIResponse(
+    status_code=200,
+    data=[
+        ServerModel(
+            id=None,
+            description="This is the server where Coolify is running on. Don't delete this!",
+            name='localhost', ip='host.docker.internal',
+            port=22,
+            user='root',
+            private_key_id=None,
+            uuid='gwogk4ssckgw8gwokcswww4o',
+            team_id=None,
+            sentinel_updated_at=None,
+            reated_at=None,
+            updated_at=None,
+            deleted_at=None,
+            high_disk_usage_notification_sent=False,
+            log_drain_notification_sent=False,
+            swarm_cluster=False,
+            validation_logs=None,
+            unreachable_count=None,
+            unreachable_notification_sent=False,
+            proxy=ServerProxyModel(
+                type='traefik',
+                status=None,
+                last_saved_settings=None,
+                last_applied_settings=None,
+                force_stop=None,
+                redirect_enabled=True
+            ),
+            settings=ServerSettingsModel(
+                id=1,
+                concurrent_builds=2,
+                delete_unused_networks=False,
+                delete_unused_volumes=False,
+                docker_cleanup_frequency='0 0 * * *',
+                docker_cleanup_threshold=80,
+                dynamic_timeout=3600,
+                force_disabled=False,
+                force_docker_cleanup=True,
+                generate_exact_labels=False,
+                is_build_server=False,
+                is_cloudflare_tunnel=False,
+                is_jump_server=False,
+                is_logdrain_axiom_enabled=False,
+                is_logdrain_custom_enabled=False,
+                is_logdrain_highlight_enabled=False,
+                is_logdrain_newrelic_enabled=False,
+                is_metrics_enabled=False,
+                is_reachable=True,
+                is_sentinel_debug_enabled=False,
+                is_sentinel_enabled=False,
+                is_swarm_manager=False,
+                is_swarm_worker=False,
+                is_usable=True,
+                sentinel_custom_url='http://host.docker.internal:8000',
+                sentinel_metrics_history_days=7,
+                sentinel_metrics_refresh_rate_seconds=10,
+                sentinel_push_interval_seconds=60,
+                sentinel_token='==',
+                server_disk_usage_notification_threshold=80,
+                server_id=0, server_timezone='UTC',
+                 created_at=datetime.datetime(2025, 1, 13, 19, 6, 12, tzinfo=datetime.timezone.utc),
+                 updated_at=datetime.datetime(2025, 1, 13, 19, 7, 19, tzinfo=datetime.timezone.utc),
+                 logdrain_axiom_api_key=None,
+                 logdrain_axiom_dataset_name=None,
+                 logdrain_custom_config=None,
+                 logdrain_custom_config_parser=None,
+                 logdrain_highlight_project_id=None,
+                 logdrain_newrelic_base_uri=None,
+                 logdrain_newrelic_license_key=None,
+                 wildcard_domain=None
+            ),
+            is_reachable=True,
+            is_usable=True
+        )
+    ]
+)
 ```
 
 - Create a Service
 ```python
 from coolipy.models.service import ServiceModelCreate
+from coolipy.constants import COOLIFY_SERVICE_TYPES
 
 service_data = ServiceModelCreate(
     type=COOLIFY_SERVICE_TYPES.glance,
@@ -67,12 +175,6 @@ service_data = ServiceModelCreate(
     environment_name="production"
 )
 new_service = coolify_client.services.create(service_data)
-```
-
-
-- List Servers
-```python
-servers = coolify_client.servers.list()
 ```
 
 - Create a DB:
