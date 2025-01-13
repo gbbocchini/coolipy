@@ -17,6 +17,7 @@ class ServerProxyModel:
     last_saved_settings: Optional[str] = None
     last_applied_settings: Optional[str] = None
     force_stop: Optional[bool] = None
+    redirect_enabled: Optional[bool] = None
 
 
 @dataclass
