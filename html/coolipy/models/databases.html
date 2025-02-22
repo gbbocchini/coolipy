@@ -989,7 +989,7 @@ class MariaDBModelCreate(DatabaseTypeCreateModelBase):
 class MongoDBModelCreate(DatabaseTypeCreateModelBase):
     mongo_initdb_root_username: str
     mongo_conf: Optional[str] = None
-    image: str = &#34;mongo&#34;   
+    image: str = &#34;mongo&#34;
     description: Optional[str] = None
     destination_uuid: Optional[str] = None
     public_port: Optional[int] = None
@@ -1046,7 +1046,7 @@ class MySQLModelCreate(DatabaseTypeCreateModelBase):
     mysql_root_password: str
     mysql_user: str
     mysql_database: str
-    mysql_conf: Optional[str] = None   
+    mysql_conf: Optional[str] = None
     image: str = &#34;mysql&#34;
     description: Optional[str] = None
     destination_uuid: Optional[str] = None

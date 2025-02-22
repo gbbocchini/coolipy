@@ -96,7 +96,7 @@ hljs.highlightAll();
             CoolipyAPIServiceException: If the model type is not found in the model_map.
         &#34;&#34;&#34;
         url_complement = None
-        
+
         for model_type, url in model_map.items():
             if isinstance(model, model_type):
                 url_complement = url
@@ -104,7 +104,7 @@ hljs.highlightAll();
 
         if not url_complement:
             raise CoolipyAPIServiceException(
-                f&#34;model argument must be one of: {[i for i in model_map.keys()]}.&#34;
+                f&#34;model argument must be one of: {model_map.keys()}.&#34;
             )
 
         return url_complement
