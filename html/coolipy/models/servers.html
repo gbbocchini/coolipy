@@ -37,7 +37,7 @@ hljs.highlightAll();
 <dl>
 <dt id="coolipy.models.servers.ServerModel"><code class="flex name class">
 <span>class <span class="ident">ServerModel</span></span>
-<span>(</span><span>id: Optional[str] = None, description: Optional[str] = None, name: Optional[str] = None, ip: Optional[str] = None, port: Optional[int] = None, user: Optional[str] = None, private_key_id: Optional[int] = None, uuid: Optional[str] = None, team_id: Optional[int] = None, sentinel_updated_at: Optional[str] = None, created_at: Union[str, datetime.datetime, ForwardRef(None)] = None, updated_at: Union[str, datetime.datetime, ForwardRef(None)] = None, deleted_at: Union[str, datetime.datetime, ForwardRef(None)] = None, high_disk_usage_notification_sent: Optional[bool] = False, log_drain_notification_sent: Optional[bool] = False, swarm_cluster: Optional[bool] = False, validation_logs: Optional[str] = None, unreachable_count: Optional[int] = None, unreachable_notification_sent: Optional[bool] = False, proxy: Optional[<a title="coolipy.models.servers.ServerProxyModel" href="#coolipy.models.servers.ServerProxyModel">ServerProxyModel</a>] = None, settings: Optional[<a title="coolipy.models.servers.ServerSettingsModel" href="#coolipy.models.servers.ServerSettingsModel">ServerSettingsModel</a>] = None, is_reachable: Optional[bool] = None, is_usable: Optional[bool] = None)</span>
+<span>(</span><span>id: Optional[str] = None, description: Optional[str] = None, name: Optional[str] = None, ip: Optional[str] = None, port: Optional[int] = None, user: Optional[str] = None, private_key_id: Optional[int] = None, uuid: Optional[str] = None, team_id: Optional[int] = None, sentinel_updated_at: Optional[str] = None, created_at: Union[str, datetime.datetime, ForwardRef(None)] = None, updated_at: Union[str, datetime.datetime, ForwardRef(None)] = None, deleted_at: Union[str, datetime.datetime, ForwardRef(None)] = None, high_disk_usage_notification_sent: Optional[bool] = False, log_drain_notification_sent: Optional[bool] = False, swarm_cluster: Optional[bool] = False, validation_logs: Optional[str] = None, unreachable_count: Optional[int] = None, unreachable_notification_sent: Optional[bool] = False, proxy: Optional[<a title="coolipy.models.servers.ServerProxyModel" href="#coolipy.models.servers.ServerProxyModel">ServerProxyModel</a>] = None, settings: Optional[<a title="coolipy.models.servers.ServerSettingsModel" href="#coolipy.models.servers.ServerSettingsModel">ServerSettingsModel</a>] = None, is_reachable: Optional[bool] = None, is_usable: Optional[bool] = None, is_coolify_host: Optional[bool] = None)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Coolify Server data model.</p></div>
@@ -74,6 +74,7 @@ class ServerModel(CoolipyBaseModel):
     settings: Optional[ServerSettingsModel] = None
     is_reachable: Optional[bool] = None
     is_usable: Optional[bool] = None
+    is_coolify_host: Optional[bool] = None
 
     @override
     def _adjust_nested(self):
@@ -114,6 +115,10 @@ class ServerModel(CoolipyBaseModel):
 <div class="desc"></div>
 </dd>
 <dt id="coolipy.models.servers.ServerModel.ip"><code class="name">var <span class="ident">ip</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.servers.ServerModel.is_coolify_host"><code class="name">var <span class="ident">is_coolify_host</span> : Optional[bool]</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -259,7 +264,7 @@ class ServerModelCreate:
 </dd>
 <dt id="coolipy.models.servers.ServerProxyModel"><code class="flex name class">
 <span>class <span class="ident">ServerProxyModel</span></span>
-<span>(</span><span>type: Optional[str] = 'traefik', status: Optional[str] = None, last_saved_settings: Optional[str] = None, last_applied_settings: Optional[str] = None, force_stop: Optional[bool] = None)</span>
+<span>(</span><span>type: Optional[str] = 'traefik', status: Optional[str] = None, last_saved_settings: Optional[str] = None, last_applied_settings: Optional[str] = None, force_stop: Optional[bool] = None, redirect_enabled: Optional[bool] = None)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Coolify Server Proxy data model.</p></div>
@@ -277,7 +282,8 @@ class ServerProxyModel:
     status: Optional[str] = None
     last_saved_settings: Optional[str] = None
     last_applied_settings: Optional[str] = None
-    force_stop: Optional[bool] = None</code></pre>
+    force_stop: Optional[bool] = None
+    redirect_enabled: Optional[bool] = None</code></pre>
 </details>
 <h3>Class variables</h3>
 <dl>
@@ -293,6 +299,10 @@ class ServerProxyModel:
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="coolipy.models.servers.ServerProxyModel.redirect_enabled"><code class="name">var <span class="ident">redirect_enabled</span> : Optional[bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="coolipy.models.servers.ServerProxyModel.status"><code class="name">var <span class="ident">status</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"></div>
@@ -305,7 +315,7 @@ class ServerProxyModel:
 </dd>
 <dt id="coolipy.models.servers.ServerSettingsModel"><code class="flex name class">
 <span>class <span class="ident">ServerSettingsModel</span></span>
-<span>(</span><span>id: Optional[int] = None, concurrent_builds: Optional[int] = None, delete_unused_networks: Optional[bool] = None, delete_unused_volumes: Optional[bool] = None, docker_cleanup_frequency: Optional[str] = None, docker_cleanup_threshold: Optional[int] = None, dynamic_timeout: Optional[int] = None, force_disabled: Optional[bool] = None, force_docker_cleanup: Optional[bool] = None, generate_exact_labels: Optional[bool] = None, is_build_server: Optional[bool] = None, is_cloudflare_tunnel: Optional[bool] = None, is_jump_server: Optional[bool] = None, is_logdrain_axiom_enabled: Optional[bool] = None, is_logdrain_custom_enabled: Optional[bool] = None, is_logdrain_highlight_enabled: Optional[bool] = None, is_logdrain_newrelic_enabled: Optional[bool] = None, is_metrics_enabled: Optional[bool] = None, is_reachable: Optional[bool] = None, is_sentinel_debug_enabled: Optional[bool] = None, is_sentinel_enabled: Optional[bool] = None, is_swarm_manager: Optional[bool] = None, is_swarm_worker: Optional[bool] = None, is_usable: Optional[bool] = None, sentinel_custom_url: Optional[str] = None, sentinel_metrics_history_days: Optional[int] = None, sentinel_metrics_refresh_rate_seconds: Optional[int] = None, sentinel_push_interval_seconds: Optional[int] = None, sentinel_token: Optional[str] = None, server_disk_usage_notification_threshold: Optional[int] = None, server_id: Optional[int] = None, server_timezone: Optional[str] = None, created_at: Union[str, datetime.datetime, ForwardRef(None)] = None, updated_at: Union[str, datetime.datetime, ForwardRef(None)] = None, logdrain_axiom_api_key: Optional[str] = None, logdrain_axiom_dataset_name: Optional[str] = None, logdrain_custom_config: Optional[str] = None, logdrain_custom_config_parser: Optional[str] = None, logdrain_highlight_project_id: Optional[str] = None, logdrain_newrelic_base_uri: Optional[str] = None, logdrain_newrelic_license_key: Optional[str] = None, wildcard_domain: Optional[str] = None)</span>
+<span>(</span><span>id: Optional[int] = None, concurrent_builds: Optional[int] = None, delete_unused_networks: Optional[bool] = None, delete_unused_volumes: Optional[bool] = None, docker_cleanup_frequency: Optional[str] = None, docker_cleanup_threshold: Optional[int] = None, dynamic_timeout: Optional[int] = None, force_disabled: Optional[bool] = None, force_docker_cleanup: Optional[bool] = None, generate_exact_labels: Optional[bool] = None, is_build_server: Optional[bool] = None, is_cloudflare_tunnel: Optional[bool] = None, is_jump_server: Optional[bool] = None, is_logdrain_axiom_enabled: Optional[bool] = None, is_logdrain_custom_enabled: Optional[bool] = None, is_logdrain_highlight_enabled: Optional[bool] = None, is_logdrain_newrelic_enabled: Optional[bool] = None, is_metrics_enabled: Optional[bool] = None, is_reachable: Optional[bool] = None, is_sentinel_debug_enabled: Optional[bool] = None, is_sentinel_enabled: Optional[bool] = None, is_swarm_manager: Optional[bool] = None, is_swarm_worker: Optional[bool] = None, is_usable: Optional[bool] = None, sentinel_custom_url: Optional[str] = None, sentinel_metrics_history_days: Optional[int] = None, sentinel_metrics_refresh_rate_seconds: Optional[int] = None, sentinel_push_interval_seconds: Optional[int] = None, sentinel_token: Optional[str] = None, server_disk_usage_notification_threshold: Optional[int] = None, server_id: Optional[int] = None, server_timezone: Optional[str] = None, created_at: Union[str, datetime.datetime, ForwardRef(None)] = None, updated_at: Union[str, datetime.datetime, ForwardRef(None)] = None, logdrain_axiom_api_key: Optional[str] = None, logdrain_axiom_dataset_name: Optional[str] = None, logdrain_custom_config: Optional[str] = None, logdrain_custom_config_parser: Optional[str] = None, logdrain_highlight_project_id: Optional[str] = None, logdrain_newrelic_base_uri: Optional[str] = None, logdrain_newrelic_license_key: Optional[str] = None, wildcard_domain: Optional[str] = None, server_disk_usage_check_frequency: Optional[str] = None)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Coolify Server Settings data model.</p></div>
@@ -360,7 +370,8 @@ class ServerSettingsModel(CoolipyBaseModel):
     logdrain_highlight_project_id: Optional[str] = None
     logdrain_newrelic_base_uri: Optional[str] = None
     logdrain_newrelic_license_key: Optional[str] = None
-    wildcard_domain: Optional[str] = None</code></pre>
+    wildcard_domain: Optional[str] = None
+    server_disk_usage_check_frequency: Optional[str] = None</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
@@ -516,6 +527,10 @@ class ServerSettingsModel(CoolipyBaseModel):
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="coolipy.models.servers.ServerSettingsModel.server_disk_usage_check_frequency"><code class="name">var <span class="ident">server_disk_usage_check_frequency</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="coolipy.models.servers.ServerSettingsModel.server_disk_usage_notification_threshold"><code class="name">var <span class="ident">server_disk_usage_notification_threshold</span> : Optional[int]</code></dt>
 <dd>
 <div class="desc"></div>
@@ -570,6 +585,7 @@ class ServerSettingsModel(CoolipyBaseModel):
 <li><code><a title="coolipy.models.servers.ServerModel.high_disk_usage_notification_sent" href="#coolipy.models.servers.ServerModel.high_disk_usage_notification_sent">high_disk_usage_notification_sent</a></code></li>
 <li><code><a title="coolipy.models.servers.ServerModel.id" href="#coolipy.models.servers.ServerModel.id">id</a></code></li>
 <li><code><a title="coolipy.models.servers.ServerModel.ip" href="#coolipy.models.servers.ServerModel.ip">ip</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerModel.is_coolify_host" href="#coolipy.models.servers.ServerModel.is_coolify_host">is_coolify_host</a></code></li>
 <li><code><a title="coolipy.models.servers.ServerModel.is_reachable" href="#coolipy.models.servers.ServerModel.is_reachable">is_reachable</a></code></li>
 <li><code><a title="coolipy.models.servers.ServerModel.is_usable" href="#coolipy.models.servers.ServerModel.is_usable">is_usable</a></code></li>
 <li><code><a title="coolipy.models.servers.ServerModel.log_drain_notification_sent" href="#coolipy.models.servers.ServerModel.log_drain_notification_sent">log_drain_notification_sent</a></code></li>
@@ -609,6 +625,7 @@ class ServerSettingsModel(CoolipyBaseModel):
 <li><code><a title="coolipy.models.servers.ServerProxyModel.force_stop" href="#coolipy.models.servers.ServerProxyModel.force_stop">force_stop</a></code></li>
 <li><code><a title="coolipy.models.servers.ServerProxyModel.last_applied_settings" href="#coolipy.models.servers.ServerProxyModel.last_applied_settings">last_applied_settings</a></code></li>
 <li><code><a title="coolipy.models.servers.ServerProxyModel.last_saved_settings" href="#coolipy.models.servers.ServerProxyModel.last_saved_settings">last_saved_settings</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerProxyModel.redirect_enabled" href="#coolipy.models.servers.ServerProxyModel.redirect_enabled">redirect_enabled</a></code></li>
 <li><code><a title="coolipy.models.servers.ServerProxyModel.status" href="#coolipy.models.servers.ServerProxyModel.status">status</a></code></li>
 <li><code><a title="coolipy.models.servers.ServerProxyModel.type" href="#coolipy.models.servers.ServerProxyModel.type">type</a></code></li>
 </ul>
@@ -653,6 +670,7 @@ class ServerSettingsModel(CoolipyBaseModel):
 <li><code><a title="coolipy.models.servers.ServerSettingsModel.sentinel_metrics_refresh_rate_seconds" href="#coolipy.models.servers.ServerSettingsModel.sentinel_metrics_refresh_rate_seconds">sentinel_metrics_refresh_rate_seconds</a></code></li>
 <li><code><a title="coolipy.models.servers.ServerSettingsModel.sentinel_push_interval_seconds" href="#coolipy.models.servers.ServerSettingsModel.sentinel_push_interval_seconds">sentinel_push_interval_seconds</a></code></li>
 <li><code><a title="coolipy.models.servers.ServerSettingsModel.sentinel_token" href="#coolipy.models.servers.ServerSettingsModel.sentinel_token">sentinel_token</a></code></li>
+<li><code><a title="coolipy.models.servers.ServerSettingsModel.server_disk_usage_check_frequency" href="#coolipy.models.servers.ServerSettingsModel.server_disk_usage_check_frequency">server_disk_usage_check_frequency</a></code></li>
 <li><code><a title="coolipy.models.servers.ServerSettingsModel.server_disk_usage_notification_threshold" href="#coolipy.models.servers.ServerSettingsModel.server_disk_usage_notification_threshold">server_disk_usage_notification_threshold</a></code></li>
 <li><code><a title="coolipy.models.servers.ServerSettingsModel.server_id" href="#coolipy.models.servers.ServerSettingsModel.server_id">server_id</a></code></li>
 <li><code><a title="coolipy.models.servers.ServerSettingsModel.server_timezone" href="#coolipy.models.servers.ServerSettingsModel.server_timezone">server_timezone</a></code></li>

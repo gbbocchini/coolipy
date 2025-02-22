@@ -1,690 +1,186 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <meta name="generator" content="pdoc3 0.11.1">
-    <title>coolipy.constants API documentation - Coolipy - the (un)Official Coolify Python client</title>
-    <meta name="description" content="Coolipy - the (un)Offcial Coolify Python client documentation" />
-    <meta name="keywords" content="coolify python, coolify client, coolify client python, coolipy, coolify, python, docs, pip, python lib"/>
-    <meta name="author" content="Gabriel Bocchini" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css"
-        integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA=="
-        crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css"
-        integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA=="
-        crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
-        crossorigin>
-    <style>
-        :root {
-            --highlight-color: #fe9
-        }
-
-        .flex {
-            display: flex !important
-        }
-
-        body {
-            line-height: 1.5em
-        }
-
-        #content {
-            padding: 20px
-        }
-
-        #sidebar {
-            padding: 1.5em;
-            overflow: hidden
-        }
-
-        #sidebar>*:last-child {
-            margin-bottom: 2cm
-        }
-
-        .http-server-breadcrumbs {
-            font-size: 130%;
-            margin: 0 0 15px 0
-        }
-
-        #footer {
-            font-size: .75em;
-            padding: 5px 30px;
-            border-top: 1px solid #ddd;
-            text-align: right
-        }
-
-        #footer p {
-            margin: 0 0 0 1em;
-            display: inline-block
-        }
-
-        #footer p:last-child {
-            margin-right: 30px
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-            font-weight: 300
-        }
-
-        h1 {
-            font-size: 2.5em;
-            line-height: 1.1em
-        }
-
-        h2 {
-            font-size: 1.75em;
-            margin: 2em 0 .50em 0
-        }
-
-        h3 {
-            font-size: 1.4em;
-            margin: 1.6em 0 .7em 0
-        }
-
-        h4 {
-            margin: 0;
-            font-size: 105%
-        }
-
-        h1:target,
-        h2:target,
-        h3:target,
-        h4:target,
-        h5:target,
-        h6:target {
-            background: var(--highlight-color);
-            padding: .2em 0
-        }
-
-        a {
-            color: #058;
-            text-decoration: none;
-            transition: color .2s ease-in-out
-        }
-
-        a:visited {
-            color: #503
-        }
-
-        a:hover {
-            color: #b62
-        }
-
-        .title code {
-            font-weight: bold
-        }
-
-        h2[id^="header-"] {
-            margin-top: 2em
-        }
-
-        .ident {
-            color: #900;
-            font-weight: bold
-        }
-
-        pre code {
-            font-size: .8em;
-            line-height: 1.4em;
-            padding: 1em;
-            display: block
-        }
-
-        code {
-            background: #f3f3f3;
-            font-family: "DejaVu Sans Mono", monospace;
-            padding: 1px 4px;
-            overflow-wrap: break-word
-        }
-
-        h1 code {
-            background: transparent
-        }
-
-        pre {
-            border-top: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
-            margin: 1em 0
-        }
-
-        #http-server-module-list {
-            display: flex;
-            flex-flow: column
-        }
-
-        #http-server-module-list div {
-            display: flex
-        }
-
-        #http-server-module-list dt {
-            min-width: 10%
-        }
-
-        #http-server-module-list p {
-            margin-top: 0
-        }
-
-        .toc ul,
-        #index {
-            list-style-type: none;
-            margin: 0;
-            padding: 0
-        }
-
-        #index code {
-            background: transparent
-        }
-
-        #index h3 {
-            border-bottom: 1px solid #ddd
-        }
-
-        #index ul {
-            padding: 0
-        }
-
-        #index h4 {
-            margin-top: .6em;
-            font-weight: bold
-        }
-
-        @media (min-width:200ex) {
-            #index .two-column {
-                column-count: 2
-            }
-        }
-
-        @media (min-width:300ex) {
-            #index .two-column {
-                column-count: 3
-            }
-        }
-
-        dl {
-            margin-bottom: 2em
-        }
-
-        dl dl:last-child {
-            margin-bottom: 4em
-        }
-
-        dd {
-            margin: 0 0 1em 3em
-        }
-
-        #header-classes+dl>dd {
-            margin-bottom: 3em
-        }
-
-        dd dd {
-            margin-left: 2em
-        }
-
-        dd p {
-            margin: 10px 0
-        }
-
-        .name {
-            background: #eee;
-            font-size: .85em;
-            padding: 5px 10px;
-            display: inline-block;
-            min-width: 40%
-        }
-
-        .name:hover {
-            background: #e0e0e0
-        }
-
-        dt:target .name {
-            background: var(--highlight-color)
-        }
-
-        .name>span:first-child {
-            white-space: nowrap
-        }
-
-        .name.class>span:nth-child(2) {
-            margin-left: .4em
-        }
-
-        .inherited {
-            color: #999;
-            border-left: 5px solid #eee;
-            padding-left: 1em
-        }
-
-        .inheritance em {
-            font-style: normal;
-            font-weight: bold
-        }
-
-        .desc h2 {
-            font-weight: 400;
-            font-size: 1.25em
-        }
-
-        .desc h3 {
-            font-size: 1em
-        }
-
-        .desc dt code {
-            background: inherit
-        }
-
-        .source summary,
-        .git-link-div {
-            color: #666;
-            text-align: right;
-            font-weight: 400;
-            font-size: .8em;
-            text-transform: uppercase
-        }
-
-        .source summary>* {
-            white-space: nowrap;
-            cursor: pointer
-        }
-
-        .git-link {
-            color: inherit;
-            margin-left: 1em
-        }
-
-        .source pre {
-            max-height: 500px;
-            overflow: auto;
-            margin: 0
-        }
-
-        .source pre code {
-            font-size: 12px;
-            overflow: visible
-        }
-
-        .hlist {
-            list-style: none
-        }
-
-        .hlist li {
-            display: inline
-        }
-
-        .hlist li:after {
-            content: ',\2002'
-        }
-
-        .hlist li:last-child:after {
-            content: none
-        }
-
-        .hlist .hlist {
-            display: inline;
-            padding-left: 1em
-        }
-
-        img {
-            max-width: 100%
-        }
-
-        td {
-            padding: 0 .5em
-        }
-
-        .admonition {
-            padding: .1em 1em;
-            margin-bottom: 1em
-        }
-
-        .admonition-title {
-            font-weight: bold
-        }
-
-        .admonition.note,
-        .admonition.info,
-        .admonition.important {
-            background: #aef
-        }
-
-        .admonition.todo,
-        .admonition.versionadded,
-        .admonition.tip,
-        .admonition.hint {
-            background: #dfd
-        }
-
-        .admonition.warning,
-        .admonition.versionchanged,
-        .admonition.deprecated {
-            background: #fd4
-        }
-
-        .admonition.error,
-        .admonition.danger,
-        .admonition.caution {
-            background: lightpink
-        }
-    </style>
-    <style media="screen and (min-width: 700px)">
-        @media screen and (min-width:700px) {
-            #sidebar {
-                width: 30%;
-                height: 100vh;
-                overflow: auto;
-                position: sticky;
-                top: 0
-            }
-
-            #content {
-                width: 70%;
-                max-width: 100ch;
-                padding: 3em 4em;
-                border-left: 1px solid #ddd
-            }
-
-            pre code {
-                font-size: 1em
-            }
-
-            .name {
-                font-size: 1em
-            }
-
-            main {
-                display: flex;
-                flex-direction: row-reverse;
-                justify-content: flex-end
-            }
-
-            .toc ul ul,
-            #index ul ul {
-                padding-left: 1em
-            }
-
-            .toc>ul>li {
-                margin-top: .5em
-            }
-        }
-    </style>
-    <style media="print">
-        @media print {
-            #sidebar h1 {
-                page-break-before: always
-            }
-
-            .source {
-                display: none
-            }
-        }
-
-        @media print {
-            * {
-                background: transparent !important;
-                color: #000 !important;
-                box-shadow: none !important;
-                text-shadow: none !important
-            }
-
-            a[href]:after {
-                content: " (" attr(href) ")";
-                font-size: 90%
-            }
-
-            a[href][title]:after {
-                content: none
-            }
-
-            abbr[title]:after {
-                content: " (" attr(title) ")"
-            }
-
-            .ir a:after,
-            a[href^="javascript:"]:after,
-            a[href^="#"]:after {
-                content: ""
-            }
-
-            pre,
-            blockquote {
-                border: 1px solid #999;
-                page-break-inside: avoid
-            }
-
-            thead {
-                display: table-header-group
-            }
-
-            tr,
-            img {
-                page-break-inside: avoid
-            }
-
-            img {
-                max-width: 100% !important
-            }
-
-            @page {
-                margin: 0.5cm
-            }
-
-            p,
-            h2,
-            h3 {
-                orphans: 3;
-                widows: 3
-            }
-
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-                page-break-after: avoid
-            }
-        }
-    </style>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"
-        integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ=="
-        crossorigin></script>
-    <script>window.addEventListener('DOMContentLoaded', () => {
-            hljs.configure({ languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml'] });
-            hljs.highlightAll();
-        })</script>
-    <script src="https://coolipy-rum.s3.us-east-1.amazonaws.com/elastic-apm-rum.umd.min.js" crossorigin></script>
-    <script>
-        elasticApm.init({
-            serviceName: 'coolipy-docs',
-            serverUrl: 'https://84b3afd273634acabe46950fe95c9687.apm.southamerica-east1.gcp.elastic-cloud.com:443',
-        })
-    </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>coolipy.constants API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
 </head>
-
 <body>
-    <main>
-        <article id="content">
-            <header>
-                <h1 class="title">Module <code>coolipy.constants</code></h1>
-            </header>
-            <section id="section-intro">
-            </section>
-            <section>
-            </section>
-            <section>
-            </section>
-            <section>
-            </section>
-            <section>
-                <h2 class="section-title" id="header-classes">Classes</h2>
-                <dl>
-                    <dt id="coolipy.constants.COOLIFY_BUILD_PACKS"><code class="flex name class">
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>coolipy.constants</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="coolipy.constants.COOLIFY_BUILD_PACKS"><code class="flex name class">
 <span>class <span class="ident">COOLIFY_BUILD_PACKS</span></span>
 </code></dt>
-                    <dd>
-                        <div class="desc">
-                            <p>Coolify build packs types.</p>
-                        </div>
-                        <details class="source">
-                            <summary>
-                                <span>Expand source code</span>
-                            </summary>
-                            <pre><code class="python">class COOLIFY_BUILD_PACKS:
+<dd>
+<div class="desc"><p>Coolify build packs types.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class COOLIFY_BUILD_PACKS:
     &#34;&#34;&#34;
     Coolify build packs types.
     &#34;&#34;&#34;
+
     nixpacks = &#34;nixpacks&#34;
     static = &#34;static&#34;
     dockerfile = &#34;dockerfile&#34;
     dockercompose = &#34;dockercompose&#34;</code></pre>
-                        </details>
-                        <h3>Class variables</h3>
-                        <dl>
-                            <dt id="coolipy.constants.COOLIFY_BUILD_PACKS.dockercompose"><code
-                                    class="name">var <span class="ident">dockercompose</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_BUILD_PACKS.dockerfile"><code
-                                    class="name">var <span class="ident">dockerfile</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_BUILD_PACKS.nixpacks"><code
-                                    class="name">var <span class="ident">nixpacks</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_BUILD_PACKS.static"><code
-                                    class="name">var <span class="ident">static</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                        </dl>
-                    </dd>
-                    <dt id="coolipy.constants.COOLIFY_PROXY_TYPES"><code class="flex name class">
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.constants.COOLIFY_BUILD_PACKS.dockercompose"><code class="name">var <span class="ident">dockercompose</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_BUILD_PACKS.dockerfile"><code class="name">var <span class="ident">dockerfile</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_BUILD_PACKS.nixpacks"><code class="name">var <span class="ident">nixpacks</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_BUILD_PACKS.static"><code class="name">var <span class="ident">static</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.constants.COOLIFY_PROXY_TYPES"><code class="flex name class">
 <span>class <span class="ident">COOLIFY_PROXY_TYPES</span></span>
 </code></dt>
-                    <dd>
-                        <div class="desc">
-                            <p>Coolify proxy types.</p>
-                        </div>
-                        <details class="source">
-                            <summary>
-                                <span>Expand source code</span>
-                            </summary>
-                            <pre><code class="python">class COOLIFY_PROXY_TYPES:
+<dd>
+<div class="desc"><p>Coolify proxy types.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class COOLIFY_PROXY_TYPES:
     &#34;&#34;&#34;
     Coolify proxy types.
     &#34;&#34;&#34;
+
     traefik = &#34;traefik&#34;
     caddy = &#34;caddy&#34;</code></pre>
-                        </details>
-                        <h3>Class variables</h3>
-                        <dl>
-                            <dt id="coolipy.constants.COOLIFY_PROXY_TYPES.caddy"><code
-                                    class="name">var <span class="ident">caddy</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_PROXY_TYPES.traefik"><code
-                                    class="name">var <span class="ident">traefik</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                        </dl>
-                    </dd>
-                    <dt id="coolipy.constants.COOLIFY_REDIRECT"><code class="flex name class">
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.constants.COOLIFY_PROXY_TYPES.caddy"><code class="name">var <span class="ident">caddy</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_PROXY_TYPES.traefik"><code class="name">var <span class="ident">traefik</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.constants.COOLIFY_REDIRECT"><code class="flex name class">
 <span>class <span class="ident">COOLIFY_REDIRECT</span></span>
 </code></dt>
-                    <dd>
-                        <div class="desc">
-                            <p>Coolify web redirect types.</p>
-                        </div>
-                        <details class="source">
-                            <summary>
-                                <span>Expand source code</span>
-                            </summary>
-                            <pre><code class="python">class COOLIFY_REDIRECT:
+<dd>
+<div class="desc"><p>Coolify web redirect types.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class COOLIFY_REDIRECT:
     &#34;&#34;&#34;
     Coolify web redirect types.
     &#34;&#34;&#34;
+
     www = &#34;www&#34;
     non_www = &#34;non-www&#34;
     both = &#34;both&#34;</code></pre>
-                        </details>
-                        <h3>Class variables</h3>
-                        <dl>
-                            <dt id="coolipy.constants.COOLIFY_REDIRECT.both"><code
-                                    class="name">var <span class="ident">both</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_REDIRECT.non_www"><code
-                                    class="name">var <span class="ident">non_www</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_REDIRECT.www"><code
-                                    class="name">var <span class="ident">www</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                        </dl>
-                    </dd>
-                    <dt id="coolipy.constants.COOLIFY_RETURN_TYPES"><code class="flex name class">
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.constants.COOLIFY_REDIRECT.both"><code class="name">var <span class="ident">both</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_REDIRECT.non_www"><code class="name">var <span class="ident">non_www</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_REDIRECT.www"><code class="name">var <span class="ident">www</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.constants.COOLIFY_RETURN_TYPES"><code class="flex name class">
 <span>class <span class="ident">COOLIFY_RETURN_TYPES</span></span>
 </code></dt>
-                    <dd>
-                        <div class="desc"></div>
-                        <details class="source">
-                            <summary>
-                                <span>Expand source code</span>
-                            </summary>
-                            <pre><code class="python">class COOLIFY_RETURN_TYPES:
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class COOLIFY_RETURN_TYPES:
     list = &#34;list&#34;
     single = &#34;single&#34;
     raw = &#34;raw&#34;</code></pre>
-                        </details>
-                        <h3>Class variables</h3>
-                        <dl>
-                            <dt id="coolipy.constants.COOLIFY_RETURN_TYPES.list"><code
-                                    class="name">var <span class="ident">list</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_RETURN_TYPES.raw"><code
-                                    class="name">var <span class="ident">raw</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_RETURN_TYPES.single"><code
-                                    class="name">var <span class="ident">single</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                        </dl>
-                    </dd>
-                    <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES"><code class="flex name class">
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.constants.COOLIFY_RETURN_TYPES.list"><code class="name">var <span class="ident">list</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_RETURN_TYPES.raw"><code class="name">var <span class="ident">raw</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_RETURN_TYPES.single"><code class="name">var <span class="ident">single</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES"><code class="flex name class">
 <span>class <span class="ident">COOLIFY_SERVICE_TYPES</span></span>
 </code></dt>
-                    <dd>
-                        <div class="desc">
-                            <p>Coolify services types.</p>
-                        </div>
-                        <details class="source">
-                            <summary>
-                                <span>Expand source code</span>
-                            </summary>
-                            <pre><code class="python">class COOLIFY_SERVICE_TYPES:
+<dd>
+<div class="desc"><p>Coolify services types.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class COOLIFY_SERVICE_TYPES:
     &#34;&#34;&#34;
     Coolify services types.
     &#34;&#34;&#34;
+
     activepieces = &#34;activepieces&#34;
     appsmith = &#34;appsmith&#34;
     appwrite = &#34;appwrite&#34;
@@ -773,468 +269,377 @@
     wordpress_with_mariadb = &#34;wordpress-with-mariadb&#34;
     wordpress_with_mysql = &#34;wordpress-with-mysql&#34;
     wordpress_without_database = &#34;wordpress-without-database&#34;</code></pre>
-                        </details>
-                        <h3>Class variables</h3>
-                        <dl>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.activepieces"><code
-                                    class="name">var <span class="ident">activepieces</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.appsmith"><code
-                                    class="name">var <span class="ident">appsmith</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.appwrite"><code
-                                    class="name">var <span class="ident">appwrite</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.authentik"><code
-                                    class="name">var <span class="ident">authentik</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.babybuddy"><code
-                                    class="name">var <span class="ident">babybuddy</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.budge"><code
-                                    class="name">var <span class="ident">budge</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.changedetection"><code
-                                    class="name">var <span class="ident">changedetection</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.chatwoot"><code
-                                    class="name">var <span class="ident">chatwoot</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.classicpress_with_mariadb"><code
-                                    class="name">var <span class="ident">classicpress_with_mariadb</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.classicpress_with_mysql"><code
-                                    class="name">var <span class="ident">classicpress_with_mysql</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.classicpress_without_database"><code
-                                    class="name">var <span class="ident">classicpress_without_database</span></code>
-                            </dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.cloudflared"><code
-                                    class="name">var <span class="ident">cloudflared</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.code_server"><code
-                                    class="name">var <span class="ident">code_server</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.dashboard"><code
-                                    class="name">var <span class="ident">dashboard</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.directus"><code
-                                    class="name">var <span class="ident">directus</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.directus_with_postgresql"><code
-                                    class="name">var <span class="ident">directus_with_postgresql</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.docker_registry"><code
-                                    class="name">var <span class="ident">docker_registry</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.docuseal"><code
-                                    class="name">var <span class="ident">docuseal</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.docuseal_with_postgres"><code
-                                    class="name">var <span class="ident">docuseal_with_postgres</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.dokuwiki"><code
-                                    class="name">var <span class="ident">dokuwiki</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.duplicati"><code
-                                    class="name">var <span class="ident">duplicati</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.emby"><code
-                                    class="name">var <span class="ident">emby</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.embystat"><code
-                                    class="name">var <span class="ident">embystat</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.fider"><code
-                                    class="name">var <span class="ident">fider</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.filebrowser"><code
-                                    class="name">var <span class="ident">filebrowser</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.firefly"><code
-                                    class="name">var <span class="ident">firefly</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.formbricks"><code
-                                    class="name">var <span class="ident">formbricks</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.ghost"><code
-                                    class="name">var <span class="ident">ghost</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.gitea"><code
-                                    class="name">var <span class="ident">gitea</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.gitea_with_mariadb"><code
-                                    class="name">var <span class="ident">gitea_with_mariadb</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.gitea_with_mysql"><code
-                                    class="name">var <span class="ident">gitea_with_mysql</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.gitea_with_postgresql"><code
-                                    class="name">var <span class="ident">gitea_with_postgresql</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.glance"><code
-                                    class="name">var <span class="ident">glance</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.glances"><code
-                                    class="name">var <span class="ident">glances</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.glitchtip"><code
-                                    class="name">var <span class="ident">glitchtip</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.grafana"><code
-                                    class="name">var <span class="ident">grafana</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.grafana_with_postgresql"><code
-                                    class="name">var <span class="ident">grafana_with_postgresql</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.grocy"><code
-                                    class="name">var <span class="ident">grocy</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.heimdall"><code
-                                    class="name">var <span class="ident">heimdall</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.homepage"><code
-                                    class="name">var <span class="ident">homepage</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.jellyfin"><code
-                                    class="name">var <span class="ident">jellyfin</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.jenkins"><code
-                                    class="name">var <span class="ident">jenkins</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.kuzzle"><code
-                                    class="name">var <span class="ident">kuzzle</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.listmonk"><code
-                                    class="name">var <span class="ident">listmonk</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.logto"><code
-                                    class="name">var <span class="ident">logto</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.mediawiki"><code
-                                    class="name">var <span class="ident">mediawiki</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.meilisearch"><code
-                                    class="name">var <span class="ident">meilisearch</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.metabase"><code
-                                    class="name">var <span class="ident">metabase</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.metube"><code
-                                    class="name">var <span class="ident">metube</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.minio"><code
-                                    class="name">var <span class="ident">minio</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.moodle"><code
-                                    class="name">var <span class="ident">moodle</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.mosquitto"><code
-                                    class="name">var <span class="ident">mosquitto</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.n8n"><code
-                                    class="name">var <span class="ident">n8n</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.n8n_with_postgresql"><code
-                                    class="name">var <span class="ident">n8n_with_postgresql</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.next_image_transformation"><code
-                                    class="name">var <span class="ident">next_image_transformation</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.nextcloud"><code
-                                    class="name">var <span class="ident">nextcloud</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.nocodb"><code
-                                    class="name">var <span class="ident">nocodb</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.odoo"><code
-                                    class="name">var <span class="ident">odoo</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.openblocks"><code
-                                    class="name">var <span class="ident">openblocks</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.pairdrop"><code
-                                    class="name">var <span class="ident">pairdrop</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.penpot"><code
-                                    class="name">var <span class="ident">penpot</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.phpmyadmin"><code
-                                    class="name">var <span class="ident">phpmyadmin</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.pocketbase"><code
-                                    class="name">var <span class="ident">pocketbase</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.posthog"><code
-                                    class="name">var <span class="ident">posthog</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.reactive_resume"><code
-                                    class="name">var <span class="ident">reactive_resume</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.rocketchat"><code
-                                    class="name">var <span class="ident">rocketchat</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.shlink"><code
-                                    class="name">var <span class="ident">shlink</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.slash"><code
-                                    class="name">var <span class="ident">slash</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.snapdrop"><code
-                                    class="name">var <span class="ident">snapdrop</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.statusnook"><code
-                                    class="name">var <span class="ident">statusnook</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.stirling_pdf"><code
-                                    class="name">var <span class="ident">stirling_pdf</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.supabase"><code
-                                    class="name">var <span class="ident">supabase</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.syncthing"><code
-                                    class="name">var <span class="ident">syncthing</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.tolgee"><code
-                                    class="name">var <span class="ident">tolgee</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.trigger"><code
-                                    class="name">var <span class="ident">trigger</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.trigger_with_external_database"><code
-                                    class="name">var <span class="ident">trigger_with_external_database</span></code>
-                            </dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.twenty"><code
-                                    class="name">var <span class="ident">twenty</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.umami"><code
-                                    class="name">var <span class="ident">umami</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.unleash_with_postgresql"><code
-                                    class="name">var <span class="ident">unleash_with_postgresql</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.unleash_without_database"><code
-                                    class="name">var <span class="ident">unleash_without_database</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.uptime_kuma"><code
-                                    class="name">var <span class="ident">uptime_kuma</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.vaultwarden"><code
-                                    class="name">var <span class="ident">vaultwarden</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.vikunja"><code
-                                    class="name">var <span class="ident">vikunja</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.weblate"><code
-                                    class="name">var <span class="ident">weblate</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.whoogle"><code
-                                    class="name">var <span class="ident">whoogle</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.wordpress_with_mariadb"><code
-                                    class="name">var <span class="ident">wordpress_with_mariadb</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.wordpress_with_mysql"><code
-                                    class="name">var <span class="ident">wordpress_with_mysql</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.wordpress_without_database"><code
-                                    class="name">var <span class="ident">wordpress_without_database</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                        </dl>
-                    </dd>
-                    <dt id="coolipy.constants.URL_MAP"><code class="flex name class">
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.activepieces"><code class="name">var <span class="ident">activepieces</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.appsmith"><code class="name">var <span class="ident">appsmith</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.appwrite"><code class="name">var <span class="ident">appwrite</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.authentik"><code class="name">var <span class="ident">authentik</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.babybuddy"><code class="name">var <span class="ident">babybuddy</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.budge"><code class="name">var <span class="ident">budge</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.changedetection"><code class="name">var <span class="ident">changedetection</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.chatwoot"><code class="name">var <span class="ident">chatwoot</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.classicpress_with_mariadb"><code class="name">var <span class="ident">classicpress_with_mariadb</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.classicpress_with_mysql"><code class="name">var <span class="ident">classicpress_with_mysql</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.classicpress_without_database"><code class="name">var <span class="ident">classicpress_without_database</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.cloudflared"><code class="name">var <span class="ident">cloudflared</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.code_server"><code class="name">var <span class="ident">code_server</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.dashboard"><code class="name">var <span class="ident">dashboard</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.directus"><code class="name">var <span class="ident">directus</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.directus_with_postgresql"><code class="name">var <span class="ident">directus_with_postgresql</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.docker_registry"><code class="name">var <span class="ident">docker_registry</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.docuseal"><code class="name">var <span class="ident">docuseal</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.docuseal_with_postgres"><code class="name">var <span class="ident">docuseal_with_postgres</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.dokuwiki"><code class="name">var <span class="ident">dokuwiki</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.duplicati"><code class="name">var <span class="ident">duplicati</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.emby"><code class="name">var <span class="ident">emby</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.embystat"><code class="name">var <span class="ident">embystat</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.fider"><code class="name">var <span class="ident">fider</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.filebrowser"><code class="name">var <span class="ident">filebrowser</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.firefly"><code class="name">var <span class="ident">firefly</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.formbricks"><code class="name">var <span class="ident">formbricks</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.ghost"><code class="name">var <span class="ident">ghost</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.gitea"><code class="name">var <span class="ident">gitea</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.gitea_with_mariadb"><code class="name">var <span class="ident">gitea_with_mariadb</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.gitea_with_mysql"><code class="name">var <span class="ident">gitea_with_mysql</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.gitea_with_postgresql"><code class="name">var <span class="ident">gitea_with_postgresql</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.glance"><code class="name">var <span class="ident">glance</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.glances"><code class="name">var <span class="ident">glances</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.glitchtip"><code class="name">var <span class="ident">glitchtip</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.grafana"><code class="name">var <span class="ident">grafana</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.grafana_with_postgresql"><code class="name">var <span class="ident">grafana_with_postgresql</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.grocy"><code class="name">var <span class="ident">grocy</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.heimdall"><code class="name">var <span class="ident">heimdall</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.homepage"><code class="name">var <span class="ident">homepage</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.jellyfin"><code class="name">var <span class="ident">jellyfin</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.jenkins"><code class="name">var <span class="ident">jenkins</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.kuzzle"><code class="name">var <span class="ident">kuzzle</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.listmonk"><code class="name">var <span class="ident">listmonk</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.logto"><code class="name">var <span class="ident">logto</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.mediawiki"><code class="name">var <span class="ident">mediawiki</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.meilisearch"><code class="name">var <span class="ident">meilisearch</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.metabase"><code class="name">var <span class="ident">metabase</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.metube"><code class="name">var <span class="ident">metube</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.minio"><code class="name">var <span class="ident">minio</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.moodle"><code class="name">var <span class="ident">moodle</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.mosquitto"><code class="name">var <span class="ident">mosquitto</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.n8n"><code class="name">var <span class="ident">n8n</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.n8n_with_postgresql"><code class="name">var <span class="ident">n8n_with_postgresql</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.next_image_transformation"><code class="name">var <span class="ident">next_image_transformation</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.nextcloud"><code class="name">var <span class="ident">nextcloud</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.nocodb"><code class="name">var <span class="ident">nocodb</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.odoo"><code class="name">var <span class="ident">odoo</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.openblocks"><code class="name">var <span class="ident">openblocks</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.pairdrop"><code class="name">var <span class="ident">pairdrop</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.penpot"><code class="name">var <span class="ident">penpot</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.phpmyadmin"><code class="name">var <span class="ident">phpmyadmin</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.pocketbase"><code class="name">var <span class="ident">pocketbase</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.posthog"><code class="name">var <span class="ident">posthog</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.reactive_resume"><code class="name">var <span class="ident">reactive_resume</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.rocketchat"><code class="name">var <span class="ident">rocketchat</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.shlink"><code class="name">var <span class="ident">shlink</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.slash"><code class="name">var <span class="ident">slash</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.snapdrop"><code class="name">var <span class="ident">snapdrop</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.statusnook"><code class="name">var <span class="ident">statusnook</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.stirling_pdf"><code class="name">var <span class="ident">stirling_pdf</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.supabase"><code class="name">var <span class="ident">supabase</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.syncthing"><code class="name">var <span class="ident">syncthing</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.tolgee"><code class="name">var <span class="ident">tolgee</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.trigger"><code class="name">var <span class="ident">trigger</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.trigger_with_external_database"><code class="name">var <span class="ident">trigger_with_external_database</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.twenty"><code class="name">var <span class="ident">twenty</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.umami"><code class="name">var <span class="ident">umami</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.unleash_with_postgresql"><code class="name">var <span class="ident">unleash_with_postgresql</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.unleash_without_database"><code class="name">var <span class="ident">unleash_without_database</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.uptime_kuma"><code class="name">var <span class="ident">uptime_kuma</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.vaultwarden"><code class="name">var <span class="ident">vaultwarden</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.vikunja"><code class="name">var <span class="ident">vikunja</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.weblate"><code class="name">var <span class="ident">weblate</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.whoogle"><code class="name">var <span class="ident">whoogle</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.wordpress_with_mariadb"><code class="name">var <span class="ident">wordpress_with_mariadb</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.wordpress_with_mysql"><code class="name">var <span class="ident">wordpress_with_mysql</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.COOLIFY_SERVICE_TYPES.wordpress_without_database"><code class="name">var <span class="ident">wordpress_without_database</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.constants.URL_MAP"><code class="flex name class">
 <span>class <span class="ident">URL_MAP</span></span>
 </code></dt>
-                    <dd>
-                        <div class="desc">
-                            <p>Coolipy URL map.</p>
-                        </div>
-                        <details class="source">
-                            <summary>
-                                <span>Expand source code</span>
-                            </summary>
-                            <pre><code class="python">class URL_MAP:
+<dd>
+<div class="desc"><p>Coolipy URL map.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class URL_MAP:
     &#34;&#34;&#34;
     Coolipy URL map.
     &#34;&#34;&#34;
+
     version = &#34;/version&#34;
     servers = &#34;/servers&#34;
     projects = &#34;/projects&#34;
@@ -1259,441 +664,283 @@
     validate = &#34;/validate&#34;
     members = &#34;/members&#34;
     current = &#34;/current&#34;</code></pre>
-                        </details>
-                        <h3>Class variables</h3>
-                        <dl>
-                            <dt id="coolipy.constants.URL_MAP.applications"><code
-                                    class="name">var <span class="ident">applications</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.bulk"><code
-                                    class="name">var <span class="ident">bulk</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.current"><code
-                                    class="name">var <span class="ident">current</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.databases"><code
-                                    class="name">var <span class="ident">databases</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.deploy"><code
-                                    class="name">var <span class="ident">deploy</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.deployments"><code
-                                    class="name">var <span class="ident">deployments</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.disable"><code
-                                    class="name">var <span class="ident">disable</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.domains"><code
-                                    class="name">var <span class="ident">domains</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.enable"><code
-                                    class="name">var <span class="ident">enable</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.envs"><code
-                                    class="name">var <span class="ident">envs</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.execute"><code
-                                    class="name">var <span class="ident">execute</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.health"><code
-                                    class="name">var <span class="ident">health</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.members"><code
-                                    class="name">var <span class="ident">members</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.private_keys"><code
-                                    class="name">var <span class="ident">private_keys</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.projects"><code
-                                    class="name">var <span class="ident">projects</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.resources"><code
-                                    class="name">var <span class="ident">resources</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.restart"><code
-                                    class="name">var <span class="ident">restart</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.servers"><code
-                                    class="name">var <span class="ident">servers</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.services"><code
-                                    class="name">var <span class="ident">services</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.start"><code
-                                    class="name">var <span class="ident">start</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.stop"><code
-                                    class="name">var <span class="ident">stop</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.teams"><code
-                                    class="name">var <span class="ident">teams</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.validate"><code
-                                    class="name">var <span class="ident">validate</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                            <dt id="coolipy.constants.URL_MAP.version"><code
-                                    class="name">var <span class="ident">version</span></code></dt>
-                            <dd>
-                                <div class="desc"></div>
-                            </dd>
-                        </dl>
-                    </dd>
-                </dl>
-            </section>
-        </article>
-        <nav id="sidebar">
-            <div class="toc">
-                <ul></ul>
-            </div>
-            <ul id="index">
-                <li>
-                    <h3>Super-module</h3>
-                    <ul>
-                        <li><code><a title="coolipy" href="index.html">coolipy</a></code></li>
-                    </ul>
-                </li>
-                <li>
-                    <h3><a href="#header-classes">Classes</a></h3>
-                    <ul>
-                        <li>
-                            <h4><code><a title="coolipy.constants.COOLIFY_BUILD_PACKS" href="#coolipy.constants.COOLIFY_BUILD_PACKS">COOLIFY_BUILD_PACKS</a></code>
-                            </h4>
-                            <ul class="">
-                                <li><code><a title="coolipy.constants.COOLIFY_BUILD_PACKS.dockercompose" href="#coolipy.constants.COOLIFY_BUILD_PACKS.dockercompose">dockercompose</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_BUILD_PACKS.dockerfile" href="#coolipy.constants.COOLIFY_BUILD_PACKS.dockerfile">dockerfile</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_BUILD_PACKS.nixpacks" href="#coolipy.constants.COOLIFY_BUILD_PACKS.nixpacks">nixpacks</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_BUILD_PACKS.static" href="#coolipy.constants.COOLIFY_BUILD_PACKS.static">static</a></code>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h4><code><a title="coolipy.constants.COOLIFY_PROXY_TYPES" href="#coolipy.constants.COOLIFY_PROXY_TYPES">COOLIFY_PROXY_TYPES</a></code>
-                            </h4>
-                            <ul class="">
-                                <li><code><a title="coolipy.constants.COOLIFY_PROXY_TYPES.caddy" href="#coolipy.constants.COOLIFY_PROXY_TYPES.caddy">caddy</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_PROXY_TYPES.traefik" href="#coolipy.constants.COOLIFY_PROXY_TYPES.traefik">traefik</a></code>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h4><code><a title="coolipy.constants.COOLIFY_REDIRECT" href="#coolipy.constants.COOLIFY_REDIRECT">COOLIFY_REDIRECT</a></code>
-                            </h4>
-                            <ul class="">
-                                <li><code><a title="coolipy.constants.COOLIFY_REDIRECT.both" href="#coolipy.constants.COOLIFY_REDIRECT.both">both</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_REDIRECT.non_www" href="#coolipy.constants.COOLIFY_REDIRECT.non_www">non_www</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_REDIRECT.www" href="#coolipy.constants.COOLIFY_REDIRECT.www">www</a></code>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h4><code><a title="coolipy.constants.COOLIFY_RETURN_TYPES" href="#coolipy.constants.COOLIFY_RETURN_TYPES">COOLIFY_RETURN_TYPES</a></code>
-                            </h4>
-                            <ul class="">
-                                <li><code><a title="coolipy.constants.COOLIFY_RETURN_TYPES.list" href="#coolipy.constants.COOLIFY_RETURN_TYPES.list">list</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_RETURN_TYPES.raw" href="#coolipy.constants.COOLIFY_RETURN_TYPES.raw">raw</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_RETURN_TYPES.single" href="#coolipy.constants.COOLIFY_RETURN_TYPES.single">single</a></code>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h4><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES" href="#coolipy.constants.COOLIFY_SERVICE_TYPES">COOLIFY_SERVICE_TYPES</a></code>
-                            </h4>
-                            <ul class="">
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.activepieces" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.activepieces">activepieces</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.appsmith" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.appsmith">appsmith</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.appwrite" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.appwrite">appwrite</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.authentik" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.authentik">authentik</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.babybuddy" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.babybuddy">babybuddy</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.budge" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.budge">budge</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.changedetection" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.changedetection">changedetection</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.chatwoot" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.chatwoot">chatwoot</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.classicpress_with_mariadb" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.classicpress_with_mariadb">classicpress_with_mariadb</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.classicpress_with_mysql" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.classicpress_with_mysql">classicpress_with_mysql</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.classicpress_without_database" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.classicpress_without_database">classicpress_without_database</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.cloudflared" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.cloudflared">cloudflared</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.code_server" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.code_server">code_server</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.dashboard" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.dashboard">dashboard</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.directus" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.directus">directus</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.directus_with_postgresql" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.directus_with_postgresql">directus_with_postgresql</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.docker_registry" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.docker_registry">docker_registry</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.docuseal" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.docuseal">docuseal</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.docuseal_with_postgres" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.docuseal_with_postgres">docuseal_with_postgres</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.dokuwiki" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.dokuwiki">dokuwiki</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.duplicati" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.duplicati">duplicati</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.emby" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.emby">emby</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.embystat" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.embystat">embystat</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.fider" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.fider">fider</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.filebrowser" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.filebrowser">filebrowser</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.firefly" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.firefly">firefly</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.formbricks" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.formbricks">formbricks</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.ghost" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.ghost">ghost</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.gitea" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.gitea">gitea</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.gitea_with_mariadb" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.gitea_with_mariadb">gitea_with_mariadb</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.gitea_with_mysql" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.gitea_with_mysql">gitea_with_mysql</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.gitea_with_postgresql" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.gitea_with_postgresql">gitea_with_postgresql</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.glance" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.glance">glance</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.glances" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.glances">glances</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.glitchtip" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.glitchtip">glitchtip</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.grafana" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.grafana">grafana</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.grafana_with_postgresql" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.grafana_with_postgresql">grafana_with_postgresql</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.grocy" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.grocy">grocy</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.heimdall" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.heimdall">heimdall</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.homepage" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.homepage">homepage</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.jellyfin" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.jellyfin">jellyfin</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.jenkins" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.jenkins">jenkins</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.kuzzle" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.kuzzle">kuzzle</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.listmonk" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.listmonk">listmonk</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.logto" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.logto">logto</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.mediawiki" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.mediawiki">mediawiki</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.meilisearch" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.meilisearch">meilisearch</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.metabase" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.metabase">metabase</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.metube" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.metube">metube</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.minio" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.minio">minio</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.moodle" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.moodle">moodle</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.mosquitto" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.mosquitto">mosquitto</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.n8n" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.n8n">n8n</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.n8n_with_postgresql" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.n8n_with_postgresql">n8n_with_postgresql</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.next_image_transformation" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.next_image_transformation">next_image_transformation</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.nextcloud" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.nextcloud">nextcloud</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.nocodb" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.nocodb">nocodb</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.odoo" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.odoo">odoo</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.openblocks" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.openblocks">openblocks</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.pairdrop" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.pairdrop">pairdrop</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.penpot" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.penpot">penpot</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.phpmyadmin" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.phpmyadmin">phpmyadmin</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.pocketbase" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.pocketbase">pocketbase</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.posthog" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.posthog">posthog</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.reactive_resume" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.reactive_resume">reactive_resume</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.rocketchat" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.rocketchat">rocketchat</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.shlink" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.shlink">shlink</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.slash" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.slash">slash</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.snapdrop" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.snapdrop">snapdrop</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.statusnook" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.statusnook">statusnook</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.stirling_pdf" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.stirling_pdf">stirling_pdf</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.supabase" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.supabase">supabase</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.syncthing" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.syncthing">syncthing</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.tolgee" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.tolgee">tolgee</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.trigger" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.trigger">trigger</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.trigger_with_external_database" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.trigger_with_external_database">trigger_with_external_database</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.twenty" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.twenty">twenty</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.umami" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.umami">umami</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.unleash_with_postgresql" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.unleash_with_postgresql">unleash_with_postgresql</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.unleash_without_database" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.unleash_without_database">unleash_without_database</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.uptime_kuma" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.uptime_kuma">uptime_kuma</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.vaultwarden" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.vaultwarden">vaultwarden</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.vikunja" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.vikunja">vikunja</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.weblate" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.weblate">weblate</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.whoogle" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.whoogle">whoogle</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.wordpress_with_mariadb" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.wordpress_with_mariadb">wordpress_with_mariadb</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.wordpress_with_mysql" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.wordpress_with_mysql">wordpress_with_mysql</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.wordpress_without_database" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.wordpress_without_database">wordpress_without_database</a></code>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h4><code><a title="coolipy.constants.URL_MAP" href="#coolipy.constants.URL_MAP">URL_MAP</a></code>
-                            </h4>
-                            <ul class="two-column">
-                                <li><code><a title="coolipy.constants.URL_MAP.applications" href="#coolipy.constants.URL_MAP.applications">applications</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.bulk" href="#coolipy.constants.URL_MAP.bulk">bulk</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.current" href="#coolipy.constants.URL_MAP.current">current</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.databases" href="#coolipy.constants.URL_MAP.databases">databases</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.deploy" href="#coolipy.constants.URL_MAP.deploy">deploy</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.deployments" href="#coolipy.constants.URL_MAP.deployments">deployments</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.disable" href="#coolipy.constants.URL_MAP.disable">disable</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.domains" href="#coolipy.constants.URL_MAP.domains">domains</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.enable" href="#coolipy.constants.URL_MAP.enable">enable</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.envs" href="#coolipy.constants.URL_MAP.envs">envs</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.execute" href="#coolipy.constants.URL_MAP.execute">execute</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.health" href="#coolipy.constants.URL_MAP.health">health</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.members" href="#coolipy.constants.URL_MAP.members">members</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.private_keys" href="#coolipy.constants.URL_MAP.private_keys">private_keys</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.projects" href="#coolipy.constants.URL_MAP.projects">projects</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.resources" href="#coolipy.constants.URL_MAP.resources">resources</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.restart" href="#coolipy.constants.URL_MAP.restart">restart</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.servers" href="#coolipy.constants.URL_MAP.servers">servers</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.services" href="#coolipy.constants.URL_MAP.services">services</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.start" href="#coolipy.constants.URL_MAP.start">start</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.stop" href="#coolipy.constants.URL_MAP.stop">stop</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.teams" href="#coolipy.constants.URL_MAP.teams">teams</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.validate" href="#coolipy.constants.URL_MAP.validate">validate</a></code>
-                                </li>
-                                <li><code><a title="coolipy.constants.URL_MAP.version" href="#coolipy.constants.URL_MAP.version">version</a></code>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </main>
-    <footer id="footer">
-        <p>Generated by <a href="https://pdoc3.github.io/pdoc"
-                title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
-    </footer>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.constants.URL_MAP.applications"><code class="name">var <span class="ident">applications</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.bulk"><code class="name">var <span class="ident">bulk</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.current"><code class="name">var <span class="ident">current</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.databases"><code class="name">var <span class="ident">databases</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.deploy"><code class="name">var <span class="ident">deploy</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.deployments"><code class="name">var <span class="ident">deployments</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.disable"><code class="name">var <span class="ident">disable</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.domains"><code class="name">var <span class="ident">domains</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.enable"><code class="name">var <span class="ident">enable</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.envs"><code class="name">var <span class="ident">envs</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.execute"><code class="name">var <span class="ident">execute</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.health"><code class="name">var <span class="ident">health</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.members"><code class="name">var <span class="ident">members</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.private_keys"><code class="name">var <span class="ident">private_keys</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.projects"><code class="name">var <span class="ident">projects</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.resources"><code class="name">var <span class="ident">resources</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.restart"><code class="name">var <span class="ident">restart</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.servers"><code class="name">var <span class="ident">servers</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.services"><code class="name">var <span class="ident">services</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.start"><code class="name">var <span class="ident">start</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.stop"><code class="name">var <span class="ident">stop</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.teams"><code class="name">var <span class="ident">teams</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.validate"><code class="name">var <span class="ident">validate</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.constants.URL_MAP.version"><code class="name">var <span class="ident">version</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="coolipy" href="index.html">coolipy</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="coolipy.constants.COOLIFY_BUILD_PACKS" href="#coolipy.constants.COOLIFY_BUILD_PACKS">COOLIFY_BUILD_PACKS</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.constants.COOLIFY_BUILD_PACKS.dockercompose" href="#coolipy.constants.COOLIFY_BUILD_PACKS.dockercompose">dockercompose</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_BUILD_PACKS.dockerfile" href="#coolipy.constants.COOLIFY_BUILD_PACKS.dockerfile">dockerfile</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_BUILD_PACKS.nixpacks" href="#coolipy.constants.COOLIFY_BUILD_PACKS.nixpacks">nixpacks</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_BUILD_PACKS.static" href="#coolipy.constants.COOLIFY_BUILD_PACKS.static">static</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.constants.COOLIFY_PROXY_TYPES" href="#coolipy.constants.COOLIFY_PROXY_TYPES">COOLIFY_PROXY_TYPES</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.constants.COOLIFY_PROXY_TYPES.caddy" href="#coolipy.constants.COOLIFY_PROXY_TYPES.caddy">caddy</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_PROXY_TYPES.traefik" href="#coolipy.constants.COOLIFY_PROXY_TYPES.traefik">traefik</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.constants.COOLIFY_REDIRECT" href="#coolipy.constants.COOLIFY_REDIRECT">COOLIFY_REDIRECT</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.constants.COOLIFY_REDIRECT.both" href="#coolipy.constants.COOLIFY_REDIRECT.both">both</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_REDIRECT.non_www" href="#coolipy.constants.COOLIFY_REDIRECT.non_www">non_www</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_REDIRECT.www" href="#coolipy.constants.COOLIFY_REDIRECT.www">www</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.constants.COOLIFY_RETURN_TYPES" href="#coolipy.constants.COOLIFY_RETURN_TYPES">COOLIFY_RETURN_TYPES</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.constants.COOLIFY_RETURN_TYPES.list" href="#coolipy.constants.COOLIFY_RETURN_TYPES.list">list</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_RETURN_TYPES.raw" href="#coolipy.constants.COOLIFY_RETURN_TYPES.raw">raw</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_RETURN_TYPES.single" href="#coolipy.constants.COOLIFY_RETURN_TYPES.single">single</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES" href="#coolipy.constants.COOLIFY_SERVICE_TYPES">COOLIFY_SERVICE_TYPES</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.activepieces" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.activepieces">activepieces</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.appsmith" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.appsmith">appsmith</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.appwrite" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.appwrite">appwrite</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.authentik" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.authentik">authentik</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.babybuddy" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.babybuddy">babybuddy</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.budge" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.budge">budge</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.changedetection" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.changedetection">changedetection</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.chatwoot" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.chatwoot">chatwoot</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.classicpress_with_mariadb" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.classicpress_with_mariadb">classicpress_with_mariadb</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.classicpress_with_mysql" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.classicpress_with_mysql">classicpress_with_mysql</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.classicpress_without_database" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.classicpress_without_database">classicpress_without_database</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.cloudflared" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.cloudflared">cloudflared</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.code_server" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.code_server">code_server</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.dashboard" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.dashboard">dashboard</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.directus" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.directus">directus</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.directus_with_postgresql" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.directus_with_postgresql">directus_with_postgresql</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.docker_registry" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.docker_registry">docker_registry</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.docuseal" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.docuseal">docuseal</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.docuseal_with_postgres" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.docuseal_with_postgres">docuseal_with_postgres</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.dokuwiki" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.dokuwiki">dokuwiki</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.duplicati" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.duplicati">duplicati</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.emby" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.emby">emby</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.embystat" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.embystat">embystat</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.fider" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.fider">fider</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.filebrowser" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.filebrowser">filebrowser</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.firefly" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.firefly">firefly</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.formbricks" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.formbricks">formbricks</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.ghost" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.ghost">ghost</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.gitea" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.gitea">gitea</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.gitea_with_mariadb" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.gitea_with_mariadb">gitea_with_mariadb</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.gitea_with_mysql" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.gitea_with_mysql">gitea_with_mysql</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.gitea_with_postgresql" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.gitea_with_postgresql">gitea_with_postgresql</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.glance" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.glance">glance</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.glances" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.glances">glances</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.glitchtip" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.glitchtip">glitchtip</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.grafana" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.grafana">grafana</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.grafana_with_postgresql" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.grafana_with_postgresql">grafana_with_postgresql</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.grocy" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.grocy">grocy</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.heimdall" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.heimdall">heimdall</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.homepage" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.homepage">homepage</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.jellyfin" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.jellyfin">jellyfin</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.jenkins" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.jenkins">jenkins</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.kuzzle" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.kuzzle">kuzzle</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.listmonk" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.listmonk">listmonk</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.logto" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.logto">logto</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.mediawiki" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.mediawiki">mediawiki</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.meilisearch" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.meilisearch">meilisearch</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.metabase" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.metabase">metabase</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.metube" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.metube">metube</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.minio" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.minio">minio</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.moodle" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.moodle">moodle</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.mosquitto" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.mosquitto">mosquitto</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.n8n" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.n8n">n8n</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.n8n_with_postgresql" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.n8n_with_postgresql">n8n_with_postgresql</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.next_image_transformation" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.next_image_transformation">next_image_transformation</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.nextcloud" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.nextcloud">nextcloud</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.nocodb" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.nocodb">nocodb</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.odoo" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.odoo">odoo</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.openblocks" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.openblocks">openblocks</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.pairdrop" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.pairdrop">pairdrop</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.penpot" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.penpot">penpot</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.phpmyadmin" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.phpmyadmin">phpmyadmin</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.pocketbase" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.pocketbase">pocketbase</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.posthog" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.posthog">posthog</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.reactive_resume" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.reactive_resume">reactive_resume</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.rocketchat" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.rocketchat">rocketchat</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.shlink" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.shlink">shlink</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.slash" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.slash">slash</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.snapdrop" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.snapdrop">snapdrop</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.statusnook" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.statusnook">statusnook</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.stirling_pdf" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.stirling_pdf">stirling_pdf</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.supabase" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.supabase">supabase</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.syncthing" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.syncthing">syncthing</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.tolgee" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.tolgee">tolgee</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.trigger" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.trigger">trigger</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.trigger_with_external_database" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.trigger_with_external_database">trigger_with_external_database</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.twenty" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.twenty">twenty</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.umami" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.umami">umami</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.unleash_with_postgresql" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.unleash_with_postgresql">unleash_with_postgresql</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.unleash_without_database" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.unleash_without_database">unleash_without_database</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.uptime_kuma" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.uptime_kuma">uptime_kuma</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.vaultwarden" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.vaultwarden">vaultwarden</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.vikunja" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.vikunja">vikunja</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.weblate" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.weblate">weblate</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.whoogle" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.whoogle">whoogle</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.wordpress_with_mariadb" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.wordpress_with_mariadb">wordpress_with_mariadb</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.wordpress_with_mysql" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.wordpress_with_mysql">wordpress_with_mysql</a></code></li>
+<li><code><a title="coolipy.constants.COOLIFY_SERVICE_TYPES.wordpress_without_database" href="#coolipy.constants.COOLIFY_SERVICE_TYPES.wordpress_without_database">wordpress_without_database</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.constants.URL_MAP" href="#coolipy.constants.URL_MAP">URL_MAP</a></code></h4>
+<ul class="two-column">
+<li><code><a title="coolipy.constants.URL_MAP.applications" href="#coolipy.constants.URL_MAP.applications">applications</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.bulk" href="#coolipy.constants.URL_MAP.bulk">bulk</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.current" href="#coolipy.constants.URL_MAP.current">current</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.databases" href="#coolipy.constants.URL_MAP.databases">databases</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.deploy" href="#coolipy.constants.URL_MAP.deploy">deploy</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.deployments" href="#coolipy.constants.URL_MAP.deployments">deployments</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.disable" href="#coolipy.constants.URL_MAP.disable">disable</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.domains" href="#coolipy.constants.URL_MAP.domains">domains</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.enable" href="#coolipy.constants.URL_MAP.enable">enable</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.envs" href="#coolipy.constants.URL_MAP.envs">envs</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.execute" href="#coolipy.constants.URL_MAP.execute">execute</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.health" href="#coolipy.constants.URL_MAP.health">health</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.members" href="#coolipy.constants.URL_MAP.members">members</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.private_keys" href="#coolipy.constants.URL_MAP.private_keys">private_keys</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.projects" href="#coolipy.constants.URL_MAP.projects">projects</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.resources" href="#coolipy.constants.URL_MAP.resources">resources</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.restart" href="#coolipy.constants.URL_MAP.restart">restart</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.servers" href="#coolipy.constants.URL_MAP.servers">servers</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.services" href="#coolipy.constants.URL_MAP.services">services</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.start" href="#coolipy.constants.URL_MAP.start">start</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.stop" href="#coolipy.constants.URL_MAP.stop">stop</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.teams" href="#coolipy.constants.URL_MAP.teams">teams</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.validate" href="#coolipy.constants.URL_MAP.validate">validate</a></code></li>
+<li><code><a title="coolipy.constants.URL_MAP.version" href="#coolipy.constants.URL_MAP.version">version</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
 </body>
-
 </html>

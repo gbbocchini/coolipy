@@ -37,10 +37,10 @@ hljs.highlightAll();
 <dl>
 <dt id="coolipy.models.service.ServiceModel"><code class="flex name class">
 <span>class <span class="ident">ServiceModel</span></span>
-<span>(</span><span>id: Optional[str] = None, uuid: Optional[str] = None, name: Optional[str] = None, applications: Optional[List[<a title="coolipy.models.applications.ServiceApplicationModel" href="applications.html#coolipy.models.applications.ServiceApplicationModel">ServiceApplicationModel</a>]] = &lt;factory&gt;, compose_parsing_version: Optional[str] = None, config_hash: Optional[str] = None, connect_to_docker_network: Optional[bool] = None, databases: Optional[List[str]] = &lt;factory&gt;, deleted_at: Union[str, datetime.datetime, ForwardRef(None)] = None, description: Optional[str] = None, destination_id: Optional[int] = None, destination_type: Optional[str] = None, docker_compose: Optional[str] = None, docker_compose_raw: Optional[str] = None, environment_id: Optional[int] = None, laravel_through_key: Optional[str] = None, is_container_label_escape_enabled: Optional[bool] = None, server: Optional[<a title="coolipy.models.servers.ServerModel" href="servers.html#coolipy.models.servers.ServerModel">ServerModel</a>] = &lt;factory&gt;, server_id: Optional[int] = None, server_status: Optional[bool] = None, domains: Optional[List[str]] = &lt;factory&gt;, service_type: Optional[str] = None, created_at: Union[str, datetime.datetime, ForwardRef(None)] = None, updated_at: Union[str, datetime.datetime, ForwardRef(None)] = None)</span>
+<span>(</span><span>id: Optional[str] = None, uuid: Optional[str] = None, name: Optional[str] = None, applications: Optional[List[<a title="coolipy.models.applications.ServiceApplicationModel" href="applications.html#coolipy.models.applications.ServiceApplicationModel">ServiceApplicationModel</a>]] = &lt;factory&gt;, compose_parsing_version: Optional[str] = None, config_hash: Optional[str] = None, connect_to_docker_network: Optional[bool] = None, databases: Optional[List[str]] = &lt;factory&gt;, deleted_at: Union[str, datetime.datetime, ForwardRef(None)] = None, description: Optional[str] = None, destination_id: Optional[int] = None, destination_type: Optional[str] = None, docker_compose: Optional[str] = None, docker_compose_raw: Optional[str] = None, environment_id: Optional[int] = None, laravel_through_key: Optional[str] = None, is_container_label_escape_enabled: Optional[bool] = None, server: Optional[<a title="coolipy.models.servers.ServerModel" href="servers.html#coolipy.models.servers.ServerModel">ServerModel</a>] = &lt;factory&gt;, server_id: Optional[int] = None, server_status: Optional[bool] = None, domains: Optional[List[str]] = &lt;factory&gt;, service_type: Optional[str] = None, created_at: Union[str, datetime.datetime, ForwardRef(None)] = None, updated_at: Union[str, datetime.datetime, ForwardRef(None)] = None, status: Optional[str] = None)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>ServiceModel(id: Optional[str] = None, uuid: Optional[str] = None, name: Optional[str] = None, applications: Optional[List[coolipy.models.applications.ServiceApplicationModel]] = <factory>, compose_parsing_version: Optional[str] = None, config_hash: Optional[str] = None, connect_to_docker_network: Optional[bool] = None, databases: Optional[List[str]] = <factory>, deleted_at: Union[str, datetime.datetime, NoneType] = None, description: Optional[str] = None, destination_id: Optional[int] = None, destination_type: Optional[str] = None, docker_compose: Optional[str] = None, docker_compose_raw: Optional[str] = None, environment_id: Optional[int] = None, laravel_through_key: Optional[str] = None, is_container_label_escape_enabled: Optional[bool] = None, server: Optional[coolipy.models.servers.ServerModel] = <factory>, server_id: Optional[int] = None, server_status: Optional[bool] = None, domains: Optional[List[str]] = <factory>, service_type: Optional[str] = None, created_at: Union[str, datetime.datetime, NoneType] = None, updated_at: Union[str, datetime.datetime, NoneType] = None)</p></div>
+<div class="desc"><p>ServiceModel(id: Optional[str] = None, uuid: Optional[str] = None, name: Optional[str] = None, applications: Optional[List[coolipy.models.applications.ServiceApplicationModel]] = <factory>, compose_parsing_version: Optional[str] = None, config_hash: Optional[str] = None, connect_to_docker_network: Optional[bool] = None, databases: Optional[List[str]] = <factory>, deleted_at: Union[str, datetime.datetime, NoneType] = None, description: Optional[str] = None, destination_id: Optional[int] = None, destination_type: Optional[str] = None, docker_compose: Optional[str] = None, docker_compose_raw: Optional[str] = None, environment_id: Optional[int] = None, laravel_through_key: Optional[str] = None, is_container_label_escape_enabled: Optional[bool] = None, server: Optional[coolipy.models.servers.ServerModel] = <factory>, server_id: Optional[int] = None, server_status: Optional[bool] = None, domains: Optional[List[str]] = <factory>, service_type: Optional[str] = None, created_at: Union[str, datetime.datetime, NoneType] = None, updated_at: Union[str, datetime.datetime, NoneType] = None, status: Optional[str] = None)</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -71,6 +71,7 @@ class ServiceModel(CoolipyBaseModel):
     service_type: Optional[str] = None
     created_at: Optional[Union[str, datetime]] = None
     updated_at: Optional[Union[str, datetime]] = None
+    status: Optional[str] = None
 
     @override
     def _adjust_nested(self):
@@ -175,6 +176,10 @@ class ServiceModel(CoolipyBaseModel):
 <div class="desc"></div>
 </dd>
 <dt id="coolipy.models.service.ServiceModel.service_type"><code class="name">var <span class="ident">service_type</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.service.ServiceModel.status"><code class="name">var <span class="ident">status</span> : Optional[str]</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -306,6 +311,7 @@ class ServiceModelCreate(CoolipyBaseModel):
 <li><code><a title="coolipy.models.service.ServiceModel.server_id" href="#coolipy.models.service.ServiceModel.server_id">server_id</a></code></li>
 <li><code><a title="coolipy.models.service.ServiceModel.server_status" href="#coolipy.models.service.ServiceModel.server_status">server_status</a></code></li>
 <li><code><a title="coolipy.models.service.ServiceModel.service_type" href="#coolipy.models.service.ServiceModel.service_type">service_type</a></code></li>
+<li><code><a title="coolipy.models.service.ServiceModel.status" href="#coolipy.models.service.ServiceModel.status">status</a></code></li>
 <li><code><a title="coolipy.models.service.ServiceModel.updated_at" href="#coolipy.models.service.ServiceModel.updated_at">updated_at</a></code></li>
 <li><code><a title="coolipy.models.service.ServiceModel.uuid" href="#coolipy.models.service.ServiceModel.uuid">uuid</a></code></li>
 </ul>

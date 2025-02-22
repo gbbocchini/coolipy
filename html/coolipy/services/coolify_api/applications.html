@@ -56,7 +56,8 @@ hljs.highlightAll();
 <pre><code class="python">class Applications(CoolifyApiBase):
     &#34;&#34;&#34;
     Provides methods for managing applications via the Coolify API.
-    &#34;&#34;&#34;    
+    &#34;&#34;&#34;
+
     def list(self) -&gt; CoolifyAPIResponse:
         &#34;&#34;&#34;
         Retrieves a list of all applications.
@@ -96,7 +97,9 @@ hljs.highlightAll();
         content = self._http.post(
             f&#34;{self._base_url}/{url_complement}&#34;, data=json.dumps(model_as_dict)
         )
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.single, ApplicationModel)
+        return self._handle_response(
+            content, COOLIFY_RETURN_TYPES.single, ApplicationModel
+        )
 
     def get(self, application_uuid: str) -&gt; CoolifyAPIResponse:
         &#34;&#34;&#34;

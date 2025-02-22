@@ -57,6 +57,7 @@ hljs.highlightAll();
     &#34;&#34;&#34;
     Provides methods for managing databases via the Coolify API.
     &#34;&#34;&#34;
+
     def list(self) -&gt; CoolifyAPIResponse:
         &#34;&#34;&#34;
         Retrieves a list of all databases.
@@ -142,9 +143,13 @@ hljs.highlightAll();
         content = self._http.post(
             f&#34;{self._base_url}/{url_complement}&#34;, data=json.dumps(db_as_dict)
         )
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.single, DatabaseModel)
+        return self._handle_response(
+            content, COOLIFY_RETURN_TYPES.single, DatabaseModel
+        )
 
-    def update(self, database_uuid: str, database_model_update: DatabaseUpdateModel) -&gt; CoolifyAPIResponse:
+    def update(
+        self, database_uuid: str, database_model_update: DatabaseUpdateModel
+    ) -&gt; CoolifyAPIResponse:
         &#34;&#34;&#34;
         Updates an existing database with new data.
 
@@ -160,7 +165,6 @@ hljs.highlightAll();
             f&#34;{self._base_url}/{database_uuid}&#34;, data=json.dumps(as_dict)
         )
         return self._handle_response(content, COOLIFY_RETURN_TYPES.raw)
-
 
     def start(self, database_uuid: str) -&gt; CoolifyAPIResponse:
         &#34;&#34;&#34;
