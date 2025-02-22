@@ -2,7 +2,6 @@ from dataclasses import asdict
 import json
 from typing import Union
 from coolipy.constants import COOLIFY_RETURN_TYPES, URL_MAP
-from coolipy.exceptions import CoolipyAPIServiceException
 from coolipy.models.coolify_api_response import CoolifyAPIResponse
 from coolipy.models.databases import (
     ClickHouseModelCreate,
