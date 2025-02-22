@@ -123,7 +123,7 @@ class COOLIFY_SERVICE_TYPES:
     wordpress_without_database = "wordpress-without-database"
 
 
-class URL_MAP:
+class _URL_MAP:
     """
     Coolipy URL map.
     """
@@ -154,11 +154,11 @@ class URL_MAP:
     current = "/current"
 
 
-API_BASE_ENTRYPOINT = "/api/v1"
-COOLIFY_DEFAULT_PROXY = COOLIFY_PROXY_TYPES.traefik
+_API_BASE_ENTRYPOINT = "/api/v1"
+_COOLIFY_DEFAULT_PROXY = COOLIFY_PROXY_TYPES.traefik
 
 
-class COOLIFY_RETURN_TYPES:
+class _COOLIFY_RETURN_TYPES:
     list = "list"
     single = "single"
     raw = "raw"

@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Optional, Union, override
 
-from coolipy.constants import COOLIFY_DEFAULT_PROXY
+from coolipy.constants import _COOLIFY_DEFAULT_PROXY
 from coolipy.models.base import CoolipyBaseModel
 
 
@@ -12,7 +12,7 @@ class ServerProxyModel:
     Coolify Server Proxy data model.
     """
 
-    type: Optional[str] = COOLIFY_DEFAULT_PROXY
+    type: Optional[str] = _COOLIFY_DEFAULT_PROXY
     status: Optional[str] = None
     last_saved_settings: Optional[str] = None
     last_applied_settings: Optional[str] = None
@@ -125,4 +125,4 @@ class ServerModelCreate:
     private_key_uuid: str
     is_build_server: bool
     instant_validate: bool
-    proxy_type: str = COOLIFY_DEFAULT_PROXY
+    proxy_type: str = _COOLIFY_DEFAULT_PROXY

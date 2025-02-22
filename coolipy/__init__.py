@@ -9,7 +9,7 @@ from coolipy.services.coolify_api.services import Services
 from coolipy.services.coolify_api.teams import Teams
 from coolipy.services.coolify_api.databases import Databases
 from coolipy.services.http_service import HttpService
-from coolipy.constants import API_BASE_ENTRYPOINT, URL_MAP
+from coolipy.constants import _API_BASE_ENTRYPOINT, _URL_MAP
 
 
 class Coolipy:
@@ -60,37 +60,41 @@ class Coolipy:
         omit_port: bool = False,
         http_protocol: str = "http",
     ):
-        self._coolify_url = f"{http_protocol}://{coolify_endpoint}" if omit_port else f"{http_protocol}://{coolify_endpoint}:{coolify_port}"
-        self._api_base_endpoint = f"{self._coolify_url}{API_BASE_ENTRYPOINT}"
+        self._coolify_url = (
+            f"{http_protocol}://{coolify_endpoint}"
+            if omit_port
+            else f"{http_protocol}://{coolify_endpoint}:{coolify_port}"
+        )
+        self._api_base_endpoint = f"{self._coolify_url}{_API_BASE_ENTRYPOINT}"
         self._coolify_api_key = coolify_api_key
         self._http = HttpService(
             api_base_endpoint=self._api_base_endpoint,
             bearer_token=self._coolify_api_key,
         )
         self.projects = Projects(
-            http_service=self._http, base_service_url=URL_MAP.projects
+            http_service=self._http, base_service_url=_URL_MAP.projects
         )
         self.deployments = Deployments(
-            http_service=self._http, base_service_url=URL_MAP.deployments
+            http_service=self._http, base_service_url=_URL_MAP.deployments
         )
         self.resources = Resources(
-            http_service=self._http, base_service_url=URL_MAP.resources
+            http_service=self._http, base_service_url=_URL_MAP.resources
         )
         self.servers = Servers(
-            http_service=self._http, base_service_url=URL_MAP.servers
+            http_service=self._http, base_service_url=_URL_MAP.servers
         )
         self.private_keys = PrivatetKeys(
-            http_service=self._http, base_service_url=URL_MAP.private_keys
+            http_service=self._http, base_service_url=_URL_MAP.private_keys
         )
-        self.teams = Teams(http_service=self._http, base_service_url=URL_MAP.teams)
+        self.teams = Teams(http_service=self._http, base_service_url=_URL_MAP.teams)
         self.services = Services(
-            http_service=self._http, base_service_url=URL_MAP.services
+            http_service=self._http, base_service_url=_URL_MAP.services
         )
         self.databases = Databases(
-            http_service=self._http, base_service_url=URL_MAP.databases
+            http_service=self._http, base_service_url=_URL_MAP.databases
         )
         self.applications = Applications(
-            http_service=self._http, base_service_url=URL_MAP.applications
+            http_service=self._http, base_service_url=_URL_MAP.applications
         )
 
     def enable_api(self) -> CoolifyAPIResponse:
@@ -102,7 +106,7 @@ class Coolipy:
         Returns:
             CoolifyAPIResponse: The response object containing the status of the operation.
         """
-        content = self._http.get(f"{self._coolify_url}{URL_MAP.enable}")
+        content = self._http.get(f"{self._coolify_url}{_URL_MAP.enable}")
         return content
 
     def disable_api(self) -> CoolifyAPIResponse:
@@ -114,7 +118,7 @@ class Coolipy:
         Returns:
             CoolifyAPIResponse: The response object containing the status of the operation.
         """
-        content = self._http.get(f"{self._coolify_url}{URL_MAP.disable}")
+        content = self._http.get(f"{self._coolify_url}{_URL_MAP.disable}")
         return content
 
     def healthcheck(self) -> CoolifyAPIResponse:
@@ -126,7 +130,7 @@ class Coolipy:
         Returns:
             CoolifyAPIResponse: The response object containing the server's health status.
         """
-        content = self._http.get(f"{self._coolify_url}{URL_MAP.health}")
+        content = self._http.get(f"{self._coolify_url}{_URL_MAP.health}")
         return content
 
     def version(self) -> CoolifyAPIResponse:
@@ -138,5 +142,5 @@ class Coolipy:
         Returns:
             CoolifyAPIResponse: The response object containing the server version information.
         """
-        content = self._http.get(f"{self._coolify_url}{URL_MAP.version}")
+        content = self._http.get(f"{self._coolify_url}{_URL_MAP.version}")
         return content

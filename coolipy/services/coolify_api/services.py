@@ -1,7 +1,7 @@
 from dataclasses import asdict
 import json
 from typing import List
-from coolipy.constants import COOLIFY_RETURN_TYPES, URL_MAP
+from coolipy.constants import _COOLIFY_RETURN_TYPES, _URL_MAP
 from coolipy.models.env_vars import EnvVarModel, EnvVarModelsCreate
 from coolipy.services.coolify_api.base import CoolifyApiBase
 from coolipy.models.coolify_api_response import CoolifyAPIResponse
@@ -22,7 +22,7 @@ class Services(CoolifyApiBase):
         """
         content = self._http.get(self._base_url)
         return self._handle_response(
-            content, COOLIFY_RETURN_TYPES.list, model=ServiceModel
+            content, _COOLIFY_RETURN_TYPES.list, model=ServiceModel
         )
 
     def create(self, service: ServiceModelCreate) -> CoolifyAPIResponse:
@@ -37,7 +37,9 @@ class Services(CoolifyApiBase):
         """
         model_as_dict = asdict(service)
         content = self._http.post(self._base_url, data=json.dumps(model_as_dict))
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.single, ServiceModel)
+        return self._handle_response(
+            content, _COOLIFY_RETURN_TYPES.single, ServiceModel
+        )
 
     def get(self, service_uuid: str) -> CoolifyAPIResponse:
         """
@@ -50,7 +52,9 @@ class Services(CoolifyApiBase):
             CoolifyAPIResponse: The response containing the service data.
         """
         content = self._http.get(f"{self._base_url}/{service_uuid}")
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.single, ServiceModel)
+        return self._handle_response(
+            content, _COOLIFY_RETURN_TYPES.single, ServiceModel
+        )
 
     def delete(
         self,
@@ -81,7 +85,7 @@ class Services(CoolifyApiBase):
         }
         query_p = self._build_url_params_from_dict(params)
         content = self._http.delete(f"{self._base_url}/{service_uuid}?{query_p}")
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.raw)
+        return self._handle_response(content, _COOLIFY_RETURN_TYPES.raw)
 
     def list_envs(self, service_uuid: str) -> CoolifyAPIResponse:
         """
@@ -93,8 +97,8 @@ class Services(CoolifyApiBase):
         Returns:
             CoolifyAPIResponse: The response containing the list of environment variables.
         """
-        content = self._http.get(f"{self._base_url}/{service_uuid}{URL_MAP.envs}")
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.list, EnvVarModel)
+        content = self._http.get(f"{self._base_url}/{service_uuid}{_URL_MAP.envs}")
+        return self._handle_response(content, _COOLIFY_RETURN_TYPES.list, EnvVarModel)
 
     def create_env(
         self, service_uuid: str, env_var: EnvVarModelsCreate
@@ -113,7 +117,7 @@ class Services(CoolifyApiBase):
         content = self._http.post(
             f"{self._base_url}/{service_uuid}/envs", data=json.dumps(env_as_dict)
         )
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.single, EnvVarModel)
+        return self._handle_response(content, _COOLIFY_RETURN_TYPES.single, EnvVarModel)
 
     def update_env(
         self, service_uuid: str, env_var_updated: EnvVarModelsCreate
@@ -130,10 +134,10 @@ class Services(CoolifyApiBase):
         """
         env_as_dict = asdict(env_var_updated)
         content = self._http.patch(
-            f"{self._base_url}/{service_uuid}{URL_MAP.envs}",
+            f"{self._base_url}/{service_uuid}{_URL_MAP.envs}",
             data=json.dumps(env_as_dict),
         )
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.raw)
+        return self._handle_response(content, _COOLIFY_RETURN_TYPES.raw)
 
     def bulk_update_env(
         self, service_uuid: str, env_vars_updated: List[EnvVarModelsCreate]
@@ -150,10 +154,10 @@ class Services(CoolifyApiBase):
         """
         envs_as_dict = [asdict(i) for i in env_vars_updated]
         content = self._http.patch(
-            f"{self._base_url}/{service_uuid}{URL_MAP.envs}{URL_MAP.bulk}",
+            f"{self._base_url}/{service_uuid}{_URL_MAP.envs}{_URL_MAP.bulk}",
             data=json.dumps(envs_as_dict),
         )
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.raw)
+        return self._handle_response(content, _COOLIFY_RETURN_TYPES.raw)
 
     def delete_env(self, service_uuid: str, env_uuid: str) -> CoolifyAPIResponse:
         """
@@ -167,9 +171,9 @@ class Services(CoolifyApiBase):
             CoolifyAPIResponse: The response after deleting the environment variable.
         """
         content = self._http.delete(
-            f"{self._base_url}/{service_uuid}{URL_MAP.envs}/{env_uuid}"
+            f"{self._base_url}/{service_uuid}{_URL_MAP.envs}/{env_uuid}"
         )
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.raw)
+        return self._handle_response(content, _COOLIFY_RETURN_TYPES.raw)
 
     def start(self, service_uuid: str) -> CoolifyAPIResponse:
         """
@@ -181,8 +185,8 @@ class Services(CoolifyApiBase):
         Returns:
             CoolifyAPIResponse: The response after starting the service.
         """
-        content = self._http.get(f"{self._base_url}/{service_uuid}{URL_MAP.start}")
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.raw)
+        content = self._http.get(f"{self._base_url}/{service_uuid}{_URL_MAP.start}")
+        return self._handle_response(content, _COOLIFY_RETURN_TYPES.raw)
 
     def stop(self, service_uuid: str) -> CoolifyAPIResponse:
         """
@@ -194,8 +198,8 @@ class Services(CoolifyApiBase):
         Returns:
             CoolifyAPIResponse: The response after stopping the service.
         """
-        content = self._http.get(f"{self._base_url}/{service_uuid}{URL_MAP.stop}")
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.raw)
+        content = self._http.get(f"{self._base_url}/{service_uuid}{_URL_MAP.stop}")
+        return self._handle_response(content, _COOLIFY_RETURN_TYPES.raw)
 
     def restart(self, service_uuid: str) -> CoolifyAPIResponse:
         """
@@ -207,5 +211,5 @@ class Services(CoolifyApiBase):
         Returns:
             CoolifyAPIResponse: The response after restarting the service.
         """
-        content = self._http.get(f"{self._base_url}/{service_uuid}{URL_MAP.restart}")
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.raw)
+        content = self._http.get(f"{self._base_url}/{service_uuid}{_URL_MAP.restart}")
+        return self._handle_response(content, _COOLIFY_RETURN_TYPES.raw)

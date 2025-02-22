@@ -1,7 +1,7 @@
 import json
 from coolipy.models.coolify_api_response import CoolifyAPIResponse
 from coolipy.services.coolify_api.base import CoolifyApiBase
-from coolipy.constants import COOLIFY_RETURN_TYPES
+from coolipy.constants import _COOLIFY_RETURN_TYPES
 
 from coolipy.models.projects import ProjectsModel
 from coolipy.models.environs import EnvironmentsModel
@@ -21,7 +21,7 @@ class Projects(CoolifyApiBase):
         """
         content = self._http.get(self._base_url)
         return self._handle_response(
-            content, return_type=COOLIFY_RETURN_TYPES.list, model=ProjectsModel
+            content, return_type=_COOLIFY_RETURN_TYPES.list, model=ProjectsModel
         )
 
     def get(self, project_uuid: str) -> CoolifyAPIResponse:
@@ -36,7 +36,7 @@ class Projects(CoolifyApiBase):
         """
         content = self._http.get(f"{self._base_url}/{project_uuid}")
         return self._handle_response(
-            content, return_type=COOLIFY_RETURN_TYPES.single, model=ProjectsModel
+            content, return_type=_COOLIFY_RETURN_TYPES.single, model=ProjectsModel
         )
 
     def update(
@@ -57,7 +57,7 @@ class Projects(CoolifyApiBase):
             data=json.dumps({"description": project_updated_description}),
         )
         return self._handle_response(
-            resp, return_type=COOLIFY_RETURN_TYPES.single, model=ProjectsModel
+            resp, return_type=_COOLIFY_RETURN_TYPES.single, model=ProjectsModel
         )
 
     def delete(self, project_uuid: str) -> CoolifyAPIResponse:
@@ -71,7 +71,7 @@ class Projects(CoolifyApiBase):
             CoolifyAPIResponse: Response from the API after deletion.
         """
         resp = self._http.delete(f"{self._base_url}/{project_uuid}")
-        return self._handle_response(resp, return_type=COOLIFY_RETURN_TYPES.raw)
+        return self._handle_response(resp, return_type=_COOLIFY_RETURN_TYPES.raw)
 
     def environment(
         self, project_uuid: str, environment_name: str
@@ -88,7 +88,7 @@ class Projects(CoolifyApiBase):
         """
         resp = self._http.get(f"{self._base_url}/{project_uuid}/{environment_name}")
         return self._handle_response(
-            resp, return_type=COOLIFY_RETURN_TYPES.single, model=EnvironmentsModel
+            resp, return_type=_COOLIFY_RETURN_TYPES.single, model=EnvironmentsModel
         )
 
     def create(self, project_name: str, project_description: str) -> CoolifyAPIResponse:
@@ -107,5 +107,5 @@ class Projects(CoolifyApiBase):
         )
         resp = self._http.post(self._base_url, data=post_data)
         return self._handle_response(
-            resp, return_type=COOLIFY_RETURN_TYPES.single, model=ProjectsModel
+            resp, return_type=_COOLIFY_RETURN_TYPES.single, model=ProjectsModel
         )

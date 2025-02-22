@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import MagicMock
-from coolipy.constants import COOLIFY_RETURN_TYPES
+from coolipy.constants import _COOLIFY_RETURN_TYPES
 from coolipy.exceptions import CoolipyAPIServiceException
 from coolipy.services.coolify_api.base import CoolifyApiBase
 
@@ -45,7 +45,7 @@ class TestCoolifyApiBase(unittest.TestCase):
         mock_model.return_value.pythonify.return_value = {"key": "value"}
 
         result = self.api_base._handle_response(
-            mock_response, COOLIFY_RETURN_TYPES.single, mock_model
+            mock_response, _COOLIFY_RETURN_TYPES.single, mock_model
         )
         self.assertEqual(result.data, {"key": "value"})
 
@@ -58,12 +58,14 @@ class TestCoolifyApiBase(unittest.TestCase):
         mock_model.side_effect = lambda **kwargs: MagicMock(pythonify=lambda: kwargs)
 
         result = self.api_base._handle_response(
-            mock_response, COOLIFY_RETURN_TYPES.list, mock_model
+            mock_response, _COOLIFY_RETURN_TYPES.list, mock_model
         )
         self.assertEqual(result.data, [{"key": "value"}, {"key2": "value2"}])
 
     def test_handle_response_raw(self):
         mock_response = MagicMock()
         mock_response.status_code = 200
-        result = self.api_base._handle_response(mock_response, COOLIFY_RETURN_TYPES.raw)
+        result = self.api_base._handle_response(
+            mock_response, _COOLIFY_RETURN_TYPES.raw
+        )
         self.assertEqual(result, mock_response)

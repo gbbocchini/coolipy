@@ -1,7 +1,7 @@
 from dataclasses import asdict
 import json
 from typing import Union
-from coolipy.constants import COOLIFY_RETURN_TYPES, URL_MAP
+from coolipy.constants import _COOLIFY_RETURN_TYPES, _URL_MAP
 from coolipy.exceptions import CoolipyAPIServiceException
 from coolipy.models.coolify_api_response import CoolifyAPIResponse
 from coolipy.models.databases import (
@@ -33,7 +33,7 @@ class Databases(CoolifyApiBase):
             CoolifyAPIResponse: Response containing a list of databases.
         """
         content = self._http.get(self._base_url)
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.list, DatabaseModel)
+        return self._handle_response(content, _COOLIFY_RETURN_TYPES.list, DatabaseModel)
 
     def get(self, database_uuid: str) -> CoolifyAPIResponse:
         """
@@ -47,7 +47,7 @@ class Databases(CoolifyApiBase):
         """
         content = self._http.get(f"{self._base_url}/{database_uuid}")
         return self._handle_response(
-            content, COOLIFY_RETURN_TYPES.single, DatabaseModel
+            content, _COOLIFY_RETURN_TYPES.single, DatabaseModel
         )
 
     def delete(
@@ -79,7 +79,7 @@ class Databases(CoolifyApiBase):
         }
         query_p = self._build_url_params_from_dict(params)
         content = self._http.delete(f"{self._base_url}/{database_uuid}?{query_p}")
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.raw)
+        return self._handle_response(content, _COOLIFY_RETURN_TYPES.raw)
 
     def create(
         self,
@@ -111,7 +111,7 @@ class Databases(CoolifyApiBase):
             f"{self._base_url}/{url_complement}", data=json.dumps(db_as_dict)
         )
         return self._handle_response(
-            content, COOLIFY_RETURN_TYPES.single, DatabaseModel
+            content, _COOLIFY_RETURN_TYPES.single, DatabaseModel
         )
 
     def update(
@@ -131,7 +131,7 @@ class Databases(CoolifyApiBase):
         content = self._http.patch(
             f"{self._base_url}/{database_uuid}", data=json.dumps(as_dict)
         )
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.raw)
+        return self._handle_response(content, _COOLIFY_RETURN_TYPES.raw)
 
     def start(self, database_uuid: str) -> CoolifyAPIResponse:
         """
@@ -143,8 +143,8 @@ class Databases(CoolifyApiBase):
         Returns:
             CoolifyAPIResponse: Raw response indicating the start status.
         """
-        content = self._http.get(f"{self._base_url}/{database_uuid}{URL_MAP.start}")
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.raw)
+        content = self._http.get(f"{self._base_url}/{database_uuid}{_URL_MAP.start}")
+        return self._handle_response(content, _COOLIFY_RETURN_TYPES.raw)
 
     def stop(self, database_uuid: str) -> CoolifyAPIResponse:
         """
@@ -156,8 +156,8 @@ class Databases(CoolifyApiBase):
         Returns:
             CoolifyAPIResponse: Raw response indicating the stop status.
         """
-        content = self._http.get(f"{self._base_url}/{database_uuid}{URL_MAP.stop}")
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.raw)
+        content = self._http.get(f"{self._base_url}/{database_uuid}{_URL_MAP.stop}")
+        return self._handle_response(content, _COOLIFY_RETURN_TYPES.raw)
 
     def restart(self, database_uuid: str) -> CoolifyAPIResponse:
         """
@@ -169,5 +169,5 @@ class Databases(CoolifyApiBase):
         Returns:
             CoolifyAPIResponse: Raw response indicating the restart status.
         """
-        content = self._http.get(f"{self._base_url}/{database_uuid}{URL_MAP.restart}")
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.raw)
+        content = self._http.get(f"{self._base_url}/{database_uuid}{_URL_MAP.restart}")
+        return self._handle_response(content, _COOLIFY_RETURN_TYPES.raw)

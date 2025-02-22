@@ -1,6 +1,6 @@
 from dataclasses import asdict
 from typing import Any, Dict, Optional, Union
-from coolipy.constants import COOLIFY_RETURN_TYPES
+from coolipy.constants import _COOLIFY_RETURN_TYPES
 from coolipy.exceptions import CoolipyAPIServiceException
 from coolipy.models.environs import EnvironmentsModel
 from coolipy.models.private_keys import PrivateKeysModel
@@ -100,10 +100,10 @@ class CoolifyApiBase:
         status_code = response.status_code
         is_successfull = status_code in (200, 201)
 
-        if is_successfull and return_type is not COOLIFY_RETURN_TYPES.raw:
-            if return_type is COOLIFY_RETURN_TYPES.single:
+        if is_successfull and return_type is not _COOLIFY_RETURN_TYPES.raw:
+            if return_type is _COOLIFY_RETURN_TYPES.single:
                 response.data = model(**response.data).pythonify()
-            elif return_type is COOLIFY_RETURN_TYPES.list:
+            elif return_type is _COOLIFY_RETURN_TYPES.list:
                 response.data = [model(**i).pythonify() for i in response.data]
 
         return response

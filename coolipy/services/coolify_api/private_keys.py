@@ -1,7 +1,7 @@
 from dataclasses import asdict
 import json
 from typing import List
-from coolipy.constants import COOLIFY_RETURN_TYPES
+from coolipy.constants import _COOLIFY_RETURN_TYPES
 from coolipy.models.coolify_api_response import CoolifyAPIResponse
 from coolipy.models.private_keys import PrivateKeysModel, PrivateKeysModelCreate
 from .base import CoolifyApiBase
@@ -22,7 +22,7 @@ class PrivatetKeys(CoolifyApiBase):
         """
         content = self._http.get(self._base_url)
         return self._handle_response(
-            content, COOLIFY_RETURN_TYPES.list, PrivateKeysModel
+            content, _COOLIFY_RETURN_TYPES.list, PrivateKeysModel
         )
 
     def get(self, private_key_uuid: str) -> CoolifyAPIResponse:
@@ -37,7 +37,7 @@ class PrivatetKeys(CoolifyApiBase):
         """
         content = self._http.get(f"{self._base_url}/{private_key_uuid}")
         return self._handle_response(
-            content, COOLIFY_RETURN_TYPES.single, PrivateKeysModel
+            content, _COOLIFY_RETURN_TYPES.single, PrivateKeysModel
         )
 
     def create(self, private_key: PrivateKeysModelCreate) -> CoolifyAPIResponse:
@@ -52,7 +52,7 @@ class PrivatetKeys(CoolifyApiBase):
         """
         model_as_dict = asdict(private_key)
         content = self._http.post(self._base_url, data=json.dumps(model_as_dict))
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.raw)
+        return self._handle_response(content, _COOLIFY_RETURN_TYPES.raw)
 
     def update(self, private_key: PrivateKeysModelCreate) -> CoolifyAPIResponse:
         """
@@ -66,7 +66,7 @@ class PrivatetKeys(CoolifyApiBase):
         """
         model_as_dict = asdict(private_key)
         content = self._http.patch(self._base_url, data=json.dumps(model_as_dict))
-        return self._handle_response(content, COOLIFY_RETURN_TYPES.raw)
+        return self._handle_response(content, _COOLIFY_RETURN_TYPES.raw)
 
     def delete(self, private_key_uuid: str) -> CoolifyAPIResponse:
         """
@@ -76,4 +76,4 @@ class PrivatetKeys(CoolifyApiBase):
             private_key_uuid (str): The UUID of the private key.
         """
         content = self._http.delete(f"{self._base_url}/{private_key_uuid}")
-        self._handle_response(content, COOLIFY_RETURN_TYPES.raw)
+        self._handle_response(content, _COOLIFY_RETURN_TYPES.raw)

@@ -1,6 +1,6 @@
 from dataclasses import asdict
 import json
-from coolipy.constants import COOLIFY_RETURN_TYPES, URL_MAP
+from coolipy.constants import _COOLIFY_RETURN_TYPES, _URL_MAP
 from coolipy.models.coolify_api_response import CoolifyAPIResponse
 from coolipy.models.resources import ResourceModel
 from coolipy.models.servers import ServerModel, ServerModelCreate
@@ -21,7 +21,7 @@ class Servers(CoolifyApiBase):
         """
         content = self._http.get(self._base_url)
         return self._handle_response(
-            content, return_type=COOLIFY_RETURN_TYPES.list, model=ServerModel
+            content, return_type=_COOLIFY_RETURN_TYPES.list, model=ServerModel
         )
 
     def get(self, server_uuid: str) -> CoolifyAPIResponse:
@@ -36,7 +36,7 @@ class Servers(CoolifyApiBase):
         """
         content = self._http.get(f"{self._base_url}/{server_uuid}")
         return self._handle_response(
-            content, return_type=COOLIFY_RETURN_TYPES.single, model=ServerModel
+            content, return_type=_COOLIFY_RETURN_TYPES.single, model=ServerModel
         )
 
     def domains(self, server_uuid: str) -> CoolifyAPIResponse:
@@ -49,8 +49,8 @@ class Servers(CoolifyApiBase):
         Returns:
             CoolifyAPIResponse: Response containing the list of domains.
         """
-        content = self._http.get(f"{self._base_url}/{server_uuid}{URL_MAP.domains}")
-        return self._handle_response(content, return_type=COOLIFY_RETURN_TYPES.raw)
+        content = self._http.get(f"{self._base_url}/{server_uuid}{_URL_MAP.domains}")
+        return self._handle_response(content, return_type=_COOLIFY_RETURN_TYPES.raw)
 
     def resources(self, server_uuid: str) -> CoolifyAPIResponse:
         """
@@ -62,9 +62,9 @@ class Servers(CoolifyApiBase):
         Returns:
             CoolifyAPIResponse: Response containing a list of resources.
         """
-        content = self._http.get(f"{self._base_url}/{server_uuid}{URL_MAP.resources}")
+        content = self._http.get(f"{self._base_url}/{server_uuid}{_URL_MAP.resources}")
         return self._handle_response(
-            content, return_type=COOLIFY_RETURN_TYPES.list, model=ResourceModel
+            content, return_type=_COOLIFY_RETURN_TYPES.list, model=ResourceModel
         )
 
     def validate(self, server_uuid: str) -> CoolifyAPIResponse:
@@ -77,8 +77,8 @@ class Servers(CoolifyApiBase):
         Returns:
             CoolifyAPIResponse: Response from the validation process.
         """
-        content = self._http.get(f"{self._base_url}/{server_uuid}{URL_MAP.validate}")
-        return self._handle_response(content, return_type=COOLIFY_RETURN_TYPES.raw)
+        content = self._http.get(f"{self._base_url}/{server_uuid}{_URL_MAP.validate}")
+        return self._handle_response(content, return_type=_COOLIFY_RETURN_TYPES.raw)
 
     def create(
         self,
@@ -95,7 +95,7 @@ class Servers(CoolifyApiBase):
         """
         server_as_dict = asdict(server)
         resp = self._http.post(self._base_url, data=json.dumps(server_as_dict))
-        return self._handle_response(resp, return_type=COOLIFY_RETURN_TYPES.raw)
+        return self._handle_response(resp, return_type=_COOLIFY_RETURN_TYPES.raw)
 
     def update(
         self,
@@ -113,5 +113,5 @@ class Servers(CoolifyApiBase):
         server_as_dict = asdict(updated_server)
         resp = self._http.patch(self._base_url, data=json.dumps(server_as_dict))
         return self._handle_response(
-            resp, return_type=COOLIFY_RETURN_TYPES.single, model=ServerModel
+            resp, return_type=_COOLIFY_RETURN_TYPES.single, model=ServerModel
         )

@@ -1,4 +1,4 @@
-from coolipy.constants import COOLIFY_RETURN_TYPES
+from coolipy.constants import _COOLIFY_RETURN_TYPES
 from coolipy.models.coolify_api_response import CoolifyAPIResponse
 from .base import CoolifyApiBase
 from coolipy.models.resources import ResourceModel
@@ -18,5 +18,5 @@ class Resources(CoolifyApiBase):
         """
         content = self._http.get(self._base_url)
         return self._handle_response(
-            content, return_type=COOLIFY_RETURN_TYPES.list, model=ResourceModel
+            content, return_type=_COOLIFY_RETURN_TYPES.list, model=ResourceModel
         )

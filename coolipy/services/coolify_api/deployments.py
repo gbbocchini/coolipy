@@ -1,5 +1,5 @@
 from typing import List, Optional
-from coolipy.constants import COOLIFY_RETURN_TYPES, URL_MAP
+from coolipy.constants import _COOLIFY_RETURN_TYPES, _URL_MAP
 from coolipy.models.coolify_api_response import CoolifyAPIResponse
 from .base import CoolifyApiBase
 from coolipy.models.deployments import DeploymentsModel
@@ -20,7 +20,7 @@ class Deployments(CoolifyApiBase):
         """
         content = self._http.get(self._base_url)
         return self._handle_response(
-            content, return_type=COOLIFY_RETURN_TYPES.list, model=DeploymentsModel
+            content, return_type=_COOLIFY_RETURN_TYPES.list, model=DeploymentsModel
         )
 
     def get(self, deployment_uuid: str) -> CoolifyAPIResponse:
@@ -36,7 +36,7 @@ class Deployments(CoolifyApiBase):
         """
         content = self._http.get(f"{self._base_url}/{deployment_uuid}")
         return self._handle_response(
-            content, return_type=COOLIFY_RETURN_TYPES.single, model=DeploymentsModel
+            content, return_type=_COOLIFY_RETURN_TYPES.single, model=DeploymentsModel
         )
 
     def deploy(
@@ -55,7 +55,7 @@ class Deployments(CoolifyApiBase):
         """
         params = {"uuid": resource_uuid, "tag": tag if tag else "", "force": force}
         query_p = self._build_url_params_from_dict(params)
-        content = self._http.get(f"{URL_MAP.deploy}?{query_p}")
+        content = self._http.get(f"{_URL_MAP.deploy}?{query_p}")
         return self._handle_response(
-            content, COOLIFY_RETURN_TYPES.list, DeploymentsModel
+            content, _COOLIFY_RETURN_TYPES.list, DeploymentsModel
         )
