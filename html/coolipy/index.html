@@ -509,9 +509,9 @@
 <main>
 <article id="content">
     <header>
-        <h1 class="title">Coolipy <code>(coolipy)</code></h1>
+        <h1 class="title"><code>coolipy</code></h1>
         <h2>The (un)Official <a href="https://coolify.io/">Coolify</a> Python Client</h2>
-        <h3><a href="https://pypi.org/project/coolipy/">pip install coolipy</a> | <a href="https://github.com/gbbocchini/coolipy"><code>github</code></a></h3>
+        <h3><a href="https://pypi.org/project/coolipy/"><code>pip install coolipy</code></a> | <a href="https://github.com/gbbocchini/coolipy"><code>github</code></a></h3>
     </header>
 <section id="section-intro">
 </section>
@@ -582,6 +582,8 @@ platform.</p>
 <dd>The endpoint URL of the Coolify server.</dd>
 <dt><strong><code>coolify_port</code></strong> :&ensp;<code>int</code>, optional</dt>
 <dd>The port number for the Coolify server. Defaults to 8000.</dd>
+<dt><strong><code>omit_port</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Flag for DNS resolution (no port in the Coolify url). Defaults to False.</dd>
 <dt><strong><code>http_protocol</code></strong> :&ensp;<code>str</code>, optional</dt>
 <dd>The HTTP protocol (e.g., "http" or "https"). Defaults to "http".</dd>
 </dl>
@@ -622,6 +624,7 @@ Retrieves the current version of the Coolify server.</p></div>
         coolify_api_key (str): The API key for authenticating with the Coolify API.
         coolify_endpoint (str): The endpoint URL of the Coolify server.
         coolify_port (int, optional): The port number for the Coolify server. Defaults to 8000.
+        omit_port (bool, optional): Flag for DNS resolution (no port in the Coolify url). Defaults to False.
         http_protocol (str, optional): The HTTP protocol (e.g., &#34;http&#34; or &#34;https&#34;). Defaults to &#34;http&#34;.
 
     Methods:
@@ -646,7 +649,11 @@ Retrieves the current version of the Coolify server.</p></div>
         omit_port: bool = False,
         http_protocol: str = &#34;http&#34;,
     ):
-        self._coolify_url = f&#34;{http_protocol}://{coolify_endpoint}&#34; if omit_port else f&#34;{http_protocol}://{coolify_endpoint}:{coolify_port}&#34;
+        self._coolify_url = (
+            f&#34;{http_protocol}://{coolify_endpoint}&#34;
+            if omit_port
+            else f&#34;{http_protocol}://{coolify_endpoint}:{coolify_port}&#34;
+        )
         self._api_base_endpoint = f&#34;{self._coolify_url}{API_BASE_ENTRYPOINT}&#34;
         self._coolify_api_key = coolify_api_key
         self._http = HttpService(
