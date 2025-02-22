@@ -209,6 +209,7 @@ my_database = coolify_client.databases.create(database_model_create=postgres_db)
 - Create an App
 ```python
 from coolipy.models.applications import ApplicationPrivateGHModelCreate
+from coolipy.constants import COOLIFY_BUILD_PACKS
 
 app_data = ApplicationPrivateGHModelCreate(
     project_uuid="your_project_uuid",
