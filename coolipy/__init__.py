@@ -36,7 +36,7 @@ class Coolipy:
         coolify_api_key (str): The API key for authenticating with the Coolify API.
         coolify_endpoint (str): The endpoint URL of the Coolify server.
         coolify_port (int, optional): The port number for the Coolify server. Defaults to 8000.
-        omit_port (bool, optional): Flag for DNS resolution (no port in the Coolify url).
+        omit_port (bool, optional): Flag for DNS resolution (no port in the Coolify url). Defaults to False.
         http_protocol (str, optional): The HTTP protocol (e.g., "http" or "https"). Defaults to "http".
 
     Methods:
