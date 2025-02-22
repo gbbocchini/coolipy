@@ -57,9 +57,10 @@ class Coolipy:
         coolify_api_key: str,
         coolify_endpoint: str,
         coolify_port: int = 8000,
+        omit_port: bool = False,
         http_protocol: str = "http",
     ):
-        self._coolify_url = f"{http_protocol}://{coolify_endpoint}:{coolify_port}"
+        self._coolify_url = f"{http_protocol}://{coolify_endpoint}" if omit_port else f"{http_protocol}://{coolify_endpoint}:{coolify_port}"
         self._api_base_endpoint = f"{self._coolify_url}{API_BASE_ENTRYPOINT}"
         self._coolify_api_key = coolify_api_key
         self._http = HttpService(
