@@ -46,6 +46,7 @@ class ServiceModel(CoolipyBaseModel):
     service_type: Optional[str] = None
     created_at: Optional[Union[str, datetime]] = None
     updated_at: Optional[Union[str, datetime]] = None
+    status: Optional[str] = None
 
     @override
     def _adjust_nested(self):

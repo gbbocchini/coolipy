@@ -68,6 +68,7 @@ class ServerSettingsModel(CoolipyBaseModel):
     logdrain_newrelic_base_uri: Optional[str] = None
     logdrain_newrelic_license_key: Optional[str] = None
     wildcard_domain: Optional[str] = None
+    server_disk_usage_check_frequency: Optional[str] = None
 
 
 @dataclass
@@ -99,6 +100,7 @@ class ServerModel(CoolipyBaseModel):
     settings: Optional[ServerSettingsModel] = None
     is_reachable: Optional[bool] = None
     is_usable: Optional[bool] = None
+    is_coolify_host: Optional[bool] = None
 
     @override
     def _adjust_nested(self):
