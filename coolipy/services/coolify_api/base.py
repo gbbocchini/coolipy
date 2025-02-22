@@ -1,7 +1,6 @@
 from dataclasses import asdict
 from typing import Any, Dict, Optional, Union
 from coolipy.constants import COOLIFY_RETURN_TYPES
-from coolipy.exceptions import CoolipyAPIServiceException
 from coolipy.models.environs import EnvironmentsModel
 from coolipy.models.private_keys import PrivateKeysModel
 from coolipy.models.teams import TeamMemberModel, TeamModel
@@ -11,6 +10,10 @@ from coolipy.models.coolify_api_response import CoolifyAPIResponse
 from coolipy.models.projects import ProjectsModel
 from coolipy.models.resources import ResourceModel
 from coolipy.models.servers import ServerModel
+
+
+class CoolipyAPIServiceException(Exception):
+    pass
 
 
 class CoolifyApiBase:
