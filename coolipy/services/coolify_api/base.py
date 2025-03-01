@@ -21,6 +21,8 @@ class CoolifyApiBase:
     Base class for services interacting with the Coolify API, handling common logic for HTTP requests and responses.
     """
 
+    __slots__ = ("http_service", "base_service_url")
+
     def __init__(self, http_service: HttpService, base_service_url: str):
         """
         Initializes the Coolify API service with an HTTP service instance and a specific service URL.

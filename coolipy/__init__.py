@@ -53,6 +53,14 @@ class Coolipy:
             Retrieves the current version of the Coolify server.
     """
 
+    _slots__ = (
+        "coolify_api_key",
+        "coolify_endpoint",
+        "coolify_port",
+        "omit_port",
+        "http_protocol",
+    )
+
     def __init__(
         self,
         coolify_api_key: str,
