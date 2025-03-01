@@ -13,7 +13,7 @@ class HttpService:
     Coolipy Http interface for managing HTTP requests to the Coolify API.
     """
 
-    _slots__ = ("api_base_endpoint", "bearer_token")
+    __slots__ = ("api_base_endpoint", "bearer_token")
 
     def __init__(self, api_base_endpoint: str, bearer_token: str):
         """
