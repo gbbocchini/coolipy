@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "coolipy"
-version = "0.0.8"
+version = "0.0.9"
 authors = [
   { name="Gabriel Bocchini", email="gabrielbocchini@gmail.com" },
 ]
@@ -36,3 +36,34 @@ Repository = "https://github.com/gbbocchini/coolipy"
 
 [tool.setuptools]
 packages = ["coolipy", "coolipy.models", "coolipy.services", "coolipy.services.coolify_api"]
+
+[tool.setuptools.metadata]
+name = "coolipy"
+version = "0.0.9"
+author = "Gabriel Bocchini"
+author_email = "gabrielbocchini@gmail.com"
+maintainer = "Gabriel Bocchini"
+maintainer_email = "gabrielbocchini@gmail.com"
+description = "Coolipy - (Un)official Coolify - coolify.io - Python client!"
+long_description = "README.md"
+long_description_content_type = "text/markdown"
+url = "https://github.com/gbbocchini/coolipy"
+project_urls = {
+    Homepage = "https://github.com/gbbocchini/coolipy",
+    Documentation = "https://coolipydocs.gabrielbocchini.com.br/",
+    Source = "https://github.com/gbbocchini/coolipy",
+    Tracker = "https://github.com/gbbocchini/coolipy/issues"
+}
+license = "Apache-2.0"
+license_file = "LICENSE"
+keywords = ["coolify", "rest client", "api client"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+requires_python = ">=3.10"
