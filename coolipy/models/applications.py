@@ -16,8 +16,7 @@ class ServiceApplicationModel(CoolipyBaseModel):
     human_name: Optional[str] = None
     description: Optional[str] = None
     fqdn: Optional[str] = None
-    ports: Optional[List[str]] = None
-    exposes: Optional[str] = None
+    ports_exposes: Optional[str] = None
     status: Optional[str] = None
     service_id: Optional[int] = None
     exclude_from_status: Optional[bool] = None
@@ -185,6 +184,7 @@ class ApplicationPublicModelCreate:
     project_uuid: str
     server_uuid: str
     environment_name: str
+    environment_uuid: str
     ports_exposes: str
     instant_deploy: bool
 
@@ -208,6 +208,13 @@ class ApplicationPrivateGHModelCreate(ApplicationPublicModelCreate):
 @dataclass
 class ApplicationPublicPrivatePvtKeyGHModelCreate(ApplicationPublicModelCreate):
     private_key_uuid: str
+    project_uuid: str
+    server_uuid: str
+    environment_name: str
+    environment_uuid: str
+    git_repository: str
+    git_branch: str
+    build_pack: COOLIFY_BUILD_PACKS
 
 
 @dataclass
