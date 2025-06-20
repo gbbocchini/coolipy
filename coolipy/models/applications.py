@@ -2,7 +2,6 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Dict, List, Optional, Union
 
-
 from coolipy.constants import COOLIFY_BUILD_PACKS
 from coolipy.models.base import CoolipyBaseModel
 from coolipy.models.databases import DestinationModel
@@ -185,12 +184,12 @@ class ApplicationPublicModelCreate:
     project_uuid: str
     server_uuid: str
     environment_name: str
-    ports_exposes: str
     instant_deploy: bool
 
 
 @dataclass
 class ApplicationPublicGHModelCreate(ApplicationPublicModelCreate):
+    ports_exposes: str
     github_app_uuid: int
     git_repository: str
     git_branch: str
@@ -199,6 +198,7 @@ class ApplicationPublicGHModelCreate(ApplicationPublicModelCreate):
 
 @dataclass
 class ApplicationPrivateGHModelCreate(ApplicationPublicModelCreate):
+    ports_exposes: str
     github_app_uuid: int
     git_repository: str
     git_branch: str
@@ -207,16 +207,19 @@ class ApplicationPrivateGHModelCreate(ApplicationPublicModelCreate):
 
 @dataclass
 class ApplicationPublicPrivatePvtKeyGHModelCreate(ApplicationPublicModelCreate):
+    ports_exposes: str
     private_key_uuid: str
 
 
 @dataclass
 class ApplicationDockerfileModelCreate(ApplicationPublicModelCreate):
+    ports_exposes: str
     dockerfile: str
 
 
 @dataclass
 class ApplicationDockerImageModelCreate(ApplicationPublicModelCreate):
+    ports_exposes: str
     docker_registry_image_name: str
     docker_registry_image_tag: Optional[str] = ""
 
