@@ -1,14 +1,19 @@
 import json
 import requests
-from coolipy.exceptions import CoolipyHttpServiceException
 from coolipy.models.coolify_api_response import CoolifyAPIResponse
 from typing import Dict, Optional
+
+
+class CoolipyHttpServiceException(Exception):
+    pass
 
 
 class HttpService:
     """
     Coolipy Http interface for managing HTTP requests to the Coolify API.
     """
+
+    __slots__ = ("api_base_endpoint", "bearer_token")
 
     def __init__(self, api_base_endpoint: str, bearer_token: str):
         """

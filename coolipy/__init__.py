@@ -36,6 +36,7 @@ class Coolipy:
         coolify_api_key (str): The API key for authenticating with the Coolify API.
         coolify_endpoint (str): The endpoint URL of the Coolify server.
         coolify_port (int, optional): The port number for the Coolify server. Defaults to 8000.
+        omit_port (bool, optional): Flag for DNS resolution (no port in the Coolify url). Defaults to False.
         http_protocol (str, optional): The HTTP protocol (e.g., "http" or "https"). Defaults to "http".
 
     Methods:
@@ -52,6 +53,14 @@ class Coolipy:
             Retrieves the current version of the Coolify server.
     """
 
+    __slots__ = (
+        "coolify_api_key",
+        "coolify_endpoint",
+        "coolify_port",
+        "omit_port",
+        "http_protocol",
+    )
+
     def __init__(
         self,
         coolify_api_key: str,
@@ -60,7 +69,11 @@ class Coolipy:
         omit_port: bool = False,
         http_protocol: str = "http",
     ):
-        self._coolify_url = f"{http_protocol}://{coolify_endpoint}" if omit_port else f"{http_protocol}://{coolify_endpoint}:{coolify_port}"
+        self._coolify_url = (
+            f"{http_protocol}://{coolify_endpoint}"
+            if omit_port
+            else f"{http_protocol}://{coolify_endpoint}:{coolify_port}"
+        )
         self._api_base_endpoint = f"{self._coolify_url}{API_BASE_ENTRYPOINT}"
         self._coolify_api_key = coolify_api_key
         self._http = HttpService(
