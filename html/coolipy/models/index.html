@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.6">
-<title>coolipy.models.base API documentation</title>
-<meta name="description" content="Base model shared by all coolipy data models.">
+<title>coolipy.models API documentation</title>
+<meta name="description" content="Data models for coolipy.">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
@@ -33,12 +33,63 @@ el.replaceWith(d);
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>coolipy.models.base</code></h1>
+<h1 class="title">Module <code>coolipy.models</code></h1>
 </header>
 <section id="section-intro">
-<p>Base model shared by all coolipy data models.</p>
+<p>Data models for coolipy.</p>
 </section>
 <section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="coolipy.models.applications" href="applications.html">coolipy.models.applications</a></code></dt>
+<dd>
+<div class="desc"><p>Application models for the Coolify API.</p></div>
+</dd>
+<dt><code class="name"><a title="coolipy.models.base" href="base.html">coolipy.models.base</a></code></dt>
+<dd>
+<div class="desc"><p>Base model shared by all coolipy data models.</p></div>
+</dd>
+<dt><code class="name"><a title="coolipy.models.common" href="common.html">coolipy.models.common</a></code></dt>
+<dd>
+<div class="desc"><p>Shared models reused across multiple coolipy resources.</p></div>
+</dd>
+<dt><code class="name"><a title="coolipy.models.databases" href="databases.html">coolipy.models.databases</a></code></dt>
+<dd>
+<div class="desc"><p>Database models for the Coolify API.</p></div>
+</dd>
+<dt><code class="name"><a title="coolipy.models.deployments" href="deployments.html">coolipy.models.deployments</a></code></dt>
+<dd>
+<div class="desc"><p>Deployment models for the Coolify API.</p></div>
+</dd>
+<dt><code class="name"><a title="coolipy.models.projects" href="projects.html">coolipy.models.projects</a></code></dt>
+<dd>
+<div class="desc"><p>Project and environment models for the Coolify API.</p></div>
+</dd>
+<dt><code class="name"><a title="coolipy.models.s3_storages" href="s3_storages.html">coolipy.models.s3_storages</a></code></dt>
+<dd>
+<div class="desc"><p>S3 storage models for the Coolify API.</p></div>
+</dd>
+<dt><code class="name"><a title="coolipy.models.security" href="security.html">coolipy.models.security</a></code></dt>
+<dd>
+<div class="desc"><p>Private key models for the Coolify API.</p></div>
+</dd>
+<dt><code class="name"><a title="coolipy.models.servers" href="servers.html">coolipy.models.servers</a></code></dt>
+<dd>
+<div class="desc"><p>Server models for the Coolify API.</p></div>
+</dd>
+<dt><code class="name"><a title="coolipy.models.services" href="services.html">coolipy.models.services</a></code></dt>
+<dd>
+<div class="desc"><p>Service models for the Coolify API.</p></div>
+</dd>
+<dt><code class="name"><a title="coolipy.models.system" href="system.html">coolipy.models.system</a></code></dt>
+<dd>
+<div class="desc"><p>Models for the system-level Coolify endpoints.</p></div>
+</dd>
+<dt><code class="name"><a title="coolipy.models.teams" href="teams.html">coolipy.models.teams</a></code></dt>
+<dd>
+<div class="desc"><p>Team and user models for the Coolify API.</p></div>
+</dd>
+</dl>
 </section>
 <section>
 </section>
@@ -47,7 +98,7 @@ el.replaceWith(d);
 <section>
 <h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt id="coolipy.models.base.CoolipyBaseModel"><code class="flex name class">
+<dt id="coolipy.models.CoolipyBaseModel"><code class="flex name class">
 <span>class <span class="ident">CoolipyBaseModel</span></span>
 <span>(</span><span>**data: Any)</span>
 </code></dt>
@@ -135,7 +186,43 @@ validated to form a valid model.</p>
 </ul>
 <h3>Class variables</h3>
 <dl>
-<dt id="coolipy.models.base.CoolipyBaseModel.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dt id="coolipy.models.CoolipyBaseModel.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.SystemMessage"><code class="flex name class">
+<span>class <span class="ident">SystemMessage</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SystemMessage(CoolipyBaseModel):
+    &#34;&#34;&#34;A message returned by system endpoints (e.g. enable/disable API, MCP).&#34;&#34;&#34;
+
+    message: str</code></pre>
+</details>
+<div class="desc"><p>A message returned by system endpoints (e.g. enable/disable API, MCP).</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.SystemMessage.message"><code class="name">var <span class="ident">message</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.SystemMessage.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -151,15 +238,38 @@ validated to form a valid model.</p>
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="coolipy.models" href="index.html">coolipy.models</a></code></li>
+<li><code><a title="coolipy" href="../index.html">coolipy</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<ul>
+<li><code><a title="coolipy.models.applications" href="applications.html">coolipy.models.applications</a></code></li>
+<li><code><a title="coolipy.models.base" href="base.html">coolipy.models.base</a></code></li>
+<li><code><a title="coolipy.models.common" href="common.html">coolipy.models.common</a></code></li>
+<li><code><a title="coolipy.models.databases" href="databases.html">coolipy.models.databases</a></code></li>
+<li><code><a title="coolipy.models.deployments" href="deployments.html">coolipy.models.deployments</a></code></li>
+<li><code><a title="coolipy.models.projects" href="projects.html">coolipy.models.projects</a></code></li>
+<li><code><a title="coolipy.models.s3_storages" href="s3_storages.html">coolipy.models.s3_storages</a></code></li>
+<li><code><a title="coolipy.models.security" href="security.html">coolipy.models.security</a></code></li>
+<li><code><a title="coolipy.models.servers" href="servers.html">coolipy.models.servers</a></code></li>
+<li><code><a title="coolipy.models.services" href="services.html">coolipy.models.services</a></code></li>
+<li><code><a title="coolipy.models.system" href="system.html">coolipy.models.system</a></code></li>
+<li><code><a title="coolipy.models.teams" href="teams.html">coolipy.models.teams</a></code></li>
 </ul>
 </li>
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
 <li>
-<h4><code><a title="coolipy.models.base.CoolipyBaseModel" href="#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></code></h4>
+<h4><code><a title="coolipy.models.CoolipyBaseModel" href="#coolipy.models.CoolipyBaseModel">CoolipyBaseModel</a></code></h4>
 <ul class="">
-<li><code><a title="coolipy.models.base.CoolipyBaseModel.model_config" href="#coolipy.models.base.CoolipyBaseModel.model_config">model_config</a></code></li>
+<li><code><a title="coolipy.models.CoolipyBaseModel.model_config" href="#coolipy.models.CoolipyBaseModel.model_config">model_config</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.SystemMessage" href="#coolipy.models.SystemMessage">SystemMessage</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.SystemMessage.message" href="#coolipy.models.SystemMessage.message">message</a></code></li>
+<li><code><a title="coolipy.models.SystemMessage.model_config" href="#coolipy.models.SystemMessage.model_config">model_config</a></code></li>
 </ul>
 </li>
 </ul>
