@@ -1,0 +1,2139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="pdoc 16.0.0"/>
+    <title>coolipy.enums API documentation</title>
+
+    <style>/*! * Bootstrap Reboot v5.0.0 (https://getbootstrap.com/) * Copyright 2011-2021 The Bootstrap Authors * Copyright 2011-2021 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE) * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md) */*,::after,::before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;background-color:#fff;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}hr{margin:1rem 0;color:inherit;background-color:currentColor;border:0;opacity:.25}hr:not([size]){height:1px}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:calc(1.375rem + 1.5vw)}@media (min-width:1200px){h1{font-size:2.5rem}}h2{font-size:calc(1.325rem + .9vw)}@media (min-width:1200px){h2{font-size:2rem}}h3{font-size:calc(1.3rem + .6vw)}@media (min-width:1200px){h3{font-size:1.75rem}}h4{font-size:calc(1.275rem + .3vw)}@media (min-width:1200px){h4{font-size:1.5rem}}h5{font-size:1.25rem}h6{font-size:1rem}p{margin-top:0;margin-bottom:1rem}abbr[data-bs-original-title],abbr[title]{-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}ol,ul{padding-left:2rem}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:.875em}mark{padding:.2em;background-color:#fcf8e3}sub,sup{position:relative;font-size:.75em;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#0d6efd;text-decoration:underline}a:hover{color:#0a58ca}a:not([href]):not([class]),a:not([href]):not([class]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em;direction:ltr;unicode-bidi:bidi-override}pre{display:block;margin-top:0;margin-bottom:1rem;overflow:auto;font-size:.875em}pre code{font-size:inherit;color:inherit;word-break:normal}code{font-size:.875em;color:#d63384;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:.875em;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:1em;font-weight:700}figure{margin:0 0 1rem}img,svg{vertical-align:middle}table{caption-side:bottom;border-collapse:collapse}caption{padding-top:.5rem;padding-bottom:.5rem;color:#6c757d;text-align:left}th{text-align:inherit;text-align:-webkit-match-parent}tbody,td,tfoot,th,thead,tr{border-color:inherit;border-style:solid;border-width:0}label{display:inline-block}button{border-radius:0}button:focus:not(:focus-visible){outline:0}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,select{text-transform:none}[role=button]{cursor:pointer}select{word-wrap:normal}select:disabled{opacity:1}[list]::-webkit-calendar-picker-indicator{display:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}::-moz-focus-inner{padding:0;border-style:none}textarea{resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{float:left;width:100%;padding:0;margin-bottom:.5rem;font-size:calc(1.275rem + .3vw);line-height:inherit}@media (min-width:1200px){legend{font-size:1.5rem}}legend+*{clear:left}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:textfield}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::file-selector-button{font:inherit}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}iframe{border:0}summary{display:list-item;cursor:pointer}progress{vertical-align:baseline}[hidden]{display:none!important}</style>
+    <style>/*! syntax-highlighting.css */pre{line-height:125%;}span.linenos{color:inherit; background-color:transparent; padding-left:5px; padding-right:20px;}.pdoc-code .hll{background-color:#ffffcc}.pdoc-code{background:#f8f8f8;}.pdoc-code .c{color:#3D7B7B; font-style:italic}.pdoc-code .err{border:1px solid #FF0000}.pdoc-code .k{color:#008000; font-weight:bold}.pdoc-code .o{color:#666666}.pdoc-code .ch{color:#3D7B7B; font-style:italic}.pdoc-code .cm{color:#3D7B7B; font-style:italic}.pdoc-code .cp{color:#9C6500}.pdoc-code .cpf{color:#3D7B7B; font-style:italic}.pdoc-code .c1{color:#3D7B7B; font-style:italic}.pdoc-code .cs{color:#3D7B7B; font-style:italic}.pdoc-code .gd{color:#A00000}.pdoc-code .ge{font-style:italic}.pdoc-code .gr{color:#E40000}.pdoc-code .gh{color:#000080; font-weight:bold}.pdoc-code .gi{color:#008400}.pdoc-code .go{color:#717171}.pdoc-code .gp{color:#000080; font-weight:bold}.pdoc-code .gs{font-weight:bold}.pdoc-code .gu{color:#800080; font-weight:bold}.pdoc-code .gt{color:#0044DD}.pdoc-code .kc{color:#008000; font-weight:bold}.pdoc-code .kd{color:#008000; font-weight:bold}.pdoc-code .kn{color:#008000; font-weight:bold}.pdoc-code .kp{color:#008000}.pdoc-code .kr{color:#008000; font-weight:bold}.pdoc-code .kt{color:#B00040}.pdoc-code .m{color:#666666}.pdoc-code .s{color:#BA2121}.pdoc-code .na{color:#687822}.pdoc-code .nb{color:#008000}.pdoc-code .nc{color:#0000FF; font-weight:bold}.pdoc-code .no{color:#880000}.pdoc-code .nd{color:#AA22FF}.pdoc-code .ni{color:#717171; font-weight:bold}.pdoc-code .ne{color:#CB3F38; font-weight:bold}.pdoc-code .nf{color:#0000FF}.pdoc-code .nl{color:#767600}.pdoc-code .nn{color:#0000FF; font-weight:bold}.pdoc-code .nt{color:#008000; font-weight:bold}.pdoc-code .nv{color:#19177C}.pdoc-code .ow{color:#AA22FF; font-weight:bold}.pdoc-code .w{color:#bbbbbb}.pdoc-code .mb{color:#666666}.pdoc-code .mf{color:#666666}.pdoc-code .mh{color:#666666}.pdoc-code .mi{color:#666666}.pdoc-code .mo{color:#666666}.pdoc-code .sa{color:#BA2121}.pdoc-code .sb{color:#BA2121}.pdoc-code .sc{color:#BA2121}.pdoc-code .dl{color:#BA2121}.pdoc-code .sd{color:#BA2121; font-style:italic}.pdoc-code .s2{color:#BA2121}.pdoc-code .se{color:#AA5D1F; font-weight:bold}.pdoc-code .sh{color:#BA2121}.pdoc-code .si{color:#A45A77; font-weight:bold}.pdoc-code .sx{color:#008000}.pdoc-code .sr{color:#A45A77}.pdoc-code .s1{color:#BA2121}.pdoc-code .ss{color:#19177C}.pdoc-code .bp{color:#008000}.pdoc-code .fm{color:#0000FF}.pdoc-code .vc{color:#19177C}.pdoc-code .vg{color:#19177C}.pdoc-code .vi{color:#19177C}.pdoc-code .vm{color:#19177C}.pdoc-code .il{color:#666666}</style>
+    <style>/*! theme.css */:root{--pdoc-background:#fff;}.pdoc{--text:#212529;--muted:#6c757d;--link:#3660a5;--link-hover:#1659c5;--code:#f8f8f8;--active:#fff598;--accent:#eee;--accent2:#c1c1c1;--nav-hover:rgba(255, 255, 255, 0.5);--name:#0066BB;--def:#008800;--annotation:#007020;}</style>
+    <style>/*! layout.css */html, body{width:100%;height:100%;}html, main{scroll-behavior:smooth;}body{background-color:var(--pdoc-background);}@media (max-width:769px){#navtoggle{cursor:pointer;position:absolute;width:50px;height:40px;top:1rem;right:1rem;border-color:var(--text);color:var(--text);display:flex;opacity:0.8;z-index:999;}#navtoggle:hover{opacity:1;}#togglestate + div{display:none;}#togglestate:checked + div{display:inherit;}main, header{padding:2rem 3vw;}header + main{margin-top:-3rem;}.git-button{display:none !important;}nav input[type="search"]{max-width:77%;}nav input[type="search"]:first-child{margin-top:-6px;}nav input[type="search"]:valid ~ *{display:none !important;}}@media (min-width:770px){:root{--sidebar-width:clamp(12.5rem, 28vw, 22rem);}nav{position:fixed;overflow:auto;height:100vh;width:var(--sidebar-width);}main, header{padding:3rem 2rem 3rem calc(var(--sidebar-width) + 3rem);width:calc(54rem + var(--sidebar-width));max-width:100%;}header + main{margin-top:-4rem;}#navtoggle{display:none;}}#togglestate{position:absolute;height:0;opacity:0;}nav.pdoc{--pad:clamp(0.5rem, 2vw, 1.75rem);--indent:1.5rem;background-color:var(--accent);border-right:1px solid var(--accent2);box-shadow:0 0 20px rgba(50, 50, 50, .2) inset;padding:0 0 0 var(--pad);overflow-wrap:anywhere;scrollbar-width:thin; scrollbar-color:var(--accent2) transparent; z-index:1}nav.pdoc::-webkit-scrollbar{width:.4rem; }nav.pdoc::-webkit-scrollbar-thumb{background-color:var(--accent2); }nav.pdoc > div{padding:var(--pad) 0;}nav.pdoc .module-list-button{display:inline-flex;align-items:center;color:var(--text);border-color:var(--muted);margin-bottom:1rem;}nav.pdoc .module-list-button:hover{border-color:var(--text);}nav.pdoc input[type=search]{display:block;outline-offset:0;width:calc(100% - var(--pad));}nav.pdoc .logo{max-width:calc(100% - var(--pad));max-height:35vh;display:block;margin:0 auto 1rem;transform:translate(calc(-.5 * var(--pad)), 0);}nav.pdoc ul{list-style:none;padding-left:0;}nav.pdoc > div > ul{margin-left:calc(0px - var(--pad));}nav.pdoc li a{padding:.2rem 0 .2rem calc(var(--pad) + var(--indent));}nav.pdoc > div > ul > li > a{padding-left:var(--pad);}nav.pdoc li{transition:all 100ms;}nav.pdoc li:hover{background-color:var(--nav-hover);}nav.pdoc a, nav.pdoc a:hover{color:var(--text);}nav.pdoc a{display:block;}nav.pdoc > h2:first-of-type{margin-top:1.5rem;}nav.pdoc .class:before{content:"class ";color:var(--muted);}nav.pdoc .function:after{content:"()";color:var(--muted);}nav.pdoc footer:before{content:"";display:block;width:calc(100% - var(--pad));border-top:solid var(--accent2) 1px;margin-top:1.5rem;padding-top:.5rem;}nav.pdoc footer{font-size:small;}</style>
+    <style>/*! content.css */.pdoc{color:var(--text);box-sizing:border-box;line-height:1.5;background:none;}.pdoc .pdoc-button{cursor:pointer;display:inline-block;border:solid black 1px;border-radius:2px;font-size:.75rem;padding:calc(0.5em - 1px) 1em;transition:100ms all;}.pdoc .alert{padding:1rem 1rem 1rem calc(1.5rem + 24px);border:1px solid transparent;border-radius:.25rem;background-repeat:no-repeat;background-position:.75rem center;margin-bottom:1rem;}.pdoc .alert > em{display:none;}.pdoc .alert > *:last-child{margin-bottom:0;}.pdoc .alert.note{color:#084298;background-color:#cfe2ff;border-color:#b6d4fe;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23084298%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8%2016A8%208%200%201%200%208%200a8%208%200%200%200%200%2016zm.93-9.412-1%204.705c-.07.34.029.533.304.533.194%200%20.487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703%200-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381%202.29-.287zM8%205.5a1%201%200%201%201%200-2%201%201%200%200%201%200%202z%22/%3E%3C/svg%3E");}.pdoc .alert.tip{color:#0a3622;background-color:#d1e7dd;border-color:#a3cfbb;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%230a3622%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2%206a6%206%200%201%201%2010.174%204.31c-.203.196-.359.4-.453.619l-.762%201.769A.5.5%200%200%201%2010.5%2013a.5.5%200%200%201%200%201%20.5.5%200%200%201%200%201l-.224.447a1%201%200%200%201-.894.553H6.618a1%201%200%200%201-.894-.553L5.5%2015a.5.5%200%200%201%200-1%20.5.5%200%200%201%200-1%20.5.5%200%200%201-.46-.302l-.761-1.77a2%202%200%200%200-.453-.618A5.98%205.98%200%200%201%202%206m6-5a5%205%200%200%200-3.479%208.592c.263.254.514.564.676.941L5.83%2012h4.342l.632-1.467c.162-.377.413-.687.676-.941A5%205%200%200%200%208%201%22/%3E%3C/svg%3E");}.pdoc .alert.important{color:#055160;background-color:#cff4fc;border-color:#9eeaf9;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23055160%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2%200a2%202%200%200%200-2%202v12a2%202%200%200%200%202%202h12a2%202%200%200%200%202-2V2a2%202%200%200%200-2-2zm6%204c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%204.995A.905.905%200%200%201%208%204m.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E");}.pdoc .alert.warning{color:#664d03;background-color:#fff3cd;border-color:#ffecb5;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23664d03%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8.982%201.566a1.13%201.13%200%200%200-1.96%200L.165%2013.233c-.457.778.091%201.767.98%201.767h13.713c.889%200%201.438-.99.98-1.767L8.982%201.566zM8%205c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%205.995A.905.905%200%200%201%208%205zm.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2z%22/%3E%3C/svg%3E");}.pdoc .alert.caution{color:#842029;background-color:#f8d7da;border-color:#f5c2c7;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23842029%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M11.46.146A.5.5%200%200%200%2011.107%200H4.893a.5.5%200%200%200-.353.146L.146%204.54A.5.5%200%200%200%200%204.893v6.214a.5.5%200%200%200%20.146.353l4.394%204.394a.5.5%200%200%200%20.353.146h6.214a.5.5%200%200%200%20.353-.146l4.394-4.394a.5.5%200%200%200%20.146-.353V4.893a.5.5%200%200%200-.146-.353zM8%204c.535%200%20.954.462.9.995l-.35%203.507a.552.552%200%200%201-1.1%200L7.1%204.995A.905.905%200%200%201%208%204m.002%206a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E");}.pdoc .alert.danger{color:#842029;background-color:#f8d7da;border-color:#f5c2c7;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22%23842029%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M5.52.359A.5.5%200%200%201%206%200h4a.5.5%200%200%201%20.474.658L8.694%206H12.5a.5.5%200%200%201%20.395.807l-7%209a.5.5%200%200%201-.873-.454L6.823%209.5H3.5a.5.5%200%200%201-.48-.641l2.5-8.5z%22/%3E%3C/svg%3E");}.pdoc .visually-hidden{position:absolute !important;width:1px !important;height:1px !important;padding:0 !important;margin:-1px !important;overflow:hidden !important;clip:rect(0, 0, 0, 0) !important;white-space:nowrap !important;border:0 !important;}.pdoc h1, .pdoc h2, .pdoc h3{font-weight:300;margin:.3em 0;padding:.2em 0;}.pdoc > section:not(.module-info) h1{font-size:1.5rem;font-weight:500;}.pdoc > section:not(.module-info) h2{font-size:1.4rem;font-weight:500;}.pdoc > section:not(.module-info) h3{font-size:1.3rem;font-weight:500;}.pdoc > section:not(.module-info) h4{font-size:1.2rem;}.pdoc > section:not(.module-info) h5{font-size:1.1rem;}.pdoc a{text-decoration:none;color:var(--link);}.pdoc a:hover{color:var(--link-hover);}.pdoc blockquote{margin-left:2rem;}.pdoc pre{border-top:1px solid var(--accent2);border-bottom:1px solid var(--accent2);margin-top:0;margin-bottom:1em;padding:.5rem 0 .5rem .5rem;overflow-x:auto;background-color:var(--code);}.pdoc code{color:var(--text);padding:.2em .4em;margin:0;font-size:85%;background-color:var(--accent);border-radius:6px;}.pdoc a > code{color:inherit;}.pdoc pre > code{display:inline-block;font-size:inherit;background:none;border:none;padding:0;}.pdoc > section:not(.module-info){margin-bottom:1.5rem;}.pdoc .modulename{margin-top:0;font-weight:bold;}.pdoc .modulename a{color:var(--link);transition:100ms all;}.pdoc .git-button{float:right;border:solid var(--link) 1px;}.pdoc .git-button:hover{background-color:var(--link);color:var(--pdoc-background);}.view-source-toggle-state,.view-source-toggle-state ~ .pdoc-code{display:none;}.view-source-toggle-state:checked ~ .pdoc-code{display:block;}.view-source-button{display:inline-block;float:right;font-size:.75rem;line-height:1.5rem;color:var(--muted);padding:0 .4rem 0 1.3rem;cursor:pointer;text-indent:-2px;}.view-source-button > span{visibility:hidden;}.module-info .view-source-button{float:none;display:flex;justify-content:flex-end;margin:-1.2rem .4rem -.2rem 0;}.view-source-button::before{position:absolute;content:"View Source";display:list-item;list-style-type:disclosure-closed;}.view-source-toggle-state:checked ~ .attr .view-source-button::before,.view-source-toggle-state:checked ~ .view-source-button::before{list-style-type:disclosure-open;}.pdoc .docstring{margin-bottom:1.5rem;}.pdoc section:not(.module-info) .docstring{margin-left:clamp(0rem, 5vw - 2rem, 1rem);}.pdoc .docstring .pdoc-code{margin-left:1em;margin-right:1em;}.pdoc h1:target,.pdoc h2:target,.pdoc h3:target,.pdoc h4:target,.pdoc h5:target,.pdoc h6:target,.pdoc .pdoc-code > pre > span:target{background-color:var(--active);box-shadow:-1rem 0 0 0 var(--active);}.pdoc .pdoc-code > pre > span:target{display:block;}.pdoc div:target > .attr,.pdoc section:target > .attr,.pdoc dd:target > a{background-color:var(--active);}.pdoc *{scroll-margin:2rem;}.pdoc .pdoc-code .linenos{user-select:none;}.pdoc .attr:hover{filter:contrast(0.95);}.pdoc section, .pdoc .classattr{position:relative;}.pdoc .headerlink{--width:clamp(1rem, 3vw, 2rem);position:absolute;top:0;left:calc(0rem - var(--width));transition:all 100ms ease-in-out;opacity:0;}.pdoc .headerlink::before{content:"#";display:block;text-align:center;width:var(--width);height:2.3rem;line-height:2.3rem;font-size:1.5rem;}.pdoc .attr:hover ~ .headerlink,.pdoc *:target > .headerlink,.pdoc .headerlink:hover{opacity:1;}.pdoc .attr{display:block;margin:.5rem 0 .5rem;padding:.4rem .4rem .4rem 1rem;background-color:var(--accent);overflow-x:auto;}.pdoc .classattr{margin-left:2rem;}.pdoc .decorator-deprecated{color:#842029;}.pdoc .decorator-deprecated ~ span{filter:grayscale(1) opacity(0.8);}.pdoc .name{color:var(--name);font-weight:bold;}.pdoc .def{color:var(--def);font-weight:bold;}.pdoc .signature{background-color:transparent;}.pdoc .param, .pdoc .return-annotation{white-space:pre;}.pdoc .signature.multiline .param{display:block;}.pdoc .signature.condensed .param{display:inline-block;}.pdoc .annotation{color:var(--annotation);}.pdoc .view-value-toggle-state,.pdoc .view-value-toggle-state ~ .default_value{display:none;}.pdoc .view-value-toggle-state:checked ~ .default_value{display:inherit;}.pdoc .view-value-button{font-size:.5rem;vertical-align:middle;border-style:dashed;margin-top:-0.1rem;}.pdoc .view-value-button:hover{background:white;}.pdoc .view-value-button::before{content:"show";text-align:center;width:2.2em;display:inline-block;}.pdoc .view-value-toggle-state:checked ~ .view-value-button::before{content:"hide";}.pdoc .inherited{margin-left:2rem;}.pdoc .inherited dt{font-weight:700;}.pdoc .inherited dt, .pdoc .inherited dd{display:inline;margin-left:0;margin-bottom:.5rem;}.pdoc .inherited dd:not(:last-child):after{content:", ";}.pdoc .inherited .class:before{content:"class ";}.pdoc .inherited .function a:after{content:"()";}.pdoc .search-result .docstring{overflow:auto;max-height:25vh;}.pdoc .search-result.focused > .attr{background-color:var(--active);}.pdoc .attribution{margin-top:2rem;display:block;opacity:0.5;transition:all 200ms;filter:grayscale(100%);}.pdoc .attribution:hover{opacity:1;filter:grayscale(0%);}.pdoc .attribution img{margin-left:5px;height:27px;vertical-align:bottom;width:50px;transition:all 200ms;}.pdoc table{display:block;width:max-content;max-width:100%;overflow:auto;margin-bottom:1rem;}.pdoc table th{font-weight:600;}.pdoc table th, .pdoc table td{padding:6px 13px;border:1px solid var(--accent2);}</style>
+    <style>/*! custom.css */</style></head>
+<body>
+    <nav class="pdoc">
+        <label id="navtoggle" for="togglestate" class="pdoc-button"><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke-linecap='round' stroke="currentColor" stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg></label>
+        <input id="togglestate" type="checkbox" aria-hidden="true" tabindex="-1">
+        <div>            <a class="pdoc-button module-list-button" href="index.html">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
+  <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+</svg>                &nbsp;coolipy</a>
+
+
+            <input type="search" placeholder="Search..." role="searchbox" aria-label="search"
+                   pattern=".+" required>
+
+
+
+            <h2>API Documentation</h2>
+                <ul class="memberlist">
+            <li>
+                    <a class="class" href="#BuildPack">BuildPack</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="variable" href="#BuildPack.NIXPACKS">NIXPACKS</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#BuildPack.RAILPACK">RAILPACK</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#BuildPack.STATIC">STATIC</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#BuildPack.DOCKERFILE">DOCKERFILE</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#BuildPack.DOCKERCOMPOSE">DOCKERCOMPOSE</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#Redirect">Redirect</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="variable" href="#Redirect.WWW">WWW</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Redirect.NON_WWW">NON_WWW</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Redirect.BOTH">BOTH</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#ProxyType">ProxyType</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="variable" href="#ProxyType.TRAEFIK">TRAEFIK</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ProxyType.CADDY">CADDY</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ProxyType.NONE">NONE</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#DestinationType">DestinationType</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="variable" href="#DestinationType.STANDALONE">STANDALONE</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#DestinationType.SWARM">SWARM</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#ServiceType">ServiceType</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="variable" href="#ServiceType.ACTIVEPIECES">ACTIVEPIECES</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.APPSMITH">APPSMITH</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.APPWRITE">APPWRITE</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.AUTHENTIK">AUTHENTIK</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.BABYBUDDY">BABYBUDDY</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.BUDGE">BUDGE</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.CHANGEDETECTION">CHANGEDETECTION</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.CHATWOOT">CHATWOOT</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.CLASSICPRESS_WITH_MARIADB">CLASSICPRESS_WITH_MARIADB</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.CLASSICPRESS_WITH_MYSQL">CLASSICPRESS_WITH_MYSQL</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.CLASSICPRESS_WITHOUT_DATABASE">CLASSICPRESS_WITHOUT_DATABASE</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.CLOUDFLARED">CLOUDFLARED</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.CODE_SERVER">CODE_SERVER</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.DASHBOARD">DASHBOARD</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.DIRECTUS">DIRECTUS</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.DIRECTUS_WITH_POSTGRESQL">DIRECTUS_WITH_POSTGRESQL</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.DOCKER_REGISTRY">DOCKER_REGISTRY</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.DOCUSEAL">DOCUSEAL</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.DOCUSEAL_WITH_POSTGRES">DOCUSEAL_WITH_POSTGRES</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.DOKUWIKI">DOKUWIKI</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.DUPLICATI">DUPLICATI</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.EMBY">EMBY</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.EMBYSTAT">EMBYSTAT</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.FIDER">FIDER</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.FILEBROWSER">FILEBROWSER</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.FIREFLY">FIREFLY</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.FORMBRICKS">FORMBRICKS</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.GHOST">GHOST</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.GITEA">GITEA</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.GITEA_WITH_MARIADB">GITEA_WITH_MARIADB</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.GITEA_WITH_MYSQL">GITEA_WITH_MYSQL</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.GITEA_WITH_POSTGRESQL">GITEA_WITH_POSTGRESQL</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.GLANCE">GLANCE</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.GLANCES">GLANCES</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.GLITCHTIP">GLITCHTIP</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.GRAFANA">GRAFANA</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.GRAFANA_WITH_POSTGRESQL">GRAFANA_WITH_POSTGRESQL</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.GROCY">GROCY</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.HEIMDALL">HEIMDALL</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.HOMEPAGE">HOMEPAGE</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.JELLYFIN">JELLYFIN</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.JENKINS">JENKINS</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.KUZZLE">KUZZLE</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.LISTMONK">LISTMONK</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.LOGTO">LOGTO</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.MEDIAWIKI">MEDIAWIKI</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.MEILISEARCH">MEILISEARCH</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.METABASE">METABASE</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.METUBE">METUBE</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.MINIO">MINIO</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.MOODLE">MOODLE</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.MOSQUITTO">MOSQUITTO</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.N8N">N8N</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.N8N_WITH_POSTGRESQL">N8N_WITH_POSTGRESQL</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.NEXT_IMAGE_TRANSFORMATION">NEXT_IMAGE_TRANSFORMATION</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.NEXTCLOUD">NEXTCLOUD</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.NOCODB">NOCODB</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.ODOO">ODOO</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.OPENBLOCKS">OPENBLOCKS</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.PAIRDROP">PAIRDROP</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.PENPOT">PENPOT</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.PHPMYADMIN">PHPMYADMIN</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.POCKETBASE">POCKETBASE</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.POSTHOG">POSTHOG</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.REACTIVE_RESUME">REACTIVE_RESUME</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.ROCKETCHAT">ROCKETCHAT</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.SHLINK">SHLINK</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.SLASH">SLASH</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.SNAPDROP">SNAPDROP</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.STATUSNOOK">STATUSNOOK</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.STIRLING_PDF">STIRLING_PDF</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.SUPABASE">SUPABASE</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.SYNCTHING">SYNCTHING</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.TOLGEE">TOLGEE</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.TRIGGER">TRIGGER</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.TRIGGER_WITH_EXTERNAL_DATABASE">TRIGGER_WITH_EXTERNAL_DATABASE</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.TWENTY">TWENTY</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.UMAMI">UMAMI</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.UNLEASH_WITH_POSTGRESQL">UNLEASH_WITH_POSTGRESQL</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.UNLEASH_WITHOUT_DATABASE">UNLEASH_WITHOUT_DATABASE</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.UPTIME_KUMA">UPTIME_KUMA</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.VAULTWARDEN">VAULTWARDEN</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.VIKUNJA">VIKUNJA</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.WEBLATE">WEBLATE</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.WHOOGLE">WHOOGLE</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.WORDPRESS_WITH_MARIADB">WORDPRESS_WITH_MARIADB</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.WORDPRESS_WITH_MYSQL">WORDPRESS_WITH_MYSQL</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#ServiceType.WORDPRESS_WITHOUT_DATABASE">WORDPRESS_WITHOUT_DATABASE</a>
+                        </li>
+                </ul>
+
+            </li>
+    </ul>
+
+
+
+        <a class="attribution" title="pdoc: Python API documentation generator" href="https://pdoc.dev" target="_blank">
+            built with <span class="visually-hidden">pdoc</span><img
+                alt="pdoc logo"
+                src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20role%3D%22img%22%20aria-label%3D%22pdoc%20logo%22%20width%3D%22300%22%20height%3D%22160%22%20viewBox%3D%220%200%20150%2080%22%3E%3Ctitle%3Epdoc%3C/title%3E%3Cpath%20d%3D%22M132.316%2048.886c.276-4.679%202.342-6.698%204.409-7.982s4.27-1.165%206.751-1.055c1.586.07%203.044.156%204.222-.482%201.142-.619%202.026-1.932%202.162-3.739.268-3.576-1.929-5.368-5.006-5.551s-7.599.524-10.517%201.606c-4.455%201.652-8.588%206.606-9.552%208.992s-2.342%206.193-1.745%2010.873%202.664%209.221%205.878%2011.79%205.878%203.808%2010.103%204.312%203.444.229%206.062.229%205.006-2.202%204.914-4.909-2.296-5.001-4.501-4.863-3.077.505-5.281.229-7.715-2.064-7.899-9.451z%22%20fill%3D%22%23198754%22/%3E%3Ccircle%20cx%3D%22101.504%22%20cy%3D%2248.943%22%20r%3D%2214.208%22%20fill%3D%22none%22%20stroke%3D%22%23198754%22%20stroke-width%3D%229.354%22/%3E%3Cpath%20d%3D%22M87.81.002c-3.637.065-5.001.454-7.014%201.232s-3.443%201.363-6.3%204.282c-1.723%201.76-3.148%205.019-3.776%207.329-.413%201.521-.316%202.63-.316%202.63l-.195%2034.612c.065%205.774-6.755%208.305-9.612%208.37s-9.678-1.038-9.743-9.408%207.128-9.521%208.362-9.521c1.413-.13%202.526-.021%203.718-.016%202.071.009%204.157-.778%204.092-4.671s-4.157-4.736-4.157-4.736c-6.3-.843-11.43%202.206-11.43%202.206S40.917%2038.15%2041.372%2049.634%2051.568%2068.19%2061.311%2068.125s18.316-7.007%2018.445-17.193l.13-22.772c.046-2.291%202.683-3.644%204.476-4.203.745-.232%201.694-.274%201.694-.274l10.457-.13s4.871-.324%207.729-3.114%204.352-6.294%204.352-6.294.974-3.049.13-4.606-.195-1.233-2.792-3.309-8.573-4.477-8.573-4.477S91.447-.063%2087.81.002zM0%2047.169l.065%2028.417S0%2080.127%204.481%2079.997s5.072-3.866%205.049-4.152l-.113-28.482s1.624-7.656%209.937-7.721%2010.002%206.942%2010.002%208.499-.909%2010.51-9.093%2010.51c-.948%200-2.99-.567-4.145-.272-3.919%201-3.194%204.554-3.194%204.554s.065%205.061%207.404%204.996%2018.575-6.034%2018.575-19.074S26.953%2030.04%2019.549%2029.91%201.234%2035.296%200%2047.169z%22%20fill%3D%22%23198754%22/%3E%3Cg%20transform%3D%22matrix%28.325601%200%200%20.325256%20-10.32669%20-45.802786%29%22%3E%3Ccircle%20cx%3D%22297.554%22%20cy%3D%22172.286%22%20r%3D%2216.5%22%20fill%3D%22%23fff%22/%3E%3Cellipse%20cx%3D%22297.709%22%20cy%3D%22172.642%22%20rx%3D%2211.071%22%20ry%3D%2210.871%22%20fill%3D%22%23105a48%22/%3E%3Ccircle%20cx%3D%22304.104%22%20cy%3D%22167.667%22%20r%3D%224.5%22%20fill%3D%22%23fff%22/%3E%3C/g%3E%3Cpath%20d%3D%22M94.661%2017.032l.893-1.476s.99.714%201.916.925%201.575.114%202.955.114l14.565-.162c1.283-.032%203.085-.762%203.02-3.293s-.373-3.503-.373-3.503l1.283-.487s.52.503.877%201.573.309%201.995.292%202.66-.227%201.541-.227%201.541%201.564-.308%202.359-1.038.823-.779%201.489-1.508.812-.86.812-.86.552-.13.877.26.341.957.065%201.46-1.672%202.206-3.247%203.066-2.76%201.427-3.929%201.768-3.848.73-7.063.714l-10.944-.114s-2.143-.081-3.02-.373-2.241-.973-2.598-1.265z%22%20fill%3D%22%23d36d49%22/%3E%3Cg%20fill%3D%22%23105a48%22%3E%3Cellipse%20cx%3D%2293.052%22%20cy%3D%2243.567%22%20rx%3D%22.869%22%20ry%3D%221.014%22%20transform%3D%22rotate%28341.022%29%22/%3E%3Cellipse%20cx%3D%22104.3%22%20cy%3D%22-16.184%22%20rx%3D%22.865%22%20ry%3D%221.009%22%20transform%3D%22rotate%2814.786%29%22/%3E%3C/g%3E%3C/svg%3E"/>
+        </a>
+</div>
+    </nav>
+    <main class="pdoc">
+            <section class="module-info">
+                    <h1 class="modulename">
+<a href="./index.html">coolipy</a><wbr>.enums    </h1>
+
+                        <div class="docstring"><p>Enums mirroring the string-constrained fields of the Coolify API.</p>
+
+<p>Every member's <code>~enum.Enum.value</code> is the exact wire value the API expects
+or returns, so serialize enums via <code>.value</code> (pydantic does this automatically
+when models are dumped with <code>mode="json"</code>).</p>
+</div>
+
+                        <input id="mod-enums-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+
+                        <label class="view-source-button" for="mod-enums-view-source"><span>View Source</span></label>
+
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">  1</span></a><span class="sd">"""Enums mirroring the string-constrained fields of the Coolify API.</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos">  2</span></a>
+</span><span id="L-3"><a href="#L-3"><span class="linenos">  3</span></a><span class="sd">Every member's :attr:`~enum.Enum.value` is the exact wire value the API expects</span>
+</span><span id="L-4"><a href="#L-4"><span class="linenos">  4</span></a><span class="sd">or returns, so serialize enums via ``.value`` (pydantic does this automatically</span>
+</span><span id="L-5"><a href="#L-5"><span class="linenos">  5</span></a><span class="sd">when models are dumped with ``mode="json"``).</span>
+</span><span id="L-6"><a href="#L-6"><span class="linenos">  6</span></a><span class="sd">"""</span>
+</span><span id="L-7"><a href="#L-7"><span class="linenos">  7</span></a>
+</span><span id="L-8"><a href="#L-8"><span class="linenos">  8</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos">  9</span></a>
+</span><span id="L-10"><a href="#L-10"><span class="linenos"> 10</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">enum</span><span class="w"> </span><span class="kn">import</span> <span class="n">Enum</span>
+</span><span id="L-11"><a href="#L-11"><span class="linenos"> 11</span></a>
+</span><span id="L-12"><a href="#L-12"><span class="linenos"> 12</span></a>
+</span><span id="L-13"><a href="#L-13"><span class="linenos"> 13</span></a><span class="k">class</span><span class="w"> </span><span class="nc">BuildPack</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+</span><span id="L-14"><a href="#L-14"><span class="linenos"> 14</span></a><span class="w">    </span><span class="sd">"""Build pack used to build an application."""</span>
+</span><span id="L-15"><a href="#L-15"><span class="linenos"> 15</span></a>
+</span><span id="L-16"><a href="#L-16"><span class="linenos"> 16</span></a>    <span class="n">NIXPACKS</span> <span class="o">=</span> <span class="s2">"nixpacks"</span>
+</span><span id="L-17"><a href="#L-17"><span class="linenos"> 17</span></a>    <span class="n">RAILPACK</span> <span class="o">=</span> <span class="s2">"railpack"</span>
+</span><span id="L-18"><a href="#L-18"><span class="linenos"> 18</span></a>    <span class="n">STATIC</span> <span class="o">=</span> <span class="s2">"static"</span>
+</span><span id="L-19"><a href="#L-19"><span class="linenos"> 19</span></a>    <span class="n">DOCKERFILE</span> <span class="o">=</span> <span class="s2">"dockerfile"</span>
+</span><span id="L-20"><a href="#L-20"><span class="linenos"> 20</span></a>    <span class="n">DOCKERCOMPOSE</span> <span class="o">=</span> <span class="s2">"dockercompose"</span>
+</span><span id="L-21"><a href="#L-21"><span class="linenos"> 21</span></a>
+</span><span id="L-22"><a href="#L-22"><span class="linenos"> 22</span></a>
+</span><span id="L-23"><a href="#L-23"><span class="linenos"> 23</span></a><span class="k">class</span><span class="w"> </span><span class="nc">Redirect</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+</span><span id="L-24"><a href="#L-24"><span class="linenos"> 24</span></a><span class="w">    </span><span class="sd">"""Domain redirect mode."""</span>
+</span><span id="L-25"><a href="#L-25"><span class="linenos"> 25</span></a>
+</span><span id="L-26"><a href="#L-26"><span class="linenos"> 26</span></a>    <span class="n">WWW</span> <span class="o">=</span> <span class="s2">"www"</span>
+</span><span id="L-27"><a href="#L-27"><span class="linenos"> 27</span></a>    <span class="n">NON_WWW</span> <span class="o">=</span> <span class="s2">"non-www"</span>
+</span><span id="L-28"><a href="#L-28"><span class="linenos"> 28</span></a>    <span class="n">BOTH</span> <span class="o">=</span> <span class="s2">"both"</span>
+</span><span id="L-29"><a href="#L-29"><span class="linenos"> 29</span></a>
+</span><span id="L-30"><a href="#L-30"><span class="linenos"> 30</span></a>
+</span><span id="L-31"><a href="#L-31"><span class="linenos"> 31</span></a><span class="k">class</span><span class="w"> </span><span class="nc">ProxyType</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+</span><span id="L-32"><a href="#L-32"><span class="linenos"> 32</span></a><span class="w">    </span><span class="sd">"""Reverse proxy used by a server."""</span>
+</span><span id="L-33"><a href="#L-33"><span class="linenos"> 33</span></a>
+</span><span id="L-34"><a href="#L-34"><span class="linenos"> 34</span></a>    <span class="n">TRAEFIK</span> <span class="o">=</span> <span class="s2">"traefik"</span>
+</span><span id="L-35"><a href="#L-35"><span class="linenos"> 35</span></a>    <span class="n">CADDY</span> <span class="o">=</span> <span class="s2">"caddy"</span>
+</span><span id="L-36"><a href="#L-36"><span class="linenos"> 36</span></a>    <span class="n">NONE</span> <span class="o">=</span> <span class="s2">"none"</span>
+</span><span id="L-37"><a href="#L-37"><span class="linenos"> 37</span></a>
+</span><span id="L-38"><a href="#L-38"><span class="linenos"> 38</span></a>
+</span><span id="L-39"><a href="#L-39"><span class="linenos"> 39</span></a><span class="k">class</span><span class="w"> </span><span class="nc">DestinationType</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+</span><span id="L-40"><a href="#L-40"><span class="linenos"> 40</span></a><span class="w">    </span><span class="sd">"""Network type of a destination."""</span>
+</span><span id="L-41"><a href="#L-41"><span class="linenos"> 41</span></a>
+</span><span id="L-42"><a href="#L-42"><span class="linenos"> 42</span></a>    <span class="n">STANDALONE</span> <span class="o">=</span> <span class="s2">"standalone"</span>
+</span><span id="L-43"><a href="#L-43"><span class="linenos"> 43</span></a>    <span class="n">SWARM</span> <span class="o">=</span> <span class="s2">"swarm"</span>
+</span><span id="L-44"><a href="#L-44"><span class="linenos"> 44</span></a>
+</span><span id="L-45"><a href="#L-45"><span class="linenos"> 45</span></a>
+</span><span id="L-46"><a href="#L-46"><span class="linenos"> 46</span></a><span class="k">class</span><span class="w"> </span><span class="nc">ServiceType</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+</span><span id="L-47"><a href="#L-47"><span class="linenos"> 47</span></a><span class="w">    </span><span class="sd">"""Known Coolify service types."""</span>
+</span><span id="L-48"><a href="#L-48"><span class="linenos"> 48</span></a>
+</span><span id="L-49"><a href="#L-49"><span class="linenos"> 49</span></a>    <span class="n">ACTIVEPIECES</span> <span class="o">=</span> <span class="s2">"activepieces"</span>
+</span><span id="L-50"><a href="#L-50"><span class="linenos"> 50</span></a>    <span class="n">APPSMITH</span> <span class="o">=</span> <span class="s2">"appsmith"</span>
+</span><span id="L-51"><a href="#L-51"><span class="linenos"> 51</span></a>    <span class="n">APPWRITE</span> <span class="o">=</span> <span class="s2">"appwrite"</span>
+</span><span id="L-52"><a href="#L-52"><span class="linenos"> 52</span></a>    <span class="n">AUTHENTIK</span> <span class="o">=</span> <span class="s2">"authentik"</span>
+</span><span id="L-53"><a href="#L-53"><span class="linenos"> 53</span></a>    <span class="n">BABYBUDDY</span> <span class="o">=</span> <span class="s2">"babybuddy"</span>
+</span><span id="L-54"><a href="#L-54"><span class="linenos"> 54</span></a>    <span class="n">BUDGE</span> <span class="o">=</span> <span class="s2">"budge"</span>
+</span><span id="L-55"><a href="#L-55"><span class="linenos"> 55</span></a>    <span class="n">CHANGEDETECTION</span> <span class="o">=</span> <span class="s2">"changedetection"</span>
+</span><span id="L-56"><a href="#L-56"><span class="linenos"> 56</span></a>    <span class="n">CHATWOOT</span> <span class="o">=</span> <span class="s2">"chatwoot"</span>
+</span><span id="L-57"><a href="#L-57"><span class="linenos"> 57</span></a>    <span class="n">CLASSICPRESS_WITH_MARIADB</span> <span class="o">=</span> <span class="s2">"classicpress-with-mariadb"</span>
+</span><span id="L-58"><a href="#L-58"><span class="linenos"> 58</span></a>    <span class="n">CLASSICPRESS_WITH_MYSQL</span> <span class="o">=</span> <span class="s2">"classicpress-with-mysql"</span>
+</span><span id="L-59"><a href="#L-59"><span class="linenos"> 59</span></a>    <span class="n">CLASSICPRESS_WITHOUT_DATABASE</span> <span class="o">=</span> <span class="s2">"classicpress-without-database"</span>
+</span><span id="L-60"><a href="#L-60"><span class="linenos"> 60</span></a>    <span class="n">CLOUDFLARED</span> <span class="o">=</span> <span class="s2">"cloudflared"</span>
+</span><span id="L-61"><a href="#L-61"><span class="linenos"> 61</span></a>    <span class="n">CODE_SERVER</span> <span class="o">=</span> <span class="s2">"code-server"</span>
+</span><span id="L-62"><a href="#L-62"><span class="linenos"> 62</span></a>    <span class="n">DASHBOARD</span> <span class="o">=</span> <span class="s2">"dashboard"</span>
+</span><span id="L-63"><a href="#L-63"><span class="linenos"> 63</span></a>    <span class="n">DIRECTUS</span> <span class="o">=</span> <span class="s2">"directus"</span>
+</span><span id="L-64"><a href="#L-64"><span class="linenos"> 64</span></a>    <span class="n">DIRECTUS_WITH_POSTGRESQL</span> <span class="o">=</span> <span class="s2">"directus-with-postgresql"</span>
+</span><span id="L-65"><a href="#L-65"><span class="linenos"> 65</span></a>    <span class="n">DOCKER_REGISTRY</span> <span class="o">=</span> <span class="s2">"docker-registry"</span>
+</span><span id="L-66"><a href="#L-66"><span class="linenos"> 66</span></a>    <span class="n">DOCUSEAL</span> <span class="o">=</span> <span class="s2">"docuseal"</span>
+</span><span id="L-67"><a href="#L-67"><span class="linenos"> 67</span></a>    <span class="n">DOCUSEAL_WITH_POSTGRES</span> <span class="o">=</span> <span class="s2">"docuseal-with-postgres"</span>
+</span><span id="L-68"><a href="#L-68"><span class="linenos"> 68</span></a>    <span class="n">DOKUWIKI</span> <span class="o">=</span> <span class="s2">"dokuwiki"</span>
+</span><span id="L-69"><a href="#L-69"><span class="linenos"> 69</span></a>    <span class="n">DUPLICATI</span> <span class="o">=</span> <span class="s2">"duplicati"</span>
+</span><span id="L-70"><a href="#L-70"><span class="linenos"> 70</span></a>    <span class="n">EMBY</span> <span class="o">=</span> <span class="s2">"emby"</span>
+</span><span id="L-71"><a href="#L-71"><span class="linenos"> 71</span></a>    <span class="n">EMBYSTAT</span> <span class="o">=</span> <span class="s2">"embystat"</span>
+</span><span id="L-72"><a href="#L-72"><span class="linenos"> 72</span></a>    <span class="n">FIDER</span> <span class="o">=</span> <span class="s2">"fider"</span>
+</span><span id="L-73"><a href="#L-73"><span class="linenos"> 73</span></a>    <span class="n">FILEBROWSER</span> <span class="o">=</span> <span class="s2">"filebrowser"</span>
+</span><span id="L-74"><a href="#L-74"><span class="linenos"> 74</span></a>    <span class="n">FIREFLY</span> <span class="o">=</span> <span class="s2">"firefly"</span>
+</span><span id="L-75"><a href="#L-75"><span class="linenos"> 75</span></a>    <span class="n">FORMBRICKS</span> <span class="o">=</span> <span class="s2">"formbricks"</span>
+</span><span id="L-76"><a href="#L-76"><span class="linenos"> 76</span></a>    <span class="n">GHOST</span> <span class="o">=</span> <span class="s2">"ghost"</span>
+</span><span id="L-77"><a href="#L-77"><span class="linenos"> 77</span></a>    <span class="n">GITEA</span> <span class="o">=</span> <span class="s2">"gitea"</span>
+</span><span id="L-78"><a href="#L-78"><span class="linenos"> 78</span></a>    <span class="n">GITEA_WITH_MARIADB</span> <span class="o">=</span> <span class="s2">"gitea-with-mariadb"</span>
+</span><span id="L-79"><a href="#L-79"><span class="linenos"> 79</span></a>    <span class="n">GITEA_WITH_MYSQL</span> <span class="o">=</span> <span class="s2">"gitea-with-mysql"</span>
+</span><span id="L-80"><a href="#L-80"><span class="linenos"> 80</span></a>    <span class="n">GITEA_WITH_POSTGRESQL</span> <span class="o">=</span> <span class="s2">"gitea-with-postgresql"</span>
+</span><span id="L-81"><a href="#L-81"><span class="linenos"> 81</span></a>    <span class="n">GLANCE</span> <span class="o">=</span> <span class="s2">"glance"</span>
+</span><span id="L-82"><a href="#L-82"><span class="linenos"> 82</span></a>    <span class="n">GLANCES</span> <span class="o">=</span> <span class="s2">"glances"</span>
+</span><span id="L-83"><a href="#L-83"><span class="linenos"> 83</span></a>    <span class="n">GLITCHTIP</span> <span class="o">=</span> <span class="s2">"glitchtip"</span>
+</span><span id="L-84"><a href="#L-84"><span class="linenos"> 84</span></a>    <span class="n">GRAFANA</span> <span class="o">=</span> <span class="s2">"grafana"</span>
+</span><span id="L-85"><a href="#L-85"><span class="linenos"> 85</span></a>    <span class="n">GRAFANA_WITH_POSTGRESQL</span> <span class="o">=</span> <span class="s2">"grafana-with-postgresql"</span>
+</span><span id="L-86"><a href="#L-86"><span class="linenos"> 86</span></a>    <span class="n">GROCY</span> <span class="o">=</span> <span class="s2">"grocy"</span>
+</span><span id="L-87"><a href="#L-87"><span class="linenos"> 87</span></a>    <span class="n">HEIMDALL</span> <span class="o">=</span> <span class="s2">"heimdall"</span>
+</span><span id="L-88"><a href="#L-88"><span class="linenos"> 88</span></a>    <span class="n">HOMEPAGE</span> <span class="o">=</span> <span class="s2">"homepage"</span>
+</span><span id="L-89"><a href="#L-89"><span class="linenos"> 89</span></a>    <span class="n">JELLYFIN</span> <span class="o">=</span> <span class="s2">"jellyfin"</span>
+</span><span id="L-90"><a href="#L-90"><span class="linenos"> 90</span></a>    <span class="n">JENKINS</span> <span class="o">=</span> <span class="s2">"jenkins"</span>
+</span><span id="L-91"><a href="#L-91"><span class="linenos"> 91</span></a>    <span class="n">KUZZLE</span> <span class="o">=</span> <span class="s2">"kuzzle"</span>
+</span><span id="L-92"><a href="#L-92"><span class="linenos"> 92</span></a>    <span class="n">LISTMONK</span> <span class="o">=</span> <span class="s2">"listmonk"</span>
+</span><span id="L-93"><a href="#L-93"><span class="linenos"> 93</span></a>    <span class="n">LOGTO</span> <span class="o">=</span> <span class="s2">"logto"</span>
+</span><span id="L-94"><a href="#L-94"><span class="linenos"> 94</span></a>    <span class="n">MEDIAWIKI</span> <span class="o">=</span> <span class="s2">"mediawiki"</span>
+</span><span id="L-95"><a href="#L-95"><span class="linenos"> 95</span></a>    <span class="n">MEILISEARCH</span> <span class="o">=</span> <span class="s2">"meilisearch"</span>
+</span><span id="L-96"><a href="#L-96"><span class="linenos"> 96</span></a>    <span class="n">METABASE</span> <span class="o">=</span> <span class="s2">"metabase"</span>
+</span><span id="L-97"><a href="#L-97"><span class="linenos"> 97</span></a>    <span class="n">METUBE</span> <span class="o">=</span> <span class="s2">"metube"</span>
+</span><span id="L-98"><a href="#L-98"><span class="linenos"> 98</span></a>    <span class="n">MINIO</span> <span class="o">=</span> <span class="s2">"minio"</span>
+</span><span id="L-99"><a href="#L-99"><span class="linenos"> 99</span></a>    <span class="n">MOODLE</span> <span class="o">=</span> <span class="s2">"moodle"</span>
+</span><span id="L-100"><a href="#L-100"><span class="linenos">100</span></a>    <span class="n">MOSQUITTO</span> <span class="o">=</span> <span class="s2">"mosquitto"</span>
+</span><span id="L-101"><a href="#L-101"><span class="linenos">101</span></a>    <span class="n">N8N</span> <span class="o">=</span> <span class="s2">"n8n"</span>
+</span><span id="L-102"><a href="#L-102"><span class="linenos">102</span></a>    <span class="n">N8N_WITH_POSTGRESQL</span> <span class="o">=</span> <span class="s2">"n8n-with-postgresql"</span>
+</span><span id="L-103"><a href="#L-103"><span class="linenos">103</span></a>    <span class="n">NEXT_IMAGE_TRANSFORMATION</span> <span class="o">=</span> <span class="s2">"next-image-transformation"</span>
+</span><span id="L-104"><a href="#L-104"><span class="linenos">104</span></a>    <span class="n">NEXTCLOUD</span> <span class="o">=</span> <span class="s2">"nextcloud"</span>
+</span><span id="L-105"><a href="#L-105"><span class="linenos">105</span></a>    <span class="n">NOCODB</span> <span class="o">=</span> <span class="s2">"nocodb"</span>
+</span><span id="L-106"><a href="#L-106"><span class="linenos">106</span></a>    <span class="n">ODOO</span> <span class="o">=</span> <span class="s2">"odoo"</span>
+</span><span id="L-107"><a href="#L-107"><span class="linenos">107</span></a>    <span class="n">OPENBLOCKS</span> <span class="o">=</span> <span class="s2">"openblocks"</span>
+</span><span id="L-108"><a href="#L-108"><span class="linenos">108</span></a>    <span class="n">PAIRDROP</span> <span class="o">=</span> <span class="s2">"pairdrop"</span>
+</span><span id="L-109"><a href="#L-109"><span class="linenos">109</span></a>    <span class="n">PENPOT</span> <span class="o">=</span> <span class="s2">"penpot"</span>
+</span><span id="L-110"><a href="#L-110"><span class="linenos">110</span></a>    <span class="n">PHPMYADMIN</span> <span class="o">=</span> <span class="s2">"phpmyadmin"</span>
+</span><span id="L-111"><a href="#L-111"><span class="linenos">111</span></a>    <span class="n">POCKETBASE</span> <span class="o">=</span> <span class="s2">"pocketbase"</span>
+</span><span id="L-112"><a href="#L-112"><span class="linenos">112</span></a>    <span class="n">POSTHOG</span> <span class="o">=</span> <span class="s2">"posthog"</span>
+</span><span id="L-113"><a href="#L-113"><span class="linenos">113</span></a>    <span class="n">REACTIVE_RESUME</span> <span class="o">=</span> <span class="s2">"reactive-resume"</span>
+</span><span id="L-114"><a href="#L-114"><span class="linenos">114</span></a>    <span class="n">ROCKETCHAT</span> <span class="o">=</span> <span class="s2">"rocketchat"</span>
+</span><span id="L-115"><a href="#L-115"><span class="linenos">115</span></a>    <span class="n">SHLINK</span> <span class="o">=</span> <span class="s2">"shlink"</span>
+</span><span id="L-116"><a href="#L-116"><span class="linenos">116</span></a>    <span class="n">SLASH</span> <span class="o">=</span> <span class="s2">"slash"</span>
+</span><span id="L-117"><a href="#L-117"><span class="linenos">117</span></a>    <span class="n">SNAPDROP</span> <span class="o">=</span> <span class="s2">"snapdrop"</span>
+</span><span id="L-118"><a href="#L-118"><span class="linenos">118</span></a>    <span class="n">STATUSNOOK</span> <span class="o">=</span> <span class="s2">"statusnook"</span>
+</span><span id="L-119"><a href="#L-119"><span class="linenos">119</span></a>    <span class="n">STIRLING_PDF</span> <span class="o">=</span> <span class="s2">"stirling-pdf"</span>
+</span><span id="L-120"><a href="#L-120"><span class="linenos">120</span></a>    <span class="n">SUPABASE</span> <span class="o">=</span> <span class="s2">"supabase"</span>
+</span><span id="L-121"><a href="#L-121"><span class="linenos">121</span></a>    <span class="n">SYNCTHING</span> <span class="o">=</span> <span class="s2">"syncthing"</span>
+</span><span id="L-122"><a href="#L-122"><span class="linenos">122</span></a>    <span class="n">TOLGEE</span> <span class="o">=</span> <span class="s2">"tolgee"</span>
+</span><span id="L-123"><a href="#L-123"><span class="linenos">123</span></a>    <span class="n">TRIGGER</span> <span class="o">=</span> <span class="s2">"trigger"</span>
+</span><span id="L-124"><a href="#L-124"><span class="linenos">124</span></a>    <span class="n">TRIGGER_WITH_EXTERNAL_DATABASE</span> <span class="o">=</span> <span class="s2">"trigger-with-external-database"</span>
+</span><span id="L-125"><a href="#L-125"><span class="linenos">125</span></a>    <span class="n">TWENTY</span> <span class="o">=</span> <span class="s2">"twenty"</span>
+</span><span id="L-126"><a href="#L-126"><span class="linenos">126</span></a>    <span class="n">UMAMI</span> <span class="o">=</span> <span class="s2">"umami"</span>
+</span><span id="L-127"><a href="#L-127"><span class="linenos">127</span></a>    <span class="n">UNLEASH_WITH_POSTGRESQL</span> <span class="o">=</span> <span class="s2">"unleash-with-postgresql"</span>
+</span><span id="L-128"><a href="#L-128"><span class="linenos">128</span></a>    <span class="n">UNLEASH_WITHOUT_DATABASE</span> <span class="o">=</span> <span class="s2">"unleash-without-database"</span>
+</span><span id="L-129"><a href="#L-129"><span class="linenos">129</span></a>    <span class="n">UPTIME_KUMA</span> <span class="o">=</span> <span class="s2">"uptime-kuma"</span>
+</span><span id="L-130"><a href="#L-130"><span class="linenos">130</span></a>    <span class="n">VAULTWARDEN</span> <span class="o">=</span> <span class="s2">"vaultwarden"</span>
+</span><span id="L-131"><a href="#L-131"><span class="linenos">131</span></a>    <span class="n">VIKUNJA</span> <span class="o">=</span> <span class="s2">"vikunja"</span>
+</span><span id="L-132"><a href="#L-132"><span class="linenos">132</span></a>    <span class="n">WEBLATE</span> <span class="o">=</span> <span class="s2">"weblate"</span>
+</span><span id="L-133"><a href="#L-133"><span class="linenos">133</span></a>    <span class="n">WHOOGLE</span> <span class="o">=</span> <span class="s2">"whoogle"</span>
+</span><span id="L-134"><a href="#L-134"><span class="linenos">134</span></a>    <span class="n">WORDPRESS_WITH_MARIADB</span> <span class="o">=</span> <span class="s2">"wordpress-with-mariadb"</span>
+</span><span id="L-135"><a href="#L-135"><span class="linenos">135</span></a>    <span class="n">WORDPRESS_WITH_MYSQL</span> <span class="o">=</span> <span class="s2">"wordpress-with-mysql"</span>
+</span><span id="L-136"><a href="#L-136"><span class="linenos">136</span></a>    <span class="n">WORDPRESS_WITHOUT_DATABASE</span> <span class="o">=</span> <span class="s2">"wordpress-without-database"</span>
+</span></pre></div>
+
+
+            </section>
+                <section id="BuildPack">
+                            <input id="BuildPack-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">BuildPack</span><wbr>(<span class="base">builtins.str</span>, <span class="base">enum.Enum</span>):
+
+                <label class="view-source-button" for="BuildPack-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#BuildPack"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="BuildPack-14"><a href="#BuildPack-14"><span class="linenos">14</span></a><span class="k">class</span><span class="w"> </span><span class="nc">BuildPack</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+</span><span id="BuildPack-15"><a href="#BuildPack-15"><span class="linenos">15</span></a><span class="w">    </span><span class="sd">"""Build pack used to build an application."""</span>
+</span><span id="BuildPack-16"><a href="#BuildPack-16"><span class="linenos">16</span></a>
+</span><span id="BuildPack-17"><a href="#BuildPack-17"><span class="linenos">17</span></a>    <span class="n">NIXPACKS</span> <span class="o">=</span> <span class="s2">"nixpacks"</span>
+</span><span id="BuildPack-18"><a href="#BuildPack-18"><span class="linenos">18</span></a>    <span class="n">RAILPACK</span> <span class="o">=</span> <span class="s2">"railpack"</span>
+</span><span id="BuildPack-19"><a href="#BuildPack-19"><span class="linenos">19</span></a>    <span class="n">STATIC</span> <span class="o">=</span> <span class="s2">"static"</span>
+</span><span id="BuildPack-20"><a href="#BuildPack-20"><span class="linenos">20</span></a>    <span class="n">DOCKERFILE</span> <span class="o">=</span> <span class="s2">"dockerfile"</span>
+</span><span id="BuildPack-21"><a href="#BuildPack-21"><span class="linenos">21</span></a>    <span class="n">DOCKERCOMPOSE</span> <span class="o">=</span> <span class="s2">"dockercompose"</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Build pack used to build an application.</p>
+</div>
+
+
+                            <div id="BuildPack.NIXPACKS" class="classattr">
+                                <div class="attr variable">
+            <span class="name">NIXPACKS</span>        =
+<span class="default_value">&lt;<a href="#BuildPack.NIXPACKS">BuildPack.NIXPACKS</a>: &#39;nixpacks&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#BuildPack.NIXPACKS"></a>
+    
+    
+
+                            </div>
+                            <div id="BuildPack.RAILPACK" class="classattr">
+                                <div class="attr variable">
+            <span class="name">RAILPACK</span>        =
+<span class="default_value">&lt;<a href="#BuildPack.RAILPACK">BuildPack.RAILPACK</a>: &#39;railpack&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#BuildPack.RAILPACK"></a>
+    
+    
+
+                            </div>
+                            <div id="BuildPack.STATIC" class="classattr">
+                                <div class="attr variable">
+            <span class="name">STATIC</span>        =
+<span class="default_value">&lt;<a href="#BuildPack.STATIC">BuildPack.STATIC</a>: &#39;static&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#BuildPack.STATIC"></a>
+    
+    
+
+                            </div>
+                            <div id="BuildPack.DOCKERFILE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">DOCKERFILE</span>        =
+<span class="default_value">&lt;<a href="#BuildPack.DOCKERFILE">BuildPack.DOCKERFILE</a>: &#39;dockerfile&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#BuildPack.DOCKERFILE"></a>
+    
+    
+
+                            </div>
+                            <div id="BuildPack.DOCKERCOMPOSE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">DOCKERCOMPOSE</span>        =
+<span class="default_value">&lt;<a href="#BuildPack.DOCKERCOMPOSE">BuildPack.DOCKERCOMPOSE</a>: &#39;dockercompose&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#BuildPack.DOCKERCOMPOSE"></a>
+    
+    
+
+                            </div>
+                </section>
+                <section id="Redirect">
+                            <input id="Redirect-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">Redirect</span><wbr>(<span class="base">builtins.str</span>, <span class="base">enum.Enum</span>):
+
+                <label class="view-source-button" for="Redirect-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Redirect"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Redirect-24"><a href="#Redirect-24"><span class="linenos">24</span></a><span class="k">class</span><span class="w"> </span><span class="nc">Redirect</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+</span><span id="Redirect-25"><a href="#Redirect-25"><span class="linenos">25</span></a><span class="w">    </span><span class="sd">"""Domain redirect mode."""</span>
+</span><span id="Redirect-26"><a href="#Redirect-26"><span class="linenos">26</span></a>
+</span><span id="Redirect-27"><a href="#Redirect-27"><span class="linenos">27</span></a>    <span class="n">WWW</span> <span class="o">=</span> <span class="s2">"www"</span>
+</span><span id="Redirect-28"><a href="#Redirect-28"><span class="linenos">28</span></a>    <span class="n">NON_WWW</span> <span class="o">=</span> <span class="s2">"non-www"</span>
+</span><span id="Redirect-29"><a href="#Redirect-29"><span class="linenos">29</span></a>    <span class="n">BOTH</span> <span class="o">=</span> <span class="s2">"both"</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Domain redirect mode.</p>
+</div>
+
+
+                            <div id="Redirect.WWW" class="classattr">
+                                <div class="attr variable">
+            <span class="name">WWW</span>        =
+<span class="default_value">&lt;<a href="#Redirect.WWW">Redirect.WWW</a>: &#39;www&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Redirect.WWW"></a>
+    
+    
+
+                            </div>
+                            <div id="Redirect.NON_WWW" class="classattr">
+                                <div class="attr variable">
+            <span class="name">NON_WWW</span>        =
+<span class="default_value">&lt;<a href="#Redirect.NON_WWW">Redirect.NON_WWW</a>: &#39;non-www&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Redirect.NON_WWW"></a>
+    
+    
+
+                            </div>
+                            <div id="Redirect.BOTH" class="classattr">
+                                <div class="attr variable">
+            <span class="name">BOTH</span>        =
+<span class="default_value">&lt;<a href="#Redirect.BOTH">Redirect.BOTH</a>: &#39;both&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Redirect.BOTH"></a>
+    
+    
+
+                            </div>
+                </section>
+                <section id="ProxyType">
+                            <input id="ProxyType-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">ProxyType</span><wbr>(<span class="base">builtins.str</span>, <span class="base">enum.Enum</span>):
+
+                <label class="view-source-button" for="ProxyType-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#ProxyType"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="ProxyType-32"><a href="#ProxyType-32"><span class="linenos">32</span></a><span class="k">class</span><span class="w"> </span><span class="nc">ProxyType</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+</span><span id="ProxyType-33"><a href="#ProxyType-33"><span class="linenos">33</span></a><span class="w">    </span><span class="sd">"""Reverse proxy used by a server."""</span>
+</span><span id="ProxyType-34"><a href="#ProxyType-34"><span class="linenos">34</span></a>
+</span><span id="ProxyType-35"><a href="#ProxyType-35"><span class="linenos">35</span></a>    <span class="n">TRAEFIK</span> <span class="o">=</span> <span class="s2">"traefik"</span>
+</span><span id="ProxyType-36"><a href="#ProxyType-36"><span class="linenos">36</span></a>    <span class="n">CADDY</span> <span class="o">=</span> <span class="s2">"caddy"</span>
+</span><span id="ProxyType-37"><a href="#ProxyType-37"><span class="linenos">37</span></a>    <span class="n">NONE</span> <span class="o">=</span> <span class="s2">"none"</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Reverse proxy used by a server.</p>
+</div>
+
+
+                            <div id="ProxyType.TRAEFIK" class="classattr">
+                                <div class="attr variable">
+            <span class="name">TRAEFIK</span>        =
+<span class="default_value">&lt;<a href="#ProxyType.TRAEFIK">ProxyType.TRAEFIK</a>: &#39;traefik&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ProxyType.TRAEFIK"></a>
+    
+    
+
+                            </div>
+                            <div id="ProxyType.CADDY" class="classattr">
+                                <div class="attr variable">
+            <span class="name">CADDY</span>        =
+<span class="default_value">&lt;<a href="#ProxyType.CADDY">ProxyType.CADDY</a>: &#39;caddy&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ProxyType.CADDY"></a>
+    
+    
+
+                            </div>
+                            <div id="ProxyType.NONE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">NONE</span>        =
+<span class="default_value">&lt;<a href="#ProxyType.NONE">ProxyType.NONE</a>: &#39;none&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ProxyType.NONE"></a>
+    
+    
+
+                            </div>
+                </section>
+                <section id="DestinationType">
+                            <input id="DestinationType-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">DestinationType</span><wbr>(<span class="base">builtins.str</span>, <span class="base">enum.Enum</span>):
+
+                <label class="view-source-button" for="DestinationType-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#DestinationType"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="DestinationType-40"><a href="#DestinationType-40"><span class="linenos">40</span></a><span class="k">class</span><span class="w"> </span><span class="nc">DestinationType</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+</span><span id="DestinationType-41"><a href="#DestinationType-41"><span class="linenos">41</span></a><span class="w">    </span><span class="sd">"""Network type of a destination."""</span>
+</span><span id="DestinationType-42"><a href="#DestinationType-42"><span class="linenos">42</span></a>
+</span><span id="DestinationType-43"><a href="#DestinationType-43"><span class="linenos">43</span></a>    <span class="n">STANDALONE</span> <span class="o">=</span> <span class="s2">"standalone"</span>
+</span><span id="DestinationType-44"><a href="#DestinationType-44"><span class="linenos">44</span></a>    <span class="n">SWARM</span> <span class="o">=</span> <span class="s2">"swarm"</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Network type of a destination.</p>
+</div>
+
+
+                            <div id="DestinationType.STANDALONE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">STANDALONE</span>        =
+<span class="default_value">&lt;<a href="#DestinationType.STANDALONE">DestinationType.STANDALONE</a>: &#39;standalone&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#DestinationType.STANDALONE"></a>
+    
+    
+
+                            </div>
+                            <div id="DestinationType.SWARM" class="classattr">
+                                <div class="attr variable">
+            <span class="name">SWARM</span>        =
+<span class="default_value">&lt;<a href="#DestinationType.SWARM">DestinationType.SWARM</a>: &#39;swarm&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#DestinationType.SWARM"></a>
+    
+    
+
+                            </div>
+                </section>
+                <section id="ServiceType">
+                            <input id="ServiceType-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">ServiceType</span><wbr>(<span class="base">builtins.str</span>, <span class="base">enum.Enum</span>):
+
+                <label class="view-source-button" for="ServiceType-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#ServiceType"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="ServiceType-47"><a href="#ServiceType-47"><span class="linenos"> 47</span></a><span class="k">class</span><span class="w"> </span><span class="nc">ServiceType</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+</span><span id="ServiceType-48"><a href="#ServiceType-48"><span class="linenos"> 48</span></a><span class="w">    </span><span class="sd">"""Known Coolify service types."""</span>
+</span><span id="ServiceType-49"><a href="#ServiceType-49"><span class="linenos"> 49</span></a>
+</span><span id="ServiceType-50"><a href="#ServiceType-50"><span class="linenos"> 50</span></a>    <span class="n">ACTIVEPIECES</span> <span class="o">=</span> <span class="s2">"activepieces"</span>
+</span><span id="ServiceType-51"><a href="#ServiceType-51"><span class="linenos"> 51</span></a>    <span class="n">APPSMITH</span> <span class="o">=</span> <span class="s2">"appsmith"</span>
+</span><span id="ServiceType-52"><a href="#ServiceType-52"><span class="linenos"> 52</span></a>    <span class="n">APPWRITE</span> <span class="o">=</span> <span class="s2">"appwrite"</span>
+</span><span id="ServiceType-53"><a href="#ServiceType-53"><span class="linenos"> 53</span></a>    <span class="n">AUTHENTIK</span> <span class="o">=</span> <span class="s2">"authentik"</span>
+</span><span id="ServiceType-54"><a href="#ServiceType-54"><span class="linenos"> 54</span></a>    <span class="n">BABYBUDDY</span> <span class="o">=</span> <span class="s2">"babybuddy"</span>
+</span><span id="ServiceType-55"><a href="#ServiceType-55"><span class="linenos"> 55</span></a>    <span class="n">BUDGE</span> <span class="o">=</span> <span class="s2">"budge"</span>
+</span><span id="ServiceType-56"><a href="#ServiceType-56"><span class="linenos"> 56</span></a>    <span class="n">CHANGEDETECTION</span> <span class="o">=</span> <span class="s2">"changedetection"</span>
+</span><span id="ServiceType-57"><a href="#ServiceType-57"><span class="linenos"> 57</span></a>    <span class="n">CHATWOOT</span> <span class="o">=</span> <span class="s2">"chatwoot"</span>
+</span><span id="ServiceType-58"><a href="#ServiceType-58"><span class="linenos"> 58</span></a>    <span class="n">CLASSICPRESS_WITH_MARIADB</span> <span class="o">=</span> <span class="s2">"classicpress-with-mariadb"</span>
+</span><span id="ServiceType-59"><a href="#ServiceType-59"><span class="linenos"> 59</span></a>    <span class="n">CLASSICPRESS_WITH_MYSQL</span> <span class="o">=</span> <span class="s2">"classicpress-with-mysql"</span>
+</span><span id="ServiceType-60"><a href="#ServiceType-60"><span class="linenos"> 60</span></a>    <span class="n">CLASSICPRESS_WITHOUT_DATABASE</span> <span class="o">=</span> <span class="s2">"classicpress-without-database"</span>
+</span><span id="ServiceType-61"><a href="#ServiceType-61"><span class="linenos"> 61</span></a>    <span class="n">CLOUDFLARED</span> <span class="o">=</span> <span class="s2">"cloudflared"</span>
+</span><span id="ServiceType-62"><a href="#ServiceType-62"><span class="linenos"> 62</span></a>    <span class="n">CODE_SERVER</span> <span class="o">=</span> <span class="s2">"code-server"</span>
+</span><span id="ServiceType-63"><a href="#ServiceType-63"><span class="linenos"> 63</span></a>    <span class="n">DASHBOARD</span> <span class="o">=</span> <span class="s2">"dashboard"</span>
+</span><span id="ServiceType-64"><a href="#ServiceType-64"><span class="linenos"> 64</span></a>    <span class="n">DIRECTUS</span> <span class="o">=</span> <span class="s2">"directus"</span>
+</span><span id="ServiceType-65"><a href="#ServiceType-65"><span class="linenos"> 65</span></a>    <span class="n">DIRECTUS_WITH_POSTGRESQL</span> <span class="o">=</span> <span class="s2">"directus-with-postgresql"</span>
+</span><span id="ServiceType-66"><a href="#ServiceType-66"><span class="linenos"> 66</span></a>    <span class="n">DOCKER_REGISTRY</span> <span class="o">=</span> <span class="s2">"docker-registry"</span>
+</span><span id="ServiceType-67"><a href="#ServiceType-67"><span class="linenos"> 67</span></a>    <span class="n">DOCUSEAL</span> <span class="o">=</span> <span class="s2">"docuseal"</span>
+</span><span id="ServiceType-68"><a href="#ServiceType-68"><span class="linenos"> 68</span></a>    <span class="n">DOCUSEAL_WITH_POSTGRES</span> <span class="o">=</span> <span class="s2">"docuseal-with-postgres"</span>
+</span><span id="ServiceType-69"><a href="#ServiceType-69"><span class="linenos"> 69</span></a>    <span class="n">DOKUWIKI</span> <span class="o">=</span> <span class="s2">"dokuwiki"</span>
+</span><span id="ServiceType-70"><a href="#ServiceType-70"><span class="linenos"> 70</span></a>    <span class="n">DUPLICATI</span> <span class="o">=</span> <span class="s2">"duplicati"</span>
+</span><span id="ServiceType-71"><a href="#ServiceType-71"><span class="linenos"> 71</span></a>    <span class="n">EMBY</span> <span class="o">=</span> <span class="s2">"emby"</span>
+</span><span id="ServiceType-72"><a href="#ServiceType-72"><span class="linenos"> 72</span></a>    <span class="n">EMBYSTAT</span> <span class="o">=</span> <span class="s2">"embystat"</span>
+</span><span id="ServiceType-73"><a href="#ServiceType-73"><span class="linenos"> 73</span></a>    <span class="n">FIDER</span> <span class="o">=</span> <span class="s2">"fider"</span>
+</span><span id="ServiceType-74"><a href="#ServiceType-74"><span class="linenos"> 74</span></a>    <span class="n">FILEBROWSER</span> <span class="o">=</span> <span class="s2">"filebrowser"</span>
+</span><span id="ServiceType-75"><a href="#ServiceType-75"><span class="linenos"> 75</span></a>    <span class="n">FIREFLY</span> <span class="o">=</span> <span class="s2">"firefly"</span>
+</span><span id="ServiceType-76"><a href="#ServiceType-76"><span class="linenos"> 76</span></a>    <span class="n">FORMBRICKS</span> <span class="o">=</span> <span class="s2">"formbricks"</span>
+</span><span id="ServiceType-77"><a href="#ServiceType-77"><span class="linenos"> 77</span></a>    <span class="n">GHOST</span> <span class="o">=</span> <span class="s2">"ghost"</span>
+</span><span id="ServiceType-78"><a href="#ServiceType-78"><span class="linenos"> 78</span></a>    <span class="n">GITEA</span> <span class="o">=</span> <span class="s2">"gitea"</span>
+</span><span id="ServiceType-79"><a href="#ServiceType-79"><span class="linenos"> 79</span></a>    <span class="n">GITEA_WITH_MARIADB</span> <span class="o">=</span> <span class="s2">"gitea-with-mariadb"</span>
+</span><span id="ServiceType-80"><a href="#ServiceType-80"><span class="linenos"> 80</span></a>    <span class="n">GITEA_WITH_MYSQL</span> <span class="o">=</span> <span class="s2">"gitea-with-mysql"</span>
+</span><span id="ServiceType-81"><a href="#ServiceType-81"><span class="linenos"> 81</span></a>    <span class="n">GITEA_WITH_POSTGRESQL</span> <span class="o">=</span> <span class="s2">"gitea-with-postgresql"</span>
+</span><span id="ServiceType-82"><a href="#ServiceType-82"><span class="linenos"> 82</span></a>    <span class="n">GLANCE</span> <span class="o">=</span> <span class="s2">"glance"</span>
+</span><span id="ServiceType-83"><a href="#ServiceType-83"><span class="linenos"> 83</span></a>    <span class="n">GLANCES</span> <span class="o">=</span> <span class="s2">"glances"</span>
+</span><span id="ServiceType-84"><a href="#ServiceType-84"><span class="linenos"> 84</span></a>    <span class="n">GLITCHTIP</span> <span class="o">=</span> <span class="s2">"glitchtip"</span>
+</span><span id="ServiceType-85"><a href="#ServiceType-85"><span class="linenos"> 85</span></a>    <span class="n">GRAFANA</span> <span class="o">=</span> <span class="s2">"grafana"</span>
+</span><span id="ServiceType-86"><a href="#ServiceType-86"><span class="linenos"> 86</span></a>    <span class="n">GRAFANA_WITH_POSTGRESQL</span> <span class="o">=</span> <span class="s2">"grafana-with-postgresql"</span>
+</span><span id="ServiceType-87"><a href="#ServiceType-87"><span class="linenos"> 87</span></a>    <span class="n">GROCY</span> <span class="o">=</span> <span class="s2">"grocy"</span>
+</span><span id="ServiceType-88"><a href="#ServiceType-88"><span class="linenos"> 88</span></a>    <span class="n">HEIMDALL</span> <span class="o">=</span> <span class="s2">"heimdall"</span>
+</span><span id="ServiceType-89"><a href="#ServiceType-89"><span class="linenos"> 89</span></a>    <span class="n">HOMEPAGE</span> <span class="o">=</span> <span class="s2">"homepage"</span>
+</span><span id="ServiceType-90"><a href="#ServiceType-90"><span class="linenos"> 90</span></a>    <span class="n">JELLYFIN</span> <span class="o">=</span> <span class="s2">"jellyfin"</span>
+</span><span id="ServiceType-91"><a href="#ServiceType-91"><span class="linenos"> 91</span></a>    <span class="n">JENKINS</span> <span class="o">=</span> <span class="s2">"jenkins"</span>
+</span><span id="ServiceType-92"><a href="#ServiceType-92"><span class="linenos"> 92</span></a>    <span class="n">KUZZLE</span> <span class="o">=</span> <span class="s2">"kuzzle"</span>
+</span><span id="ServiceType-93"><a href="#ServiceType-93"><span class="linenos"> 93</span></a>    <span class="n">LISTMONK</span> <span class="o">=</span> <span class="s2">"listmonk"</span>
+</span><span id="ServiceType-94"><a href="#ServiceType-94"><span class="linenos"> 94</span></a>    <span class="n">LOGTO</span> <span class="o">=</span> <span class="s2">"logto"</span>
+</span><span id="ServiceType-95"><a href="#ServiceType-95"><span class="linenos"> 95</span></a>    <span class="n">MEDIAWIKI</span> <span class="o">=</span> <span class="s2">"mediawiki"</span>
+</span><span id="ServiceType-96"><a href="#ServiceType-96"><span class="linenos"> 96</span></a>    <span class="n">MEILISEARCH</span> <span class="o">=</span> <span class="s2">"meilisearch"</span>
+</span><span id="ServiceType-97"><a href="#ServiceType-97"><span class="linenos"> 97</span></a>    <span class="n">METABASE</span> <span class="o">=</span> <span class="s2">"metabase"</span>
+</span><span id="ServiceType-98"><a href="#ServiceType-98"><span class="linenos"> 98</span></a>    <span class="n">METUBE</span> <span class="o">=</span> <span class="s2">"metube"</span>
+</span><span id="ServiceType-99"><a href="#ServiceType-99"><span class="linenos"> 99</span></a>    <span class="n">MINIO</span> <span class="o">=</span> <span class="s2">"minio"</span>
+</span><span id="ServiceType-100"><a href="#ServiceType-100"><span class="linenos">100</span></a>    <span class="n">MOODLE</span> <span class="o">=</span> <span class="s2">"moodle"</span>
+</span><span id="ServiceType-101"><a href="#ServiceType-101"><span class="linenos">101</span></a>    <span class="n">MOSQUITTO</span> <span class="o">=</span> <span class="s2">"mosquitto"</span>
+</span><span id="ServiceType-102"><a href="#ServiceType-102"><span class="linenos">102</span></a>    <span class="n">N8N</span> <span class="o">=</span> <span class="s2">"n8n"</span>
+</span><span id="ServiceType-103"><a href="#ServiceType-103"><span class="linenos">103</span></a>    <span class="n">N8N_WITH_POSTGRESQL</span> <span class="o">=</span> <span class="s2">"n8n-with-postgresql"</span>
+</span><span id="ServiceType-104"><a href="#ServiceType-104"><span class="linenos">104</span></a>    <span class="n">NEXT_IMAGE_TRANSFORMATION</span> <span class="o">=</span> <span class="s2">"next-image-transformation"</span>
+</span><span id="ServiceType-105"><a href="#ServiceType-105"><span class="linenos">105</span></a>    <span class="n">NEXTCLOUD</span> <span class="o">=</span> <span class="s2">"nextcloud"</span>
+</span><span id="ServiceType-106"><a href="#ServiceType-106"><span class="linenos">106</span></a>    <span class="n">NOCODB</span> <span class="o">=</span> <span class="s2">"nocodb"</span>
+</span><span id="ServiceType-107"><a href="#ServiceType-107"><span class="linenos">107</span></a>    <span class="n">ODOO</span> <span class="o">=</span> <span class="s2">"odoo"</span>
+</span><span id="ServiceType-108"><a href="#ServiceType-108"><span class="linenos">108</span></a>    <span class="n">OPENBLOCKS</span> <span class="o">=</span> <span class="s2">"openblocks"</span>
+</span><span id="ServiceType-109"><a href="#ServiceType-109"><span class="linenos">109</span></a>    <span class="n">PAIRDROP</span> <span class="o">=</span> <span class="s2">"pairdrop"</span>
+</span><span id="ServiceType-110"><a href="#ServiceType-110"><span class="linenos">110</span></a>    <span class="n">PENPOT</span> <span class="o">=</span> <span class="s2">"penpot"</span>
+</span><span id="ServiceType-111"><a href="#ServiceType-111"><span class="linenos">111</span></a>    <span class="n">PHPMYADMIN</span> <span class="o">=</span> <span class="s2">"phpmyadmin"</span>
+</span><span id="ServiceType-112"><a href="#ServiceType-112"><span class="linenos">112</span></a>    <span class="n">POCKETBASE</span> <span class="o">=</span> <span class="s2">"pocketbase"</span>
+</span><span id="ServiceType-113"><a href="#ServiceType-113"><span class="linenos">113</span></a>    <span class="n">POSTHOG</span> <span class="o">=</span> <span class="s2">"posthog"</span>
+</span><span id="ServiceType-114"><a href="#ServiceType-114"><span class="linenos">114</span></a>    <span class="n">REACTIVE_RESUME</span> <span class="o">=</span> <span class="s2">"reactive-resume"</span>
+</span><span id="ServiceType-115"><a href="#ServiceType-115"><span class="linenos">115</span></a>    <span class="n">ROCKETCHAT</span> <span class="o">=</span> <span class="s2">"rocketchat"</span>
+</span><span id="ServiceType-116"><a href="#ServiceType-116"><span class="linenos">116</span></a>    <span class="n">SHLINK</span> <span class="o">=</span> <span class="s2">"shlink"</span>
+</span><span id="ServiceType-117"><a href="#ServiceType-117"><span class="linenos">117</span></a>    <span class="n">SLASH</span> <span class="o">=</span> <span class="s2">"slash"</span>
+</span><span id="ServiceType-118"><a href="#ServiceType-118"><span class="linenos">118</span></a>    <span class="n">SNAPDROP</span> <span class="o">=</span> <span class="s2">"snapdrop"</span>
+</span><span id="ServiceType-119"><a href="#ServiceType-119"><span class="linenos">119</span></a>    <span class="n">STATUSNOOK</span> <span class="o">=</span> <span class="s2">"statusnook"</span>
+</span><span id="ServiceType-120"><a href="#ServiceType-120"><span class="linenos">120</span></a>    <span class="n">STIRLING_PDF</span> <span class="o">=</span> <span class="s2">"stirling-pdf"</span>
+</span><span id="ServiceType-121"><a href="#ServiceType-121"><span class="linenos">121</span></a>    <span class="n">SUPABASE</span> <span class="o">=</span> <span class="s2">"supabase"</span>
+</span><span id="ServiceType-122"><a href="#ServiceType-122"><span class="linenos">122</span></a>    <span class="n">SYNCTHING</span> <span class="o">=</span> <span class="s2">"syncthing"</span>
+</span><span id="ServiceType-123"><a href="#ServiceType-123"><span class="linenos">123</span></a>    <span class="n">TOLGEE</span> <span class="o">=</span> <span class="s2">"tolgee"</span>
+</span><span id="ServiceType-124"><a href="#ServiceType-124"><span class="linenos">124</span></a>    <span class="n">TRIGGER</span> <span class="o">=</span> <span class="s2">"trigger"</span>
+</span><span id="ServiceType-125"><a href="#ServiceType-125"><span class="linenos">125</span></a>    <span class="n">TRIGGER_WITH_EXTERNAL_DATABASE</span> <span class="o">=</span> <span class="s2">"trigger-with-external-database"</span>
+</span><span id="ServiceType-126"><a href="#ServiceType-126"><span class="linenos">126</span></a>    <span class="n">TWENTY</span> <span class="o">=</span> <span class="s2">"twenty"</span>
+</span><span id="ServiceType-127"><a href="#ServiceType-127"><span class="linenos">127</span></a>    <span class="n">UMAMI</span> <span class="o">=</span> <span class="s2">"umami"</span>
+</span><span id="ServiceType-128"><a href="#ServiceType-128"><span class="linenos">128</span></a>    <span class="n">UNLEASH_WITH_POSTGRESQL</span> <span class="o">=</span> <span class="s2">"unleash-with-postgresql"</span>
+</span><span id="ServiceType-129"><a href="#ServiceType-129"><span class="linenos">129</span></a>    <span class="n">UNLEASH_WITHOUT_DATABASE</span> <span class="o">=</span> <span class="s2">"unleash-without-database"</span>
+</span><span id="ServiceType-130"><a href="#ServiceType-130"><span class="linenos">130</span></a>    <span class="n">UPTIME_KUMA</span> <span class="o">=</span> <span class="s2">"uptime-kuma"</span>
+</span><span id="ServiceType-131"><a href="#ServiceType-131"><span class="linenos">131</span></a>    <span class="n">VAULTWARDEN</span> <span class="o">=</span> <span class="s2">"vaultwarden"</span>
+</span><span id="ServiceType-132"><a href="#ServiceType-132"><span class="linenos">132</span></a>    <span class="n">VIKUNJA</span> <span class="o">=</span> <span class="s2">"vikunja"</span>
+</span><span id="ServiceType-133"><a href="#ServiceType-133"><span class="linenos">133</span></a>    <span class="n">WEBLATE</span> <span class="o">=</span> <span class="s2">"weblate"</span>
+</span><span id="ServiceType-134"><a href="#ServiceType-134"><span class="linenos">134</span></a>    <span class="n">WHOOGLE</span> <span class="o">=</span> <span class="s2">"whoogle"</span>
+</span><span id="ServiceType-135"><a href="#ServiceType-135"><span class="linenos">135</span></a>    <span class="n">WORDPRESS_WITH_MARIADB</span> <span class="o">=</span> <span class="s2">"wordpress-with-mariadb"</span>
+</span><span id="ServiceType-136"><a href="#ServiceType-136"><span class="linenos">136</span></a>    <span class="n">WORDPRESS_WITH_MYSQL</span> <span class="o">=</span> <span class="s2">"wordpress-with-mysql"</span>
+</span><span id="ServiceType-137"><a href="#ServiceType-137"><span class="linenos">137</span></a>    <span class="n">WORDPRESS_WITHOUT_DATABASE</span> <span class="o">=</span> <span class="s2">"wordpress-without-database"</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Known Coolify service types.</p>
+</div>
+
+
+                            <div id="ServiceType.ACTIVEPIECES" class="classattr">
+                                <div class="attr variable">
+            <span class="name">ACTIVEPIECES</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.ACTIVEPIECES">ServiceType.ACTIVEPIECES</a>: &#39;activepieces&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.ACTIVEPIECES"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.APPSMITH" class="classattr">
+                                <div class="attr variable">
+            <span class="name">APPSMITH</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.APPSMITH">ServiceType.APPSMITH</a>: &#39;appsmith&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.APPSMITH"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.APPWRITE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">APPWRITE</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.APPWRITE">ServiceType.APPWRITE</a>: &#39;appwrite&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.APPWRITE"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.AUTHENTIK" class="classattr">
+                                <div class="attr variable">
+            <span class="name">AUTHENTIK</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.AUTHENTIK">ServiceType.AUTHENTIK</a>: &#39;authentik&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.AUTHENTIK"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.BABYBUDDY" class="classattr">
+                                <div class="attr variable">
+            <span class="name">BABYBUDDY</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.BABYBUDDY">ServiceType.BABYBUDDY</a>: &#39;babybuddy&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.BABYBUDDY"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.BUDGE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">BUDGE</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.BUDGE">ServiceType.BUDGE</a>: &#39;budge&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.BUDGE"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.CHANGEDETECTION" class="classattr">
+                                <div class="attr variable">
+            <span class="name">CHANGEDETECTION</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.CHANGEDETECTION">ServiceType.CHANGEDETECTION</a>: &#39;changedetection&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.CHANGEDETECTION"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.CHATWOOT" class="classattr">
+                                <div class="attr variable">
+            <span class="name">CHATWOOT</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.CHATWOOT">ServiceType.CHATWOOT</a>: &#39;chatwoot&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.CHATWOOT"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.CLASSICPRESS_WITH_MARIADB" class="classattr">
+                                <div class="attr variable">
+            <span class="name">CLASSICPRESS_WITH_MARIADB</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.CLASSICPRESS_WITH_MARIADB">ServiceType.CLASSICPRESS_WITH_MARIADB</a>: &#39;classicpress-with-mariadb&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.CLASSICPRESS_WITH_MARIADB"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.CLASSICPRESS_WITH_MYSQL" class="classattr">
+                                <div class="attr variable">
+            <span class="name">CLASSICPRESS_WITH_MYSQL</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.CLASSICPRESS_WITH_MYSQL">ServiceType.CLASSICPRESS_WITH_MYSQL</a>: &#39;classicpress-with-mysql&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.CLASSICPRESS_WITH_MYSQL"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.CLASSICPRESS_WITHOUT_DATABASE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">CLASSICPRESS_WITHOUT_DATABASE</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.CLASSICPRESS_WITHOUT_DATABASE">ServiceType.CLASSICPRESS_WITHOUT_DATABASE</a>: &#39;classicpress-without-database&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.CLASSICPRESS_WITHOUT_DATABASE"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.CLOUDFLARED" class="classattr">
+                                <div class="attr variable">
+            <span class="name">CLOUDFLARED</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.CLOUDFLARED">ServiceType.CLOUDFLARED</a>: &#39;cloudflared&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.CLOUDFLARED"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.CODE_SERVER" class="classattr">
+                                <div class="attr variable">
+            <span class="name">CODE_SERVER</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.CODE_SERVER">ServiceType.CODE_SERVER</a>: &#39;code-server&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.CODE_SERVER"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.DASHBOARD" class="classattr">
+                                <div class="attr variable">
+            <span class="name">DASHBOARD</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.DASHBOARD">ServiceType.DASHBOARD</a>: &#39;dashboard&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.DASHBOARD"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.DIRECTUS" class="classattr">
+                                <div class="attr variable">
+            <span class="name">DIRECTUS</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.DIRECTUS">ServiceType.DIRECTUS</a>: &#39;directus&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.DIRECTUS"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.DIRECTUS_WITH_POSTGRESQL" class="classattr">
+                                <div class="attr variable">
+            <span class="name">DIRECTUS_WITH_POSTGRESQL</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.DIRECTUS_WITH_POSTGRESQL">ServiceType.DIRECTUS_WITH_POSTGRESQL</a>: &#39;directus-with-postgresql&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.DIRECTUS_WITH_POSTGRESQL"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.DOCKER_REGISTRY" class="classattr">
+                                <div class="attr variable">
+            <span class="name">DOCKER_REGISTRY</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.DOCKER_REGISTRY">ServiceType.DOCKER_REGISTRY</a>: &#39;docker-registry&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.DOCKER_REGISTRY"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.DOCUSEAL" class="classattr">
+                                <div class="attr variable">
+            <span class="name">DOCUSEAL</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.DOCUSEAL">ServiceType.DOCUSEAL</a>: &#39;docuseal&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.DOCUSEAL"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.DOCUSEAL_WITH_POSTGRES" class="classattr">
+                                <div class="attr variable">
+            <span class="name">DOCUSEAL_WITH_POSTGRES</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.DOCUSEAL_WITH_POSTGRES">ServiceType.DOCUSEAL_WITH_POSTGRES</a>: &#39;docuseal-with-postgres&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.DOCUSEAL_WITH_POSTGRES"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.DOKUWIKI" class="classattr">
+                                <div class="attr variable">
+            <span class="name">DOKUWIKI</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.DOKUWIKI">ServiceType.DOKUWIKI</a>: &#39;dokuwiki&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.DOKUWIKI"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.DUPLICATI" class="classattr">
+                                <div class="attr variable">
+            <span class="name">DUPLICATI</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.DUPLICATI">ServiceType.DUPLICATI</a>: &#39;duplicati&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.DUPLICATI"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.EMBY" class="classattr">
+                                <div class="attr variable">
+            <span class="name">EMBY</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.EMBY">ServiceType.EMBY</a>: &#39;emby&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.EMBY"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.EMBYSTAT" class="classattr">
+                                <div class="attr variable">
+            <span class="name">EMBYSTAT</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.EMBYSTAT">ServiceType.EMBYSTAT</a>: &#39;embystat&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.EMBYSTAT"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.FIDER" class="classattr">
+                                <div class="attr variable">
+            <span class="name">FIDER</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.FIDER">ServiceType.FIDER</a>: &#39;fider&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.FIDER"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.FILEBROWSER" class="classattr">
+                                <div class="attr variable">
+            <span class="name">FILEBROWSER</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.FILEBROWSER">ServiceType.FILEBROWSER</a>: &#39;filebrowser&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.FILEBROWSER"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.FIREFLY" class="classattr">
+                                <div class="attr variable">
+            <span class="name">FIREFLY</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.FIREFLY">ServiceType.FIREFLY</a>: &#39;firefly&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.FIREFLY"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.FORMBRICKS" class="classattr">
+                                <div class="attr variable">
+            <span class="name">FORMBRICKS</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.FORMBRICKS">ServiceType.FORMBRICKS</a>: &#39;formbricks&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.FORMBRICKS"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.GHOST" class="classattr">
+                                <div class="attr variable">
+            <span class="name">GHOST</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.GHOST">ServiceType.GHOST</a>: &#39;ghost&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.GHOST"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.GITEA" class="classattr">
+                                <div class="attr variable">
+            <span class="name">GITEA</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.GITEA">ServiceType.GITEA</a>: &#39;gitea&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.GITEA"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.GITEA_WITH_MARIADB" class="classattr">
+                                <div class="attr variable">
+            <span class="name">GITEA_WITH_MARIADB</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.GITEA_WITH_MARIADB">ServiceType.GITEA_WITH_MARIADB</a>: &#39;gitea-with-mariadb&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.GITEA_WITH_MARIADB"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.GITEA_WITH_MYSQL" class="classattr">
+                                <div class="attr variable">
+            <span class="name">GITEA_WITH_MYSQL</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.GITEA_WITH_MYSQL">ServiceType.GITEA_WITH_MYSQL</a>: &#39;gitea-with-mysql&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.GITEA_WITH_MYSQL"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.GITEA_WITH_POSTGRESQL" class="classattr">
+                                <div class="attr variable">
+            <span class="name">GITEA_WITH_POSTGRESQL</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.GITEA_WITH_POSTGRESQL">ServiceType.GITEA_WITH_POSTGRESQL</a>: &#39;gitea-with-postgresql&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.GITEA_WITH_POSTGRESQL"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.GLANCE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">GLANCE</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.GLANCE">ServiceType.GLANCE</a>: &#39;glance&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.GLANCE"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.GLANCES" class="classattr">
+                                <div class="attr variable">
+            <span class="name">GLANCES</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.GLANCES">ServiceType.GLANCES</a>: &#39;glances&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.GLANCES"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.GLITCHTIP" class="classattr">
+                                <div class="attr variable">
+            <span class="name">GLITCHTIP</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.GLITCHTIP">ServiceType.GLITCHTIP</a>: &#39;glitchtip&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.GLITCHTIP"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.GRAFANA" class="classattr">
+                                <div class="attr variable">
+            <span class="name">GRAFANA</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.GRAFANA">ServiceType.GRAFANA</a>: &#39;grafana&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.GRAFANA"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.GRAFANA_WITH_POSTGRESQL" class="classattr">
+                                <div class="attr variable">
+            <span class="name">GRAFANA_WITH_POSTGRESQL</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.GRAFANA_WITH_POSTGRESQL">ServiceType.GRAFANA_WITH_POSTGRESQL</a>: &#39;grafana-with-postgresql&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.GRAFANA_WITH_POSTGRESQL"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.GROCY" class="classattr">
+                                <div class="attr variable">
+            <span class="name">GROCY</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.GROCY">ServiceType.GROCY</a>: &#39;grocy&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.GROCY"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.HEIMDALL" class="classattr">
+                                <div class="attr variable">
+            <span class="name">HEIMDALL</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.HEIMDALL">ServiceType.HEIMDALL</a>: &#39;heimdall&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.HEIMDALL"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.HOMEPAGE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">HOMEPAGE</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.HOMEPAGE">ServiceType.HOMEPAGE</a>: &#39;homepage&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.HOMEPAGE"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.JELLYFIN" class="classattr">
+                                <div class="attr variable">
+            <span class="name">JELLYFIN</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.JELLYFIN">ServiceType.JELLYFIN</a>: &#39;jellyfin&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.JELLYFIN"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.JENKINS" class="classattr">
+                                <div class="attr variable">
+            <span class="name">JENKINS</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.JENKINS">ServiceType.JENKINS</a>: &#39;jenkins&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.JENKINS"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.KUZZLE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">KUZZLE</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.KUZZLE">ServiceType.KUZZLE</a>: &#39;kuzzle&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.KUZZLE"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.LISTMONK" class="classattr">
+                                <div class="attr variable">
+            <span class="name">LISTMONK</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.LISTMONK">ServiceType.LISTMONK</a>: &#39;listmonk&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.LISTMONK"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.LOGTO" class="classattr">
+                                <div class="attr variable">
+            <span class="name">LOGTO</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.LOGTO">ServiceType.LOGTO</a>: &#39;logto&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.LOGTO"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.MEDIAWIKI" class="classattr">
+                                <div class="attr variable">
+            <span class="name">MEDIAWIKI</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.MEDIAWIKI">ServiceType.MEDIAWIKI</a>: &#39;mediawiki&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.MEDIAWIKI"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.MEILISEARCH" class="classattr">
+                                <div class="attr variable">
+            <span class="name">MEILISEARCH</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.MEILISEARCH">ServiceType.MEILISEARCH</a>: &#39;meilisearch&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.MEILISEARCH"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.METABASE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">METABASE</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.METABASE">ServiceType.METABASE</a>: &#39;metabase&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.METABASE"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.METUBE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">METUBE</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.METUBE">ServiceType.METUBE</a>: &#39;metube&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.METUBE"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.MINIO" class="classattr">
+                                <div class="attr variable">
+            <span class="name">MINIO</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.MINIO">ServiceType.MINIO</a>: &#39;minio&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.MINIO"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.MOODLE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">MOODLE</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.MOODLE">ServiceType.MOODLE</a>: &#39;moodle&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.MOODLE"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.MOSQUITTO" class="classattr">
+                                <div class="attr variable">
+            <span class="name">MOSQUITTO</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.MOSQUITTO">ServiceType.MOSQUITTO</a>: &#39;mosquitto&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.MOSQUITTO"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.N8N" class="classattr">
+                                <div class="attr variable">
+            <span class="name">N8N</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.N8N">ServiceType.N8N</a>: &#39;n8n&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.N8N"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.N8N_WITH_POSTGRESQL" class="classattr">
+                                <div class="attr variable">
+            <span class="name">N8N_WITH_POSTGRESQL</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.N8N_WITH_POSTGRESQL">ServiceType.N8N_WITH_POSTGRESQL</a>: &#39;n8n-with-postgresql&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.N8N_WITH_POSTGRESQL"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.NEXT_IMAGE_TRANSFORMATION" class="classattr">
+                                <div class="attr variable">
+            <span class="name">NEXT_IMAGE_TRANSFORMATION</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.NEXT_IMAGE_TRANSFORMATION">ServiceType.NEXT_IMAGE_TRANSFORMATION</a>: &#39;next-image-transformation&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.NEXT_IMAGE_TRANSFORMATION"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.NEXTCLOUD" class="classattr">
+                                <div class="attr variable">
+            <span class="name">NEXTCLOUD</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.NEXTCLOUD">ServiceType.NEXTCLOUD</a>: &#39;nextcloud&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.NEXTCLOUD"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.NOCODB" class="classattr">
+                                <div class="attr variable">
+            <span class="name">NOCODB</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.NOCODB">ServiceType.NOCODB</a>: &#39;nocodb&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.NOCODB"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.ODOO" class="classattr">
+                                <div class="attr variable">
+            <span class="name">ODOO</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.ODOO">ServiceType.ODOO</a>: &#39;odoo&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.ODOO"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.OPENBLOCKS" class="classattr">
+                                <div class="attr variable">
+            <span class="name">OPENBLOCKS</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.OPENBLOCKS">ServiceType.OPENBLOCKS</a>: &#39;openblocks&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.OPENBLOCKS"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.PAIRDROP" class="classattr">
+                                <div class="attr variable">
+            <span class="name">PAIRDROP</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.PAIRDROP">ServiceType.PAIRDROP</a>: &#39;pairdrop&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.PAIRDROP"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.PENPOT" class="classattr">
+                                <div class="attr variable">
+            <span class="name">PENPOT</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.PENPOT">ServiceType.PENPOT</a>: &#39;penpot&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.PENPOT"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.PHPMYADMIN" class="classattr">
+                                <div class="attr variable">
+            <span class="name">PHPMYADMIN</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.PHPMYADMIN">ServiceType.PHPMYADMIN</a>: &#39;phpmyadmin&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.PHPMYADMIN"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.POCKETBASE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">POCKETBASE</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.POCKETBASE">ServiceType.POCKETBASE</a>: &#39;pocketbase&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.POCKETBASE"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.POSTHOG" class="classattr">
+                                <div class="attr variable">
+            <span class="name">POSTHOG</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.POSTHOG">ServiceType.POSTHOG</a>: &#39;posthog&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.POSTHOG"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.REACTIVE_RESUME" class="classattr">
+                                <div class="attr variable">
+            <span class="name">REACTIVE_RESUME</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.REACTIVE_RESUME">ServiceType.REACTIVE_RESUME</a>: &#39;reactive-resume&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.REACTIVE_RESUME"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.ROCKETCHAT" class="classattr">
+                                <div class="attr variable">
+            <span class="name">ROCKETCHAT</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.ROCKETCHAT">ServiceType.ROCKETCHAT</a>: &#39;rocketchat&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.ROCKETCHAT"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.SHLINK" class="classattr">
+                                <div class="attr variable">
+            <span class="name">SHLINK</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.SHLINK">ServiceType.SHLINK</a>: &#39;shlink&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.SHLINK"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.SLASH" class="classattr">
+                                <div class="attr variable">
+            <span class="name">SLASH</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.SLASH">ServiceType.SLASH</a>: &#39;slash&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.SLASH"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.SNAPDROP" class="classattr">
+                                <div class="attr variable">
+            <span class="name">SNAPDROP</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.SNAPDROP">ServiceType.SNAPDROP</a>: &#39;snapdrop&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.SNAPDROP"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.STATUSNOOK" class="classattr">
+                                <div class="attr variable">
+            <span class="name">STATUSNOOK</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.STATUSNOOK">ServiceType.STATUSNOOK</a>: &#39;statusnook&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.STATUSNOOK"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.STIRLING_PDF" class="classattr">
+                                <div class="attr variable">
+            <span class="name">STIRLING_PDF</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.STIRLING_PDF">ServiceType.STIRLING_PDF</a>: &#39;stirling-pdf&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.STIRLING_PDF"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.SUPABASE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">SUPABASE</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.SUPABASE">ServiceType.SUPABASE</a>: &#39;supabase&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.SUPABASE"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.SYNCTHING" class="classattr">
+                                <div class="attr variable">
+            <span class="name">SYNCTHING</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.SYNCTHING">ServiceType.SYNCTHING</a>: &#39;syncthing&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.SYNCTHING"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.TOLGEE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">TOLGEE</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.TOLGEE">ServiceType.TOLGEE</a>: &#39;tolgee&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.TOLGEE"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.TRIGGER" class="classattr">
+                                <div class="attr variable">
+            <span class="name">TRIGGER</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.TRIGGER">ServiceType.TRIGGER</a>: &#39;trigger&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.TRIGGER"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.TRIGGER_WITH_EXTERNAL_DATABASE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">TRIGGER_WITH_EXTERNAL_DATABASE</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.TRIGGER_WITH_EXTERNAL_DATABASE">ServiceType.TRIGGER_WITH_EXTERNAL_DATABASE</a>: &#39;trigger-with-external-database&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.TRIGGER_WITH_EXTERNAL_DATABASE"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.TWENTY" class="classattr">
+                                <div class="attr variable">
+            <span class="name">TWENTY</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.TWENTY">ServiceType.TWENTY</a>: &#39;twenty&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.TWENTY"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.UMAMI" class="classattr">
+                                <div class="attr variable">
+            <span class="name">UMAMI</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.UMAMI">ServiceType.UMAMI</a>: &#39;umami&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.UMAMI"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.UNLEASH_WITH_POSTGRESQL" class="classattr">
+                                <div class="attr variable">
+            <span class="name">UNLEASH_WITH_POSTGRESQL</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.UNLEASH_WITH_POSTGRESQL">ServiceType.UNLEASH_WITH_POSTGRESQL</a>: &#39;unleash-with-postgresql&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.UNLEASH_WITH_POSTGRESQL"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.UNLEASH_WITHOUT_DATABASE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">UNLEASH_WITHOUT_DATABASE</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.UNLEASH_WITHOUT_DATABASE">ServiceType.UNLEASH_WITHOUT_DATABASE</a>: &#39;unleash-without-database&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.UNLEASH_WITHOUT_DATABASE"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.UPTIME_KUMA" class="classattr">
+                                <div class="attr variable">
+            <span class="name">UPTIME_KUMA</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.UPTIME_KUMA">ServiceType.UPTIME_KUMA</a>: &#39;uptime-kuma&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.UPTIME_KUMA"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.VAULTWARDEN" class="classattr">
+                                <div class="attr variable">
+            <span class="name">VAULTWARDEN</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.VAULTWARDEN">ServiceType.VAULTWARDEN</a>: &#39;vaultwarden&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.VAULTWARDEN"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.VIKUNJA" class="classattr">
+                                <div class="attr variable">
+            <span class="name">VIKUNJA</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.VIKUNJA">ServiceType.VIKUNJA</a>: &#39;vikunja&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.VIKUNJA"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.WEBLATE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">WEBLATE</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.WEBLATE">ServiceType.WEBLATE</a>: &#39;weblate&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.WEBLATE"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.WHOOGLE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">WHOOGLE</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.WHOOGLE">ServiceType.WHOOGLE</a>: &#39;whoogle&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.WHOOGLE"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.WORDPRESS_WITH_MARIADB" class="classattr">
+                                <div class="attr variable">
+            <span class="name">WORDPRESS_WITH_MARIADB</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.WORDPRESS_WITH_MARIADB">ServiceType.WORDPRESS_WITH_MARIADB</a>: &#39;wordpress-with-mariadb&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.WORDPRESS_WITH_MARIADB"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.WORDPRESS_WITH_MYSQL" class="classattr">
+                                <div class="attr variable">
+            <span class="name">WORDPRESS_WITH_MYSQL</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.WORDPRESS_WITH_MYSQL">ServiceType.WORDPRESS_WITH_MYSQL</a>: &#39;wordpress-with-mysql&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.WORDPRESS_WITH_MYSQL"></a>
+    
+    
+
+                            </div>
+                            <div id="ServiceType.WORDPRESS_WITHOUT_DATABASE" class="classattr">
+                                <div class="attr variable">
+            <span class="name">WORDPRESS_WITHOUT_DATABASE</span>        =
+<span class="default_value">&lt;<a href="#ServiceType.WORDPRESS_WITHOUT_DATABASE">ServiceType.WORDPRESS_WITHOUT_DATABASE</a>: &#39;wordpress-without-database&#39;&gt;</span>
+
+        
+    </div>
+    <a class="headerlink" href="#ServiceType.WORDPRESS_WITHOUT_DATABASE"></a>
+    
+    
+
+                            </div>
+                </section>
+    </main>
+<script>
+    function escapeHTML(html) {
+        return document.createElement('div').appendChild(document.createTextNode(html)).parentNode.innerHTML;
+    }
+
+    const originalContent = document.querySelector("main.pdoc");
+    let currentContent = originalContent;
+
+    function setContent(innerHTML) {
+        let elem;
+        if (innerHTML) {
+            elem = document.createElement("main");
+            elem.classList.add("pdoc");
+            elem.innerHTML = innerHTML;
+        } else {
+            elem = originalContent;
+        }
+        if (currentContent !== elem) {
+            currentContent.replaceWith(elem);
+            currentContent = elem;
+        }
+    }
+
+    function getSearchTerm() {
+        return (new URL(window.location)).searchParams.get("search");
+    }
+
+    const searchBox = document.querySelector(".pdoc input[type=search]");
+    searchBox.addEventListener("input", function () {
+        let url = new URL(window.location);
+        if (searchBox.value.trim()) {
+            url.hash = "";
+            url.searchParams.set("search", searchBox.value);
+        } else {
+            url.searchParams.delete("search");
+        }
+        history.replaceState("", "", url.toString());
+        onInput();
+    });
+    window.addEventListener("popstate", onInput);
+
+
+    let search, searchErr;
+
+    async function initialize() {
+        try {
+            search = await new Promise((resolve, reject) => {
+                const script = document.createElement("script");
+                script.type = "text/javascript";
+                script.async = true;
+                script.onload = () => resolve(window.pdocSearch);
+                script.onerror = (e) => reject(e);
+                script.src = "search.js";
+                document.getElementsByTagName("head")[0].appendChild(script);
+            });
+        } catch (e) {
+            console.error("Cannot fetch pdoc search index");
+            searchErr = "Cannot fetch search index.";
+        }
+        onInput();
+
+        document.querySelector("nav.pdoc").addEventListener("click", e => {
+            if (e.target.hash) {
+                searchBox.value = "";
+                searchBox.dispatchEvent(new Event("input"));
+            }
+        });
+    }
+
+    function onInput() {
+        setContent((() => {
+            const term = getSearchTerm();
+            if (!term) {
+                return null
+            }
+            if (searchErr) {
+                return `<h3>Error: ${searchErr}</h3>`
+            }
+            if (!search) {
+                return "<h3>Searching...</h3>"
+            }
+
+            window.scrollTo({top: 0, left: 0, behavior: 'auto'});
+
+            const results = search(term);
+
+            let html;
+            if (results.length === 0) {
+                html = `No search results for '${escapeHTML(term)}'.`
+            } else {
+                html = `<h4>${results.length} search result${results.length > 1 ? "s" : ""} for '${escapeHTML(term)}'.</h4>`;
+            }
+            for (let result of results.slice(0, 10)) {
+                let doc = result.doc;
+                let url = `../${doc.modulename.replaceAll(".", "/")}.html`;
+                if (doc.qualname) {
+                    url += `#${doc.qualname}`;
+                }
+
+                let heading;
+                switch (result.doc.kind) {
+                    case "function":
+                        if (doc.fullname.endsWith(".__init__")) {
+                            heading = `<span class="name">${doc.fullname.replace(/\.__init__$/, "")}</span>${doc.signature}`;
+                        } else {
+                            heading = `<span class="def">${doc.funcdef}</span> <span class="name">${doc.fullname}</span>${doc.signature}`;
+                        }
+                        break;
+                    case "class":
+                        heading = `<span class="def">class</span> <span class="name">${doc.fullname}</span>`;
+                        if (doc.bases)
+                            heading += `<wbr>(<span class="base">${doc.bases}</span>)`;
+                        heading += `:`;
+                        break;
+                    case "variable":
+                        heading = `<span class="name">${doc.fullname}</span>`;
+                        if (doc.annotation)
+                            heading += `<span class="annotation">${doc.annotation}</span>`;
+                        if (doc.default_value)
+                            heading += `<span class="default_value"> = ${doc.default_value}</span>`;
+                        break;
+                    default:
+                        heading = `<span class="name">${doc.fullname}</span>`;
+                        break;
+                }
+                html += `
+                        <section class="search-result">
+                        <a href="${url}" class="attr ${doc.kind}">${heading}</a>
+                        <div class="docstring">${doc.doc}</div>
+                        </section>
+                    `;
+
+            }
+            return html;
+        })());
+    }
+
+    if (getSearchTerm()) {
+        initialize();
+        searchBox.value = getSearchTerm();
+        onInput();
+    } else {
+        searchBox.addEventListener("focus", initialize, {once: true});
+    }
+
+    searchBox.addEventListener("keydown", e => {
+        if (["ArrowDown", "ArrowUp", "Enter"].includes(e.key)) {
+            let focused = currentContent.querySelector(".search-result.focused");
+            if (!focused) {
+                currentContent.querySelector(".search-result").classList.add("focused");
+            } else if (
+                e.key === "ArrowDown"
+                && focused.nextElementSibling
+                && focused.nextElementSibling.classList.contains("search-result")
+            ) {
+                focused.classList.remove("focused");
+                focused.nextElementSibling.classList.add("focused");
+                focused.nextElementSibling.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                    inline: "nearest"
+                });
+            } else if (
+                e.key === "ArrowUp"
+                && focused.previousElementSibling
+                && focused.previousElementSibling.classList.contains("search-result")
+            ) {
+                focused.classList.remove("focused");
+                focused.previousElementSibling.classList.add("focused");
+                focused.previousElementSibling.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                    inline: "nearest"
+                });
+            } else if (
+                e.key === "Enter"
+            ) {
+                focused.querySelector("a").click();
+            }
+        }
+    });
+</script></body>
+</html>

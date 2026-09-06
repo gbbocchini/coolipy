@@ -1,128 +1,110 @@
-from dataclasses import dataclass
-from datetime import datetime
-from typing import Optional, Union, override
+"""Server models for the Coolify API."""
 
-from coolipy.constants import COOLIFY_DEFAULT_PROXY
+from __future__ import annotations
+
+from datetime import datetime
+
+from coolipy.enums import ProxyType
 from coolipy.models.base import CoolipyBaseModel
 
 
-@dataclass
-class ServerProxyModel:
-    """
-    Coolify Server Proxy data model.
-    """
+class ServerSetting(CoolipyBaseModel):
+    """Server settings returned as part of a server model."""
 
-    type: Optional[str] = COOLIFY_DEFAULT_PROXY
-    status: Optional[str] = None
-    last_saved_settings: Optional[str] = None
-    last_applied_settings: Optional[str] = None
-    force_stop: Optional[bool] = None
-    redirect_enabled: Optional[bool] = None
-
-
-@dataclass
-class ServerSettingsModel(CoolipyBaseModel):
-    """
-    Coolify Server Settings data model.
-    """
-
-    id: Optional[int] = None
-    concurrent_builds: Optional[int] = None
-    delete_unused_networks: Optional[bool] = None
-    delete_unused_volumes: Optional[bool] = None
-    docker_cleanup_frequency: Optional[str] = None
-    docker_cleanup_threshold: Optional[int] = None
-    dynamic_timeout: Optional[int] = None
-    force_disabled: Optional[bool] = None
-    force_docker_cleanup: Optional[bool] = None
-    generate_exact_labels: Optional[bool] = None
-    is_build_server: Optional[bool] = None
-    is_cloudflare_tunnel: Optional[bool] = None
-    is_jump_server: Optional[bool] = None
-    is_logdrain_axiom_enabled: Optional[bool] = None
-    is_logdrain_custom_enabled: Optional[bool] = None
-    is_logdrain_highlight_enabled: Optional[bool] = None
-    is_logdrain_newrelic_enabled: Optional[bool] = None
-    is_metrics_enabled: Optional[bool] = None
-    is_reachable: Optional[bool] = None
-    is_sentinel_debug_enabled: Optional[bool] = None
-    is_sentinel_enabled: Optional[bool] = None
-    is_swarm_manager: Optional[bool] = None
-    is_swarm_worker: Optional[bool] = None
-    is_usable: Optional[bool] = None
-    sentinel_custom_url: Optional[str] = None
-    sentinel_metrics_history_days: Optional[int] = None
-    sentinel_metrics_refresh_rate_seconds: Optional[int] = None
-    sentinel_push_interval_seconds: Optional[int] = None
-    sentinel_token: Optional[str] = None
-    server_disk_usage_notification_threshold: Optional[int] = None
-    server_id: Optional[int] = None
-    server_timezone: Optional[str] = None
-    created_at: Optional[Union[str, datetime]] = None
-    updated_at: Optional[Union[str, datetime]] = None
-    logdrain_axiom_api_key: Optional[str] = None
-    logdrain_axiom_dataset_name: Optional[str] = None
-    logdrain_custom_config: Optional[str] = None
-    logdrain_custom_config_parser: Optional[str] = None
-    logdrain_highlight_project_id: Optional[str] = None
-    logdrain_newrelic_base_uri: Optional[str] = None
-    logdrain_newrelic_license_key: Optional[str] = None
-    wildcard_domain: Optional[str] = None
-    server_disk_usage_check_frequency: Optional[str] = None
+    id: int | None = None
+    concurrent_builds: int | None = None
+    deployment_queue_limit: int | None = None
+    dynamic_timeout: int | None = None
+    force_disabled: bool | None = None
+    force_server_cleanup: bool | None = None
+    is_build_server: bool | None = None
+    is_cloudflare_tunnel: bool | None = None
+    is_jump_server: bool | None = None
+    is_logdrain_axiom_enabled: bool | None = None
+    is_logdrain_custom_enabled: bool | None = None
+    is_logdrain_highlight_enabled: bool | None = None
+    is_logdrain_newrelic_enabled: bool | None = None
+    is_metrics_enabled: bool | None = None
+    is_reachable: bool | None = None
+    is_sentinel_enabled: bool | None = None
+    is_swarm_manager: bool | None = None
+    is_swarm_worker: bool | None = None
+    is_terminal_enabled: bool | None = None
+    is_usable: bool | None = None
+    logdrain_axiom_api_key: str | None = None
+    logdrain_axiom_dataset_name: str | None = None
+    logdrain_custom_config: str | None = None
+    logdrain_custom_config_parser: str | None = None
+    logdrain_highlight_project_id: str | None = None
+    logdrain_newrelic_base_uri: str | None = None
+    logdrain_newrelic_license_key: str | None = None
+    sentinel_metrics_history_days: int | None = None
+    sentinel_metrics_refresh_rate_seconds: int | None = None
+    sentinel_token: str | None = None
+    docker_cleanup_frequency: str | None = None
+    docker_cleanup_threshold: int | None = None
+    server_id: int | None = None
+    wildcard_domain: str | None = None
+    created_at: datetime | None = None
+    updated_at: datetime | None = None
+    delete_unused_volumes: bool | None = None
+    delete_unused_networks: bool | None = None
+    connection_timeout: int | None = None
 
 
-@dataclass
 class ServerModel(CoolipyBaseModel):
-    """
-    Coolify Server data model.
-    """
+    """A server as returned by the API."""
 
-    id: Optional[str] = None
-    description: Optional[str] = None
-    name: Optional[str] = None
-    ip: Optional[str] = None
-    port: Optional[int] = None
-    user: Optional[str] = None
-    private_key_id: Optional[int] = None
-    uuid: Optional[str] = None
-    team_id: Optional[int] = None
-    sentinel_updated_at: Optional[str] = None
-    created_at: Optional[Union[str, datetime]] = None
-    updated_at: Optional[Union[str, datetime]] = None
-    deleted_at: Optional[Union[str, datetime]] = None
-    high_disk_usage_notification_sent: Optional[bool] = False
-    log_drain_notification_sent: Optional[bool] = False
-    swarm_cluster: Optional[bool] = False
-    validation_logs: Optional[str] = None
-    unreachable_count: Optional[int] = None
-    unreachable_notification_sent: Optional[bool] = False
-    proxy: Optional[ServerProxyModel] = None
-    settings: Optional[ServerSettingsModel] = None
-    is_reachable: Optional[bool] = None
-    is_usable: Optional[bool] = None
-    is_coolify_host: Optional[bool] = None
-
-    @override
-    def _adjust_nested(self):
-        if isinstance(self.settings, dict) and self.settings:
-            raw_sets = self.settings
-            parsed = ServerSettingsModel(**raw_sets).pythonify()
-            self.settings = parsed
-
-        raw_proxy = self.proxy
-
-        if raw_proxy and isinstance(raw_proxy, dict):
-            self.proxy = ServerProxyModel(**raw_proxy)
+    id: int | None = None
+    uuid: str | None = None
+    name: str | None = None
+    description: str | None = None
+    ip: str | None = None
+    user: str | None = None
+    port: int | None = None
+    proxy: dict | None = None
+    proxy_type: str | None = None
+    is_coolify_host: bool | None = None
+    is_reachable: bool | None = None
+    is_usable: bool | None = None
+    high_disk_usage_notification_sent: bool | None = None
+    unreachable_notification_sent: bool | None = None
+    unreachable_count: int | None = None
+    validation_logs: str | None = None
+    log_drain_notification_sent: bool | None = None
+    swarm_cluster: str | None = None
+    settings: ServerSetting | None = None
 
 
-@dataclass
-class ServerModelCreate:
-    name: str
-    description: str
-    ip: str
-    port: int
-    user: str
-    private_key_uuid: str
-    is_build_server: bool
-    instant_validate: bool
-    proxy_type: str = COOLIFY_DEFAULT_PROXY
+class ServerCreateModel(CoolipyBaseModel):
+    """Body for creating a server."""
+
+    name: str | None = None
+    description: str | None = None
+    ip: str | None = None
+    port: int | None = None
+    user: str | None = None
+    private_key_uuid: str | None = None
+    is_build_server: bool | None = None
+    instant_validate: bool | None = None
+    proxy_type: ProxyType | None = None
+
+
+class ServerUpdateModel(CoolipyBaseModel):
+    """Body for updating a server."""
+
+    name: str | None = None
+    description: str | None = None
+    ip: str | None = None
+    port: int | None = None
+    user: str | None = None
+    private_key_uuid: str | None = None
+    is_build_server: bool | None = None
+    instant_validate: bool | None = None
+    proxy_type: ProxyType | None = None
+    concurrent_builds: int | None = None
+    dynamic_timeout: int | None = None
+    deployment_queue_limit: int | None = None
+    server_disk_usage_notification_threshold: int | None = None
+    server_disk_usage_check_frequency: str | None = None
+    connection_timeout: int | None = None

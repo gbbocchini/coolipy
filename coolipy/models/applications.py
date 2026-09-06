@@ -1,236 +1,278 @@
-from dataclasses import dataclass, field
+"""Application models for the Coolify API."""
+
+from __future__ import annotations
+
 from datetime import datetime
-from typing import Dict, List, Optional, Union
 
-
-from coolipy.constants import COOLIFY_BUILD_PACKS
+from coolipy.enums import BuildPack, Redirect
 from coolipy.models.base import CoolipyBaseModel
-from coolipy.models.databases import DestinationModel
 
 
-@dataclass
-class ServiceApplicationModel(CoolipyBaseModel):
-    id: Optional[int] = None
-    uuid: Optional[str] = None
-    name: Optional[str] = None
-    human_name: Optional[str] = None
-    description: Optional[str] = None
-    fqdn: Optional[str] = None
-    ports: Optional[List[str]] = None
-    exposes: Optional[str] = None
-    status: Optional[str] = None
-    service_id: Optional[int] = None
-    exclude_from_status: Optional[bool] = None
-    required_fqdn: Optional[bool] = None
-    image: Optional[str] = None
-    is_log_drain_enabled: Optional[bool] = None
-    is_include_timestamps: Optional[bool] = None
-    deleted_at: Optional[Union[str, datetime]] = None
-    is_gzip_enabled: Optional[bool] = None
-    is_stripprefix_enabled: Optional[bool] = None
-    last_online_at: Optional[Union[str, datetime]] = None
-    created_at: Optional[Union[str, datetime]] = None
-    updated_at: Optional[Union[str, datetime]] = None
+class DockerComposeDomain(CoolipyBaseModel):
+    """A per-service domain mapping for docker-compose applications."""
+
+    name: str | None = None
+    domain: str | None = None
+    redirect: Redirect | None = None
 
 
-@dataclass
-class ApplicationBaseModel:
-    uuid: Optional[str] = None
-    name: Optional[str] = None
-    domains: Optional[List[str]] = field(default_factory=list)
-    description: Optional[str] = None
-    git_repository: Optional[str] = None
-    git_branch: Optional[str] = None
-    build_pack: Optional[COOLIFY_BUILD_PACKS] = None
-    docker_registry_image_name: Optional[str] = None
-    docker_registry_image_tag: Optional[str] = None
-    static_image: Optional[str] = None
-    install_command: Optional[str] = None
-    build_command: Optional[str] = None
-    start_command: Optional[str] = None
-    base_directory: Optional[str] = None
-    publish_directory: Optional[str] = None
-    health_check_enabled: Optional[bool] = None
-    health_check_path: Optional[str] = None
-    health_check_port: Optional[int] = None
-    health_check_host: Optional[str] = None
-    health_check_method: Optional[str] = None
-    health_check_return_code: Optional[int] = None
-    health_check_scheme: Optional[str] = None
-    health_check_response_text: Optional[str] = None
-    health_check_interval: Optional[int] = None
-    health_check_timeout: Optional[int] = None
-    health_check_retries: Optional[int] = None
-    health_check_start_period: Optional[int] = None
-    limits_memory: Optional[str] = None
-    limits_memory_swap: Optional[str] = None
-    limits_memory_swappiness: Optional[int] = None
-    limits_memory_reservation: Optional[str] = None
-    limits_cpus: Optional[str] = None
-    limits_cpuset: Optional[str] = None
-    limits_cpu_shares: Optional[int] = None
-    custom_labels: Optional[str] = None
-    custom_docker_run_options: Optional[str] = None
-    post_deployment_command: Optional[str] = None
-    post_deployment_command_container: Optional[str] = None
-    pre_deployment_command: Optional[str] = None
-    pre_deployment_command_container: Optional[str] = None
-    manual_webhook_secret_github: Optional[str] = None
-    manual_webhook_secret_gitlab: Optional[str] = None
-    manual_webhook_secret_bitbucket: Optional[str] = None
-    manual_webhook_secret_gitea: Optional[str] = None
-    dockerfile: Optional[str] = None
-    docker_compose_location: Optional[str] = None
-    docker_compose_raw: Optional[str] = None
-    docker_compose_custom_start_command: Optional[str] = None
-    docker_compose_custom_build_command: Optional[str] = None
-    docker_compose_domains: Optional[List[str]] = None
-    watch_paths: Optional[List[str]] = None
+class ApplicationSetting(CoolipyBaseModel):
+    """Application settings returned as part of an application model."""
+
+    is_static: bool | None = None
+    is_git_submodules_enabled: bool | None = None
+    is_git_lfs_enabled: bool | None = None
+    is_auto_deploy_enabled: bool | None = None
+    is_force_https_enabled: bool | None = None
+    is_debug_enabled: bool | None = None
+    is_preview_deployments_enabled: bool | None = None
+    is_log_drain_enabled: bool | None = None
+    is_gpu_enabled: bool | None = None
+    gpu_driver: str | None = None
+    gpu_count: str | None = None
+    gpu_device_ids: str | None = None
+    gpu_options: str | None = None
+    is_include_timestamps: bool | None = None
+    is_swarm_only_worker_nodes: bool | None = None
+    is_raw_compose_deployment_enabled: bool | None = None
+    is_build_server_enabled: bool | None = None
+    is_consistent_container_name_enabled: bool | None = None
+    is_gzip_enabled: bool | None = None
+    is_stripprefix_enabled: bool | None = None
+    connect_to_docker_network: bool | None = None
+    custom_internal_name: str | None = None
+    is_container_label_escape_enabled: bool | None = None
+    is_env_sorting_enabled: bool | None = None
+    is_container_label_readonly_enabled: bool | None = None
+    is_preserve_repository_enabled: bool | None = None
+    disable_build_cache: bool | None = None
+    is_spa: bool | None = None
+    is_git_shallow_clone_enabled: bool | None = None
+    is_pr_deployments_public_enabled: bool | None = None
+    use_build_secrets: bool | None = None
+    inject_build_args_to_dockerfile: bool | None = None
+    include_source_commit_in_build: bool | None = None
+    docker_images_to_keep: int | None = None
+    stop_grace_period: int | None = None
 
 
-@dataclass
-class ApplicationModel(ApplicationBaseModel, CoolipyBaseModel):
-    uuid: Optional[str] = None
-    name: Optional[str] = None
-    additional_servers: Optional[List] = None
-    base_directory: Optional[str] = None
-    build_command: Optional[str] = None
-    build_pack: Optional[COOLIFY_BUILD_PACKS] = None
-    compose_parsing_version: Optional[str] = None
-    config_hash: Optional[str] = None
-    custom_docker_run_options: Optional[str] = None
-    custom_healthcheck_found: Optional[bool] = None
-    custom_labels: Optional[str] = None
-    custom_nginx_configuration: Optional[str] = None
-    deleted_at: Optional[str] = None
-    description: Optional[str] = None
-    destination: Optional[DestinationModel] = None
-    destination_id: Optional[int] = None
-    destination_type: Optional[str] = None
-    docker_compose: Optional[str] = None
-    docker_compose_custom_build_command: Optional[str] = None
-    docker_compose_custom_start_command: Optional[str] = None
-    docker_compose_domains: Optional[List] = None
-    docker_compose_location: Optional[str] = None
-    docker_compose_raw: Optional[str] = None
-    docker_registry_image_name: Optional[str] = None
-    docker_registry_image_tag: Optional[str] = None
-    dockerfile: Optional[str] = None
-    dockerfile_location: Optional[str] = None
-    dockerfile_target_build: Optional[str] = None
-    environment_id: Optional[int] = None
-    fqdn: Optional[str] = None
-    git_branch: Optional[str] = None
-    git_commit_sha: Optional[str] = None
-    git_full_url: Optional[str] = None
-    git_repository: Optional[str] = None
-    health_check_enabled: Optional[bool] = None
-    health_check_host: Optional[str] = None
-    health_check_interval: Optional[int] = None
-    health_check_method: Optional[str] = None
-    health_check_path: Optional[str] = None
-    health_check_port: Optional[int] = None
-    health_check_response_text: Optional[str] = None
-    health_check_retries: Optional[int] = None
-    health_check_return_code: Optional[int] = None
-    health_check_scheme: Optional[str] = None
-    health_check_start_period: Optional[int] = None
-    health_check_timeout: Optional[int] = None
-    install_command: Optional[str] = None
-    laravel_through_key: Optional[int] = None
-    last_online_at: Optional[str] = None
-    limits_cpu_shares: Optional[int] = None
-    limits_cpus: Optional[str] = None
-    limits_cpuset: Optional[str] = None
-    limits_memory: Optional[str] = None
-    limits_memory_reservation: Optional[str] = None
-    limits_memory_swap: Optional[str] = None
-    limits_memory_swappiness: Optional[int] = None
-    manual_webhook_secret_bitbucket: Optional[str] = None
-    manual_webhook_secret_gitea: Optional[str] = None
-    manual_webhook_secret_github: Optional[str] = None
-    manual_webhook_secret_gitlab: Optional[str] = None
-    ports_exposes: Optional[str] = None
-    ports_mappings: Optional[List] = field(default_factory=list)
-    post_deployment_command: Optional[str] = None
-    post_deployment_command_container: Optional[str] = None
-    pre_deployment_command: Optional[str] = None
-    pre_deployment_command_container: Optional[str] = None
-    preview_url_template: Optional[str] = None
-    private_key_id: Optional[str] = None
-    publish_directory: Optional[str] = None
-    redirect: Optional[str] = None
-    repository_project_id: Optional[str] = None
-    server_status: Optional[bool] = None
-    source_id: Optional[int] = None
-    source_type: Optional[str] = None
-    start_command: Optional[str] = None
-    static_image: Optional[str] = None
-    status: Optional[str] = None
-    swarm_placement_constraints: Optional[str] = None
-    swarm_replicas: Optional[int] = None
-    watch_paths: Optional[List] = None
-    created_at: Optional[Union[str, datetime]] = None
-    updated_at: Optional[Union[str, datetime]] = None
+class ApplicationModel(CoolipyBaseModel):
+    """An application as returned by the API."""
 
-    def _adjust_nested(self):
-        raw_server = self.destination
-        if isinstance(raw_server, dict) and raw_server:
-            self.destination = DestinationModel(**raw_server).pythonify()
-
-
-@dataclass
-class ApplicationPublicModelCreate:
-    name: str
-    project_uuid: str
-    server_uuid: str
-    environment_name: str
-    ports_exposes: str
-    instant_deploy: bool
+    id: int | None = None
+    description: str | None = None
+    repository_project_id: int | None = None
+    uuid: str | None = None
+    name: str | None = None
+    fqdn: str | None = None
+    noindex_domains: list[str] | None = None
+    config_hash: str | None = None
+    git_repository: str | None = None
+    git_branch: str | None = None
+    git_commit_sha: str | None = None
+    git_full_url: str | None = None
+    docker_registry_image_name: str | None = None
+    docker_registry_image_tag: str | None = None
+    build_pack: str | None = None
+    static_image: str | None = None
+    install_command: str | None = None
+    build_command: str | None = None
+    start_command: str | None = None
+    ports_exposes: str | None = None
+    ports_mappings: str | None = None
+    custom_network_aliases: str | None = None
+    base_directory: str | None = None
+    publish_directory: str | None = None
+    health_check_enabled: bool | None = None
+    health_check_path: str | None = None
+    health_check_port: str | None = None
+    health_check_host: str | None = None
+    health_check_method: str | None = None
+    health_check_return_code: int | None = None
+    health_check_scheme: str | None = None
+    health_check_response_text: str | None = None
+    health_check_interval: int | None = None
+    health_check_timeout: int | None = None
+    health_check_retries: int | None = None
+    health_check_start_period: int | None = None
+    health_check_type: str | None = None
+    health_check_command: str | None = None
+    limits_memory: str | None = None
+    limits_memory_swap: str | None = None
+    limits_memory_swappiness: int | None = None
+    limits_memory_reservation: str | None = None
+    limits_cpus: str | None = None
+    limits_cpuset: str | None = None
+    limits_cpu_shares: int | None = None
+    status: str | None = None
+    preview_url_template: str | None = None
+    max_restart_count: int | None = None
+    destination_type: str | None = None
+    destination_id: int | None = None
+    source_id: int | None = None
+    private_key_id: int | None = None
+    environment_id: int | None = None
+    dockerfile: str | None = None
+    dockerfile_location: str | None = None
+    custom_labels: str | None = None
+    dockerfile_target_build: str | None = None
+    manual_webhook_secret_github: str | None = None
+    manual_webhook_secret_gitlab: str | None = None
+    manual_webhook_secret_bitbucket: str | None = None
+    manual_webhook_secret_gitea: str | None = None
+    docker_compose_location: str | None = None
+    docker_compose: str | None = None
+    docker_compose_raw: str | None = None
+    docker_compose_domains: str | None = None
+    docker_compose_custom_start_command: str | None = None
+    docker_compose_custom_build_command: str | None = None
+    swarm_replicas: int | None = None
+    swarm_placement_constraints: str | None = None
+    custom_docker_run_options: str | None = None
+    post_deployment_command: str | None = None
+    post_deployment_command_container: str | None = None
+    pre_deployment_command: str | None = None
+    pre_deployment_command_container: str | None = None
+    watch_paths: str | None = None
+    custom_healthcheck_found: bool | None = None
+    redirect: str | None = None
+    created_at: datetime | None = None
+    updated_at: datetime | None = None
+    deleted_at: datetime | None = None
+    compose_parsing_version: str | None = None
+    custom_nginx_configuration: str | None = None
+    is_http_basic_auth_enabled: bool | None = None
+    http_basic_auth_username: str | None = None
+    http_basic_auth_password: str | None = None
+    settings: ApplicationSetting | None = None
 
 
-@dataclass
-class ApplicationPublicGHModelCreate(ApplicationPublicModelCreate):
-    github_app_uuid: int
-    git_repository: str
-    git_branch: str
-    build_pack: COOLIFY_BUILD_PACKS
+class ApplicationBaseModel(CoolipyBaseModel):
+    """Shared fields for application create/update request bodies."""
+
+    project_uuid: str | None = None
+    server_uuid: str | None = None
+    environment_name: str | None = None
+    environment_uuid: str | None = None
+    git_repository: str | None = None
+    git_branch: str | None = None
+    build_pack: BuildPack | None = None
+    ports_exposes: str | None = None
+    destination_uuid: str | None = None
+    name: str | None = None
+    description: str | None = None
+    domains: str | None = None
+    noindex_domains: list[str] | None = None
+    git_commit_sha: str | None = None
+    docker_registry_image_name: str | None = None
+    docker_registry_image_tag: str | None = None
+    is_static: bool | None = None
+    is_spa: bool | None = None
+    is_auto_deploy_enabled: bool | None = None
+    is_force_https_enabled: bool | None = None
+    is_preview_deployments_enabled: bool | None = None
+    static_image: str | None = None
+    install_command: str | None = None
+    build_command: str | None = None
+    start_command: str | None = None
+    ports_mappings: str | None = None
+    base_directory: str | None = None
+    publish_directory: str | None = None
+    health_check_enabled: bool | None = None
+    health_check_path: str | None = None
+    health_check_port: str | None = None
+    health_check_host: str | None = None
+    health_check_method: str | None = None
+    health_check_return_code: int | None = None
+    health_check_scheme: str | None = None
+    health_check_response_text: str | None = None
+    health_check_interval: int | None = None
+    health_check_timeout: int | None = None
+    health_check_retries: int | None = None
+    health_check_start_period: int | None = None
+    limits_memory: str | None = None
+    limits_memory_swap: str | None = None
+    limits_memory_swappiness: int | None = None
+    limits_memory_reservation: str | None = None
+    limits_cpus: str | None = None
+    limits_cpuset: str | None = None
+    limits_cpu_shares: int | None = None
+    custom_labels: str | None = None
+    custom_docker_run_options: str | None = None
+    post_deployment_command: str | None = None
+    post_deployment_command_container: str | None = None
+    pre_deployment_command: str | None = None
+    pre_deployment_command_container: str | None = None
+    manual_webhook_secret_github: str | None = None
+    manual_webhook_secret_gitlab: str | None = None
+    manual_webhook_secret_bitbucket: str | None = None
+    manual_webhook_secret_gitea: str | None = None
+    redirect: Redirect | None = None
+    instant_deploy: bool | None = None
+    dockerfile: str | None = None
+    dockerfile_location: str | None = None
+    docker_compose_location: str | None = None
+    docker_compose_custom_start_command: str | None = None
+    docker_compose_custom_build_command: str | None = None
+    docker_compose_domains: list[DockerComposeDomain] | None = None
+    watch_paths: str | None = None
+    use_build_server: bool | None = None
+    use_build_secrets: bool | None = None
+    is_git_submodules_enabled: bool | None = None
+    is_git_lfs_enabled: bool | None = None
+    is_git_shallow_clone_enabled: bool | None = None
+    disable_build_cache: bool | None = None
+    inject_build_args_to_dockerfile: bool | None = None
+    include_source_commit_in_build: bool | None = None
+    is_env_sorting_enabled: bool | None = None
+    is_pr_deployments_public_enabled: bool | None = None
+    stop_grace_period: int | None = None
+    docker_images_to_keep: int | None = None
+    is_gzip_enabled: bool | None = None
+    is_stripprefix_enabled: bool | None = None
+    is_raw_compose_deployment_enabled: bool | None = None
+    is_log_drain_enabled: bool | None = None
+    is_gpu_enabled: bool | None = None
+    gpu_driver: str | None = None
+    gpu_count: str | None = None
+    gpu_device_ids: str | None = None
+    gpu_options: str | None = None
+    is_consistent_container_name_enabled: bool | None = None
+    custom_internal_name: str | None = None
+    preview_url_template: str | None = None
+    max_restart_count: int | None = None
+    is_http_basic_auth_enabled: bool | None = None
+    http_basic_auth_username: str | None = None
+    http_basic_auth_password: str | None = None
+    connect_to_docker_network: bool | None = None
+    force_domain_override: bool | None = None
+    autogenerate_domain: bool | None = None
+    is_container_label_escape_enabled: bool | None = None
+    tags: list[str] | None = None
+    is_preserve_repository_enabled: bool | None = None
+    github_app_uuid: str | None = None
+    private_key_uuid: str | None = None
 
 
-@dataclass
-class ApplicationPrivateGHModelCreate(ApplicationPublicModelCreate):
-    github_app_uuid: int
-    git_repository: str
-    git_branch: str
-    build_pack: COOLIFY_BUILD_PACKS
+class ApplicationUpdateModel(ApplicationBaseModel):
+    """Body for updating an application."""
 
 
-@dataclass
-class ApplicationPublicPrivatePvtKeyGHModelCreate(ApplicationPublicModelCreate):
-    private_key_uuid: str
+class ApplicationPublicModelCreate(ApplicationBaseModel):
+    """Create an application from a public git repository."""
 
 
-@dataclass
-class ApplicationDockerfileModelCreate(ApplicationPublicModelCreate):
-    dockerfile: str
+class ApplicationPrivateGHModelCreate(ApplicationBaseModel):
+    """Create an application from a private repository via a GitHub App."""
 
 
-@dataclass
-class ApplicationDockerImageModelCreate(ApplicationPublicModelCreate):
-    docker_registry_image_name: str
-    docker_registry_image_tag: Optional[str] = ""
+class ApplicationPrivateDeployKeyModelCreate(ApplicationBaseModel):
+    """Create an application from a private repository via a deploy key."""
 
 
-@dataclass
-class ApplicationDockerComposeModelCreate(ApplicationPublicModelCreate):
-    docker_compose_raw: str
+class ApplicationDockerfileModelCreate(ApplicationBaseModel):
+    """Create an application from a Dockerfile."""
 
 
-APPLICATION_MODELS_URL_CREATE_MAP = {
-    ApplicationPublicGHModelCreate: "public",
-    ApplicationPrivateGHModelCreate: "private-github-app",
-    ApplicationPublicPrivatePvtKeyGHModelCreate: "private-deploy-key",
-    ApplicationDockerfileModelCreate: "dockerfile",
-    ApplicationDockerImageModelCreate: "dockerimage",
-    ApplicationDockerComposeModelCreate: "dockercompose",
-}
+class ApplicationDockerImageModelCreate(ApplicationBaseModel):
+    """Create an application from a prebuilt Docker image."""

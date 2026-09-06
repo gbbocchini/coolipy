@@ -125,11 +125,15 @@ celerybeat.pid
 # Environments
 .env
 .venv
+.test_venv/
 env/
 venv/
 ENV/
 env.bak/
 venv.bak/
+
+# Crash dumps
+*.stackdump
 
 # Spyder project settings
 .spyderproject
@@ -143,6 +147,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# ruff
+.ruff_cache/
 .dmypy.json
 dmypy.json
 

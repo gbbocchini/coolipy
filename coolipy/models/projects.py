@@ -1,30 +1,53 @@
+"""Project and environment models for the Coolify API."""
+
+from __future__ import annotations
+
 from datetime import datetime
-from dataclasses import dataclass, field
-from typing import Optional, Union, override
 
-from .base import CoolipyBaseModel
-from coolipy.models.environs import EnvironmentsModel
+from coolipy.models.base import CoolipyBaseModel
 
 
-@dataclass
-class ProjectsModel(CoolipyBaseModel):
-    """
-    Coolify Projects data model.
-    """
+class ProjectModel(CoolipyBaseModel):
+    """A project as returned by the API."""
 
-    name: Optional[str] = None
-    description: Optional[str] = None
-    id: Optional[int] = None
-    uuid: Optional[str] = None
-    default_environment: Optional[str] = None
-    environments: list[Optional[EnvironmentsModel]] = field(default_factory=list)
-    team_id: Optional[str] = None
-    created_at: Optional[Union[str, datetime]] = None
-    updated_at: Optional[Union[str, datetime]] = None
+    id: int | None = None
+    uuid: str | None = None
+    name: str | None = None
+    description: str | None = None
 
-    @override
-    def _adjust_nested(self):
-        if isinstance(self.environments, list) and len(self.environments):
-            raw_envs = self.environments
-            parsed_envs = [EnvironmentsModel(**i).pythonify() for i in raw_envs]
-            self.environments = parsed_envs
+
+class ProjectCreateModel(CoolipyBaseModel):
+    """Body for creating a project."""
+
+    name: str | None = None
+    description: str | None = None
+
+
+class ProjectUpdateModel(CoolipyBaseModel):
+    """Body for updating a project."""
+
+    name: str | None = None
+    description: str | None = None
+
+
+class EnvironmentModel(CoolipyBaseModel):
+    """An environment as returned by the API."""
+
+    id: int | None = None
+    name: str | None = None
+    project_id: int | None = None
+    created_at: datetime | None = None
+    updated_at: datetime | None = None
+    description: str | None = None
+
+
+class EnvironmentCreateModel(CoolipyBaseModel):
+    """Body for creating an environment."""
+
+    name: str | None = None
+
+
+class EnvironmentUpdateModel(CoolipyBaseModel):
+    """Body for updating an environment."""
+
+    name: str | None = None
