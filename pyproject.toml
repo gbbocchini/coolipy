@@ -50,6 +50,17 @@ path = "coolipy/__init__.py"
 [tool.hatch.build.targets.wheel]
 packages = ["coolipy"]
 
+[tool.hatch.build.targets.sdist]
+exclude = [
+    "/.claude",
+    "/.github",
+    "/.gitignore",
+    "/.test_venv",
+    "/html",
+    "/uv.lock",
+    "*.stackdump",
+]
+
 [tool.ruff]
 line-length = 100
 target-version = "py310"
