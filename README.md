@@ -317,10 +317,20 @@ Run the real-world smoke tests against a live instance (no secrets committed —
 COOLIPY_API_KEY=... COOLIPY_ENDPOINT=... uv run pytest -m smoke
 ```
 
-Regenerate the API documentation (rendered with [pdoc3](https://pdoc3.github.io/pdoc/)):
+Regenerate the API documentation (rendered with [pdoc](https://pdoc.dev/)):
 
 ```bash
-pdoc3 --html --output-dir html coolipy
+pdoc coolipy \
+  coolipy.async_client coolipy.client coolipy.enums coolipy.exceptions \
+  coolipy.models.applications coolipy.models.base coolipy.models.common \
+  coolipy.models.databases coolipy.models.deployments coolipy.models.projects \
+  coolipy.models.s3_storages coolipy.models.security coolipy.models.servers \
+  coolipy.models.services coolipy.models.system coolipy.models.teams \
+  coolipy.resources.applications coolipy.resources.databases coolipy.resources.deployments \
+  coolipy.resources.projects coolipy.resources.s3_storages coolipy.resources.security \
+  coolipy.resources.servers coolipy.resources.services coolipy.resources.tags \
+  coolipy.resources.teams \
+  -o html
 ```
 
 ## Contributing
