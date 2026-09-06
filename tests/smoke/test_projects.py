@@ -13,9 +13,9 @@ from coolipy.models.projects import (
 pytestmark = pytest.mark.smoke
 
 
-def test_project_lifecycle_sync(sync_client):
+def test_project_lifecycle_sync(sync_client, suffix):
     created = sync_client.projects.create(
-        ProjectCreateModel(name="coolipy-smoke", description="smoke test")
+        ProjectCreateModel(name=f"coolipy-smoke-{suffix}", description="smoke test")
     )
     assert created.status_code == 201
     project_uuid = created.data.uuid
@@ -30,19 +30,19 @@ def test_project_lifecycle_sync(sync_client):
         assert got.data.uuid == project_uuid
 
         updated = sync_client.projects.update(
-            project_uuid, ProjectUpdateModel(name="coolipy-smoke-updated")
+            project_uuid, ProjectUpdateModel(name=f"coolipy-smoke-updated-{suffix}")
         )
-        assert updated.status_code == 200
+        assert updated.status_code == 201
     finally:
         sync_client.projects.delete(project_uuid)
 
 
-def test_environment_lifecycle_sync(sync_client):
-    created = sync_client.projects.create(ProjectCreateModel(name="coolipy-smoke-env"))
+def test_environment_lifecycle_sync(sync_client, suffix):
+    created = sync_client.projects.create(ProjectCreateModel(name=f"coolipy-smoke-env-{suffix}"))
     project_uuid = created.data.uuid
     try:
         env = sync_client.projects.create_environment(
-            project_uuid, EnvironmentCreateModel(name="production")
+            project_uuid, EnvironmentCreateModel(name="staging")
         )
         assert env.status_code == 201
 
@@ -53,9 +53,9 @@ def test_environment_lifecycle_sync(sync_client):
         sync_client.projects.delete(project_uuid)
 
 
-async def test_project_lifecycle_async(async_client):
+async def test_project_lifecycle_async(async_client, suffix):
     created = await async_client.projects.create(
-        ProjectCreateModel(name="coolipy-smoke-async", description="smoke")
+        ProjectCreateModel(name=f"coolipy-smoke-async-{suffix}", description="smoke")
     )
     assert created.status_code == 201
     project_uuid = created.data.uuid

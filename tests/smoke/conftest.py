@@ -7,6 +7,7 @@ set in the environment. No secrets are hardcoded anywhere.
 from __future__ import annotations
 
 import os
+import uuid
 
 import pytest
 
@@ -31,6 +32,12 @@ def _client_kwargs() -> dict[str, object]:
         "http_protocol": os.environ.get("COOLIPY_PROTOCOL", "http"),
         "omit_port": os.environ.get("COOLIPY_OMIT_PORT", "false").lower() == "true",
     }
+
+
+@pytest.fixture()
+def suffix() -> str:
+    """A short unique suffix for resource names (so re-runs don't collide)."""
+    return uuid.uuid4().hex[:8]
 
 
 @pytest.fixture()

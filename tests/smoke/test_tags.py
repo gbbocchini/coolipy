@@ -7,9 +7,9 @@ from coolipy.models.common import Tag, TagCreate
 pytestmark = pytest.mark.smoke
 
 
-def test_tag_lifecycle_sync(sync_client):
-    created = sync_client.tags.create(TagCreate(name="coolipy-smoke-tag"))
-    assert created.status_code == 200
+def test_tag_lifecycle_sync(sync_client, suffix):
+    created = sync_client.tags.create(TagCreate(name=f"coolipy-smoke-tag-{suffix}"))
+    assert created.status_code == 201
     assert isinstance(created.data, Tag)
     tag_uuid = created.data.uuid
 
