@@ -64,6 +64,9 @@ class ServerModel(CoolipyBaseModel):
     port: int | None = None
     proxy: dict | None = None
     proxy_type: str | None = None
+    is_coolify_host: bool | None = None
+    is_reachable: bool | None = None
+    is_usable: bool | None = None
     high_disk_usage_notification_sent: bool | None = None
     unreachable_notification_sent: bool | None = None
     unreachable_count: int | None = None

@@ -69,3 +69,6 @@ warn_redundant_casts = true
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
+markers = [
+    "smoke: real-world tests against a live Coolify instance (requires COOLIPY_API_KEY/COOLIPY_ENDPOINT)",
+]
