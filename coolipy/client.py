@@ -10,7 +10,14 @@ from coolipy.exceptions import CoolipyConfigError
 from coolipy.models.system import SystemMessage
 from coolipy.resources.applications import Applications
 from coolipy.resources.databases import Databases
+from coolipy.resources.deployments import Deployments
+from coolipy.resources.projects import Projects
+from coolipy.resources.s3_storages import S3Storages
+from coolipy.resources.security import Security
+from coolipy.resources.servers import Servers
 from coolipy.resources.services import Services
+from coolipy.resources.tags import Tags
+from coolipy.resources.teams import Teams
 
 
 class Coolipy:
@@ -45,6 +52,13 @@ class Coolipy:
         self.applications = Applications(self._transport)
         self.databases = Databases(self._transport)
         self.services = Services(self._transport)
+        self.servers = Servers(self._transport)
+        self.projects = Projects(self._transport)
+        self.teams = Teams(self._transport)
+        self.deployments = Deployments(self._transport)
+        self.tags = Tags(self._transport)
+        self.s3_storages = S3Storages(self._transport)
+        self.security = Security(self._transport)
 
     def version(self) -> CoolipyAPIResponse[str]:
         """Get the Coolify version."""

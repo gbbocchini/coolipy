@@ -123,6 +123,14 @@ class Destination(CoolipyBaseModel):
     updated_at: datetime | None = None
 
 
+class DestinationCreate(CoolipyBaseModel):
+    """Body for creating a destination."""
+
+    name: str | None = None
+    network: str | None = None
+    type: str | None = None
+
+
 class Tag(CoolipyBaseModel):
     """A tag attached to a resource."""
 
@@ -130,6 +138,18 @@ class Tag(CoolipyBaseModel):
     name: str | None = None
     created_at: datetime | None = None
     updated_at: datetime | None = None
+
+
+class TagCreate(CoolipyBaseModel):
+    """Body for creating a global tag."""
+
+    name: str | None = None
+
+
+class TagUpdate(CoolipyBaseModel):
+    """Body for updating a global tag."""
+
+    name: str | None = None
 
 
 class Logs(CoolipyBaseModel):
