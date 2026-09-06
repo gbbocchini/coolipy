@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.6">
-<title>coolipy.exceptions API documentation</title>
-<meta name="description" content="Exceptions raised by coolipy.">
+<title>coolipy.models.system API documentation</title>
+<meta name="description" content="Models for the system-level Coolify endpoints.">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
@@ -33,10 +33,10 @@ el.replaceWith(d);
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>coolipy.exceptions</code></h1>
+<h1 class="title">Module <code>coolipy.models.system</code></h1>
 </header>
 <section id="section-intro">
-<p>Exceptions raised by coolipy.</p>
+<p>Models for the system-level Coolify endpoints.</p>
 </section>
 <section>
 </section>
@@ -47,126 +47,41 @@ el.replaceWith(d);
 <section>
 <h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt id="coolipy.exceptions.CoolipyConfigError"><code class="flex name class">
-<span>class <span class="ident">CoolipyConfigError</span></span>
-<span>(</span><span>*args, **kwargs)</span>
+<dt id="coolipy.models.system.SystemMessage"><code class="flex name class">
+<span>class <span class="ident">SystemMessage</span></span>
+<span>(</span><span>**data: Any)</span>
 </code></dt>
 <dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class CoolipyConfigError(CoolipyError):
-    &#34;&#34;&#34;Raised when the client is misconfigured (e.g. missing API key).&#34;&#34;&#34;</code></pre>
+<pre><code class="python">class SystemMessage(CoolipyBaseModel):
+    &#34;&#34;&#34;A message returned by system endpoints (e.g. enable/disable API, MCP).&#34;&#34;&#34;
+
+    message: str</code></pre>
 </details>
-<div class="desc"><p>Raised when the client is misconfigured (e.g. missing API key).</p></div>
+<div class="desc"><p>A message returned by system endpoints (e.g. enable/disable API, MCP).</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
-<li><a title="coolipy.exceptions.CoolipyError" href="#coolipy.exceptions.CoolipyError">CoolipyError</a></li>
-<li>builtins.Exception</li>
-<li>builtins.BaseException</li>
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
 </ul>
-</dd>
-<dt id="coolipy.exceptions.CoolipyError"><code class="flex name class">
-<span>class <span class="ident">CoolipyError</span></span>
-<span>(</span><span>*args, **kwargs)</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class CoolipyError(Exception):
-    &#34;&#34;&#34;Base class for every exception raised by coolipy.&#34;&#34;&#34;</code></pre>
-</details>
-<div class="desc"><p>Base class for every exception raised by coolipy.</p></div>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li>builtins.Exception</li>
-<li>builtins.BaseException</li>
-</ul>
-<h3>Subclasses</h3>
-<ul class="hlist">
-<li><a title="coolipy.exceptions.CoolipyConfigError" href="#coolipy.exceptions.CoolipyConfigError">CoolipyConfigError</a></li>
-<li><a title="coolipy.exceptions.CoolipyHTTPError" href="#coolipy.exceptions.CoolipyHTTPError">CoolipyHTTPError</a></li>
-<li><a title="coolipy.exceptions.CoolipyValidationError" href="#coolipy.exceptions.CoolipyValidationError">CoolipyValidationError</a></li>
-</ul>
-</dd>
-<dt id="coolipy.exceptions.CoolipyHTTPError"><code class="flex name class">
-<span>class <span class="ident">CoolipyHTTPError</span></span>
-<span>(</span><span>status_code: int,<br>message: str,<br>*,<br>errors: Mapping[str, Any] | None = None,<br>response: Any = None)</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class CoolipyHTTPError(CoolipyError):
-    &#34;&#34;&#34;Raised when the Coolify API responds with a non-2xx status code.
-
-    Attributes:
-        status_code: The HTTP status code returned by the API.
-        message: The human-readable ``message`` from the error response body.
-        errors: Field-level validation errors, populated for ``422`` responses.
-        response: The raw parsed response body, when available.
-    &#34;&#34;&#34;
-
-    def __init__(
-        self,
-        status_code: int,
-        message: str,
-        *,
-        errors: Mapping[str, Any] | None = None,
-        response: Any = None,
-    ) -&gt; None:
-        super().__init__(message)
-        self.status_code = status_code
-        self.message = message
-        self.errors = errors
-        self.response = response
-
-    def __str__(self) -&gt; str:
-        return f&#34;{self.status_code}: {self.message}&#34;</code></pre>
-</details>
-<div class="desc"><p>Raised when the Coolify API responds with a non-2xx status code.</p>
+<h3>Class variables</h3>
 <dl>
-<dt>Attributes</dt>
-<dt>-----=</dt>
-<dt><strong><code>status_code</code></strong></dt>
-<dd>The HTTP status code returned by the API.</dd>
-<dt><strong><code>message</code></strong></dt>
-<dd>The human-readable <code>message</code> from the error response body.</dd>
-<dt><strong><code>errors</code></strong></dt>
-<dd>Field-level validation errors, populated for <code>422</code> responses.</dd>
-<dt><strong><code>response</code></strong></dt>
-<dd>The raw parsed response body, when available.</dd>
-</dl></div>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li><a title="coolipy.exceptions.CoolipyError" href="#coolipy.exceptions.CoolipyError">CoolipyError</a></li>
-<li>builtins.Exception</li>
-<li>builtins.BaseException</li>
-</ul>
-</dd>
-<dt id="coolipy.exceptions.CoolipyValidationError"><code class="flex name class">
-<span>class <span class="ident">CoolipyValidationError</span></span>
-<span>(</span><span>*args, **kwargs)</span>
-</code></dt>
+<dt id="coolipy.models.system.SystemMessage.message"><code class="name">var <span class="ident">message</span> : str</code></dt>
 <dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class CoolipyValidationError(CoolipyError):
-    &#34;&#34;&#34;Raised when a request model fails client-side validation.&#34;&#34;&#34;</code></pre>
-</details>
-<div class="desc"><p>Raised when a request model fails client-side validation.</p></div>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li><a title="coolipy.exceptions.CoolipyError" href="#coolipy.exceptions.CoolipyError">CoolipyError</a></li>
-<li>builtins.Exception</li>
-<li>builtins.BaseException</li>
-</ul>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.system.SystemMessage.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
 </dd>
 </dl>
 </section>
@@ -178,22 +93,17 @@ el.replaceWith(d);
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="coolipy" href="index.html">coolipy</a></code></li>
+<li><code><a title="coolipy.models" href="index.html">coolipy.models</a></code></li>
 </ul>
 </li>
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
 <li>
-<h4><code><a title="coolipy.exceptions.CoolipyConfigError" href="#coolipy.exceptions.CoolipyConfigError">CoolipyConfigError</a></code></h4>
-</li>
-<li>
-<h4><code><a title="coolipy.exceptions.CoolipyError" href="#coolipy.exceptions.CoolipyError">CoolipyError</a></code></h4>
-</li>
-<li>
-<h4><code><a title="coolipy.exceptions.CoolipyHTTPError" href="#coolipy.exceptions.CoolipyHTTPError">CoolipyHTTPError</a></code></h4>
-</li>
-<li>
-<h4><code><a title="coolipy.exceptions.CoolipyValidationError" href="#coolipy.exceptions.CoolipyValidationError">CoolipyValidationError</a></code></h4>
+<h4><code><a title="coolipy.models.system.SystemMessage" href="#coolipy.models.system.SystemMessage">SystemMessage</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.system.SystemMessage.message" href="#coolipy.models.system.SystemMessage.message">message</a></code></li>
+<li><code><a title="coolipy.models.system.SystemMessage.model_config" href="#coolipy.models.system.SystemMessage.model_config">model_config</a></code></li>
+</ul>
 </li>
 </ul>
 </li>

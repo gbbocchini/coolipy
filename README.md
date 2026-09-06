@@ -2,7 +2,7 @@
 
 **The (un)official Python client for [Coolify](https://coolify.io/).**
 
-Coolipy wraps the [Coolify REST API](https://coolify.io/docs/api) with typed models and ships **synchronous** and **asynchronous** clients in a single package.
+Coolipy wraps the [Coolify REST API](https://coolify.io/docs/api) with typed models and ships **synchronous** and **asynchronous** clients in a single package. Every request body and every response body is a [`pydantic`](https://docs.pydantic.dev/) model — no raw dicts, no manual JSON.
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
@@ -23,10 +23,10 @@ Requires **Python 3.10+**. Runtime dependencies: [`httpx`](https://github.com/en
 
 ## Features
 
-- Synchronous **and** asynchronous clients in one package.
-- Typed request and response models (pydantic) for every endpoint.
+- **Sync and async** clients in one package (`Coolipy` / `AsyncCoolipy`).
+- **Typed models** for every request and response body.
 - A single `CoolipyAPIResponse[T]` envelope: `status_code`, validated `data`, and `headers`.
-- Typed exceptions that carry the API's validation errors.
+- **Typed exceptions** that carry the API's validation errors.
 - Built on `httpx` with a dependency-injected transport (easy to mock in tests).
 
 ## Quick start
@@ -45,7 +45,7 @@ client = Coolipy(
 
 resp = client.version()
 print(resp.status_code)  # 200
-print(resp.data)         # e.g. "v4.0.0"
+print(resp.data)         # '4.3.17'
 
 client.close()
 ```
@@ -54,7 +54,7 @@ Use it as a context manager to close automatically:
 
 ```python
 with Coolipy("YOUR_API_TOKEN", "your-coolify-instance.com") as client:
-    print(client.health().data)  # "OK"
+    print(client.health().data)  # 'OK'
 ```
 
 ### Asynchronous
@@ -72,6 +72,23 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
+## Resources
+
+Each resource is a sub-client on the client instance:
+
+| Sub-client | What it manages |
+| --- | --- |
+| `client.projects` | Projects and environments |
+| `client.servers` | Servers, destinations, resources, validation |
+| `client.applications` | Applications (git / docker image / dockerfile), envs, storages, tags, scheduled tasks |
+| `client.databases` | PostgreSQL, MySQL, MariaDB, MongoDB, Redis, ClickHouse, Dragonfly, KeyDB |
+| `client.services` | Docker Compose services (incl. per-service apps and databases) |
+| `client.deployments` | Deployments and `deploy` |
+| `client.teams` | Teams, members, shared environment variables |
+| `client.tags` | Global tags |
+| `client.s3_storages` | S3 storage backends |
+| `client.security` | Private keys |
+
 ## Responses
 
 Every method returns a [`CoolipyAPIResponse`](coolipy/_response.py) with three fields:
@@ -79,13 +96,176 @@ Every method returns a [`CoolipyAPIResponse`](coolipy/_response.py) with three f
 | Field | Type | Description |
 | --- | --- | --- |
 | `status_code` | `int` | HTTP status code. |
-| `data` | `T` | Parsed body, validated against a model when one exists. |
+| `data` | `T` | Parsed body, validated against a model. |
 | `headers` | `dict[str, str]` | Response headers. |
 
 ```python
 resp = client.enable_api()
 print(resp.data)          # SystemMessage(message='API enabled.')
 print(resp.data.message)  # 'API enabled.'
+```
+
+## Models
+
+Every request and response body is a `pydantic` model deriving from [`CoolipyBaseModel`](coolipy/models/base.py). Response models are tolerant: every field is optional and unknown fields are ignored, so they never fail against a live instance.
+
+- **Request models** — `*Create` / `*Update` classes you build and pass in (e.g. `ProjectCreateModel`, `ApplicationDockerImageModelCreate`, `PostgreSQLModelCreate`). Unset fields are omitted from the request body.
+- **Response models** — `*Model` classes returned in `resp.data` (e.g. `ProjectModel`, `ServerModel`, `ApplicationModel`).
+
+Enums mirror the API's string-constrained fields:
+
+```python
+from coolipy.enums import BuildPack, ProxyType, ServiceType
+
+BuildPack.NIXPACKS.value   # 'nixpacks'
+BuildPack.RAILPACK.value   # 'railpack'
+ProxyType.NONE.value       # 'none'
+```
+
+## Usage examples
+
+All examples below were captured against a live Coolify instance (`v4.3.17`).
+
+### Projects
+
+```python
+from coolipy.models.projects import ProjectCreateModel
+
+resp = client.projects.create(
+    ProjectCreateModel(name="My Project", description="Created with Coolipy")
+)
+print(resp.status_code)  # 201
+print(resp.data)         # UUIDResponse(uuid='og888os')
+
+resp = client.projects.list()
+print(resp.data)
+# [
+#   ProjectModel(id=7, uuid='mawhjk3svlsd9v9dujlck4cq',
+#                name='coolipy-smoke-apps-async', description=''),
+# ]
+```
+
+### Servers
+
+```python
+resp = client.servers.list()
+server = resp.data[0]
+print(server)
+# ServerModel(
+#     uuid='g7jdko9weqgokkm7m9lhkzqb',
+#     name='localhost',
+#     ip='host.docker.internal',
+#     user='root',
+#     port=22,
+#     is_coolify_host=True,
+#     is_reachable=True,
+#     is_usable=True,
+#     proxy={'redirect_enabled': True},
+#     settings=ServerSetting(id=1, concurrent_builds=2, ...),
+# )
+```
+
+### Applications — from a ready-to-go Docker image
+
+```python
+from coolipy.models.applications import ApplicationDockerImageModelCreate
+
+app = ApplicationDockerImageModelCreate(
+    project_uuid="your_project_uuid",
+    server_uuid="your_server_uuid",
+    environment_name="production",
+    docker_registry_image_name="nginx",
+    docker_registry_image_tag="latest",
+    name="my-nginx",
+    ports_exposes="80",
+)
+resp = client.applications.create(app)
+print(resp.data)  # UUIDResponse(uuid='6zacuhbss0pnxtjihzmxolds')
+
+resp = client.applications.list()
+app = resp.data[0]
+print(app.docker_registry_image_name, app.build_pack, app.fqdn)
+# nginx dockerimage http://6zacuhbss0pnxtjihzmxolds.178.104.56.250.sslip.io
+```
+
+Applications can also be created from a public/private git repository, a deploy key, or a Dockerfile — `ApplicationPublicModelCreate`, `ApplicationPrivateGHModelCreate`, `ApplicationPrivateDeployKeyModelCreate`, `ApplicationDockerfileModelCreate`.
+
+### Databases
+
+```python
+from coolipy.models.databases import PostgreSQLModelCreate
+
+db = PostgreSQLModelCreate(
+    project_uuid="your_project_uuid",
+    server_uuid="your_server_uuid",
+    environment_name="production",
+    postgres_user="dbuser",
+    postgres_password="password",
+    postgres_db="mydatabase",
+    name="My PostgreSQL DB",
+)
+resp = client.databases.create(db)
+print(resp.data)  # UUIDResponse(uuid='...')
+```
+
+Eight database types are supported: `PostgreSQLModelCreate`, `MySQLModelCreate`, `MariaDBModelCreate`, `MongoDBModelCreate`, `RedisModelCreate`, `ClickhouseModelCreate`, `DragonflyModelCreate`, `KeyDBModelCreate`.
+
+### Services
+
+```python
+from coolipy.models.services import ServiceCreateModel
+
+service = ServiceCreateModel(
+    name="my-service",
+    project_uuid="your_project_uuid",
+    server_uuid="your_server_uuid",
+    environment_name="production",
+    docker_compose_raw="<base64 docker-compose.yml>",
+)
+resp = client.services.create(service)
+```
+
+### Teams & members
+
+```python
+resp = client.teams.current()
+print(resp.data)
+# TeamModel(id=0, name='Root Team', personal_team=True, ...)
+
+resp = client.teams.current_members()
+print(resp.data)
+# [UserModel(id=0, name='Gabriel B. Bocchini', email='gabrielbocchini@gmail.com', ...)]
+```
+
+### Tags, private keys, S3 storages
+
+```python
+resp = client.tags.list()
+print(resp.data)  # [Tag(uuid='cz8op2sw7b0ysjvjq9ykeips', name='coolipy-smoke-tag', ...)]
+
+resp = client.security.list()
+print(resp.data)  # [PrivateKeyModel(uuid='...', name="localhost's key", is_git_related=False, ...)]
+
+resp = client.s3_storages.list()
+print(resp.data)  # []
+```
+
+### Deployments
+
+```python
+resp = client.deployments.deploy(tag="my-tag", force=True)
+print(resp.data)
+# DeployResponse(deployments=[DeploymentEntry(message='...', resource_uuid='...', deployment_uuid='...')])
+```
+
+### Async
+
+Every method has an async equivalent on `AsyncCoolipy`:
+
+```python
+async with AsyncCoolipy("YOUR_API_TOKEN", "your-coolify-instance.com") as client:
+    resp = await client.projects.list()
+    print(resp.data)
 ```
 
 ## Errors
@@ -105,88 +285,6 @@ except CoolipyHTTPError as exc:
 
 `CoolipyError` is the base class; `CoolipyConfigError` and `CoolipyValidationError` cover client-side problems.
 
-## Models & enums
-
-Every request and response body is a [`pydantic`](https://docs.pydantic.dev/) model deriving from [`CoolipyBaseModel`](coolipy/models/base.py). Enums mirror the API's string-constrained fields:
-
-```python
-from coolipy.enums import BuildPack, ProxyType, ServiceType
-
-BuildPack.RAILPACK.value  # "railpack"
-ProxyType.NONE.value      # "none"
-```
-
-## Usage examples
-
-Each resource is a sub-client on `Coolipy`/`AsyncCoolipy` (`client.projects`, `client.servers`, `client.applications`, …). Requests take a typed model; responses come back as a `CoolipyAPIResponse` with a validated model in `.data`.
-
-### Projects
-
-```python
-from coolipy.models.projects import ProjectCreateModel
-
-resp = client.projects.create(
-    ProjectCreateModel(name="My Project", description="Created with Coolipy")
-)
-print(resp.status_code)  # 201
-print(resp.data)         # UUIDResponse(uuid='og888os')
-
-resp = client.projects.list()
-print(resp.data)
-# [
-#   ProjectModel(id=1, uuid='og888os', name='My Project', description='Created with Coolipy'),
-# ]
-```
-
-### Servers
-
-```python
-resp = client.servers.list()
-for server in resp.data:
-    print(server.name, server.ip, server.proxy_type)
-```
-
-### Applications, databases, and services
-
-```python
-resp = client.applications.list()
-print([app.name for app in resp.data])
-
-resp = client.databases.list()
-print([db.name for db in resp.data])
-
-resp = client.services.list()
-print([svc.name for svc in resp.data])
-```
-
-### Creating an application
-
-```python
-from coolipy.enums import BuildPack
-from coolipy.models.applications import ApplicationPublicModelCreate
-
-app = ApplicationPublicModelCreate(
-    project_uuid="your_project_uuid",
-    server_uuid="your_server_uuid",
-    environment_name="production",
-    git_repository="https://github.com/your/repo",
-    git_branch="main",
-    build_pack=BuildPack.NIXPACKS,
-    name="My App",
-    instant_deploy=True,
-)
-resp = client.applications.create(app)
-print(resp.data)  # UUIDResponse(uuid='...')
-```
-
-### Async
-
-```python
-async with AsyncCoolipy("YOUR_API_TOKEN", "your-coolify-instance.com") as client:
-    resp = await client.projects.list()
-    print(resp.data)
-```
-
 ## Configuration
 
 Both clients take the same arguments:
@@ -202,7 +300,7 @@ Both clients take the same arguments:
 
 ## Status
 
-Coolipy **1.0.0** covers the full token-gated Coolify API surface — applications, databases, services, servers, projects, environments, teams, deployments, tags, S3 storages, private keys, shared envs, and the system endpoints — in both sync and async flavours. Real-world smoke tests in [`tests/smoke/`](tests/smoke/) exercise these against a live instance (skipped unless credentials are provided).
+Coolipy **1.0.0** covers the full token-gated Coolify API surface — applications, databases, services, servers, projects, environments, teams, deployments, tags, S3 storages, private keys, shared envs, and the system endpoints — in both sync and async flavours. The suite is verified against a live Coolify instance via the smoke tests in [`tests/smoke/`](tests/smoke/).
 
 ## Development
 
@@ -217,6 +315,12 @@ Run the real-world smoke tests against a live instance (no secrets committed —
 
 ```bash
 COOLIPY_API_KEY=... COOLIPY_ENDPOINT=... uv run pytest -m smoke
+```
+
+Regenerate the API documentation (rendered with [pdoc3](https://pdoc3.github.io/pdoc/)):
+
+```bash
+pdoc3 --html --output-dir html coolipy
 ```
 
 ## Contributing

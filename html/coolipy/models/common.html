@@ -1,0 +1,1668 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>coolipy.models.common API documentation</title>
+<meta name="description" content="Shared models reused across multiple coolipy resources.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>coolipy.models.common</code></h1>
+</header>
+<section id="section-intro">
+<p>Shared models reused across multiple coolipy resources.</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="coolipy.models.common.BulkEnvsUpdate"><code class="flex name class">
+<span>class <span class="ident">BulkEnvsUpdate</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BulkEnvsUpdate(CoolipyBaseModel):
+    &#34;&#34;&#34;Body for bulk-updating environment variables.&#34;&#34;&#34;
+
+    data: list[EnvironmentVariableCreate] = Field(default_factory=list)</code></pre>
+</details>
+<div class="desc"><p>Body for bulk-updating environment variables.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.BulkEnvsUpdate.data"><code class="name">var <span class="ident">data</span> : list[<a title="coolipy.models.common.EnvironmentVariableCreate" href="#coolipy.models.common.EnvironmentVariableCreate">EnvironmentVariableCreate</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.BulkEnvsUpdate.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.DeploymentQueuedResponse"><code class="flex name class">
+<span>class <span class="ident">DeploymentQueuedResponse</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DeploymentQueuedResponse(CoolipyBaseModel):
+    &#34;&#34;&#34;A response indicating a deployment was queued.&#34;&#34;&#34;
+
+    message: str | None = None
+    deployment_uuid: str | None = None</code></pre>
+</details>
+<div class="desc"><p>A response indicating a deployment was queued.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.DeploymentQueuedResponse.deployment_uuid"><code class="name">var <span class="ident">deployment_uuid</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.DeploymentQueuedResponse.message"><code class="name">var <span class="ident">message</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.DeploymentQueuedResponse.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.Destination"><code class="flex name class">
+<span>class <span class="ident">Destination</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Destination(CoolipyBaseModel):
+    &#34;&#34;&#34;A Docker network destination attached to a server.&#34;&#34;&#34;
+
+    uuid: str | None = None
+    name: str | None = None
+    network: str | None = None
+    type: str | None = None
+    server_uuid: str | None = None
+    created_at: datetime | None = None
+    updated_at: datetime | None = None</code></pre>
+</details>
+<div class="desc"><p>A Docker network destination attached to a server.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.Destination.created_at"><code class="name">var <span class="ident">created_at</span> : datetime.datetime | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.Destination.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.Destination.name"><code class="name">var <span class="ident">name</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.Destination.network"><code class="name">var <span class="ident">network</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.Destination.server_uuid"><code class="name">var <span class="ident">server_uuid</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.Destination.type"><code class="name">var <span class="ident">type</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.Destination.updated_at"><code class="name">var <span class="ident">updated_at</span> : datetime.datetime | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.Destination.uuid"><code class="name">var <span class="ident">uuid</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.DestinationCreate"><code class="flex name class">
+<span>class <span class="ident">DestinationCreate</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DestinationCreate(CoolipyBaseModel):
+    &#34;&#34;&#34;Body for creating a destination.&#34;&#34;&#34;
+
+    name: str | None = None
+    network: str | None = None
+    type: str | None = None</code></pre>
+</details>
+<div class="desc"><p>Body for creating a destination.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.DestinationCreate.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.DestinationCreate.name"><code class="name">var <span class="ident">name</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.DestinationCreate.network"><code class="name">var <span class="ident">network</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.DestinationCreate.type"><code class="name">var <span class="ident">type</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariable"><code class="flex name class">
+<span>class <span class="ident">EnvironmentVariable</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class EnvironmentVariable(CoolipyBaseModel):
+    &#34;&#34;&#34;An environment variable as returned by the API.&#34;&#34;&#34;
+
+    id: int | None = None
+    uuid: str | None = None
+    resourceable_type: str | None = None
+    resourceable_id: int | None = None
+    is_literal: bool | None = None
+    is_multiline: bool | None = None
+    is_preview: bool | None = None
+    is_runtime: bool | None = None
+    is_buildtime: bool | None = None
+    is_shared: bool | None = None
+    is_shown_once: bool | None = None
+    key: str | None = None
+    value: str | None = None
+    real_value: str | None = None
+    comment: str | None = None
+    version: str | None = None
+    created_at: datetime | None = None
+    updated_at: datetime | None = None</code></pre>
+</details>
+<div class="desc"><p>An environment variable as returned by the API.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.EnvironmentVariable.comment"><code class="name">var <span class="ident">comment</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariable.created_at"><code class="name">var <span class="ident">created_at</span> : datetime.datetime | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariable.id"><code class="name">var <span class="ident">id</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariable.is_buildtime"><code class="name">var <span class="ident">is_buildtime</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariable.is_literal"><code class="name">var <span class="ident">is_literal</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariable.is_multiline"><code class="name">var <span class="ident">is_multiline</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariable.is_preview"><code class="name">var <span class="ident">is_preview</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariable.is_runtime"><code class="name">var <span class="ident">is_runtime</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariable.is_shared"><code class="name">var <span class="ident">is_shared</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariable.is_shown_once"><code class="name">var <span class="ident">is_shown_once</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariable.key"><code class="name">var <span class="ident">key</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariable.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariable.real_value"><code class="name">var <span class="ident">real_value</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariable.resourceable_id"><code class="name">var <span class="ident">resourceable_id</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariable.resourceable_type"><code class="name">var <span class="ident">resourceable_type</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariable.updated_at"><code class="name">var <span class="ident">updated_at</span> : datetime.datetime | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariable.uuid"><code class="name">var <span class="ident">uuid</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariable.value"><code class="name">var <span class="ident">value</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariable.version"><code class="name">var <span class="ident">version</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariableCreate"><code class="flex name class">
+<span>class <span class="ident">EnvironmentVariableCreate</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class EnvironmentVariableCreate(CoolipyBaseModel):
+    &#34;&#34;&#34;Body for creating an environment variable.&#34;&#34;&#34;
+
+    key: str | None = None
+    value: str | None = None
+    is_preview: bool | None = None
+    is_literal: bool | None = None
+    is_multiline: bool | None = None
+    is_shown_once: bool | None = None</code></pre>
+</details>
+<div class="desc"><p>Body for creating an environment variable.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.EnvironmentVariableCreate.is_literal"><code class="name">var <span class="ident">is_literal</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariableCreate.is_multiline"><code class="name">var <span class="ident">is_multiline</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariableCreate.is_preview"><code class="name">var <span class="ident">is_preview</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariableCreate.is_shown_once"><code class="name">var <span class="ident">is_shown_once</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariableCreate.key"><code class="name">var <span class="ident">key</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariableCreate.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariableCreate.value"><code class="name">var <span class="ident">value</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariableUpdate"><code class="flex name class">
+<span>class <span class="ident">EnvironmentVariableUpdate</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class EnvironmentVariableUpdate(CoolipyBaseModel):
+    &#34;&#34;&#34;Body for updating an environment variable.&#34;&#34;&#34;
+
+    key: str | None = None
+    value: str | None = None
+    is_preview: bool | None = None
+    is_literal: bool | None = None
+    is_multiline: bool | None = None
+    is_shown_once: bool | None = None</code></pre>
+</details>
+<div class="desc"><p>Body for updating an environment variable.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.EnvironmentVariableUpdate.is_literal"><code class="name">var <span class="ident">is_literal</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariableUpdate.is_multiline"><code class="name">var <span class="ident">is_multiline</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariableUpdate.is_preview"><code class="name">var <span class="ident">is_preview</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariableUpdate.is_shown_once"><code class="name">var <span class="ident">is_shown_once</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariableUpdate.key"><code class="name">var <span class="ident">key</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariableUpdate.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.EnvironmentVariableUpdate.value"><code class="name">var <span class="ident">value</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.Logs"><code class="flex name class">
+<span>class <span class="ident">Logs</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Logs(CoolipyBaseModel):
+    &#34;&#34;&#34;Log output returned by a logs endpoint.&#34;&#34;&#34;
+
+    logs: str | None = None</code></pre>
+</details>
+<div class="desc"><p>Log output returned by a logs endpoint.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.Logs.logs"><code class="name">var <span class="ident">logs</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.Logs.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.MessageResponse"><code class="flex name class">
+<span>class <span class="ident">MessageResponse</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MessageResponse(CoolipyBaseModel):
+    &#34;&#34;&#34;A response carrying a single ``message``.&#34;&#34;&#34;
+
+    message: str | None = None</code></pre>
+</details>
+<div class="desc"><p>A response carrying a single <code>message</code>.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.MessageResponse.message"><code class="name">var <span class="ident">message</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.MessageResponse.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.ScheduledTask"><code class="flex name class">
+<span>class <span class="ident">ScheduledTask</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ScheduledTask(CoolipyBaseModel):
+    &#34;&#34;&#34;A scheduled task as returned by the API.&#34;&#34;&#34;
+
+    id: int | None = None
+    uuid: str | None = None
+    enabled: bool | None = None
+    name: str | None = None
+    command: str | None = None
+    frequency: str | None = None
+    container: str | None = None
+    timeout: int | None = None
+    created_at: datetime | None = None
+    updated_at: datetime | None = None</code></pre>
+</details>
+<div class="desc"><p>A scheduled task as returned by the API.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.ScheduledTask.command"><code class="name">var <span class="ident">command</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTask.container"><code class="name">var <span class="ident">container</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTask.created_at"><code class="name">var <span class="ident">created_at</span> : datetime.datetime | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTask.enabled"><code class="name">var <span class="ident">enabled</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTask.frequency"><code class="name">var <span class="ident">frequency</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTask.id"><code class="name">var <span class="ident">id</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTask.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTask.name"><code class="name">var <span class="ident">name</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTask.timeout"><code class="name">var <span class="ident">timeout</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTask.updated_at"><code class="name">var <span class="ident">updated_at</span> : datetime.datetime | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTask.uuid"><code class="name">var <span class="ident">uuid</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskCreate"><code class="flex name class">
+<span>class <span class="ident">ScheduledTaskCreate</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ScheduledTaskCreate(CoolipyBaseModel):
+    &#34;&#34;&#34;Body for creating a scheduled task.&#34;&#34;&#34;
+
+    enabled: bool | None = None
+    name: str | None = None
+    command: str | None = None
+    frequency: str | None = None
+    container: str | None = None
+    timeout: int | None = None</code></pre>
+</details>
+<div class="desc"><p>Body for creating a scheduled task.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.ScheduledTaskCreate.command"><code class="name">var <span class="ident">command</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskCreate.container"><code class="name">var <span class="ident">container</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskCreate.enabled"><code class="name">var <span class="ident">enabled</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskCreate.frequency"><code class="name">var <span class="ident">frequency</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskCreate.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskCreate.name"><code class="name">var <span class="ident">name</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskCreate.timeout"><code class="name">var <span class="ident">timeout</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskExecution"><code class="flex name class">
+<span>class <span class="ident">ScheduledTaskExecution</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ScheduledTaskExecution(CoolipyBaseModel):
+    &#34;&#34;&#34;An execution of a scheduled task.&#34;&#34;&#34;
+
+    uuid: str | None = None
+    status: str | None = None
+    message: str | None = None
+    retry_count: int | None = None
+    duration: float | None = None
+    started_at: datetime | None = None
+    finished_at: datetime | None = None
+    created_at: datetime | None = None
+    updated_at: datetime | None = None</code></pre>
+</details>
+<div class="desc"><p>An execution of a scheduled task.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.ScheduledTaskExecution.created_at"><code class="name">var <span class="ident">created_at</span> : datetime.datetime | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskExecution.duration"><code class="name">var <span class="ident">duration</span> : float | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskExecution.finished_at"><code class="name">var <span class="ident">finished_at</span> : datetime.datetime | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskExecution.message"><code class="name">var <span class="ident">message</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskExecution.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskExecution.retry_count"><code class="name">var <span class="ident">retry_count</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskExecution.started_at"><code class="name">var <span class="ident">started_at</span> : datetime.datetime | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskExecution.status"><code class="name">var <span class="ident">status</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskExecution.updated_at"><code class="name">var <span class="ident">updated_at</span> : datetime.datetime | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskExecution.uuid"><code class="name">var <span class="ident">uuid</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskUpdate"><code class="flex name class">
+<span>class <span class="ident">ScheduledTaskUpdate</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ScheduledTaskUpdate(CoolipyBaseModel):
+    &#34;&#34;&#34;Body for updating a scheduled task.&#34;&#34;&#34;
+
+    enabled: bool | None = None
+    name: str | None = None
+    command: str | None = None
+    frequency: str | None = None
+    container: str | None = None
+    timeout: int | None = None</code></pre>
+</details>
+<div class="desc"><p>Body for updating a scheduled task.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.ScheduledTaskUpdate.command"><code class="name">var <span class="ident">command</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskUpdate.container"><code class="name">var <span class="ident">container</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskUpdate.enabled"><code class="name">var <span class="ident">enabled</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskUpdate.frequency"><code class="name">var <span class="ident">frequency</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskUpdate.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskUpdate.name"><code class="name">var <span class="ident">name</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.ScheduledTaskUpdate.timeout"><code class="name">var <span class="ident">timeout</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.StorageCreate"><code class="flex name class">
+<span>class <span class="ident">StorageCreate</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class StorageCreate(CoolipyBaseModel):
+    &#34;&#34;&#34;Body for creating a persistent or file storage.&#34;&#34;&#34;
+
+    type: str | None = None
+    name: str | None = None
+    mount_path: str | None = None
+    host_path: str | None = None
+    content: str | None = None
+    is_directory: bool | None = None
+    fs_path: str | None = None</code></pre>
+</details>
+<div class="desc"><p>Body for creating a persistent or file storage.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.StorageCreate.content"><code class="name">var <span class="ident">content</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.StorageCreate.fs_path"><code class="name">var <span class="ident">fs_path</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.StorageCreate.host_path"><code class="name">var <span class="ident">host_path</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.StorageCreate.is_directory"><code class="name">var <span class="ident">is_directory</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.StorageCreate.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.StorageCreate.mount_path"><code class="name">var <span class="ident">mount_path</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.StorageCreate.name"><code class="name">var <span class="ident">name</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.StorageCreate.type"><code class="name">var <span class="ident">type</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.StorageUpdate"><code class="flex name class">
+<span>class <span class="ident">StorageUpdate</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class StorageUpdate(CoolipyBaseModel):
+    &#34;&#34;&#34;Body for updating a persistent or file storage.&#34;&#34;&#34;
+
+    uuid: str | None = None
+    id: int | None = None
+    type: str | None = None
+    is_preview_suffix_enabled: bool | None = None
+    name: str | None = None
+    mount_path: str | None = None
+    host_path: str | None = None
+    content: str | None = None</code></pre>
+</details>
+<div class="desc"><p>Body for updating a persistent or file storage.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.StorageUpdate.content"><code class="name">var <span class="ident">content</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.StorageUpdate.host_path"><code class="name">var <span class="ident">host_path</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.StorageUpdate.id"><code class="name">var <span class="ident">id</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.StorageUpdate.is_preview_suffix_enabled"><code class="name">var <span class="ident">is_preview_suffix_enabled</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.StorageUpdate.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.StorageUpdate.mount_path"><code class="name">var <span class="ident">mount_path</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.StorageUpdate.name"><code class="name">var <span class="ident">name</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.StorageUpdate.type"><code class="name">var <span class="ident">type</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.StorageUpdate.uuid"><code class="name">var <span class="ident">uuid</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.Tag"><code class="flex name class">
+<span>class <span class="ident">Tag</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Tag(CoolipyBaseModel):
+    &#34;&#34;&#34;A tag attached to a resource.&#34;&#34;&#34;
+
+    uuid: str | None = None
+    name: str | None = None
+    created_at: datetime | None = None
+    updated_at: datetime | None = None</code></pre>
+</details>
+<div class="desc"><p>A tag attached to a resource.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.Tag.created_at"><code class="name">var <span class="ident">created_at</span> : datetime.datetime | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.Tag.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.Tag.name"><code class="name">var <span class="ident">name</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.Tag.updated_at"><code class="name">var <span class="ident">updated_at</span> : datetime.datetime | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.Tag.uuid"><code class="name">var <span class="ident">uuid</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.TagCreate"><code class="flex name class">
+<span>class <span class="ident">TagCreate</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TagCreate(CoolipyBaseModel):
+    &#34;&#34;&#34;Body for creating a global tag.&#34;&#34;&#34;
+
+    name: str | None = None</code></pre>
+</details>
+<div class="desc"><p>Body for creating a global tag.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.TagCreate.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.TagCreate.name"><code class="name">var <span class="ident">name</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.TagUpdate"><code class="flex name class">
+<span>class <span class="ident">TagUpdate</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TagUpdate(CoolipyBaseModel):
+    &#34;&#34;&#34;Body for updating a global tag.&#34;&#34;&#34;
+
+    name: str | None = None</code></pre>
+</details>
+<div class="desc"><p>Body for updating a global tag.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.TagUpdate.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.TagUpdate.name"><code class="name">var <span class="ident">name</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.TagsCreate"><code class="flex name class">
+<span>class <span class="ident">TagsCreate</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TagsCreate(CoolipyBaseModel):
+    &#34;&#34;&#34;Body for adding one or more tags to a resource.&#34;&#34;&#34;
+
+    tag_name: str | None = None
+    tag_names: list[str] | None = None</code></pre>
+</details>
+<div class="desc"><p>Body for adding one or more tags to a resource.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.TagsCreate.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.TagsCreate.tag_name"><code class="name">var <span class="ident">tag_name</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.TagsCreate.tag_names"><code class="name">var <span class="ident">tag_names</span> : list[str] | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.UUIDResponse"><code class="flex name class">
+<span>class <span class="ident">UUIDResponse</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class UUIDResponse(CoolipyBaseModel):
+    &#34;&#34;&#34;A response carrying a single ``uuid``.&#34;&#34;&#34;
+
+    uuid: str | None = None</code></pre>
+</details>
+<div class="desc"><p>A response carrying a single <code>uuid</code>.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.UUIDResponse.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.UUIDResponse.uuid"><code class="name">var <span class="ident">uuid</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleRequest"><code class="flex name class">
+<span>class <span class="ident">VolumeBackupScheduleRequest</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class VolumeBackupScheduleRequest(CoolipyBaseModel):
+    &#34;&#34;&#34;Body for scheduling volume backups.&#34;&#34;&#34;
+
+    frequency: str | None = None
+    enabled: bool | None = None
+    save_s3: bool | None = None
+    disable_local_backup: bool | None = None
+    stop_during_backup: bool | None = None
+    s3_storage_uuid: str | None = None
+    retention_amount_locally: int | None = None
+    retention_days_locally: int | None = None
+    retention_max_storage_locally: float | None = None
+    retention_amount_s3: int | None = None
+    retention_days_s3: int | None = None
+    retention_max_storage_s3: float | None = None
+    timeout: int | None = None</code></pre>
+</details>
+<div class="desc"><p>Body for scheduling volume backups.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.VolumeBackupScheduleRequest.disable_local_backup"><code class="name">var <span class="ident">disable_local_backup</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleRequest.enabled"><code class="name">var <span class="ident">enabled</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleRequest.frequency"><code class="name">var <span class="ident">frequency</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleRequest.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleRequest.retention_amount_locally"><code class="name">var <span class="ident">retention_amount_locally</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleRequest.retention_amount_s3"><code class="name">var <span class="ident">retention_amount_s3</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleRequest.retention_days_locally"><code class="name">var <span class="ident">retention_days_locally</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleRequest.retention_days_s3"><code class="name">var <span class="ident">retention_days_s3</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleRequest.retention_max_storage_locally"><code class="name">var <span class="ident">retention_max_storage_locally</span> : float | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleRequest.retention_max_storage_s3"><code class="name">var <span class="ident">retention_max_storage_s3</span> : float | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleRequest.s3_storage_uuid"><code class="name">var <span class="ident">s3_storage_uuid</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleRequest.save_s3"><code class="name">var <span class="ident">save_s3</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleRequest.stop_during_backup"><code class="name">var <span class="ident">stop_during_backup</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleRequest.timeout"><code class="name">var <span class="ident">timeout</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleResponse"><code class="flex name class">
+<span>class <span class="ident">VolumeBackupScheduleResponse</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class VolumeBackupScheduleResponse(CoolipyBaseModel):
+    &#34;&#34;&#34;A scheduled volume backup as returned by the API.&#34;&#34;&#34;
+
+    uuid: str | None = None
+    message: str | None = None
+    storage_uuid: str | None = None
+    storage_type: str | None = None
+    frequency: str | None = None
+    enabled: bool | None = None
+    save_s3: bool | None = None
+    disable_local_backup: bool | None = None
+    stop_during_backup: bool | None = None
+    s3_storage_uuid: str | None = None
+    retention_amount_locally: int | None = None
+    retention_days_locally: int | None = None
+    retention_max_storage_locally: float | None = None
+    retention_amount_s3: int | None = None
+    retention_days_s3: int | None = None
+    retention_max_storage_s3: float | None = None
+    timeout: int | None = None</code></pre>
+</details>
+<div class="desc"><p>A scheduled volume backup as returned by the API.</p>
+<p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises [<code>ValidationError</code>][pydantic_core.ValidationError] if the input data cannot be
+validated to form a valid model.</p>
+<p><code>self</code> is explicitly positional-only to allow <code>self</code> as a field name.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="coolipy.models.base.CoolipyBaseModel" href="base.html#coolipy.models.base.CoolipyBaseModel">CoolipyBaseModel</a></li>
+<li>pydantic.main.BaseModel</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.models.common.VolumeBackupScheduleResponse.disable_local_backup"><code class="name">var <span class="ident">disable_local_backup</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleResponse.enabled"><code class="name">var <span class="ident">enabled</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleResponse.frequency"><code class="name">var <span class="ident">frequency</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleResponse.message"><code class="name">var <span class="ident">message</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleResponse.model_config"><code class="name">var <span class="ident">model_config</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleResponse.retention_amount_locally"><code class="name">var <span class="ident">retention_amount_locally</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleResponse.retention_amount_s3"><code class="name">var <span class="ident">retention_amount_s3</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleResponse.retention_days_locally"><code class="name">var <span class="ident">retention_days_locally</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleResponse.retention_days_s3"><code class="name">var <span class="ident">retention_days_s3</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleResponse.retention_max_storage_locally"><code class="name">var <span class="ident">retention_max_storage_locally</span> : float | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleResponse.retention_max_storage_s3"><code class="name">var <span class="ident">retention_max_storage_s3</span> : float | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleResponse.s3_storage_uuid"><code class="name">var <span class="ident">s3_storage_uuid</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleResponse.save_s3"><code class="name">var <span class="ident">save_s3</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleResponse.stop_during_backup"><code class="name">var <span class="ident">stop_during_backup</span> : bool | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleResponse.storage_type"><code class="name">var <span class="ident">storage_type</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleResponse.storage_uuid"><code class="name">var <span class="ident">storage_uuid</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleResponse.timeout"><code class="name">var <span class="ident">timeout</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.models.common.VolumeBackupScheduleResponse.uuid"><code class="name">var <span class="ident">uuid</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="coolipy.models" href="index.html">coolipy.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="coolipy.models.common.BulkEnvsUpdate" href="#coolipy.models.common.BulkEnvsUpdate">BulkEnvsUpdate</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.common.BulkEnvsUpdate.data" href="#coolipy.models.common.BulkEnvsUpdate.data">data</a></code></li>
+<li><code><a title="coolipy.models.common.BulkEnvsUpdate.model_config" href="#coolipy.models.common.BulkEnvsUpdate.model_config">model_config</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.DeploymentQueuedResponse" href="#coolipy.models.common.DeploymentQueuedResponse">DeploymentQueuedResponse</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.common.DeploymentQueuedResponse.deployment_uuid" href="#coolipy.models.common.DeploymentQueuedResponse.deployment_uuid">deployment_uuid</a></code></li>
+<li><code><a title="coolipy.models.common.DeploymentQueuedResponse.message" href="#coolipy.models.common.DeploymentQueuedResponse.message">message</a></code></li>
+<li><code><a title="coolipy.models.common.DeploymentQueuedResponse.model_config" href="#coolipy.models.common.DeploymentQueuedResponse.model_config">model_config</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.Destination" href="#coolipy.models.common.Destination">Destination</a></code></h4>
+<ul class="two-column">
+<li><code><a title="coolipy.models.common.Destination.created_at" href="#coolipy.models.common.Destination.created_at">created_at</a></code></li>
+<li><code><a title="coolipy.models.common.Destination.model_config" href="#coolipy.models.common.Destination.model_config">model_config</a></code></li>
+<li><code><a title="coolipy.models.common.Destination.name" href="#coolipy.models.common.Destination.name">name</a></code></li>
+<li><code><a title="coolipy.models.common.Destination.network" href="#coolipy.models.common.Destination.network">network</a></code></li>
+<li><code><a title="coolipy.models.common.Destination.server_uuid" href="#coolipy.models.common.Destination.server_uuid">server_uuid</a></code></li>
+<li><code><a title="coolipy.models.common.Destination.type" href="#coolipy.models.common.Destination.type">type</a></code></li>
+<li><code><a title="coolipy.models.common.Destination.updated_at" href="#coolipy.models.common.Destination.updated_at">updated_at</a></code></li>
+<li><code><a title="coolipy.models.common.Destination.uuid" href="#coolipy.models.common.Destination.uuid">uuid</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.DestinationCreate" href="#coolipy.models.common.DestinationCreate">DestinationCreate</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.common.DestinationCreate.model_config" href="#coolipy.models.common.DestinationCreate.model_config">model_config</a></code></li>
+<li><code><a title="coolipy.models.common.DestinationCreate.name" href="#coolipy.models.common.DestinationCreate.name">name</a></code></li>
+<li><code><a title="coolipy.models.common.DestinationCreate.network" href="#coolipy.models.common.DestinationCreate.network">network</a></code></li>
+<li><code><a title="coolipy.models.common.DestinationCreate.type" href="#coolipy.models.common.DestinationCreate.type">type</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.EnvironmentVariable" href="#coolipy.models.common.EnvironmentVariable">EnvironmentVariable</a></code></h4>
+<ul class="two-column">
+<li><code><a title="coolipy.models.common.EnvironmentVariable.comment" href="#coolipy.models.common.EnvironmentVariable.comment">comment</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariable.created_at" href="#coolipy.models.common.EnvironmentVariable.created_at">created_at</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariable.id" href="#coolipy.models.common.EnvironmentVariable.id">id</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariable.is_buildtime" href="#coolipy.models.common.EnvironmentVariable.is_buildtime">is_buildtime</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariable.is_literal" href="#coolipy.models.common.EnvironmentVariable.is_literal">is_literal</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariable.is_multiline" href="#coolipy.models.common.EnvironmentVariable.is_multiline">is_multiline</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariable.is_preview" href="#coolipy.models.common.EnvironmentVariable.is_preview">is_preview</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariable.is_runtime" href="#coolipy.models.common.EnvironmentVariable.is_runtime">is_runtime</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariable.is_shared" href="#coolipy.models.common.EnvironmentVariable.is_shared">is_shared</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariable.is_shown_once" href="#coolipy.models.common.EnvironmentVariable.is_shown_once">is_shown_once</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariable.key" href="#coolipy.models.common.EnvironmentVariable.key">key</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariable.model_config" href="#coolipy.models.common.EnvironmentVariable.model_config">model_config</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariable.real_value" href="#coolipy.models.common.EnvironmentVariable.real_value">real_value</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariable.resourceable_id" href="#coolipy.models.common.EnvironmentVariable.resourceable_id">resourceable_id</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariable.resourceable_type" href="#coolipy.models.common.EnvironmentVariable.resourceable_type">resourceable_type</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariable.updated_at" href="#coolipy.models.common.EnvironmentVariable.updated_at">updated_at</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariable.uuid" href="#coolipy.models.common.EnvironmentVariable.uuid">uuid</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariable.value" href="#coolipy.models.common.EnvironmentVariable.value">value</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariable.version" href="#coolipy.models.common.EnvironmentVariable.version">version</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.EnvironmentVariableCreate" href="#coolipy.models.common.EnvironmentVariableCreate">EnvironmentVariableCreate</a></code></h4>
+<ul class="two-column">
+<li><code><a title="coolipy.models.common.EnvironmentVariableCreate.is_literal" href="#coolipy.models.common.EnvironmentVariableCreate.is_literal">is_literal</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariableCreate.is_multiline" href="#coolipy.models.common.EnvironmentVariableCreate.is_multiline">is_multiline</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariableCreate.is_preview" href="#coolipy.models.common.EnvironmentVariableCreate.is_preview">is_preview</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariableCreate.is_shown_once" href="#coolipy.models.common.EnvironmentVariableCreate.is_shown_once">is_shown_once</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariableCreate.key" href="#coolipy.models.common.EnvironmentVariableCreate.key">key</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariableCreate.model_config" href="#coolipy.models.common.EnvironmentVariableCreate.model_config">model_config</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariableCreate.value" href="#coolipy.models.common.EnvironmentVariableCreate.value">value</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.EnvironmentVariableUpdate" href="#coolipy.models.common.EnvironmentVariableUpdate">EnvironmentVariableUpdate</a></code></h4>
+<ul class="two-column">
+<li><code><a title="coolipy.models.common.EnvironmentVariableUpdate.is_literal" href="#coolipy.models.common.EnvironmentVariableUpdate.is_literal">is_literal</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariableUpdate.is_multiline" href="#coolipy.models.common.EnvironmentVariableUpdate.is_multiline">is_multiline</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariableUpdate.is_preview" href="#coolipy.models.common.EnvironmentVariableUpdate.is_preview">is_preview</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariableUpdate.is_shown_once" href="#coolipy.models.common.EnvironmentVariableUpdate.is_shown_once">is_shown_once</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariableUpdate.key" href="#coolipy.models.common.EnvironmentVariableUpdate.key">key</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariableUpdate.model_config" href="#coolipy.models.common.EnvironmentVariableUpdate.model_config">model_config</a></code></li>
+<li><code><a title="coolipy.models.common.EnvironmentVariableUpdate.value" href="#coolipy.models.common.EnvironmentVariableUpdate.value">value</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.Logs" href="#coolipy.models.common.Logs">Logs</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.common.Logs.logs" href="#coolipy.models.common.Logs.logs">logs</a></code></li>
+<li><code><a title="coolipy.models.common.Logs.model_config" href="#coolipy.models.common.Logs.model_config">model_config</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.MessageResponse" href="#coolipy.models.common.MessageResponse">MessageResponse</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.common.MessageResponse.message" href="#coolipy.models.common.MessageResponse.message">message</a></code></li>
+<li><code><a title="coolipy.models.common.MessageResponse.model_config" href="#coolipy.models.common.MessageResponse.model_config">model_config</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.ScheduledTask" href="#coolipy.models.common.ScheduledTask">ScheduledTask</a></code></h4>
+<ul class="two-column">
+<li><code><a title="coolipy.models.common.ScheduledTask.command" href="#coolipy.models.common.ScheduledTask.command">command</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTask.container" href="#coolipy.models.common.ScheduledTask.container">container</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTask.created_at" href="#coolipy.models.common.ScheduledTask.created_at">created_at</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTask.enabled" href="#coolipy.models.common.ScheduledTask.enabled">enabled</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTask.frequency" href="#coolipy.models.common.ScheduledTask.frequency">frequency</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTask.id" href="#coolipy.models.common.ScheduledTask.id">id</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTask.model_config" href="#coolipy.models.common.ScheduledTask.model_config">model_config</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTask.name" href="#coolipy.models.common.ScheduledTask.name">name</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTask.timeout" href="#coolipy.models.common.ScheduledTask.timeout">timeout</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTask.updated_at" href="#coolipy.models.common.ScheduledTask.updated_at">updated_at</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTask.uuid" href="#coolipy.models.common.ScheduledTask.uuid">uuid</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.ScheduledTaskCreate" href="#coolipy.models.common.ScheduledTaskCreate">ScheduledTaskCreate</a></code></h4>
+<ul class="two-column">
+<li><code><a title="coolipy.models.common.ScheduledTaskCreate.command" href="#coolipy.models.common.ScheduledTaskCreate.command">command</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskCreate.container" href="#coolipy.models.common.ScheduledTaskCreate.container">container</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskCreate.enabled" href="#coolipy.models.common.ScheduledTaskCreate.enabled">enabled</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskCreate.frequency" href="#coolipy.models.common.ScheduledTaskCreate.frequency">frequency</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskCreate.model_config" href="#coolipy.models.common.ScheduledTaskCreate.model_config">model_config</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskCreate.name" href="#coolipy.models.common.ScheduledTaskCreate.name">name</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskCreate.timeout" href="#coolipy.models.common.ScheduledTaskCreate.timeout">timeout</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.ScheduledTaskExecution" href="#coolipy.models.common.ScheduledTaskExecution">ScheduledTaskExecution</a></code></h4>
+<ul class="two-column">
+<li><code><a title="coolipy.models.common.ScheduledTaskExecution.created_at" href="#coolipy.models.common.ScheduledTaskExecution.created_at">created_at</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskExecution.duration" href="#coolipy.models.common.ScheduledTaskExecution.duration">duration</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskExecution.finished_at" href="#coolipy.models.common.ScheduledTaskExecution.finished_at">finished_at</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskExecution.message" href="#coolipy.models.common.ScheduledTaskExecution.message">message</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskExecution.model_config" href="#coolipy.models.common.ScheduledTaskExecution.model_config">model_config</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskExecution.retry_count" href="#coolipy.models.common.ScheduledTaskExecution.retry_count">retry_count</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskExecution.started_at" href="#coolipy.models.common.ScheduledTaskExecution.started_at">started_at</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskExecution.status" href="#coolipy.models.common.ScheduledTaskExecution.status">status</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskExecution.updated_at" href="#coolipy.models.common.ScheduledTaskExecution.updated_at">updated_at</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskExecution.uuid" href="#coolipy.models.common.ScheduledTaskExecution.uuid">uuid</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.ScheduledTaskUpdate" href="#coolipy.models.common.ScheduledTaskUpdate">ScheduledTaskUpdate</a></code></h4>
+<ul class="two-column">
+<li><code><a title="coolipy.models.common.ScheduledTaskUpdate.command" href="#coolipy.models.common.ScheduledTaskUpdate.command">command</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskUpdate.container" href="#coolipy.models.common.ScheduledTaskUpdate.container">container</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskUpdate.enabled" href="#coolipy.models.common.ScheduledTaskUpdate.enabled">enabled</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskUpdate.frequency" href="#coolipy.models.common.ScheduledTaskUpdate.frequency">frequency</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskUpdate.model_config" href="#coolipy.models.common.ScheduledTaskUpdate.model_config">model_config</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskUpdate.name" href="#coolipy.models.common.ScheduledTaskUpdate.name">name</a></code></li>
+<li><code><a title="coolipy.models.common.ScheduledTaskUpdate.timeout" href="#coolipy.models.common.ScheduledTaskUpdate.timeout">timeout</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.StorageCreate" href="#coolipy.models.common.StorageCreate">StorageCreate</a></code></h4>
+<ul class="two-column">
+<li><code><a title="coolipy.models.common.StorageCreate.content" href="#coolipy.models.common.StorageCreate.content">content</a></code></li>
+<li><code><a title="coolipy.models.common.StorageCreate.fs_path" href="#coolipy.models.common.StorageCreate.fs_path">fs_path</a></code></li>
+<li><code><a title="coolipy.models.common.StorageCreate.host_path" href="#coolipy.models.common.StorageCreate.host_path">host_path</a></code></li>
+<li><code><a title="coolipy.models.common.StorageCreate.is_directory" href="#coolipy.models.common.StorageCreate.is_directory">is_directory</a></code></li>
+<li><code><a title="coolipy.models.common.StorageCreate.model_config" href="#coolipy.models.common.StorageCreate.model_config">model_config</a></code></li>
+<li><code><a title="coolipy.models.common.StorageCreate.mount_path" href="#coolipy.models.common.StorageCreate.mount_path">mount_path</a></code></li>
+<li><code><a title="coolipy.models.common.StorageCreate.name" href="#coolipy.models.common.StorageCreate.name">name</a></code></li>
+<li><code><a title="coolipy.models.common.StorageCreate.type" href="#coolipy.models.common.StorageCreate.type">type</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.StorageUpdate" href="#coolipy.models.common.StorageUpdate">StorageUpdate</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.common.StorageUpdate.content" href="#coolipy.models.common.StorageUpdate.content">content</a></code></li>
+<li><code><a title="coolipy.models.common.StorageUpdate.host_path" href="#coolipy.models.common.StorageUpdate.host_path">host_path</a></code></li>
+<li><code><a title="coolipy.models.common.StorageUpdate.id" href="#coolipy.models.common.StorageUpdate.id">id</a></code></li>
+<li><code><a title="coolipy.models.common.StorageUpdate.is_preview_suffix_enabled" href="#coolipy.models.common.StorageUpdate.is_preview_suffix_enabled">is_preview_suffix_enabled</a></code></li>
+<li><code><a title="coolipy.models.common.StorageUpdate.model_config" href="#coolipy.models.common.StorageUpdate.model_config">model_config</a></code></li>
+<li><code><a title="coolipy.models.common.StorageUpdate.mount_path" href="#coolipy.models.common.StorageUpdate.mount_path">mount_path</a></code></li>
+<li><code><a title="coolipy.models.common.StorageUpdate.name" href="#coolipy.models.common.StorageUpdate.name">name</a></code></li>
+<li><code><a title="coolipy.models.common.StorageUpdate.type" href="#coolipy.models.common.StorageUpdate.type">type</a></code></li>
+<li><code><a title="coolipy.models.common.StorageUpdate.uuid" href="#coolipy.models.common.StorageUpdate.uuid">uuid</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.Tag" href="#coolipy.models.common.Tag">Tag</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.common.Tag.created_at" href="#coolipy.models.common.Tag.created_at">created_at</a></code></li>
+<li><code><a title="coolipy.models.common.Tag.model_config" href="#coolipy.models.common.Tag.model_config">model_config</a></code></li>
+<li><code><a title="coolipy.models.common.Tag.name" href="#coolipy.models.common.Tag.name">name</a></code></li>
+<li><code><a title="coolipy.models.common.Tag.updated_at" href="#coolipy.models.common.Tag.updated_at">updated_at</a></code></li>
+<li><code><a title="coolipy.models.common.Tag.uuid" href="#coolipy.models.common.Tag.uuid">uuid</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.TagCreate" href="#coolipy.models.common.TagCreate">TagCreate</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.common.TagCreate.model_config" href="#coolipy.models.common.TagCreate.model_config">model_config</a></code></li>
+<li><code><a title="coolipy.models.common.TagCreate.name" href="#coolipy.models.common.TagCreate.name">name</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.TagUpdate" href="#coolipy.models.common.TagUpdate">TagUpdate</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.common.TagUpdate.model_config" href="#coolipy.models.common.TagUpdate.model_config">model_config</a></code></li>
+<li><code><a title="coolipy.models.common.TagUpdate.name" href="#coolipy.models.common.TagUpdate.name">name</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.TagsCreate" href="#coolipy.models.common.TagsCreate">TagsCreate</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.common.TagsCreate.model_config" href="#coolipy.models.common.TagsCreate.model_config">model_config</a></code></li>
+<li><code><a title="coolipy.models.common.TagsCreate.tag_name" href="#coolipy.models.common.TagsCreate.tag_name">tag_name</a></code></li>
+<li><code><a title="coolipy.models.common.TagsCreate.tag_names" href="#coolipy.models.common.TagsCreate.tag_names">tag_names</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.UUIDResponse" href="#coolipy.models.common.UUIDResponse">UUIDResponse</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.common.UUIDResponse.model_config" href="#coolipy.models.common.UUIDResponse.model_config">model_config</a></code></li>
+<li><code><a title="coolipy.models.common.UUIDResponse.uuid" href="#coolipy.models.common.UUIDResponse.uuid">uuid</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.VolumeBackupScheduleRequest" href="#coolipy.models.common.VolumeBackupScheduleRequest">VolumeBackupScheduleRequest</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleRequest.disable_local_backup" href="#coolipy.models.common.VolumeBackupScheduleRequest.disable_local_backup">disable_local_backup</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleRequest.enabled" href="#coolipy.models.common.VolumeBackupScheduleRequest.enabled">enabled</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleRequest.frequency" href="#coolipy.models.common.VolumeBackupScheduleRequest.frequency">frequency</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleRequest.model_config" href="#coolipy.models.common.VolumeBackupScheduleRequest.model_config">model_config</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleRequest.retention_amount_locally" href="#coolipy.models.common.VolumeBackupScheduleRequest.retention_amount_locally">retention_amount_locally</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleRequest.retention_amount_s3" href="#coolipy.models.common.VolumeBackupScheduleRequest.retention_amount_s3">retention_amount_s3</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleRequest.retention_days_locally" href="#coolipy.models.common.VolumeBackupScheduleRequest.retention_days_locally">retention_days_locally</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleRequest.retention_days_s3" href="#coolipy.models.common.VolumeBackupScheduleRequest.retention_days_s3">retention_days_s3</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleRequest.retention_max_storage_locally" href="#coolipy.models.common.VolumeBackupScheduleRequest.retention_max_storage_locally">retention_max_storage_locally</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleRequest.retention_max_storage_s3" href="#coolipy.models.common.VolumeBackupScheduleRequest.retention_max_storage_s3">retention_max_storage_s3</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleRequest.s3_storage_uuid" href="#coolipy.models.common.VolumeBackupScheduleRequest.s3_storage_uuid">s3_storage_uuid</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleRequest.save_s3" href="#coolipy.models.common.VolumeBackupScheduleRequest.save_s3">save_s3</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleRequest.stop_during_backup" href="#coolipy.models.common.VolumeBackupScheduleRequest.stop_during_backup">stop_during_backup</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleRequest.timeout" href="#coolipy.models.common.VolumeBackupScheduleRequest.timeout">timeout</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.models.common.VolumeBackupScheduleResponse" href="#coolipy.models.common.VolumeBackupScheduleResponse">VolumeBackupScheduleResponse</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleResponse.disable_local_backup" href="#coolipy.models.common.VolumeBackupScheduleResponse.disable_local_backup">disable_local_backup</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleResponse.enabled" href="#coolipy.models.common.VolumeBackupScheduleResponse.enabled">enabled</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleResponse.frequency" href="#coolipy.models.common.VolumeBackupScheduleResponse.frequency">frequency</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleResponse.message" href="#coolipy.models.common.VolumeBackupScheduleResponse.message">message</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleResponse.model_config" href="#coolipy.models.common.VolumeBackupScheduleResponse.model_config">model_config</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleResponse.retention_amount_locally" href="#coolipy.models.common.VolumeBackupScheduleResponse.retention_amount_locally">retention_amount_locally</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleResponse.retention_amount_s3" href="#coolipy.models.common.VolumeBackupScheduleResponse.retention_amount_s3">retention_amount_s3</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleResponse.retention_days_locally" href="#coolipy.models.common.VolumeBackupScheduleResponse.retention_days_locally">retention_days_locally</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleResponse.retention_days_s3" href="#coolipy.models.common.VolumeBackupScheduleResponse.retention_days_s3">retention_days_s3</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleResponse.retention_max_storage_locally" href="#coolipy.models.common.VolumeBackupScheduleResponse.retention_max_storage_locally">retention_max_storage_locally</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleResponse.retention_max_storage_s3" href="#coolipy.models.common.VolumeBackupScheduleResponse.retention_max_storage_s3">retention_max_storage_s3</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleResponse.s3_storage_uuid" href="#coolipy.models.common.VolumeBackupScheduleResponse.s3_storage_uuid">s3_storage_uuid</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleResponse.save_s3" href="#coolipy.models.common.VolumeBackupScheduleResponse.save_s3">save_s3</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleResponse.stop_during_backup" href="#coolipy.models.common.VolumeBackupScheduleResponse.stop_during_backup">stop_during_backup</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleResponse.storage_type" href="#coolipy.models.common.VolumeBackupScheduleResponse.storage_type">storage_type</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleResponse.storage_uuid" href="#coolipy.models.common.VolumeBackupScheduleResponse.storage_uuid">storage_uuid</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleResponse.timeout" href="#coolipy.models.common.VolumeBackupScheduleResponse.timeout">timeout</a></code></li>
+<li><code><a title="coolipy.models.common.VolumeBackupScheduleResponse.uuid" href="#coolipy.models.common.VolumeBackupScheduleResponse.uuid">uuid</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

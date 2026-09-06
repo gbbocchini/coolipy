@@ -1,0 +1,2126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>coolipy.resources.applications API documentation</title>
+<meta name="description" content="Applications resource clients (sync + async).">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>coolipy.resources.applications</code></h1>
+</header>
+<section id="section-intro">
+<p>Applications resource clients (sync + async).</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="coolipy.resources.applications.Applications"><code class="flex name class">
+<span>class <span class="ident">Applications</span></span>
+<span>(</span><span>transport: SyncTransport)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Applications(ResourceBase):
+    &#34;&#34;&#34;Synchronous client for Coolify applications.&#34;&#34;&#34;
+
+    def list(self) -&gt; CoolipyAPIResponse[ApplicationList]:
+        &#34;&#34;&#34;List all applications.&#34;&#34;&#34;
+        return self._get(&#34;/applications&#34;, response_model=list[ApplicationModel])
+
+    def get(self, uuid: str) -&gt; CoolipyAPIResponse[ApplicationModel]:
+        &#34;&#34;&#34;Get an application by UUID.&#34;&#34;&#34;
+        return self._get(f&#34;/applications/{uuid}&#34;, response_model=ApplicationModel)
+
+    def create(
+        self,
+        model: ApplicationPublicModelCreate
+        | ApplicationPrivateGHModelCreate
+        | ApplicationPrivateDeployKeyModelCreate
+        | ApplicationDockerfileModelCreate
+        | ApplicationDockerImageModelCreate,
+    ) -&gt; CoolipyAPIResponse[UUIDResponse]:
+        &#34;&#34;&#34;Create an application from one of the supported create models.&#34;&#34;&#34;
+        path = _APPLICATION_CREATE_PATHS.get(type(model))
+        if path is None:
+            raise CoolipyValidationError(
+                f&#34;Unsupported application create model: {type(model).__name__}&#34;
+            )
+        return self._post(path, json=_dump(model), response_model=UUIDResponse)
+
+    def update(self, uuid: str, model: ApplicationUpdateModel) -&gt; CoolipyAPIResponse[UUIDResponse]:
+        &#34;&#34;&#34;Update an application by UUID.&#34;&#34;&#34;
+        return self._patch(f&#34;/applications/{uuid}&#34;, json=_dump(model), response_model=UUIDResponse)
+
+    def delete(
+        self,
+        uuid: str,
+        *,
+        delete_configurations: bool = True,
+        delete_volumes: bool = True,
+        docker_cleanup: bool = True,
+        delete_connected_networks: bool = True,
+    ) -&gt; CoolipyAPIResponse[MessageResponse]:
+        &#34;&#34;&#34;Delete an application by UUID.&#34;&#34;&#34;
+        params = {
+            &#34;delete_configurations&#34;: delete_configurations,
+            &#34;delete_volumes&#34;: delete_volumes,
+            &#34;docker_cleanup&#34;: docker_cleanup,
+            &#34;delete_connected_networks&#34;: delete_connected_networks,
+        }
+        return self._delete(f&#34;/applications/{uuid}&#34;, params=params, response_model=MessageResponse)
+
+    def logs(
+        self, uuid: str, *, lines: int = 100, show_timestamps: bool = False
+    ) -&gt; CoolipyAPIResponse[Logs]:
+        &#34;&#34;&#34;Get application logs.&#34;&#34;&#34;
+        params = {&#34;lines&#34;: lines, &#34;show_timestamps&#34;: show_timestamps}
+        return self._get(f&#34;/applications/{uuid}/logs&#34;, params=params, response_model=Logs)
+
+    def envs(self, uuid: str) -&gt; CoolipyAPIResponse[EnvironmentVariableList]:
+        &#34;&#34;&#34;List environment variables for an application.&#34;&#34;&#34;
+        return self._get(f&#34;/applications/{uuid}/envs&#34;, response_model=list[EnvironmentVariable])
+
+    def create_env(
+        self, uuid: str, model: EnvironmentVariableCreate
+    ) -&gt; CoolipyAPIResponse[UUIDResponse]:
+        &#34;&#34;&#34;Create an environment variable for an application.&#34;&#34;&#34;
+        return self._post(
+            f&#34;/applications/{uuid}/envs&#34;, json=_dump(model), response_model=UUIDResponse
+        )
+
+    def update_env(
+        self, uuid: str, model: EnvironmentVariableUpdate
+    ) -&gt; CoolipyAPIResponse[EnvironmentVariable]:
+        &#34;&#34;&#34;Update an environment variable for an application.&#34;&#34;&#34;
+        return self._patch(
+            f&#34;/applications/{uuid}/envs&#34;, json=_dump(model), response_model=EnvironmentVariable
+        )
+
+    def bulk_update_envs(
+        self, uuid: str, model: BulkEnvsUpdate
+    ) -&gt; CoolipyAPIResponse[EnvironmentVariableList]:
+        &#34;&#34;&#34;Bulk-update environment variables for an application.&#34;&#34;&#34;
+        return self._patch(
+            f&#34;/applications/{uuid}/envs/bulk&#34;,
+            json=_dump(model),
+            response_model=list[EnvironmentVariable],
+        )
+
+    def delete_env(self, uuid: str, env_uuid: str) -&gt; CoolipyAPIResponse[MessageResponse]:
+        &#34;&#34;&#34;Delete an environment variable by UUID.&#34;&#34;&#34;
+        return self._delete(f&#34;/applications/{uuid}/envs/{env_uuid}&#34;, response_model=MessageResponse)
+
+    def start(
+        self, uuid: str, *, force: bool = False, instant_deploy: bool = False
+    ) -&gt; CoolipyAPIResponse[DeploymentQueuedResponse]:
+        &#34;&#34;&#34;Start an application.&#34;&#34;&#34;
+        params = {&#34;force&#34;: force, &#34;instant_deploy&#34;: instant_deploy}
+        return self._post(
+            f&#34;/applications/{uuid}/start&#34;, params=params, response_model=DeploymentQueuedResponse
+        )
+
+    def stop(
+        self, uuid: str, *, docker_cleanup: bool = True
+    ) -&gt; CoolipyAPIResponse[MessageResponse]:
+        &#34;&#34;&#34;Stop an application.&#34;&#34;&#34;
+        return self._post(
+            f&#34;/applications/{uuid}/stop&#34;,
+            params={&#34;docker_cleanup&#34;: docker_cleanup},
+            response_model=MessageResponse,
+        )
+
+    def restart(self, uuid: str) -&gt; CoolipyAPIResponse[DeploymentQueuedResponse]:
+        &#34;&#34;&#34;Restart an application.&#34;&#34;&#34;
+        return self._post(f&#34;/applications/{uuid}/restart&#34;, response_model=DeploymentQueuedResponse)
+
+    def move(self, uuid: str, environment_uuid: str) -&gt; CoolipyAPIResponse[dict]:
+        &#34;&#34;&#34;Move an application to another environment.&#34;&#34;&#34;
+        return self._post(
+            f&#34;/applications/{uuid}/move&#34;,
+            json={&#34;environment_uuid&#34;: environment_uuid},
+            response_model=dict,
+        )
+
+    def migrate(
+        self, uuid: str, destination_uuid: str, *, migrate_volumes: bool = True
+    ) -&gt; CoolipyAPIResponse[Any]:
+        &#34;&#34;&#34;Migrate an application to another destination/server.&#34;&#34;&#34;
+        body = {&#34;destination_uuid&#34;: destination_uuid, &#34;migrate_volumes&#34;: migrate_volumes}
+        return self._post(f&#34;/applications/{uuid}/migrate&#34;, json=body)
+
+    def storages(self, uuid: str) -&gt; CoolipyAPIResponse[dict]:
+        &#34;&#34;&#34;List storages for an application.&#34;&#34;&#34;
+        return self._get(f&#34;/applications/{uuid}/storages&#34;, response_model=dict)
+
+    def create_storage(self, uuid: str, model: StorageCreate) -&gt; CoolipyAPIResponse[dict]:
+        &#34;&#34;&#34;Create a storage for an application.&#34;&#34;&#34;
+        return self._post(f&#34;/applications/{uuid}/storages&#34;, json=_dump(model), response_model=dict)
+
+    def update_storage(self, uuid: str, model: StorageUpdate) -&gt; CoolipyAPIResponse[dict]:
+        &#34;&#34;&#34;Update a storage for an application.&#34;&#34;&#34;
+        return self._patch(f&#34;/applications/{uuid}/storages&#34;, json=_dump(model), response_model=dict)
+
+    def delete_storage(self, uuid: str, storage_uuid: str) -&gt; CoolipyAPIResponse[MessageResponse]:
+        &#34;&#34;&#34;Delete a storage by UUID.&#34;&#34;&#34;
+        return self._delete(
+            f&#34;/applications/{uuid}/storages/{storage_uuid}&#34;, response_model=MessageResponse
+        )
+
+    def delete_preview(
+        self, uuid: str, pull_request_id: int
+    ) -&gt; CoolipyAPIResponse[MessageResponse]:
+        &#34;&#34;&#34;Delete a preview deployment by pull request ID.&#34;&#34;&#34;
+        return self._delete(
+            f&#34;/applications/{uuid}/previews/{pull_request_id}&#34;, response_model=MessageResponse
+        )
+
+    def tags(self, uuid: str) -&gt; CoolipyAPIResponse[TagList]:
+        &#34;&#34;&#34;List tags for an application.&#34;&#34;&#34;
+        return self._get(f&#34;/applications/{uuid}/tags&#34;, response_model=list[Tag])
+
+    def add_tags(self, uuid: str, model: TagsCreate) -&gt; CoolipyAPIResponse[TagList]:
+        &#34;&#34;&#34;Add one or more tags to an application.&#34;&#34;&#34;
+        return self._post(f&#34;/applications/{uuid}/tags&#34;, json=_dump(model), response_model=list[Tag])
+
+    def delete_tag(self, uuid: str, tag_uuid: str) -&gt; CoolipyAPIResponse[Any]:
+        &#34;&#34;&#34;Remove a tag from an application.&#34;&#34;&#34;
+        return self._delete(f&#34;/applications/{uuid}/tags/{tag_uuid}&#34;)
+
+    def clone(
+        self,
+        uuid: str,
+        destination_uuid: str,
+        *,
+        name: str | None = None,
+        clone_volumes: bool = False,
+    ) -&gt; CoolipyAPIResponse[dict]:
+        &#34;&#34;&#34;Clone an application into a destination.&#34;&#34;&#34;
+        body = {&#34;destination_uuid&#34;: destination_uuid, &#34;name&#34;: name, &#34;clone_volumes&#34;: clone_volumes}
+        return self._post(f&#34;/applications/{uuid}/clone&#34;, json=body, response_model=dict)
+
+    def rollback_images(self, uuid: str) -&gt; CoolipyAPIResponse[dict]:
+        &#34;&#34;&#34;List available rollback images for an application.&#34;&#34;&#34;
+        return self._get(f&#34;/applications/{uuid}/rollback-images&#34;, response_model=dict)
+
+    def rollback(self, uuid: str, commit: str) -&gt; CoolipyAPIResponse[DeploymentQueuedResponse]:
+        &#34;&#34;&#34;Queue a rollback deployment for an application.&#34;&#34;&#34;
+        return self._post(
+            f&#34;/applications/{uuid}/rollback&#34;,
+            json={&#34;commit&#34;: commit},
+            response_model=DeploymentQueuedResponse,
+        )
+
+    def destinations(self, uuid: str) -&gt; CoolipyAPIResponse[Any]:
+        &#34;&#34;&#34;List destinations for an application.&#34;&#34;&#34;
+        return self._get(f&#34;/applications/{uuid}/destinations&#34;)
+
+    def add_destination(self, uuid: str, destination_uuid: str) -&gt; CoolipyAPIResponse[Any]:
+        &#34;&#34;&#34;Attach an additional destination to an application.&#34;&#34;&#34;
+        return self._post(
+            f&#34;/applications/{uuid}/destinations&#34;, json={&#34;destination_uuid&#34;: destination_uuid}
+        )
+
+    def delete_destination(self, uuid: str, destination_uuid: str) -&gt; CoolipyAPIResponse[Any]:
+        &#34;&#34;&#34;Detach an additional destination from an application.&#34;&#34;&#34;
+        return self._delete(f&#34;/applications/{uuid}/destinations/{destination_uuid}&#34;)
+
+    def scheduled_tasks(self, uuid: str) -&gt; CoolipyAPIResponse[ScheduledTaskList]:
+        &#34;&#34;&#34;List scheduled tasks for an application.&#34;&#34;&#34;
+        return self._get(
+            f&#34;/applications/{uuid}/scheduled-tasks&#34;, response_model=list[ScheduledTask]
+        )
+
+    def create_scheduled_task(
+        self, uuid: str, model: ScheduledTaskCreate
+    ) -&gt; CoolipyAPIResponse[ScheduledTask]:
+        &#34;&#34;&#34;Create a scheduled task for an application.&#34;&#34;&#34;
+        return self._post(
+            f&#34;/applications/{uuid}/scheduled-tasks&#34;, json=_dump(model), response_model=ScheduledTask
+        )
+
+    def update_scheduled_task(
+        self, uuid: str, task_uuid: str, model: ScheduledTaskUpdate
+    ) -&gt; CoolipyAPIResponse[ScheduledTask]:
+        &#34;&#34;&#34;Update a scheduled task by UUID.&#34;&#34;&#34;
+        return self._patch(
+            f&#34;/applications/{uuid}/scheduled-tasks/{task_uuid}&#34;,
+            json=_dump(model),
+            response_model=ScheduledTask,
+        )
+
+    def delete_scheduled_task(
+        self, uuid: str, task_uuid: str
+    ) -&gt; CoolipyAPIResponse[MessageResponse]:
+        &#34;&#34;&#34;Delete a scheduled task by UUID.&#34;&#34;&#34;
+        return self._delete(
+            f&#34;/applications/{uuid}/scheduled-tasks/{task_uuid}&#34;, response_model=MessageResponse
+        )
+
+    def scheduled_task_executions(
+        self, uuid: str, task_uuid: str
+    ) -&gt; CoolipyAPIResponse[ScheduledTaskExecutionList]:
+        &#34;&#34;&#34;List executions of a scheduled task.&#34;&#34;&#34;
+        return self._get(
+            f&#34;/applications/{uuid}/scheduled-tasks/{task_uuid}/executions&#34;,
+            response_model=list[ScheduledTaskExecution],
+        )
+
+    def execute_scheduled_task(
+        self, uuid: str, task_uuid: str
+    ) -&gt; CoolipyAPIResponse[MessageResponse]:
+        &#34;&#34;&#34;Execute a scheduled task now.&#34;&#34;&#34;
+        return self._post(
+            f&#34;/applications/{uuid}/scheduled-tasks/{task_uuid}/execute&#34;,
+            response_model=MessageResponse,
+        )
+
+    def update_storage_backup(
+        self, uuid: str, storage_uuid: str, model: VolumeBackupScheduleRequest
+    ) -&gt; CoolipyAPIResponse[VolumeBackupScheduleResponse]:
+        &#34;&#34;&#34;Schedule backups for a storage volume.&#34;&#34;&#34;
+        return self._put(
+            f&#34;/applications/{uuid}/storages/{storage_uuid}/backups&#34;,
+            json=_dump(model),
+            response_model=VolumeBackupScheduleResponse,
+        )
+
+    def delete_storage_backup(
+        self, uuid: str, storage_uuid: str
+    ) -&gt; CoolipyAPIResponse[MessageResponse]:
+        &#34;&#34;&#34;Remove the backup schedule for a storage volume.&#34;&#34;&#34;
+        return self._delete(
+            f&#34;/applications/{uuid}/storages/{storage_uuid}/backups&#34;, response_model=MessageResponse
+        )
+
+    def run_storage_backup(
+        self, uuid: str, storage_uuid: str
+    ) -&gt; CoolipyAPIResponse[MessageResponse]:
+        &#34;&#34;&#34;Run a storage backup now.&#34;&#34;&#34;
+        return self._post(
+            f&#34;/applications/{uuid}/storages/{storage_uuid}/backups/run&#34;,
+            response_model=MessageResponse,
+        )</code></pre>
+</details>
+<div class="desc"><p>Synchronous client for Coolify applications.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>coolipy._base.ResourceBase</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="coolipy.resources.applications.Applications.add_destination"><code class="name flex">
+<span>def <span class="ident">add_destination</span></span>(<span>self, uuid: str, destination_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[typing.Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_destination(self, uuid: str, destination_uuid: str) -&gt; CoolipyAPIResponse[Any]:
+    &#34;&#34;&#34;Attach an additional destination to an application.&#34;&#34;&#34;
+    return self._post(
+        f&#34;/applications/{uuid}/destinations&#34;, json={&#34;destination_uuid&#34;: destination_uuid}
+    )</code></pre>
+</details>
+<div class="desc"><p>Attach an additional destination to an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.add_tags"><code class="name flex">
+<span>def <span class="ident">add_tags</span></span>(<span>self, uuid: str, model: TagsCreate) ‑> coolipy._response.CoolipyAPIResponse[list[<a title="coolipy.models.common.Tag" href="../models/common.html#coolipy.models.common.Tag">Tag</a>]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_tags(self, uuid: str, model: TagsCreate) -&gt; CoolipyAPIResponse[TagList]:
+    &#34;&#34;&#34;Add one or more tags to an application.&#34;&#34;&#34;
+    return self._post(f&#34;/applications/{uuid}/tags&#34;, json=_dump(model), response_model=list[Tag])</code></pre>
+</details>
+<div class="desc"><p>Add one or more tags to an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.bulk_update_envs"><code class="name flex">
+<span>def <span class="ident">bulk_update_envs</span></span>(<span>self, uuid: str, model: BulkEnvsUpdate) ‑> coolipy._response.CoolipyAPIResponse[list[<a title="coolipy.models.common.EnvironmentVariable" href="../models/common.html#coolipy.models.common.EnvironmentVariable">EnvironmentVariable</a>]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def bulk_update_envs(
+    self, uuid: str, model: BulkEnvsUpdate
+) -&gt; CoolipyAPIResponse[EnvironmentVariableList]:
+    &#34;&#34;&#34;Bulk-update environment variables for an application.&#34;&#34;&#34;
+    return self._patch(
+        f&#34;/applications/{uuid}/envs/bulk&#34;,
+        json=_dump(model),
+        response_model=list[EnvironmentVariable],
+    )</code></pre>
+</details>
+<div class="desc"><p>Bulk-update environment variables for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.clone"><code class="name flex">
+<span>def <span class="ident">clone</span></span>(<span>self,<br>uuid: str,<br>destination_uuid: str,<br>*,<br>name: str | None = None,<br>clone_volumes: bool = False) ‑> coolipy._response.CoolipyAPIResponse[dict]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def clone(
+    self,
+    uuid: str,
+    destination_uuid: str,
+    *,
+    name: str | None = None,
+    clone_volumes: bool = False,
+) -&gt; CoolipyAPIResponse[dict]:
+    &#34;&#34;&#34;Clone an application into a destination.&#34;&#34;&#34;
+    body = {&#34;destination_uuid&#34;: destination_uuid, &#34;name&#34;: name, &#34;clone_volumes&#34;: clone_volumes}
+    return self._post(f&#34;/applications/{uuid}/clone&#34;, json=body, response_model=dict)</code></pre>
+</details>
+<div class="desc"><p>Clone an application into a destination.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.create"><code class="name flex">
+<span>def <span class="ident">create</span></span>(<span>self,<br>model: ApplicationPublicModelCreate | ApplicationPrivateGHModelCreate | ApplicationPrivateDeployKeyModelCreate | ApplicationDockerfileModelCreate | ApplicationDockerImageModelCreate) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.UUIDResponse" href="../models/common.html#coolipy.models.common.UUIDResponse">UUIDResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create(
+    self,
+    model: ApplicationPublicModelCreate
+    | ApplicationPrivateGHModelCreate
+    | ApplicationPrivateDeployKeyModelCreate
+    | ApplicationDockerfileModelCreate
+    | ApplicationDockerImageModelCreate,
+) -&gt; CoolipyAPIResponse[UUIDResponse]:
+    &#34;&#34;&#34;Create an application from one of the supported create models.&#34;&#34;&#34;
+    path = _APPLICATION_CREATE_PATHS.get(type(model))
+    if path is None:
+        raise CoolipyValidationError(
+            f&#34;Unsupported application create model: {type(model).__name__}&#34;
+        )
+    return self._post(path, json=_dump(model), response_model=UUIDResponse)</code></pre>
+</details>
+<div class="desc"><p>Create an application from one of the supported create models.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.create_env"><code class="name flex">
+<span>def <span class="ident">create_env</span></span>(<span>self, uuid: str, model: EnvironmentVariableCreate) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.UUIDResponse" href="../models/common.html#coolipy.models.common.UUIDResponse">UUIDResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_env(
+    self, uuid: str, model: EnvironmentVariableCreate
+) -&gt; CoolipyAPIResponse[UUIDResponse]:
+    &#34;&#34;&#34;Create an environment variable for an application.&#34;&#34;&#34;
+    return self._post(
+        f&#34;/applications/{uuid}/envs&#34;, json=_dump(model), response_model=UUIDResponse
+    )</code></pre>
+</details>
+<div class="desc"><p>Create an environment variable for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.create_scheduled_task"><code class="name flex">
+<span>def <span class="ident">create_scheduled_task</span></span>(<span>self, uuid: str, model: ScheduledTaskCreate) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.ScheduledTask" href="../models/common.html#coolipy.models.common.ScheduledTask">ScheduledTask</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_scheduled_task(
+    self, uuid: str, model: ScheduledTaskCreate
+) -&gt; CoolipyAPIResponse[ScheduledTask]:
+    &#34;&#34;&#34;Create a scheduled task for an application.&#34;&#34;&#34;
+    return self._post(
+        f&#34;/applications/{uuid}/scheduled-tasks&#34;, json=_dump(model), response_model=ScheduledTask
+    )</code></pre>
+</details>
+<div class="desc"><p>Create a scheduled task for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.create_storage"><code class="name flex">
+<span>def <span class="ident">create_storage</span></span>(<span>self, uuid: str, model: StorageCreate) ‑> coolipy._response.CoolipyAPIResponse[dict]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_storage(self, uuid: str, model: StorageCreate) -&gt; CoolipyAPIResponse[dict]:
+    &#34;&#34;&#34;Create a storage for an application.&#34;&#34;&#34;
+    return self._post(f&#34;/applications/{uuid}/storages&#34;, json=_dump(model), response_model=dict)</code></pre>
+</details>
+<div class="desc"><p>Create a storage for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.delete"><code class="name flex">
+<span>def <span class="ident">delete</span></span>(<span>self,<br>uuid: str,<br>*,<br>delete_configurations: bool = True,<br>delete_volumes: bool = True,<br>docker_cleanup: bool = True,<br>delete_connected_networks: bool = True) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.MessageResponse" href="../models/common.html#coolipy.models.common.MessageResponse">MessageResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete(
+    self,
+    uuid: str,
+    *,
+    delete_configurations: bool = True,
+    delete_volumes: bool = True,
+    docker_cleanup: bool = True,
+    delete_connected_networks: bool = True,
+) -&gt; CoolipyAPIResponse[MessageResponse]:
+    &#34;&#34;&#34;Delete an application by UUID.&#34;&#34;&#34;
+    params = {
+        &#34;delete_configurations&#34;: delete_configurations,
+        &#34;delete_volumes&#34;: delete_volumes,
+        &#34;docker_cleanup&#34;: docker_cleanup,
+        &#34;delete_connected_networks&#34;: delete_connected_networks,
+    }
+    return self._delete(f&#34;/applications/{uuid}&#34;, params=params, response_model=MessageResponse)</code></pre>
+</details>
+<div class="desc"><p>Delete an application by UUID.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.delete_destination"><code class="name flex">
+<span>def <span class="ident">delete_destination</span></span>(<span>self, uuid: str, destination_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[typing.Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_destination(self, uuid: str, destination_uuid: str) -&gt; CoolipyAPIResponse[Any]:
+    &#34;&#34;&#34;Detach an additional destination from an application.&#34;&#34;&#34;
+    return self._delete(f&#34;/applications/{uuid}/destinations/{destination_uuid}&#34;)</code></pre>
+</details>
+<div class="desc"><p>Detach an additional destination from an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.delete_env"><code class="name flex">
+<span>def <span class="ident">delete_env</span></span>(<span>self, uuid: str, env_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.MessageResponse" href="../models/common.html#coolipy.models.common.MessageResponse">MessageResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_env(self, uuid: str, env_uuid: str) -&gt; CoolipyAPIResponse[MessageResponse]:
+    &#34;&#34;&#34;Delete an environment variable by UUID.&#34;&#34;&#34;
+    return self._delete(f&#34;/applications/{uuid}/envs/{env_uuid}&#34;, response_model=MessageResponse)</code></pre>
+</details>
+<div class="desc"><p>Delete an environment variable by UUID.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.delete_preview"><code class="name flex">
+<span>def <span class="ident">delete_preview</span></span>(<span>self, uuid: str, pull_request_id: int) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.MessageResponse" href="../models/common.html#coolipy.models.common.MessageResponse">MessageResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_preview(
+    self, uuid: str, pull_request_id: int
+) -&gt; CoolipyAPIResponse[MessageResponse]:
+    &#34;&#34;&#34;Delete a preview deployment by pull request ID.&#34;&#34;&#34;
+    return self._delete(
+        f&#34;/applications/{uuid}/previews/{pull_request_id}&#34;, response_model=MessageResponse
+    )</code></pre>
+</details>
+<div class="desc"><p>Delete a preview deployment by pull request ID.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.delete_scheduled_task"><code class="name flex">
+<span>def <span class="ident">delete_scheduled_task</span></span>(<span>self, uuid: str, task_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.MessageResponse" href="../models/common.html#coolipy.models.common.MessageResponse">MessageResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_scheduled_task(
+    self, uuid: str, task_uuid: str
+) -&gt; CoolipyAPIResponse[MessageResponse]:
+    &#34;&#34;&#34;Delete a scheduled task by UUID.&#34;&#34;&#34;
+    return self._delete(
+        f&#34;/applications/{uuid}/scheduled-tasks/{task_uuid}&#34;, response_model=MessageResponse
+    )</code></pre>
+</details>
+<div class="desc"><p>Delete a scheduled task by UUID.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.delete_storage"><code class="name flex">
+<span>def <span class="ident">delete_storage</span></span>(<span>self, uuid: str, storage_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.MessageResponse" href="../models/common.html#coolipy.models.common.MessageResponse">MessageResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_storage(self, uuid: str, storage_uuid: str) -&gt; CoolipyAPIResponse[MessageResponse]:
+    &#34;&#34;&#34;Delete a storage by UUID.&#34;&#34;&#34;
+    return self._delete(
+        f&#34;/applications/{uuid}/storages/{storage_uuid}&#34;, response_model=MessageResponse
+    )</code></pre>
+</details>
+<div class="desc"><p>Delete a storage by UUID.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.delete_storage_backup"><code class="name flex">
+<span>def <span class="ident">delete_storage_backup</span></span>(<span>self, uuid: str, storage_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.MessageResponse" href="../models/common.html#coolipy.models.common.MessageResponse">MessageResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_storage_backup(
+    self, uuid: str, storage_uuid: str
+) -&gt; CoolipyAPIResponse[MessageResponse]:
+    &#34;&#34;&#34;Remove the backup schedule for a storage volume.&#34;&#34;&#34;
+    return self._delete(
+        f&#34;/applications/{uuid}/storages/{storage_uuid}/backups&#34;, response_model=MessageResponse
+    )</code></pre>
+</details>
+<div class="desc"><p>Remove the backup schedule for a storage volume.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.delete_tag"><code class="name flex">
+<span>def <span class="ident">delete_tag</span></span>(<span>self, uuid: str, tag_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[typing.Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_tag(self, uuid: str, tag_uuid: str) -&gt; CoolipyAPIResponse[Any]:
+    &#34;&#34;&#34;Remove a tag from an application.&#34;&#34;&#34;
+    return self._delete(f&#34;/applications/{uuid}/tags/{tag_uuid}&#34;)</code></pre>
+</details>
+<div class="desc"><p>Remove a tag from an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.destinations"><code class="name flex">
+<span>def <span class="ident">destinations</span></span>(<span>self, uuid: str) ‑> coolipy._response.CoolipyAPIResponse[typing.Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def destinations(self, uuid: str) -&gt; CoolipyAPIResponse[Any]:
+    &#34;&#34;&#34;List destinations for an application.&#34;&#34;&#34;
+    return self._get(f&#34;/applications/{uuid}/destinations&#34;)</code></pre>
+</details>
+<div class="desc"><p>List destinations for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.envs"><code class="name flex">
+<span>def <span class="ident">envs</span></span>(<span>self, uuid: str) ‑> coolipy._response.CoolipyAPIResponse[list[<a title="coolipy.models.common.EnvironmentVariable" href="../models/common.html#coolipy.models.common.EnvironmentVariable">EnvironmentVariable</a>]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def envs(self, uuid: str) -&gt; CoolipyAPIResponse[EnvironmentVariableList]:
+    &#34;&#34;&#34;List environment variables for an application.&#34;&#34;&#34;
+    return self._get(f&#34;/applications/{uuid}/envs&#34;, response_model=list[EnvironmentVariable])</code></pre>
+</details>
+<div class="desc"><p>List environment variables for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.execute_scheduled_task"><code class="name flex">
+<span>def <span class="ident">execute_scheduled_task</span></span>(<span>self, uuid: str, task_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.MessageResponse" href="../models/common.html#coolipy.models.common.MessageResponse">MessageResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def execute_scheduled_task(
+    self, uuid: str, task_uuid: str
+) -&gt; CoolipyAPIResponse[MessageResponse]:
+    &#34;&#34;&#34;Execute a scheduled task now.&#34;&#34;&#34;
+    return self._post(
+        f&#34;/applications/{uuid}/scheduled-tasks/{task_uuid}/execute&#34;,
+        response_model=MessageResponse,
+    )</code></pre>
+</details>
+<div class="desc"><p>Execute a scheduled task now.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.get"><code class="name flex">
+<span>def <span class="ident">get</span></span>(<span>self, uuid: str) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.applications.ApplicationModel" href="../models/applications.html#coolipy.models.applications.ApplicationModel">ApplicationModel</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get(self, uuid: str) -&gt; CoolipyAPIResponse[ApplicationModel]:
+    &#34;&#34;&#34;Get an application by UUID.&#34;&#34;&#34;
+    return self._get(f&#34;/applications/{uuid}&#34;, response_model=ApplicationModel)</code></pre>
+</details>
+<div class="desc"><p>Get an application by UUID.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.list"><code class="name flex">
+<span>def <span class="ident">list</span></span>(<span>self) ‑> coolipy._response.CoolipyAPIResponse[list[<a title="coolipy.models.applications.ApplicationModel" href="../models/applications.html#coolipy.models.applications.ApplicationModel">ApplicationModel</a>]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def list(self) -&gt; CoolipyAPIResponse[ApplicationList]:
+    &#34;&#34;&#34;List all applications.&#34;&#34;&#34;
+    return self._get(&#34;/applications&#34;, response_model=list[ApplicationModel])</code></pre>
+</details>
+<div class="desc"><p>List all applications.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.logs"><code class="name flex">
+<span>def <span class="ident">logs</span></span>(<span>self, uuid: str, *, lines: int = 100, show_timestamps: bool = False) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.Logs" href="../models/common.html#coolipy.models.common.Logs">Logs</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def logs(
+    self, uuid: str, *, lines: int = 100, show_timestamps: bool = False
+) -&gt; CoolipyAPIResponse[Logs]:
+    &#34;&#34;&#34;Get application logs.&#34;&#34;&#34;
+    params = {&#34;lines&#34;: lines, &#34;show_timestamps&#34;: show_timestamps}
+    return self._get(f&#34;/applications/{uuid}/logs&#34;, params=params, response_model=Logs)</code></pre>
+</details>
+<div class="desc"><p>Get application logs.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.migrate"><code class="name flex">
+<span>def <span class="ident">migrate</span></span>(<span>self, uuid: str, destination_uuid: str, *, migrate_volumes: bool = True) ‑> coolipy._response.CoolipyAPIResponse[typing.Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def migrate(
+    self, uuid: str, destination_uuid: str, *, migrate_volumes: bool = True
+) -&gt; CoolipyAPIResponse[Any]:
+    &#34;&#34;&#34;Migrate an application to another destination/server.&#34;&#34;&#34;
+    body = {&#34;destination_uuid&#34;: destination_uuid, &#34;migrate_volumes&#34;: migrate_volumes}
+    return self._post(f&#34;/applications/{uuid}/migrate&#34;, json=body)</code></pre>
+</details>
+<div class="desc"><p>Migrate an application to another destination/server.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.move"><code class="name flex">
+<span>def <span class="ident">move</span></span>(<span>self, uuid: str, environment_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[dict]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def move(self, uuid: str, environment_uuid: str) -&gt; CoolipyAPIResponse[dict]:
+    &#34;&#34;&#34;Move an application to another environment.&#34;&#34;&#34;
+    return self._post(
+        f&#34;/applications/{uuid}/move&#34;,
+        json={&#34;environment_uuid&#34;: environment_uuid},
+        response_model=dict,
+    )</code></pre>
+</details>
+<div class="desc"><p>Move an application to another environment.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.restart"><code class="name flex">
+<span>def <span class="ident">restart</span></span>(<span>self, uuid: str) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.DeploymentQueuedResponse" href="../models/common.html#coolipy.models.common.DeploymentQueuedResponse">DeploymentQueuedResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def restart(self, uuid: str) -&gt; CoolipyAPIResponse[DeploymentQueuedResponse]:
+    &#34;&#34;&#34;Restart an application.&#34;&#34;&#34;
+    return self._post(f&#34;/applications/{uuid}/restart&#34;, response_model=DeploymentQueuedResponse)</code></pre>
+</details>
+<div class="desc"><p>Restart an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.rollback"><code class="name flex">
+<span>def <span class="ident">rollback</span></span>(<span>self, uuid: str, commit: str) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.DeploymentQueuedResponse" href="../models/common.html#coolipy.models.common.DeploymentQueuedResponse">DeploymentQueuedResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rollback(self, uuid: str, commit: str) -&gt; CoolipyAPIResponse[DeploymentQueuedResponse]:
+    &#34;&#34;&#34;Queue a rollback deployment for an application.&#34;&#34;&#34;
+    return self._post(
+        f&#34;/applications/{uuid}/rollback&#34;,
+        json={&#34;commit&#34;: commit},
+        response_model=DeploymentQueuedResponse,
+    )</code></pre>
+</details>
+<div class="desc"><p>Queue a rollback deployment for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.rollback_images"><code class="name flex">
+<span>def <span class="ident">rollback_images</span></span>(<span>self, uuid: str) ‑> coolipy._response.CoolipyAPIResponse[dict]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rollback_images(self, uuid: str) -&gt; CoolipyAPIResponse[dict]:
+    &#34;&#34;&#34;List available rollback images for an application.&#34;&#34;&#34;
+    return self._get(f&#34;/applications/{uuid}/rollback-images&#34;, response_model=dict)</code></pre>
+</details>
+<div class="desc"><p>List available rollback images for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.run_storage_backup"><code class="name flex">
+<span>def <span class="ident">run_storage_backup</span></span>(<span>self, uuid: str, storage_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.MessageResponse" href="../models/common.html#coolipy.models.common.MessageResponse">MessageResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run_storage_backup(
+    self, uuid: str, storage_uuid: str
+) -&gt; CoolipyAPIResponse[MessageResponse]:
+    &#34;&#34;&#34;Run a storage backup now.&#34;&#34;&#34;
+    return self._post(
+        f&#34;/applications/{uuid}/storages/{storage_uuid}/backups/run&#34;,
+        response_model=MessageResponse,
+    )</code></pre>
+</details>
+<div class="desc"><p>Run a storage backup now.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.scheduled_task_executions"><code class="name flex">
+<span>def <span class="ident">scheduled_task_executions</span></span>(<span>self, uuid: str, task_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[list[<a title="coolipy.models.common.ScheduledTaskExecution" href="../models/common.html#coolipy.models.common.ScheduledTaskExecution">ScheduledTaskExecution</a>]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def scheduled_task_executions(
+    self, uuid: str, task_uuid: str
+) -&gt; CoolipyAPIResponse[ScheduledTaskExecutionList]:
+    &#34;&#34;&#34;List executions of a scheduled task.&#34;&#34;&#34;
+    return self._get(
+        f&#34;/applications/{uuid}/scheduled-tasks/{task_uuid}/executions&#34;,
+        response_model=list[ScheduledTaskExecution],
+    )</code></pre>
+</details>
+<div class="desc"><p>List executions of a scheduled task.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.scheduled_tasks"><code class="name flex">
+<span>def <span class="ident">scheduled_tasks</span></span>(<span>self, uuid: str) ‑> coolipy._response.CoolipyAPIResponse[list[<a title="coolipy.models.common.ScheduledTask" href="../models/common.html#coolipy.models.common.ScheduledTask">ScheduledTask</a>]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def scheduled_tasks(self, uuid: str) -&gt; CoolipyAPIResponse[ScheduledTaskList]:
+    &#34;&#34;&#34;List scheduled tasks for an application.&#34;&#34;&#34;
+    return self._get(
+        f&#34;/applications/{uuid}/scheduled-tasks&#34;, response_model=list[ScheduledTask]
+    )</code></pre>
+</details>
+<div class="desc"><p>List scheduled tasks for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.start"><code class="name flex">
+<span>def <span class="ident">start</span></span>(<span>self, uuid: str, *, force: bool = False, instant_deploy: bool = False) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.DeploymentQueuedResponse" href="../models/common.html#coolipy.models.common.DeploymentQueuedResponse">DeploymentQueuedResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def start(
+    self, uuid: str, *, force: bool = False, instant_deploy: bool = False
+) -&gt; CoolipyAPIResponse[DeploymentQueuedResponse]:
+    &#34;&#34;&#34;Start an application.&#34;&#34;&#34;
+    params = {&#34;force&#34;: force, &#34;instant_deploy&#34;: instant_deploy}
+    return self._post(
+        f&#34;/applications/{uuid}/start&#34;, params=params, response_model=DeploymentQueuedResponse
+    )</code></pre>
+</details>
+<div class="desc"><p>Start an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.stop"><code class="name flex">
+<span>def <span class="ident">stop</span></span>(<span>self, uuid: str, *, docker_cleanup: bool = True) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.MessageResponse" href="../models/common.html#coolipy.models.common.MessageResponse">MessageResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def stop(
+    self, uuid: str, *, docker_cleanup: bool = True
+) -&gt; CoolipyAPIResponse[MessageResponse]:
+    &#34;&#34;&#34;Stop an application.&#34;&#34;&#34;
+    return self._post(
+        f&#34;/applications/{uuid}/stop&#34;,
+        params={&#34;docker_cleanup&#34;: docker_cleanup},
+        response_model=MessageResponse,
+    )</code></pre>
+</details>
+<div class="desc"><p>Stop an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.storages"><code class="name flex">
+<span>def <span class="ident">storages</span></span>(<span>self, uuid: str) ‑> coolipy._response.CoolipyAPIResponse[dict]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def storages(self, uuid: str) -&gt; CoolipyAPIResponse[dict]:
+    &#34;&#34;&#34;List storages for an application.&#34;&#34;&#34;
+    return self._get(f&#34;/applications/{uuid}/storages&#34;, response_model=dict)</code></pre>
+</details>
+<div class="desc"><p>List storages for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.tags"><code class="name flex">
+<span>def <span class="ident">tags</span></span>(<span>self, uuid: str) ‑> coolipy._response.CoolipyAPIResponse[list[<a title="coolipy.models.common.Tag" href="../models/common.html#coolipy.models.common.Tag">Tag</a>]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def tags(self, uuid: str) -&gt; CoolipyAPIResponse[TagList]:
+    &#34;&#34;&#34;List tags for an application.&#34;&#34;&#34;
+    return self._get(f&#34;/applications/{uuid}/tags&#34;, response_model=list[Tag])</code></pre>
+</details>
+<div class="desc"><p>List tags for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.update"><code class="name flex">
+<span>def <span class="ident">update</span></span>(<span>self, uuid: str, model: ApplicationUpdateModel) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.UUIDResponse" href="../models/common.html#coolipy.models.common.UUIDResponse">UUIDResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update(self, uuid: str, model: ApplicationUpdateModel) -&gt; CoolipyAPIResponse[UUIDResponse]:
+    &#34;&#34;&#34;Update an application by UUID.&#34;&#34;&#34;
+    return self._patch(f&#34;/applications/{uuid}&#34;, json=_dump(model), response_model=UUIDResponse)</code></pre>
+</details>
+<div class="desc"><p>Update an application by UUID.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.update_env"><code class="name flex">
+<span>def <span class="ident">update_env</span></span>(<span>self, uuid: str, model: EnvironmentVariableUpdate) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.EnvironmentVariable" href="../models/common.html#coolipy.models.common.EnvironmentVariable">EnvironmentVariable</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_env(
+    self, uuid: str, model: EnvironmentVariableUpdate
+) -&gt; CoolipyAPIResponse[EnvironmentVariable]:
+    &#34;&#34;&#34;Update an environment variable for an application.&#34;&#34;&#34;
+    return self._patch(
+        f&#34;/applications/{uuid}/envs&#34;, json=_dump(model), response_model=EnvironmentVariable
+    )</code></pre>
+</details>
+<div class="desc"><p>Update an environment variable for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.update_scheduled_task"><code class="name flex">
+<span>def <span class="ident">update_scheduled_task</span></span>(<span>self, uuid: str, task_uuid: str, model: ScheduledTaskUpdate) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.ScheduledTask" href="../models/common.html#coolipy.models.common.ScheduledTask">ScheduledTask</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_scheduled_task(
+    self, uuid: str, task_uuid: str, model: ScheduledTaskUpdate
+) -&gt; CoolipyAPIResponse[ScheduledTask]:
+    &#34;&#34;&#34;Update a scheduled task by UUID.&#34;&#34;&#34;
+    return self._patch(
+        f&#34;/applications/{uuid}/scheduled-tasks/{task_uuid}&#34;,
+        json=_dump(model),
+        response_model=ScheduledTask,
+    )</code></pre>
+</details>
+<div class="desc"><p>Update a scheduled task by UUID.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.update_storage"><code class="name flex">
+<span>def <span class="ident">update_storage</span></span>(<span>self, uuid: str, model: StorageUpdate) ‑> coolipy._response.CoolipyAPIResponse[dict]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_storage(self, uuid: str, model: StorageUpdate) -&gt; CoolipyAPIResponse[dict]:
+    &#34;&#34;&#34;Update a storage for an application.&#34;&#34;&#34;
+    return self._patch(f&#34;/applications/{uuid}/storages&#34;, json=_dump(model), response_model=dict)</code></pre>
+</details>
+<div class="desc"><p>Update a storage for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.Applications.update_storage_backup"><code class="name flex">
+<span>def <span class="ident">update_storage_backup</span></span>(<span>self, uuid: str, storage_uuid: str, model: VolumeBackupScheduleRequest) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.VolumeBackupScheduleResponse" href="../models/common.html#coolipy.models.common.VolumeBackupScheduleResponse">VolumeBackupScheduleResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_storage_backup(
+    self, uuid: str, storage_uuid: str, model: VolumeBackupScheduleRequest
+) -&gt; CoolipyAPIResponse[VolumeBackupScheduleResponse]:
+    &#34;&#34;&#34;Schedule backups for a storage volume.&#34;&#34;&#34;
+    return self._put(
+        f&#34;/applications/{uuid}/storages/{storage_uuid}/backups&#34;,
+        json=_dump(model),
+        response_model=VolumeBackupScheduleResponse,
+    )</code></pre>
+</details>
+<div class="desc"><p>Schedule backups for a storage volume.</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications"><code class="flex name class">
+<span>class <span class="ident">AsyncApplications</span></span>
+<span>(</span><span>transport: AsyncTransport)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AsyncApplications(AsyncResourceBase):
+    &#34;&#34;&#34;Asynchronous client for Coolify applications.&#34;&#34;&#34;
+
+    async def list(self) -&gt; CoolipyAPIResponse[ApplicationList]:
+        &#34;&#34;&#34;List all applications.&#34;&#34;&#34;
+        return await self._get(&#34;/applications&#34;, response_model=list[ApplicationModel])
+
+    async def get(self, uuid: str) -&gt; CoolipyAPIResponse[ApplicationModel]:
+        &#34;&#34;&#34;Get an application by UUID.&#34;&#34;&#34;
+        return await self._get(f&#34;/applications/{uuid}&#34;, response_model=ApplicationModel)
+
+    async def create(self, model: Any) -&gt; CoolipyAPIResponse[UUIDResponse]:
+        &#34;&#34;&#34;Create an application from one of the supported create models.&#34;&#34;&#34;
+        path = _APPLICATION_CREATE_PATHS.get(type(model))
+        if path is None:
+            raise CoolipyValidationError(
+                f&#34;Unsupported application create model: {type(model).__name__}&#34;
+            )
+        return await self._post(path, json=_dump(model), response_model=UUIDResponse)
+
+    async def update(
+        self, uuid: str, model: ApplicationUpdateModel
+    ) -&gt; CoolipyAPIResponse[UUIDResponse]:
+        &#34;&#34;&#34;Update an application by UUID.&#34;&#34;&#34;
+        return await self._patch(
+            f&#34;/applications/{uuid}&#34;, json=_dump(model), response_model=UUIDResponse
+        )
+
+    async def delete(
+        self,
+        uuid: str,
+        *,
+        delete_configurations: bool = True,
+        delete_volumes: bool = True,
+        docker_cleanup: bool = True,
+        delete_connected_networks: bool = True,
+    ) -&gt; CoolipyAPIResponse[MessageResponse]:
+        &#34;&#34;&#34;Delete an application by UUID.&#34;&#34;&#34;
+        params = {
+            &#34;delete_configurations&#34;: delete_configurations,
+            &#34;delete_volumes&#34;: delete_volumes,
+            &#34;docker_cleanup&#34;: docker_cleanup,
+            &#34;delete_connected_networks&#34;: delete_connected_networks,
+        }
+        return await self._delete(
+            f&#34;/applications/{uuid}&#34;, params=params, response_model=MessageResponse
+        )
+
+    async def logs(
+        self, uuid: str, *, lines: int = 100, show_timestamps: bool = False
+    ) -&gt; CoolipyAPIResponse[Logs]:
+        &#34;&#34;&#34;Get application logs.&#34;&#34;&#34;
+        params = {&#34;lines&#34;: lines, &#34;show_timestamps&#34;: show_timestamps}
+        return await self._get(f&#34;/applications/{uuid}/logs&#34;, params=params, response_model=Logs)
+
+    async def envs(self, uuid: str) -&gt; CoolipyAPIResponse[EnvironmentVariableList]:
+        &#34;&#34;&#34;List environment variables for an application.&#34;&#34;&#34;
+        return await self._get(
+            f&#34;/applications/{uuid}/envs&#34;, response_model=list[EnvironmentVariable]
+        )
+
+    async def create_env(
+        self, uuid: str, model: EnvironmentVariableCreate
+    ) -&gt; CoolipyAPIResponse[UUIDResponse]:
+        &#34;&#34;&#34;Create an environment variable for an application.&#34;&#34;&#34;
+        return await self._post(
+            f&#34;/applications/{uuid}/envs&#34;, json=_dump(model), response_model=UUIDResponse
+        )
+
+    async def update_env(
+        self, uuid: str, model: EnvironmentVariableUpdate
+    ) -&gt; CoolipyAPIResponse[EnvironmentVariable]:
+        &#34;&#34;&#34;Update an environment variable for an application.&#34;&#34;&#34;
+        return await self._patch(
+            f&#34;/applications/{uuid}/envs&#34;, json=_dump(model), response_model=EnvironmentVariable
+        )
+
+    async def bulk_update_envs(
+        self, uuid: str, model: BulkEnvsUpdate
+    ) -&gt; CoolipyAPIResponse[EnvironmentVariableList]:
+        &#34;&#34;&#34;Bulk-update environment variables for an application.&#34;&#34;&#34;
+        return await self._patch(
+            f&#34;/applications/{uuid}/envs/bulk&#34;,
+            json=_dump(model),
+            response_model=list[EnvironmentVariable],
+        )
+
+    async def delete_env(self, uuid: str, env_uuid: str) -&gt; CoolipyAPIResponse[MessageResponse]:
+        &#34;&#34;&#34;Delete an environment variable by UUID.&#34;&#34;&#34;
+        return await self._delete(
+            f&#34;/applications/{uuid}/envs/{env_uuid}&#34;, response_model=MessageResponse
+        )
+
+    async def start(
+        self, uuid: str, *, force: bool = False, instant_deploy: bool = False
+    ) -&gt; CoolipyAPIResponse[DeploymentQueuedResponse]:
+        &#34;&#34;&#34;Start an application.&#34;&#34;&#34;
+        params = {&#34;force&#34;: force, &#34;instant_deploy&#34;: instant_deploy}
+        return await self._post(
+            f&#34;/applications/{uuid}/start&#34;, params=params, response_model=DeploymentQueuedResponse
+        )
+
+    async def stop(
+        self, uuid: str, *, docker_cleanup: bool = True
+    ) -&gt; CoolipyAPIResponse[MessageResponse]:
+        &#34;&#34;&#34;Stop an application.&#34;&#34;&#34;
+        return await self._post(
+            f&#34;/applications/{uuid}/stop&#34;,
+            params={&#34;docker_cleanup&#34;: docker_cleanup},
+            response_model=MessageResponse,
+        )
+
+    async def restart(self, uuid: str) -&gt; CoolipyAPIResponse[DeploymentQueuedResponse]:
+        &#34;&#34;&#34;Restart an application.&#34;&#34;&#34;
+        return await self._post(
+            f&#34;/applications/{uuid}/restart&#34;, response_model=DeploymentQueuedResponse
+        )
+
+    async def move(self, uuid: str, environment_uuid: str) -&gt; CoolipyAPIResponse[dict]:
+        &#34;&#34;&#34;Move an application to another environment.&#34;&#34;&#34;
+        return await self._post(
+            f&#34;/applications/{uuid}/move&#34;,
+            json={&#34;environment_uuid&#34;: environment_uuid},
+            response_model=dict,
+        )
+
+    async def migrate(
+        self, uuid: str, destination_uuid: str, *, migrate_volumes: bool = True
+    ) -&gt; CoolipyAPIResponse[Any]:
+        &#34;&#34;&#34;Migrate an application to another destination/server.&#34;&#34;&#34;
+        body = {&#34;destination_uuid&#34;: destination_uuid, &#34;migrate_volumes&#34;: migrate_volumes}
+        return await self._post(f&#34;/applications/{uuid}/migrate&#34;, json=body)
+
+    async def storages(self, uuid: str) -&gt; CoolipyAPIResponse[dict]:
+        &#34;&#34;&#34;List storages for an application.&#34;&#34;&#34;
+        return await self._get(f&#34;/applications/{uuid}/storages&#34;, response_model=dict)
+
+    async def create_storage(self, uuid: str, model: StorageCreate) -&gt; CoolipyAPIResponse[dict]:
+        &#34;&#34;&#34;Create a storage for an application.&#34;&#34;&#34;
+        return await self._post(
+            f&#34;/applications/{uuid}/storages&#34;, json=_dump(model), response_model=dict
+        )
+
+    async def update_storage(self, uuid: str, model: StorageUpdate) -&gt; CoolipyAPIResponse[dict]:
+        &#34;&#34;&#34;Update a storage for an application.&#34;&#34;&#34;
+        return await self._patch(
+            f&#34;/applications/{uuid}/storages&#34;, json=_dump(model), response_model=dict
+        )
+
+    async def delete_storage(
+        self, uuid: str, storage_uuid: str
+    ) -&gt; CoolipyAPIResponse[MessageResponse]:
+        &#34;&#34;&#34;Delete a storage by UUID.&#34;&#34;&#34;
+        return await self._delete(
+            f&#34;/applications/{uuid}/storages/{storage_uuid}&#34;, response_model=MessageResponse
+        )
+
+    async def delete_preview(
+        self, uuid: str, pull_request_id: int
+    ) -&gt; CoolipyAPIResponse[MessageResponse]:
+        &#34;&#34;&#34;Delete a preview deployment by pull request ID.&#34;&#34;&#34;
+        return await self._delete(
+            f&#34;/applications/{uuid}/previews/{pull_request_id}&#34;, response_model=MessageResponse
+        )
+
+    async def tags(self, uuid: str) -&gt; CoolipyAPIResponse[TagList]:
+        &#34;&#34;&#34;List tags for an application.&#34;&#34;&#34;
+        return await self._get(f&#34;/applications/{uuid}/tags&#34;, response_model=list[Tag])
+
+    async def add_tags(self, uuid: str, model: TagsCreate) -&gt; CoolipyAPIResponse[TagList]:
+        &#34;&#34;&#34;Add one or more tags to an application.&#34;&#34;&#34;
+        return await self._post(
+            f&#34;/applications/{uuid}/tags&#34;, json=_dump(model), response_model=list[Tag]
+        )
+
+    async def delete_tag(self, uuid: str, tag_uuid: str) -&gt; CoolipyAPIResponse[Any]:
+        &#34;&#34;&#34;Remove a tag from an application.&#34;&#34;&#34;
+        return await self._delete(f&#34;/applications/{uuid}/tags/{tag_uuid}&#34;)
+
+    async def clone(
+        self,
+        uuid: str,
+        destination_uuid: str,
+        *,
+        name: str | None = None,
+        clone_volumes: bool = False,
+    ) -&gt; CoolipyAPIResponse[dict]:
+        &#34;&#34;&#34;Clone an application into a destination.&#34;&#34;&#34;
+        body = {&#34;destination_uuid&#34;: destination_uuid, &#34;name&#34;: name, &#34;clone_volumes&#34;: clone_volumes}
+        return await self._post(f&#34;/applications/{uuid}/clone&#34;, json=body, response_model=dict)
+
+    async def rollback_images(self, uuid: str) -&gt; CoolipyAPIResponse[dict]:
+        &#34;&#34;&#34;List available rollback images for an application.&#34;&#34;&#34;
+        return await self._get(f&#34;/applications/{uuid}/rollback-images&#34;, response_model=dict)
+
+    async def rollback(
+        self, uuid: str, commit: str
+    ) -&gt; CoolipyAPIResponse[DeploymentQueuedResponse]:
+        &#34;&#34;&#34;Queue a rollback deployment for an application.&#34;&#34;&#34;
+        return await self._post(
+            f&#34;/applications/{uuid}/rollback&#34;,
+            json={&#34;commit&#34;: commit},
+            response_model=DeploymentQueuedResponse,
+        )
+
+    async def destinations(self, uuid: str) -&gt; CoolipyAPIResponse[Any]:
+        &#34;&#34;&#34;List destinations for an application.&#34;&#34;&#34;
+        return await self._get(f&#34;/applications/{uuid}/destinations&#34;)
+
+    async def add_destination(self, uuid: str, destination_uuid: str) -&gt; CoolipyAPIResponse[Any]:
+        &#34;&#34;&#34;Attach an additional destination to an application.&#34;&#34;&#34;
+        return await self._post(
+            f&#34;/applications/{uuid}/destinations&#34;, json={&#34;destination_uuid&#34;: destination_uuid}
+        )
+
+    async def delete_destination(self, uuid: str, destination_uuid: str) -&gt; CoolipyAPIResponse[Any]:
+        &#34;&#34;&#34;Detach an additional destination from an application.&#34;&#34;&#34;
+        return await self._delete(f&#34;/applications/{uuid}/destinations/{destination_uuid}&#34;)
+
+    async def scheduled_tasks(self, uuid: str) -&gt; CoolipyAPIResponse[ScheduledTaskList]:
+        &#34;&#34;&#34;List scheduled tasks for an application.&#34;&#34;&#34;
+        return await self._get(
+            f&#34;/applications/{uuid}/scheduled-tasks&#34;, response_model=list[ScheduledTask]
+        )
+
+    async def create_scheduled_task(
+        self, uuid: str, model: ScheduledTaskCreate
+    ) -&gt; CoolipyAPIResponse[ScheduledTask]:
+        &#34;&#34;&#34;Create a scheduled task for an application.&#34;&#34;&#34;
+        return await self._post(
+            f&#34;/applications/{uuid}/scheduled-tasks&#34;, json=_dump(model), response_model=ScheduledTask
+        )
+
+    async def update_scheduled_task(
+        self, uuid: str, task_uuid: str, model: ScheduledTaskUpdate
+    ) -&gt; CoolipyAPIResponse[ScheduledTask]:
+        &#34;&#34;&#34;Update a scheduled task by UUID.&#34;&#34;&#34;
+        return await self._patch(
+            f&#34;/applications/{uuid}/scheduled-tasks/{task_uuid}&#34;,
+            json=_dump(model),
+            response_model=ScheduledTask,
+        )
+
+    async def delete_scheduled_task(
+        self, uuid: str, task_uuid: str
+    ) -&gt; CoolipyAPIResponse[MessageResponse]:
+        &#34;&#34;&#34;Delete a scheduled task by UUID.&#34;&#34;&#34;
+        return await self._delete(
+            f&#34;/applications/{uuid}/scheduled-tasks/{task_uuid}&#34;, response_model=MessageResponse
+        )
+
+    async def scheduled_task_executions(
+        self, uuid: str, task_uuid: str
+    ) -&gt; CoolipyAPIResponse[ScheduledTaskExecutionList]:
+        &#34;&#34;&#34;List executions of a scheduled task.&#34;&#34;&#34;
+        return await self._get(
+            f&#34;/applications/{uuid}/scheduled-tasks/{task_uuid}/executions&#34;,
+            response_model=list[ScheduledTaskExecution],
+        )
+
+    async def execute_scheduled_task(
+        self, uuid: str, task_uuid: str
+    ) -&gt; CoolipyAPIResponse[MessageResponse]:
+        &#34;&#34;&#34;Execute a scheduled task now.&#34;&#34;&#34;
+        return await self._post(
+            f&#34;/applications/{uuid}/scheduled-tasks/{task_uuid}/execute&#34;,
+            response_model=MessageResponse,
+        )
+
+    async def update_storage_backup(
+        self, uuid: str, storage_uuid: str, model: VolumeBackupScheduleRequest
+    ) -&gt; CoolipyAPIResponse[VolumeBackupScheduleResponse]:
+        &#34;&#34;&#34;Schedule backups for a storage volume.&#34;&#34;&#34;
+        return await self._put(
+            f&#34;/applications/{uuid}/storages/{storage_uuid}/backups&#34;,
+            json=_dump(model),
+            response_model=VolumeBackupScheduleResponse,
+        )
+
+    async def delete_storage_backup(
+        self, uuid: str, storage_uuid: str
+    ) -&gt; CoolipyAPIResponse[MessageResponse]:
+        &#34;&#34;&#34;Remove the backup schedule for a storage volume.&#34;&#34;&#34;
+        return await self._delete(
+            f&#34;/applications/{uuid}/storages/{storage_uuid}/backups&#34;, response_model=MessageResponse
+        )
+
+    async def run_storage_backup(
+        self, uuid: str, storage_uuid: str
+    ) -&gt; CoolipyAPIResponse[MessageResponse]:
+        &#34;&#34;&#34;Run a storage backup now.&#34;&#34;&#34;
+        return await self._post(
+            f&#34;/applications/{uuid}/storages/{storage_uuid}/backups/run&#34;,
+            response_model=MessageResponse,
+        )</code></pre>
+</details>
+<div class="desc"><p>Asynchronous client for Coolify applications.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>coolipy._base.AsyncResourceBase</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="coolipy.resources.applications.AsyncApplications.add_destination"><code class="name flex">
+<span>async def <span class="ident">add_destination</span></span>(<span>self, uuid: str, destination_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[typing.Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def add_destination(self, uuid: str, destination_uuid: str) -&gt; CoolipyAPIResponse[Any]:
+    &#34;&#34;&#34;Attach an additional destination to an application.&#34;&#34;&#34;
+    return await self._post(
+        f&#34;/applications/{uuid}/destinations&#34;, json={&#34;destination_uuid&#34;: destination_uuid}
+    )</code></pre>
+</details>
+<div class="desc"><p>Attach an additional destination to an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.add_tags"><code class="name flex">
+<span>async def <span class="ident">add_tags</span></span>(<span>self, uuid: str, model: TagsCreate) ‑> coolipy._response.CoolipyAPIResponse[list[<a title="coolipy.models.common.Tag" href="../models/common.html#coolipy.models.common.Tag">Tag</a>]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def add_tags(self, uuid: str, model: TagsCreate) -&gt; CoolipyAPIResponse[TagList]:
+    &#34;&#34;&#34;Add one or more tags to an application.&#34;&#34;&#34;
+    return await self._post(
+        f&#34;/applications/{uuid}/tags&#34;, json=_dump(model), response_model=list[Tag]
+    )</code></pre>
+</details>
+<div class="desc"><p>Add one or more tags to an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.bulk_update_envs"><code class="name flex">
+<span>async def <span class="ident">bulk_update_envs</span></span>(<span>self, uuid: str, model: BulkEnvsUpdate) ‑> coolipy._response.CoolipyAPIResponse[list[<a title="coolipy.models.common.EnvironmentVariable" href="../models/common.html#coolipy.models.common.EnvironmentVariable">EnvironmentVariable</a>]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def bulk_update_envs(
+    self, uuid: str, model: BulkEnvsUpdate
+) -&gt; CoolipyAPIResponse[EnvironmentVariableList]:
+    &#34;&#34;&#34;Bulk-update environment variables for an application.&#34;&#34;&#34;
+    return await self._patch(
+        f&#34;/applications/{uuid}/envs/bulk&#34;,
+        json=_dump(model),
+        response_model=list[EnvironmentVariable],
+    )</code></pre>
+</details>
+<div class="desc"><p>Bulk-update environment variables for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.clone"><code class="name flex">
+<span>async def <span class="ident">clone</span></span>(<span>self,<br>uuid: str,<br>destination_uuid: str,<br>*,<br>name: str | None = None,<br>clone_volumes: bool = False) ‑> coolipy._response.CoolipyAPIResponse[dict]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def clone(
+    self,
+    uuid: str,
+    destination_uuid: str,
+    *,
+    name: str | None = None,
+    clone_volumes: bool = False,
+) -&gt; CoolipyAPIResponse[dict]:
+    &#34;&#34;&#34;Clone an application into a destination.&#34;&#34;&#34;
+    body = {&#34;destination_uuid&#34;: destination_uuid, &#34;name&#34;: name, &#34;clone_volumes&#34;: clone_volumes}
+    return await self._post(f&#34;/applications/{uuid}/clone&#34;, json=body, response_model=dict)</code></pre>
+</details>
+<div class="desc"><p>Clone an application into a destination.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.create"><code class="name flex">
+<span>async def <span class="ident">create</span></span>(<span>self, model: Any) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.UUIDResponse" href="../models/common.html#coolipy.models.common.UUIDResponse">UUIDResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create(self, model: Any) -&gt; CoolipyAPIResponse[UUIDResponse]:
+    &#34;&#34;&#34;Create an application from one of the supported create models.&#34;&#34;&#34;
+    path = _APPLICATION_CREATE_PATHS.get(type(model))
+    if path is None:
+        raise CoolipyValidationError(
+            f&#34;Unsupported application create model: {type(model).__name__}&#34;
+        )
+    return await self._post(path, json=_dump(model), response_model=UUIDResponse)</code></pre>
+</details>
+<div class="desc"><p>Create an application from one of the supported create models.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.create_env"><code class="name flex">
+<span>async def <span class="ident">create_env</span></span>(<span>self, uuid: str, model: EnvironmentVariableCreate) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.UUIDResponse" href="../models/common.html#coolipy.models.common.UUIDResponse">UUIDResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_env(
+    self, uuid: str, model: EnvironmentVariableCreate
+) -&gt; CoolipyAPIResponse[UUIDResponse]:
+    &#34;&#34;&#34;Create an environment variable for an application.&#34;&#34;&#34;
+    return await self._post(
+        f&#34;/applications/{uuid}/envs&#34;, json=_dump(model), response_model=UUIDResponse
+    )</code></pre>
+</details>
+<div class="desc"><p>Create an environment variable for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.create_scheduled_task"><code class="name flex">
+<span>async def <span class="ident">create_scheduled_task</span></span>(<span>self, uuid: str, model: ScheduledTaskCreate) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.ScheduledTask" href="../models/common.html#coolipy.models.common.ScheduledTask">ScheduledTask</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_scheduled_task(
+    self, uuid: str, model: ScheduledTaskCreate
+) -&gt; CoolipyAPIResponse[ScheduledTask]:
+    &#34;&#34;&#34;Create a scheduled task for an application.&#34;&#34;&#34;
+    return await self._post(
+        f&#34;/applications/{uuid}/scheduled-tasks&#34;, json=_dump(model), response_model=ScheduledTask
+    )</code></pre>
+</details>
+<div class="desc"><p>Create a scheduled task for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.create_storage"><code class="name flex">
+<span>async def <span class="ident">create_storage</span></span>(<span>self, uuid: str, model: StorageCreate) ‑> coolipy._response.CoolipyAPIResponse[dict]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create_storage(self, uuid: str, model: StorageCreate) -&gt; CoolipyAPIResponse[dict]:
+    &#34;&#34;&#34;Create a storage for an application.&#34;&#34;&#34;
+    return await self._post(
+        f&#34;/applications/{uuid}/storages&#34;, json=_dump(model), response_model=dict
+    )</code></pre>
+</details>
+<div class="desc"><p>Create a storage for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.delete"><code class="name flex">
+<span>async def <span class="ident">delete</span></span>(<span>self,<br>uuid: str,<br>*,<br>delete_configurations: bool = True,<br>delete_volumes: bool = True,<br>docker_cleanup: bool = True,<br>delete_connected_networks: bool = True) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.MessageResponse" href="../models/common.html#coolipy.models.common.MessageResponse">MessageResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def delete(
+    self,
+    uuid: str,
+    *,
+    delete_configurations: bool = True,
+    delete_volumes: bool = True,
+    docker_cleanup: bool = True,
+    delete_connected_networks: bool = True,
+) -&gt; CoolipyAPIResponse[MessageResponse]:
+    &#34;&#34;&#34;Delete an application by UUID.&#34;&#34;&#34;
+    params = {
+        &#34;delete_configurations&#34;: delete_configurations,
+        &#34;delete_volumes&#34;: delete_volumes,
+        &#34;docker_cleanup&#34;: docker_cleanup,
+        &#34;delete_connected_networks&#34;: delete_connected_networks,
+    }
+    return await self._delete(
+        f&#34;/applications/{uuid}&#34;, params=params, response_model=MessageResponse
+    )</code></pre>
+</details>
+<div class="desc"><p>Delete an application by UUID.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.delete_destination"><code class="name flex">
+<span>async def <span class="ident">delete_destination</span></span>(<span>self, uuid: str, destination_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[typing.Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def delete_destination(self, uuid: str, destination_uuid: str) -&gt; CoolipyAPIResponse[Any]:
+    &#34;&#34;&#34;Detach an additional destination from an application.&#34;&#34;&#34;
+    return await self._delete(f&#34;/applications/{uuid}/destinations/{destination_uuid}&#34;)</code></pre>
+</details>
+<div class="desc"><p>Detach an additional destination from an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.delete_env"><code class="name flex">
+<span>async def <span class="ident">delete_env</span></span>(<span>self, uuid: str, env_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.MessageResponse" href="../models/common.html#coolipy.models.common.MessageResponse">MessageResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def delete_env(self, uuid: str, env_uuid: str) -&gt; CoolipyAPIResponse[MessageResponse]:
+    &#34;&#34;&#34;Delete an environment variable by UUID.&#34;&#34;&#34;
+    return await self._delete(
+        f&#34;/applications/{uuid}/envs/{env_uuid}&#34;, response_model=MessageResponse
+    )</code></pre>
+</details>
+<div class="desc"><p>Delete an environment variable by UUID.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.delete_preview"><code class="name flex">
+<span>async def <span class="ident">delete_preview</span></span>(<span>self, uuid: str, pull_request_id: int) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.MessageResponse" href="../models/common.html#coolipy.models.common.MessageResponse">MessageResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def delete_preview(
+    self, uuid: str, pull_request_id: int
+) -&gt; CoolipyAPIResponse[MessageResponse]:
+    &#34;&#34;&#34;Delete a preview deployment by pull request ID.&#34;&#34;&#34;
+    return await self._delete(
+        f&#34;/applications/{uuid}/previews/{pull_request_id}&#34;, response_model=MessageResponse
+    )</code></pre>
+</details>
+<div class="desc"><p>Delete a preview deployment by pull request ID.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.delete_scheduled_task"><code class="name flex">
+<span>async def <span class="ident">delete_scheduled_task</span></span>(<span>self, uuid: str, task_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.MessageResponse" href="../models/common.html#coolipy.models.common.MessageResponse">MessageResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def delete_scheduled_task(
+    self, uuid: str, task_uuid: str
+) -&gt; CoolipyAPIResponse[MessageResponse]:
+    &#34;&#34;&#34;Delete a scheduled task by UUID.&#34;&#34;&#34;
+    return await self._delete(
+        f&#34;/applications/{uuid}/scheduled-tasks/{task_uuid}&#34;, response_model=MessageResponse
+    )</code></pre>
+</details>
+<div class="desc"><p>Delete a scheduled task by UUID.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.delete_storage"><code class="name flex">
+<span>async def <span class="ident">delete_storage</span></span>(<span>self, uuid: str, storage_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.MessageResponse" href="../models/common.html#coolipy.models.common.MessageResponse">MessageResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def delete_storage(
+    self, uuid: str, storage_uuid: str
+) -&gt; CoolipyAPIResponse[MessageResponse]:
+    &#34;&#34;&#34;Delete a storage by UUID.&#34;&#34;&#34;
+    return await self._delete(
+        f&#34;/applications/{uuid}/storages/{storage_uuid}&#34;, response_model=MessageResponse
+    )</code></pre>
+</details>
+<div class="desc"><p>Delete a storage by UUID.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.delete_storage_backup"><code class="name flex">
+<span>async def <span class="ident">delete_storage_backup</span></span>(<span>self, uuid: str, storage_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.MessageResponse" href="../models/common.html#coolipy.models.common.MessageResponse">MessageResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def delete_storage_backup(
+    self, uuid: str, storage_uuid: str
+) -&gt; CoolipyAPIResponse[MessageResponse]:
+    &#34;&#34;&#34;Remove the backup schedule for a storage volume.&#34;&#34;&#34;
+    return await self._delete(
+        f&#34;/applications/{uuid}/storages/{storage_uuid}/backups&#34;, response_model=MessageResponse
+    )</code></pre>
+</details>
+<div class="desc"><p>Remove the backup schedule for a storage volume.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.delete_tag"><code class="name flex">
+<span>async def <span class="ident">delete_tag</span></span>(<span>self, uuid: str, tag_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[typing.Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def delete_tag(self, uuid: str, tag_uuid: str) -&gt; CoolipyAPIResponse[Any]:
+    &#34;&#34;&#34;Remove a tag from an application.&#34;&#34;&#34;
+    return await self._delete(f&#34;/applications/{uuid}/tags/{tag_uuid}&#34;)</code></pre>
+</details>
+<div class="desc"><p>Remove a tag from an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.destinations"><code class="name flex">
+<span>async def <span class="ident">destinations</span></span>(<span>self, uuid: str) ‑> coolipy._response.CoolipyAPIResponse[typing.Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def destinations(self, uuid: str) -&gt; CoolipyAPIResponse[Any]:
+    &#34;&#34;&#34;List destinations for an application.&#34;&#34;&#34;
+    return await self._get(f&#34;/applications/{uuid}/destinations&#34;)</code></pre>
+</details>
+<div class="desc"><p>List destinations for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.envs"><code class="name flex">
+<span>async def <span class="ident">envs</span></span>(<span>self, uuid: str) ‑> coolipy._response.CoolipyAPIResponse[list[<a title="coolipy.models.common.EnvironmentVariable" href="../models/common.html#coolipy.models.common.EnvironmentVariable">EnvironmentVariable</a>]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def envs(self, uuid: str) -&gt; CoolipyAPIResponse[EnvironmentVariableList]:
+    &#34;&#34;&#34;List environment variables for an application.&#34;&#34;&#34;
+    return await self._get(
+        f&#34;/applications/{uuid}/envs&#34;, response_model=list[EnvironmentVariable]
+    )</code></pre>
+</details>
+<div class="desc"><p>List environment variables for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.execute_scheduled_task"><code class="name flex">
+<span>async def <span class="ident">execute_scheduled_task</span></span>(<span>self, uuid: str, task_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.MessageResponse" href="../models/common.html#coolipy.models.common.MessageResponse">MessageResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def execute_scheduled_task(
+    self, uuid: str, task_uuid: str
+) -&gt; CoolipyAPIResponse[MessageResponse]:
+    &#34;&#34;&#34;Execute a scheduled task now.&#34;&#34;&#34;
+    return await self._post(
+        f&#34;/applications/{uuid}/scheduled-tasks/{task_uuid}/execute&#34;,
+        response_model=MessageResponse,
+    )</code></pre>
+</details>
+<div class="desc"><p>Execute a scheduled task now.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.get"><code class="name flex">
+<span>async def <span class="ident">get</span></span>(<span>self, uuid: str) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.applications.ApplicationModel" href="../models/applications.html#coolipy.models.applications.ApplicationModel">ApplicationModel</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def get(self, uuid: str) -&gt; CoolipyAPIResponse[ApplicationModel]:
+    &#34;&#34;&#34;Get an application by UUID.&#34;&#34;&#34;
+    return await self._get(f&#34;/applications/{uuid}&#34;, response_model=ApplicationModel)</code></pre>
+</details>
+<div class="desc"><p>Get an application by UUID.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.list"><code class="name flex">
+<span>async def <span class="ident">list</span></span>(<span>self) ‑> coolipy._response.CoolipyAPIResponse[list[<a title="coolipy.models.applications.ApplicationModel" href="../models/applications.html#coolipy.models.applications.ApplicationModel">ApplicationModel</a>]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def list(self) -&gt; CoolipyAPIResponse[ApplicationList]:
+    &#34;&#34;&#34;List all applications.&#34;&#34;&#34;
+    return await self._get(&#34;/applications&#34;, response_model=list[ApplicationModel])</code></pre>
+</details>
+<div class="desc"><p>List all applications.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.logs"><code class="name flex">
+<span>async def <span class="ident">logs</span></span>(<span>self, uuid: str, *, lines: int = 100, show_timestamps: bool = False) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.Logs" href="../models/common.html#coolipy.models.common.Logs">Logs</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def logs(
+    self, uuid: str, *, lines: int = 100, show_timestamps: bool = False
+) -&gt; CoolipyAPIResponse[Logs]:
+    &#34;&#34;&#34;Get application logs.&#34;&#34;&#34;
+    params = {&#34;lines&#34;: lines, &#34;show_timestamps&#34;: show_timestamps}
+    return await self._get(f&#34;/applications/{uuid}/logs&#34;, params=params, response_model=Logs)</code></pre>
+</details>
+<div class="desc"><p>Get application logs.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.migrate"><code class="name flex">
+<span>async def <span class="ident">migrate</span></span>(<span>self, uuid: str, destination_uuid: str, *, migrate_volumes: bool = True) ‑> coolipy._response.CoolipyAPIResponse[typing.Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def migrate(
+    self, uuid: str, destination_uuid: str, *, migrate_volumes: bool = True
+) -&gt; CoolipyAPIResponse[Any]:
+    &#34;&#34;&#34;Migrate an application to another destination/server.&#34;&#34;&#34;
+    body = {&#34;destination_uuid&#34;: destination_uuid, &#34;migrate_volumes&#34;: migrate_volumes}
+    return await self._post(f&#34;/applications/{uuid}/migrate&#34;, json=body)</code></pre>
+</details>
+<div class="desc"><p>Migrate an application to another destination/server.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.move"><code class="name flex">
+<span>async def <span class="ident">move</span></span>(<span>self, uuid: str, environment_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[dict]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def move(self, uuid: str, environment_uuid: str) -&gt; CoolipyAPIResponse[dict]:
+    &#34;&#34;&#34;Move an application to another environment.&#34;&#34;&#34;
+    return await self._post(
+        f&#34;/applications/{uuid}/move&#34;,
+        json={&#34;environment_uuid&#34;: environment_uuid},
+        response_model=dict,
+    )</code></pre>
+</details>
+<div class="desc"><p>Move an application to another environment.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.restart"><code class="name flex">
+<span>async def <span class="ident">restart</span></span>(<span>self, uuid: str) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.DeploymentQueuedResponse" href="../models/common.html#coolipy.models.common.DeploymentQueuedResponse">DeploymentQueuedResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def restart(self, uuid: str) -&gt; CoolipyAPIResponse[DeploymentQueuedResponse]:
+    &#34;&#34;&#34;Restart an application.&#34;&#34;&#34;
+    return await self._post(
+        f&#34;/applications/{uuid}/restart&#34;, response_model=DeploymentQueuedResponse
+    )</code></pre>
+</details>
+<div class="desc"><p>Restart an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.rollback"><code class="name flex">
+<span>async def <span class="ident">rollback</span></span>(<span>self, uuid: str, commit: str) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.DeploymentQueuedResponse" href="../models/common.html#coolipy.models.common.DeploymentQueuedResponse">DeploymentQueuedResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def rollback(
+    self, uuid: str, commit: str
+) -&gt; CoolipyAPIResponse[DeploymentQueuedResponse]:
+    &#34;&#34;&#34;Queue a rollback deployment for an application.&#34;&#34;&#34;
+    return await self._post(
+        f&#34;/applications/{uuid}/rollback&#34;,
+        json={&#34;commit&#34;: commit},
+        response_model=DeploymentQueuedResponse,
+    )</code></pre>
+</details>
+<div class="desc"><p>Queue a rollback deployment for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.rollback_images"><code class="name flex">
+<span>async def <span class="ident">rollback_images</span></span>(<span>self, uuid: str) ‑> coolipy._response.CoolipyAPIResponse[dict]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def rollback_images(self, uuid: str) -&gt; CoolipyAPIResponse[dict]:
+    &#34;&#34;&#34;List available rollback images for an application.&#34;&#34;&#34;
+    return await self._get(f&#34;/applications/{uuid}/rollback-images&#34;, response_model=dict)</code></pre>
+</details>
+<div class="desc"><p>List available rollback images for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.run_storage_backup"><code class="name flex">
+<span>async def <span class="ident">run_storage_backup</span></span>(<span>self, uuid: str, storage_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.MessageResponse" href="../models/common.html#coolipy.models.common.MessageResponse">MessageResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def run_storage_backup(
+    self, uuid: str, storage_uuid: str
+) -&gt; CoolipyAPIResponse[MessageResponse]:
+    &#34;&#34;&#34;Run a storage backup now.&#34;&#34;&#34;
+    return await self._post(
+        f&#34;/applications/{uuid}/storages/{storage_uuid}/backups/run&#34;,
+        response_model=MessageResponse,
+    )</code></pre>
+</details>
+<div class="desc"><p>Run a storage backup now.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.scheduled_task_executions"><code class="name flex">
+<span>async def <span class="ident">scheduled_task_executions</span></span>(<span>self, uuid: str, task_uuid: str) ‑> coolipy._response.CoolipyAPIResponse[list[<a title="coolipy.models.common.ScheduledTaskExecution" href="../models/common.html#coolipy.models.common.ScheduledTaskExecution">ScheduledTaskExecution</a>]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def scheduled_task_executions(
+    self, uuid: str, task_uuid: str
+) -&gt; CoolipyAPIResponse[ScheduledTaskExecutionList]:
+    &#34;&#34;&#34;List executions of a scheduled task.&#34;&#34;&#34;
+    return await self._get(
+        f&#34;/applications/{uuid}/scheduled-tasks/{task_uuid}/executions&#34;,
+        response_model=list[ScheduledTaskExecution],
+    )</code></pre>
+</details>
+<div class="desc"><p>List executions of a scheduled task.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.scheduled_tasks"><code class="name flex">
+<span>async def <span class="ident">scheduled_tasks</span></span>(<span>self, uuid: str) ‑> coolipy._response.CoolipyAPIResponse[list[<a title="coolipy.models.common.ScheduledTask" href="../models/common.html#coolipy.models.common.ScheduledTask">ScheduledTask</a>]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def scheduled_tasks(self, uuid: str) -&gt; CoolipyAPIResponse[ScheduledTaskList]:
+    &#34;&#34;&#34;List scheduled tasks for an application.&#34;&#34;&#34;
+    return await self._get(
+        f&#34;/applications/{uuid}/scheduled-tasks&#34;, response_model=list[ScheduledTask]
+    )</code></pre>
+</details>
+<div class="desc"><p>List scheduled tasks for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.start"><code class="name flex">
+<span>async def <span class="ident">start</span></span>(<span>self, uuid: str, *, force: bool = False, instant_deploy: bool = False) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.DeploymentQueuedResponse" href="../models/common.html#coolipy.models.common.DeploymentQueuedResponse">DeploymentQueuedResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def start(
+    self, uuid: str, *, force: bool = False, instant_deploy: bool = False
+) -&gt; CoolipyAPIResponse[DeploymentQueuedResponse]:
+    &#34;&#34;&#34;Start an application.&#34;&#34;&#34;
+    params = {&#34;force&#34;: force, &#34;instant_deploy&#34;: instant_deploy}
+    return await self._post(
+        f&#34;/applications/{uuid}/start&#34;, params=params, response_model=DeploymentQueuedResponse
+    )</code></pre>
+</details>
+<div class="desc"><p>Start an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.stop"><code class="name flex">
+<span>async def <span class="ident">stop</span></span>(<span>self, uuid: str, *, docker_cleanup: bool = True) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.MessageResponse" href="../models/common.html#coolipy.models.common.MessageResponse">MessageResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def stop(
+    self, uuid: str, *, docker_cleanup: bool = True
+) -&gt; CoolipyAPIResponse[MessageResponse]:
+    &#34;&#34;&#34;Stop an application.&#34;&#34;&#34;
+    return await self._post(
+        f&#34;/applications/{uuid}/stop&#34;,
+        params={&#34;docker_cleanup&#34;: docker_cleanup},
+        response_model=MessageResponse,
+    )</code></pre>
+</details>
+<div class="desc"><p>Stop an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.storages"><code class="name flex">
+<span>async def <span class="ident">storages</span></span>(<span>self, uuid: str) ‑> coolipy._response.CoolipyAPIResponse[dict]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def storages(self, uuid: str) -&gt; CoolipyAPIResponse[dict]:
+    &#34;&#34;&#34;List storages for an application.&#34;&#34;&#34;
+    return await self._get(f&#34;/applications/{uuid}/storages&#34;, response_model=dict)</code></pre>
+</details>
+<div class="desc"><p>List storages for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.tags"><code class="name flex">
+<span>async def <span class="ident">tags</span></span>(<span>self, uuid: str) ‑> coolipy._response.CoolipyAPIResponse[list[<a title="coolipy.models.common.Tag" href="../models/common.html#coolipy.models.common.Tag">Tag</a>]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def tags(self, uuid: str) -&gt; CoolipyAPIResponse[TagList]:
+    &#34;&#34;&#34;List tags for an application.&#34;&#34;&#34;
+    return await self._get(f&#34;/applications/{uuid}/tags&#34;, response_model=list[Tag])</code></pre>
+</details>
+<div class="desc"><p>List tags for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.update"><code class="name flex">
+<span>async def <span class="ident">update</span></span>(<span>self, uuid: str, model: ApplicationUpdateModel) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.UUIDResponse" href="../models/common.html#coolipy.models.common.UUIDResponse">UUIDResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def update(
+    self, uuid: str, model: ApplicationUpdateModel
+) -&gt; CoolipyAPIResponse[UUIDResponse]:
+    &#34;&#34;&#34;Update an application by UUID.&#34;&#34;&#34;
+    return await self._patch(
+        f&#34;/applications/{uuid}&#34;, json=_dump(model), response_model=UUIDResponse
+    )</code></pre>
+</details>
+<div class="desc"><p>Update an application by UUID.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.update_env"><code class="name flex">
+<span>async def <span class="ident">update_env</span></span>(<span>self, uuid: str, model: EnvironmentVariableUpdate) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.EnvironmentVariable" href="../models/common.html#coolipy.models.common.EnvironmentVariable">EnvironmentVariable</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def update_env(
+    self, uuid: str, model: EnvironmentVariableUpdate
+) -&gt; CoolipyAPIResponse[EnvironmentVariable]:
+    &#34;&#34;&#34;Update an environment variable for an application.&#34;&#34;&#34;
+    return await self._patch(
+        f&#34;/applications/{uuid}/envs&#34;, json=_dump(model), response_model=EnvironmentVariable
+    )</code></pre>
+</details>
+<div class="desc"><p>Update an environment variable for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.update_scheduled_task"><code class="name flex">
+<span>async def <span class="ident">update_scheduled_task</span></span>(<span>self, uuid: str, task_uuid: str, model: ScheduledTaskUpdate) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.ScheduledTask" href="../models/common.html#coolipy.models.common.ScheduledTask">ScheduledTask</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def update_scheduled_task(
+    self, uuid: str, task_uuid: str, model: ScheduledTaskUpdate
+) -&gt; CoolipyAPIResponse[ScheduledTask]:
+    &#34;&#34;&#34;Update a scheduled task by UUID.&#34;&#34;&#34;
+    return await self._patch(
+        f&#34;/applications/{uuid}/scheduled-tasks/{task_uuid}&#34;,
+        json=_dump(model),
+        response_model=ScheduledTask,
+    )</code></pre>
+</details>
+<div class="desc"><p>Update a scheduled task by UUID.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.update_storage"><code class="name flex">
+<span>async def <span class="ident">update_storage</span></span>(<span>self, uuid: str, model: StorageUpdate) ‑> coolipy._response.CoolipyAPIResponse[dict]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def update_storage(self, uuid: str, model: StorageUpdate) -&gt; CoolipyAPIResponse[dict]:
+    &#34;&#34;&#34;Update a storage for an application.&#34;&#34;&#34;
+    return await self._patch(
+        f&#34;/applications/{uuid}/storages&#34;, json=_dump(model), response_model=dict
+    )</code></pre>
+</details>
+<div class="desc"><p>Update a storage for an application.</p></div>
+</dd>
+<dt id="coolipy.resources.applications.AsyncApplications.update_storage_backup"><code class="name flex">
+<span>async def <span class="ident">update_storage_backup</span></span>(<span>self, uuid: str, storage_uuid: str, model: VolumeBackupScheduleRequest) ‑> coolipy._response.CoolipyAPIResponse[<a title="coolipy.models.common.VolumeBackupScheduleResponse" href="../models/common.html#coolipy.models.common.VolumeBackupScheduleResponse">VolumeBackupScheduleResponse</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def update_storage_backup(
+    self, uuid: str, storage_uuid: str, model: VolumeBackupScheduleRequest
+) -&gt; CoolipyAPIResponse[VolumeBackupScheduleResponse]:
+    &#34;&#34;&#34;Schedule backups for a storage volume.&#34;&#34;&#34;
+    return await self._put(
+        f&#34;/applications/{uuid}/storages/{storage_uuid}/backups&#34;,
+        json=_dump(model),
+        response_model=VolumeBackupScheduleResponse,
+    )</code></pre>
+</details>
+<div class="desc"><p>Schedule backups for a storage volume.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="coolipy.resources" href="index.html">coolipy.resources</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="coolipy.resources.applications.Applications" href="#coolipy.resources.applications.Applications">Applications</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.resources.applications.Applications.add_destination" href="#coolipy.resources.applications.Applications.add_destination">add_destination</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.add_tags" href="#coolipy.resources.applications.Applications.add_tags">add_tags</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.bulk_update_envs" href="#coolipy.resources.applications.Applications.bulk_update_envs">bulk_update_envs</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.clone" href="#coolipy.resources.applications.Applications.clone">clone</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.create" href="#coolipy.resources.applications.Applications.create">create</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.create_env" href="#coolipy.resources.applications.Applications.create_env">create_env</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.create_scheduled_task" href="#coolipy.resources.applications.Applications.create_scheduled_task">create_scheduled_task</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.create_storage" href="#coolipy.resources.applications.Applications.create_storage">create_storage</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.delete" href="#coolipy.resources.applications.Applications.delete">delete</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.delete_destination" href="#coolipy.resources.applications.Applications.delete_destination">delete_destination</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.delete_env" href="#coolipy.resources.applications.Applications.delete_env">delete_env</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.delete_preview" href="#coolipy.resources.applications.Applications.delete_preview">delete_preview</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.delete_scheduled_task" href="#coolipy.resources.applications.Applications.delete_scheduled_task">delete_scheduled_task</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.delete_storage" href="#coolipy.resources.applications.Applications.delete_storage">delete_storage</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.delete_storage_backup" href="#coolipy.resources.applications.Applications.delete_storage_backup">delete_storage_backup</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.delete_tag" href="#coolipy.resources.applications.Applications.delete_tag">delete_tag</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.destinations" href="#coolipy.resources.applications.Applications.destinations">destinations</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.envs" href="#coolipy.resources.applications.Applications.envs">envs</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.execute_scheduled_task" href="#coolipy.resources.applications.Applications.execute_scheduled_task">execute_scheduled_task</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.get" href="#coolipy.resources.applications.Applications.get">get</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.list" href="#coolipy.resources.applications.Applications.list">list</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.logs" href="#coolipy.resources.applications.Applications.logs">logs</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.migrate" href="#coolipy.resources.applications.Applications.migrate">migrate</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.move" href="#coolipy.resources.applications.Applications.move">move</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.restart" href="#coolipy.resources.applications.Applications.restart">restart</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.rollback" href="#coolipy.resources.applications.Applications.rollback">rollback</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.rollback_images" href="#coolipy.resources.applications.Applications.rollback_images">rollback_images</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.run_storage_backup" href="#coolipy.resources.applications.Applications.run_storage_backup">run_storage_backup</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.scheduled_task_executions" href="#coolipy.resources.applications.Applications.scheduled_task_executions">scheduled_task_executions</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.scheduled_tasks" href="#coolipy.resources.applications.Applications.scheduled_tasks">scheduled_tasks</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.start" href="#coolipy.resources.applications.Applications.start">start</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.stop" href="#coolipy.resources.applications.Applications.stop">stop</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.storages" href="#coolipy.resources.applications.Applications.storages">storages</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.tags" href="#coolipy.resources.applications.Applications.tags">tags</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.update" href="#coolipy.resources.applications.Applications.update">update</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.update_env" href="#coolipy.resources.applications.Applications.update_env">update_env</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.update_scheduled_task" href="#coolipy.resources.applications.Applications.update_scheduled_task">update_scheduled_task</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.update_storage" href="#coolipy.resources.applications.Applications.update_storage">update_storage</a></code></li>
+<li><code><a title="coolipy.resources.applications.Applications.update_storage_backup" href="#coolipy.resources.applications.Applications.update_storage_backup">update_storage_backup</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.resources.applications.AsyncApplications" href="#coolipy.resources.applications.AsyncApplications">AsyncApplications</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.resources.applications.AsyncApplications.add_destination" href="#coolipy.resources.applications.AsyncApplications.add_destination">add_destination</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.add_tags" href="#coolipy.resources.applications.AsyncApplications.add_tags">add_tags</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.bulk_update_envs" href="#coolipy.resources.applications.AsyncApplications.bulk_update_envs">bulk_update_envs</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.clone" href="#coolipy.resources.applications.AsyncApplications.clone">clone</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.create" href="#coolipy.resources.applications.AsyncApplications.create">create</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.create_env" href="#coolipy.resources.applications.AsyncApplications.create_env">create_env</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.create_scheduled_task" href="#coolipy.resources.applications.AsyncApplications.create_scheduled_task">create_scheduled_task</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.create_storage" href="#coolipy.resources.applications.AsyncApplications.create_storage">create_storage</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.delete" href="#coolipy.resources.applications.AsyncApplications.delete">delete</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.delete_destination" href="#coolipy.resources.applications.AsyncApplications.delete_destination">delete_destination</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.delete_env" href="#coolipy.resources.applications.AsyncApplications.delete_env">delete_env</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.delete_preview" href="#coolipy.resources.applications.AsyncApplications.delete_preview">delete_preview</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.delete_scheduled_task" href="#coolipy.resources.applications.AsyncApplications.delete_scheduled_task">delete_scheduled_task</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.delete_storage" href="#coolipy.resources.applications.AsyncApplications.delete_storage">delete_storage</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.delete_storage_backup" href="#coolipy.resources.applications.AsyncApplications.delete_storage_backup">delete_storage_backup</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.delete_tag" href="#coolipy.resources.applications.AsyncApplications.delete_tag">delete_tag</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.destinations" href="#coolipy.resources.applications.AsyncApplications.destinations">destinations</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.envs" href="#coolipy.resources.applications.AsyncApplications.envs">envs</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.execute_scheduled_task" href="#coolipy.resources.applications.AsyncApplications.execute_scheduled_task">execute_scheduled_task</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.get" href="#coolipy.resources.applications.AsyncApplications.get">get</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.list" href="#coolipy.resources.applications.AsyncApplications.list">list</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.logs" href="#coolipy.resources.applications.AsyncApplications.logs">logs</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.migrate" href="#coolipy.resources.applications.AsyncApplications.migrate">migrate</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.move" href="#coolipy.resources.applications.AsyncApplications.move">move</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.restart" href="#coolipy.resources.applications.AsyncApplications.restart">restart</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.rollback" href="#coolipy.resources.applications.AsyncApplications.rollback">rollback</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.rollback_images" href="#coolipy.resources.applications.AsyncApplications.rollback_images">rollback_images</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.run_storage_backup" href="#coolipy.resources.applications.AsyncApplications.run_storage_backup">run_storage_backup</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.scheduled_task_executions" href="#coolipy.resources.applications.AsyncApplications.scheduled_task_executions">scheduled_task_executions</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.scheduled_tasks" href="#coolipy.resources.applications.AsyncApplications.scheduled_tasks">scheduled_tasks</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.start" href="#coolipy.resources.applications.AsyncApplications.start">start</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.stop" href="#coolipy.resources.applications.AsyncApplications.stop">stop</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.storages" href="#coolipy.resources.applications.AsyncApplications.storages">storages</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.tags" href="#coolipy.resources.applications.AsyncApplications.tags">tags</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.update" href="#coolipy.resources.applications.AsyncApplications.update">update</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.update_env" href="#coolipy.resources.applications.AsyncApplications.update_env">update_env</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.update_scheduled_task" href="#coolipy.resources.applications.AsyncApplications.update_scheduled_task">update_scheduled_task</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.update_storage" href="#coolipy.resources.applications.AsyncApplications.update_storage">update_storage</a></code></li>
+<li><code><a title="coolipy.resources.applications.AsyncApplications.update_storage_backup" href="#coolipy.resources.applications.AsyncApplications.update_storage_backup">update_storage_backup</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

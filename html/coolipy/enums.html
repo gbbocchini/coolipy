@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>coolipy.enums API documentation</title>
+<meta name="description" content="Enums mirroring the string-constrained fields of the Coolify API …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>coolipy.enums</code></h1>
+</header>
+<section id="section-intro">
+<p>Enums mirroring the string-constrained fields of the Coolify API.</p>
+<p>Every member's :attr:<code>~enum.Enum.value</code> is the exact wire value the API expects
+or returns, so serialize enums via <code>.value</code> (pydantic does this automatically
+when models are dumped with <code>mode="json"</code>).</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="coolipy.enums.BuildPack"><code class="flex name class">
+<span>class <span class="ident">BuildPack</span></span>
+<span>(</span><span>*args, **kwds)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BuildPack(str, Enum):
+    &#34;&#34;&#34;Build pack used to build an application.&#34;&#34;&#34;
+
+    NIXPACKS = &#34;nixpacks&#34;
+    RAILPACK = &#34;railpack&#34;
+    STATIC = &#34;static&#34;
+    DOCKERFILE = &#34;dockerfile&#34;
+    DOCKERCOMPOSE = &#34;dockercompose&#34;</code></pre>
+</details>
+<div class="desc"><p>Build pack used to build an application.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.str</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.enums.BuildPack.DOCKERCOMPOSE"><code class="name">var <span class="ident">DOCKERCOMPOSE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.BuildPack.DOCKERFILE"><code class="name">var <span class="ident">DOCKERFILE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.BuildPack.NIXPACKS"><code class="name">var <span class="ident">NIXPACKS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.BuildPack.RAILPACK"><code class="name">var <span class="ident">RAILPACK</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.BuildPack.STATIC"><code class="name">var <span class="ident">STATIC</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.enums.DestinationType"><code class="flex name class">
+<span>class <span class="ident">DestinationType</span></span>
+<span>(</span><span>*args, **kwds)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DestinationType(str, Enum):
+    &#34;&#34;&#34;Network type of a destination.&#34;&#34;&#34;
+
+    STANDALONE = &#34;standalone&#34;
+    SWARM = &#34;swarm&#34;</code></pre>
+</details>
+<div class="desc"><p>Network type of a destination.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.str</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.enums.DestinationType.STANDALONE"><code class="name">var <span class="ident">STANDALONE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.DestinationType.SWARM"><code class="name">var <span class="ident">SWARM</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.enums.ProxyType"><code class="flex name class">
+<span>class <span class="ident">ProxyType</span></span>
+<span>(</span><span>*args, **kwds)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ProxyType(str, Enum):
+    &#34;&#34;&#34;Reverse proxy used by a server.&#34;&#34;&#34;
+
+    TRAEFIK = &#34;traefik&#34;
+    CADDY = &#34;caddy&#34;
+    NONE = &#34;none&#34;</code></pre>
+</details>
+<div class="desc"><p>Reverse proxy used by a server.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.str</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.enums.ProxyType.CADDY"><code class="name">var <span class="ident">CADDY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ProxyType.NONE"><code class="name">var <span class="ident">NONE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ProxyType.TRAEFIK"><code class="name">var <span class="ident">TRAEFIK</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.enums.Redirect"><code class="flex name class">
+<span>class <span class="ident">Redirect</span></span>
+<span>(</span><span>*args, **kwds)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Redirect(str, Enum):
+    &#34;&#34;&#34;Domain redirect mode.&#34;&#34;&#34;
+
+    WWW = &#34;www&#34;
+    NON_WWW = &#34;non-www&#34;
+    BOTH = &#34;both&#34;</code></pre>
+</details>
+<div class="desc"><p>Domain redirect mode.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.str</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.enums.Redirect.BOTH"><code class="name">var <span class="ident">BOTH</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.Redirect.NON_WWW"><code class="name">var <span class="ident">NON_WWW</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.Redirect.WWW"><code class="name">var <span class="ident">WWW</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="coolipy.enums.ServiceType"><code class="flex name class">
+<span>class <span class="ident">ServiceType</span></span>
+<span>(</span><span>*args, **kwds)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ServiceType(str, Enum):
+    &#34;&#34;&#34;Known Coolify service types.&#34;&#34;&#34;
+
+    ACTIVEPIECES = &#34;activepieces&#34;
+    APPSMITH = &#34;appsmith&#34;
+    APPWRITE = &#34;appwrite&#34;
+    AUTHENTIK = &#34;authentik&#34;
+    BABYBUDDY = &#34;babybuddy&#34;
+    BUDGE = &#34;budge&#34;
+    CHANGEDETECTION = &#34;changedetection&#34;
+    CHATWOOT = &#34;chatwoot&#34;
+    CLASSICPRESS_WITH_MARIADB = &#34;classicpress-with-mariadb&#34;
+    CLASSICPRESS_WITH_MYSQL = &#34;classicpress-with-mysql&#34;
+    CLASSICPRESS_WITHOUT_DATABASE = &#34;classicpress-without-database&#34;
+    CLOUDFLARED = &#34;cloudflared&#34;
+    CODE_SERVER = &#34;code-server&#34;
+    DASHBOARD = &#34;dashboard&#34;
+    DIRECTUS = &#34;directus&#34;
+    DIRECTUS_WITH_POSTGRESQL = &#34;directus-with-postgresql&#34;
+    DOCKER_REGISTRY = &#34;docker-registry&#34;
+    DOCUSEAL = &#34;docuseal&#34;
+    DOCUSEAL_WITH_POSTGRES = &#34;docuseal-with-postgres&#34;
+    DOKUWIKI = &#34;dokuwiki&#34;
+    DUPLICATI = &#34;duplicati&#34;
+    EMBY = &#34;emby&#34;
+    EMBYSTAT = &#34;embystat&#34;
+    FIDER = &#34;fider&#34;
+    FILEBROWSER = &#34;filebrowser&#34;
+    FIREFLY = &#34;firefly&#34;
+    FORMBRICKS = &#34;formbricks&#34;
+    GHOST = &#34;ghost&#34;
+    GITEA = &#34;gitea&#34;
+    GITEA_WITH_MARIADB = &#34;gitea-with-mariadb&#34;
+    GITEA_WITH_MYSQL = &#34;gitea-with-mysql&#34;
+    GITEA_WITH_POSTGRESQL = &#34;gitea-with-postgresql&#34;
+    GLANCE = &#34;glance&#34;
+    GLANCES = &#34;glances&#34;
+    GLITCHTIP = &#34;glitchtip&#34;
+    GRAFANA = &#34;grafana&#34;
+    GRAFANA_WITH_POSTGRESQL = &#34;grafana-with-postgresql&#34;
+    GROCY = &#34;grocy&#34;
+    HEIMDALL = &#34;heimdall&#34;
+    HOMEPAGE = &#34;homepage&#34;
+    JELLYFIN = &#34;jellyfin&#34;
+    JENKINS = &#34;jenkins&#34;
+    KUZZLE = &#34;kuzzle&#34;
+    LISTMONK = &#34;listmonk&#34;
+    LOGTO = &#34;logto&#34;
+    MEDIAWIKI = &#34;mediawiki&#34;
+    MEILISEARCH = &#34;meilisearch&#34;
+    METABASE = &#34;metabase&#34;
+    METUBE = &#34;metube&#34;
+    MINIO = &#34;minio&#34;
+    MOODLE = &#34;moodle&#34;
+    MOSQUITTO = &#34;mosquitto&#34;
+    N8N = &#34;n8n&#34;
+    N8N_WITH_POSTGRESQL = &#34;n8n-with-postgresql&#34;
+    NEXT_IMAGE_TRANSFORMATION = &#34;next-image-transformation&#34;
+    NEXTCLOUD = &#34;nextcloud&#34;
+    NOCODB = &#34;nocodb&#34;
+    ODOO = &#34;odoo&#34;
+    OPENBLOCKS = &#34;openblocks&#34;
+    PAIRDROP = &#34;pairdrop&#34;
+    PENPOT = &#34;penpot&#34;
+    PHPMYADMIN = &#34;phpmyadmin&#34;
+    POCKETBASE = &#34;pocketbase&#34;
+    POSTHOG = &#34;posthog&#34;
+    REACTIVE_RESUME = &#34;reactive-resume&#34;
+    ROCKETCHAT = &#34;rocketchat&#34;
+    SHLINK = &#34;shlink&#34;
+    SLASH = &#34;slash&#34;
+    SNAPDROP = &#34;snapdrop&#34;
+    STATUSNOOK = &#34;statusnook&#34;
+    STIRLING_PDF = &#34;stirling-pdf&#34;
+    SUPABASE = &#34;supabase&#34;
+    SYNCTHING = &#34;syncthing&#34;
+    TOLGEE = &#34;tolgee&#34;
+    TRIGGER = &#34;trigger&#34;
+    TRIGGER_WITH_EXTERNAL_DATABASE = &#34;trigger-with-external-database&#34;
+    TWENTY = &#34;twenty&#34;
+    UMAMI = &#34;umami&#34;
+    UNLEASH_WITH_POSTGRESQL = &#34;unleash-with-postgresql&#34;
+    UNLEASH_WITHOUT_DATABASE = &#34;unleash-without-database&#34;
+    UPTIME_KUMA = &#34;uptime-kuma&#34;
+    VAULTWARDEN = &#34;vaultwarden&#34;
+    VIKUNJA = &#34;vikunja&#34;
+    WEBLATE = &#34;weblate&#34;
+    WHOOGLE = &#34;whoogle&#34;
+    WORDPRESS_WITH_MARIADB = &#34;wordpress-with-mariadb&#34;
+    WORDPRESS_WITH_MYSQL = &#34;wordpress-with-mysql&#34;
+    WORDPRESS_WITHOUT_DATABASE = &#34;wordpress-without-database&#34;</code></pre>
+</details>
+<div class="desc"><p>Known Coolify service types.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.str</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="coolipy.enums.ServiceType.ACTIVEPIECES"><code class="name">var <span class="ident">ACTIVEPIECES</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.APPSMITH"><code class="name">var <span class="ident">APPSMITH</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.APPWRITE"><code class="name">var <span class="ident">APPWRITE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.AUTHENTIK"><code class="name">var <span class="ident">AUTHENTIK</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.BABYBUDDY"><code class="name">var <span class="ident">BABYBUDDY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.BUDGE"><code class="name">var <span class="ident">BUDGE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.CHANGEDETECTION"><code class="name">var <span class="ident">CHANGEDETECTION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.CHATWOOT"><code class="name">var <span class="ident">CHATWOOT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.CLASSICPRESS_WITHOUT_DATABASE"><code class="name">var <span class="ident">CLASSICPRESS_WITHOUT_DATABASE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.CLASSICPRESS_WITH_MARIADB"><code class="name">var <span class="ident">CLASSICPRESS_WITH_MARIADB</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.CLASSICPRESS_WITH_MYSQL"><code class="name">var <span class="ident">CLASSICPRESS_WITH_MYSQL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.CLOUDFLARED"><code class="name">var <span class="ident">CLOUDFLARED</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.CODE_SERVER"><code class="name">var <span class="ident">CODE_SERVER</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.DASHBOARD"><code class="name">var <span class="ident">DASHBOARD</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.DIRECTUS"><code class="name">var <span class="ident">DIRECTUS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.DIRECTUS_WITH_POSTGRESQL"><code class="name">var <span class="ident">DIRECTUS_WITH_POSTGRESQL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.DOCKER_REGISTRY"><code class="name">var <span class="ident">DOCKER_REGISTRY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.DOCUSEAL"><code class="name">var <span class="ident">DOCUSEAL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.DOCUSEAL_WITH_POSTGRES"><code class="name">var <span class="ident">DOCUSEAL_WITH_POSTGRES</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.DOKUWIKI"><code class="name">var <span class="ident">DOKUWIKI</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.DUPLICATI"><code class="name">var <span class="ident">DUPLICATI</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.EMBY"><code class="name">var <span class="ident">EMBY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.EMBYSTAT"><code class="name">var <span class="ident">EMBYSTAT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.FIDER"><code class="name">var <span class="ident">FIDER</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.FILEBROWSER"><code class="name">var <span class="ident">FILEBROWSER</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.FIREFLY"><code class="name">var <span class="ident">FIREFLY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.FORMBRICKS"><code class="name">var <span class="ident">FORMBRICKS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.GHOST"><code class="name">var <span class="ident">GHOST</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.GITEA"><code class="name">var <span class="ident">GITEA</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.GITEA_WITH_MARIADB"><code class="name">var <span class="ident">GITEA_WITH_MARIADB</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.GITEA_WITH_MYSQL"><code class="name">var <span class="ident">GITEA_WITH_MYSQL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.GITEA_WITH_POSTGRESQL"><code class="name">var <span class="ident">GITEA_WITH_POSTGRESQL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.GLANCE"><code class="name">var <span class="ident">GLANCE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.GLANCES"><code class="name">var <span class="ident">GLANCES</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.GLITCHTIP"><code class="name">var <span class="ident">GLITCHTIP</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.GRAFANA"><code class="name">var <span class="ident">GRAFANA</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.GRAFANA_WITH_POSTGRESQL"><code class="name">var <span class="ident">GRAFANA_WITH_POSTGRESQL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.GROCY"><code class="name">var <span class="ident">GROCY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.HEIMDALL"><code class="name">var <span class="ident">HEIMDALL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.HOMEPAGE"><code class="name">var <span class="ident">HOMEPAGE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.JELLYFIN"><code class="name">var <span class="ident">JELLYFIN</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.JENKINS"><code class="name">var <span class="ident">JENKINS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.KUZZLE"><code class="name">var <span class="ident">KUZZLE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.LISTMONK"><code class="name">var <span class="ident">LISTMONK</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.LOGTO"><code class="name">var <span class="ident">LOGTO</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.MEDIAWIKI"><code class="name">var <span class="ident">MEDIAWIKI</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.MEILISEARCH"><code class="name">var <span class="ident">MEILISEARCH</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.METABASE"><code class="name">var <span class="ident">METABASE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.METUBE"><code class="name">var <span class="ident">METUBE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.MINIO"><code class="name">var <span class="ident">MINIO</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.MOODLE"><code class="name">var <span class="ident">MOODLE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.MOSQUITTO"><code class="name">var <span class="ident">MOSQUITTO</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.N8N"><code class="name">var <span class="ident">N8N</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.N8N_WITH_POSTGRESQL"><code class="name">var <span class="ident">N8N_WITH_POSTGRESQL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.NEXTCLOUD"><code class="name">var <span class="ident">NEXTCLOUD</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.NEXT_IMAGE_TRANSFORMATION"><code class="name">var <span class="ident">NEXT_IMAGE_TRANSFORMATION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.NOCODB"><code class="name">var <span class="ident">NOCODB</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.ODOO"><code class="name">var <span class="ident">ODOO</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.OPENBLOCKS"><code class="name">var <span class="ident">OPENBLOCKS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.PAIRDROP"><code class="name">var <span class="ident">PAIRDROP</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.PENPOT"><code class="name">var <span class="ident">PENPOT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.PHPMYADMIN"><code class="name">var <span class="ident">PHPMYADMIN</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.POCKETBASE"><code class="name">var <span class="ident">POCKETBASE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.POSTHOG"><code class="name">var <span class="ident">POSTHOG</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.REACTIVE_RESUME"><code class="name">var <span class="ident">REACTIVE_RESUME</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.ROCKETCHAT"><code class="name">var <span class="ident">ROCKETCHAT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.SHLINK"><code class="name">var <span class="ident">SHLINK</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.SLASH"><code class="name">var <span class="ident">SLASH</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.SNAPDROP"><code class="name">var <span class="ident">SNAPDROP</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.STATUSNOOK"><code class="name">var <span class="ident">STATUSNOOK</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.STIRLING_PDF"><code class="name">var <span class="ident">STIRLING_PDF</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.SUPABASE"><code class="name">var <span class="ident">SUPABASE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.SYNCTHING"><code class="name">var <span class="ident">SYNCTHING</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.TOLGEE"><code class="name">var <span class="ident">TOLGEE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.TRIGGER"><code class="name">var <span class="ident">TRIGGER</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.TRIGGER_WITH_EXTERNAL_DATABASE"><code class="name">var <span class="ident">TRIGGER_WITH_EXTERNAL_DATABASE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.TWENTY"><code class="name">var <span class="ident">TWENTY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.UMAMI"><code class="name">var <span class="ident">UMAMI</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.UNLEASH_WITHOUT_DATABASE"><code class="name">var <span class="ident">UNLEASH_WITHOUT_DATABASE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.UNLEASH_WITH_POSTGRESQL"><code class="name">var <span class="ident">UNLEASH_WITH_POSTGRESQL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.UPTIME_KUMA"><code class="name">var <span class="ident">UPTIME_KUMA</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.VAULTWARDEN"><code class="name">var <span class="ident">VAULTWARDEN</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.VIKUNJA"><code class="name">var <span class="ident">VIKUNJA</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.WEBLATE"><code class="name">var <span class="ident">WEBLATE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.WHOOGLE"><code class="name">var <span class="ident">WHOOGLE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.WORDPRESS_WITHOUT_DATABASE"><code class="name">var <span class="ident">WORDPRESS_WITHOUT_DATABASE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.WORDPRESS_WITH_MARIADB"><code class="name">var <span class="ident">WORDPRESS_WITH_MARIADB</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="coolipy.enums.ServiceType.WORDPRESS_WITH_MYSQL"><code class="name">var <span class="ident">WORDPRESS_WITH_MYSQL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="coolipy" href="index.html">coolipy</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="coolipy.enums.BuildPack" href="#coolipy.enums.BuildPack">BuildPack</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.enums.BuildPack.DOCKERCOMPOSE" href="#coolipy.enums.BuildPack.DOCKERCOMPOSE">DOCKERCOMPOSE</a></code></li>
+<li><code><a title="coolipy.enums.BuildPack.DOCKERFILE" href="#coolipy.enums.BuildPack.DOCKERFILE">DOCKERFILE</a></code></li>
+<li><code><a title="coolipy.enums.BuildPack.NIXPACKS" href="#coolipy.enums.BuildPack.NIXPACKS">NIXPACKS</a></code></li>
+<li><code><a title="coolipy.enums.BuildPack.RAILPACK" href="#coolipy.enums.BuildPack.RAILPACK">RAILPACK</a></code></li>
+<li><code><a title="coolipy.enums.BuildPack.STATIC" href="#coolipy.enums.BuildPack.STATIC">STATIC</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.enums.DestinationType" href="#coolipy.enums.DestinationType">DestinationType</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.enums.DestinationType.STANDALONE" href="#coolipy.enums.DestinationType.STANDALONE">STANDALONE</a></code></li>
+<li><code><a title="coolipy.enums.DestinationType.SWARM" href="#coolipy.enums.DestinationType.SWARM">SWARM</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.enums.ProxyType" href="#coolipy.enums.ProxyType">ProxyType</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.enums.ProxyType.CADDY" href="#coolipy.enums.ProxyType.CADDY">CADDY</a></code></li>
+<li><code><a title="coolipy.enums.ProxyType.NONE" href="#coolipy.enums.ProxyType.NONE">NONE</a></code></li>
+<li><code><a title="coolipy.enums.ProxyType.TRAEFIK" href="#coolipy.enums.ProxyType.TRAEFIK">TRAEFIK</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.enums.Redirect" href="#coolipy.enums.Redirect">Redirect</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.enums.Redirect.BOTH" href="#coolipy.enums.Redirect.BOTH">BOTH</a></code></li>
+<li><code><a title="coolipy.enums.Redirect.NON_WWW" href="#coolipy.enums.Redirect.NON_WWW">NON_WWW</a></code></li>
+<li><code><a title="coolipy.enums.Redirect.WWW" href="#coolipy.enums.Redirect.WWW">WWW</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="coolipy.enums.ServiceType" href="#coolipy.enums.ServiceType">ServiceType</a></code></h4>
+<ul class="">
+<li><code><a title="coolipy.enums.ServiceType.ACTIVEPIECES" href="#coolipy.enums.ServiceType.ACTIVEPIECES">ACTIVEPIECES</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.APPSMITH" href="#coolipy.enums.ServiceType.APPSMITH">APPSMITH</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.APPWRITE" href="#coolipy.enums.ServiceType.APPWRITE">APPWRITE</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.AUTHENTIK" href="#coolipy.enums.ServiceType.AUTHENTIK">AUTHENTIK</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.BABYBUDDY" href="#coolipy.enums.ServiceType.BABYBUDDY">BABYBUDDY</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.BUDGE" href="#coolipy.enums.ServiceType.BUDGE">BUDGE</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.CHANGEDETECTION" href="#coolipy.enums.ServiceType.CHANGEDETECTION">CHANGEDETECTION</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.CHATWOOT" href="#coolipy.enums.ServiceType.CHATWOOT">CHATWOOT</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.CLASSICPRESS_WITHOUT_DATABASE" href="#coolipy.enums.ServiceType.CLASSICPRESS_WITHOUT_DATABASE">CLASSICPRESS_WITHOUT_DATABASE</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.CLASSICPRESS_WITH_MARIADB" href="#coolipy.enums.ServiceType.CLASSICPRESS_WITH_MARIADB">CLASSICPRESS_WITH_MARIADB</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.CLASSICPRESS_WITH_MYSQL" href="#coolipy.enums.ServiceType.CLASSICPRESS_WITH_MYSQL">CLASSICPRESS_WITH_MYSQL</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.CLOUDFLARED" href="#coolipy.enums.ServiceType.CLOUDFLARED">CLOUDFLARED</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.CODE_SERVER" href="#coolipy.enums.ServiceType.CODE_SERVER">CODE_SERVER</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.DASHBOARD" href="#coolipy.enums.ServiceType.DASHBOARD">DASHBOARD</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.DIRECTUS" href="#coolipy.enums.ServiceType.DIRECTUS">DIRECTUS</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.DIRECTUS_WITH_POSTGRESQL" href="#coolipy.enums.ServiceType.DIRECTUS_WITH_POSTGRESQL">DIRECTUS_WITH_POSTGRESQL</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.DOCKER_REGISTRY" href="#coolipy.enums.ServiceType.DOCKER_REGISTRY">DOCKER_REGISTRY</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.DOCUSEAL" href="#coolipy.enums.ServiceType.DOCUSEAL">DOCUSEAL</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.DOCUSEAL_WITH_POSTGRES" href="#coolipy.enums.ServiceType.DOCUSEAL_WITH_POSTGRES">DOCUSEAL_WITH_POSTGRES</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.DOKUWIKI" href="#coolipy.enums.ServiceType.DOKUWIKI">DOKUWIKI</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.DUPLICATI" href="#coolipy.enums.ServiceType.DUPLICATI">DUPLICATI</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.EMBY" href="#coolipy.enums.ServiceType.EMBY">EMBY</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.EMBYSTAT" href="#coolipy.enums.ServiceType.EMBYSTAT">EMBYSTAT</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.FIDER" href="#coolipy.enums.ServiceType.FIDER">FIDER</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.FILEBROWSER" href="#coolipy.enums.ServiceType.FILEBROWSER">FILEBROWSER</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.FIREFLY" href="#coolipy.enums.ServiceType.FIREFLY">FIREFLY</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.FORMBRICKS" href="#coolipy.enums.ServiceType.FORMBRICKS">FORMBRICKS</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.GHOST" href="#coolipy.enums.ServiceType.GHOST">GHOST</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.GITEA" href="#coolipy.enums.ServiceType.GITEA">GITEA</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.GITEA_WITH_MARIADB" href="#coolipy.enums.ServiceType.GITEA_WITH_MARIADB">GITEA_WITH_MARIADB</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.GITEA_WITH_MYSQL" href="#coolipy.enums.ServiceType.GITEA_WITH_MYSQL">GITEA_WITH_MYSQL</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.GITEA_WITH_POSTGRESQL" href="#coolipy.enums.ServiceType.GITEA_WITH_POSTGRESQL">GITEA_WITH_POSTGRESQL</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.GLANCE" href="#coolipy.enums.ServiceType.GLANCE">GLANCE</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.GLANCES" href="#coolipy.enums.ServiceType.GLANCES">GLANCES</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.GLITCHTIP" href="#coolipy.enums.ServiceType.GLITCHTIP">GLITCHTIP</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.GRAFANA" href="#coolipy.enums.ServiceType.GRAFANA">GRAFANA</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.GRAFANA_WITH_POSTGRESQL" href="#coolipy.enums.ServiceType.GRAFANA_WITH_POSTGRESQL">GRAFANA_WITH_POSTGRESQL</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.GROCY" href="#coolipy.enums.ServiceType.GROCY">GROCY</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.HEIMDALL" href="#coolipy.enums.ServiceType.HEIMDALL">HEIMDALL</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.HOMEPAGE" href="#coolipy.enums.ServiceType.HOMEPAGE">HOMEPAGE</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.JELLYFIN" href="#coolipy.enums.ServiceType.JELLYFIN">JELLYFIN</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.JENKINS" href="#coolipy.enums.ServiceType.JENKINS">JENKINS</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.KUZZLE" href="#coolipy.enums.ServiceType.KUZZLE">KUZZLE</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.LISTMONK" href="#coolipy.enums.ServiceType.LISTMONK">LISTMONK</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.LOGTO" href="#coolipy.enums.ServiceType.LOGTO">LOGTO</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.MEDIAWIKI" href="#coolipy.enums.ServiceType.MEDIAWIKI">MEDIAWIKI</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.MEILISEARCH" href="#coolipy.enums.ServiceType.MEILISEARCH">MEILISEARCH</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.METABASE" href="#coolipy.enums.ServiceType.METABASE">METABASE</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.METUBE" href="#coolipy.enums.ServiceType.METUBE">METUBE</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.MINIO" href="#coolipy.enums.ServiceType.MINIO">MINIO</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.MOODLE" href="#coolipy.enums.ServiceType.MOODLE">MOODLE</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.MOSQUITTO" href="#coolipy.enums.ServiceType.MOSQUITTO">MOSQUITTO</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.N8N" href="#coolipy.enums.ServiceType.N8N">N8N</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.N8N_WITH_POSTGRESQL" href="#coolipy.enums.ServiceType.N8N_WITH_POSTGRESQL">N8N_WITH_POSTGRESQL</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.NEXTCLOUD" href="#coolipy.enums.ServiceType.NEXTCLOUD">NEXTCLOUD</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.NEXT_IMAGE_TRANSFORMATION" href="#coolipy.enums.ServiceType.NEXT_IMAGE_TRANSFORMATION">NEXT_IMAGE_TRANSFORMATION</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.NOCODB" href="#coolipy.enums.ServiceType.NOCODB">NOCODB</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.ODOO" href="#coolipy.enums.ServiceType.ODOO">ODOO</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.OPENBLOCKS" href="#coolipy.enums.ServiceType.OPENBLOCKS">OPENBLOCKS</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.PAIRDROP" href="#coolipy.enums.ServiceType.PAIRDROP">PAIRDROP</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.PENPOT" href="#coolipy.enums.ServiceType.PENPOT">PENPOT</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.PHPMYADMIN" href="#coolipy.enums.ServiceType.PHPMYADMIN">PHPMYADMIN</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.POCKETBASE" href="#coolipy.enums.ServiceType.POCKETBASE">POCKETBASE</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.POSTHOG" href="#coolipy.enums.ServiceType.POSTHOG">POSTHOG</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.REACTIVE_RESUME" href="#coolipy.enums.ServiceType.REACTIVE_RESUME">REACTIVE_RESUME</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.ROCKETCHAT" href="#coolipy.enums.ServiceType.ROCKETCHAT">ROCKETCHAT</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.SHLINK" href="#coolipy.enums.ServiceType.SHLINK">SHLINK</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.SLASH" href="#coolipy.enums.ServiceType.SLASH">SLASH</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.SNAPDROP" href="#coolipy.enums.ServiceType.SNAPDROP">SNAPDROP</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.STATUSNOOK" href="#coolipy.enums.ServiceType.STATUSNOOK">STATUSNOOK</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.STIRLING_PDF" href="#coolipy.enums.ServiceType.STIRLING_PDF">STIRLING_PDF</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.SUPABASE" href="#coolipy.enums.ServiceType.SUPABASE">SUPABASE</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.SYNCTHING" href="#coolipy.enums.ServiceType.SYNCTHING">SYNCTHING</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.TOLGEE" href="#coolipy.enums.ServiceType.TOLGEE">TOLGEE</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.TRIGGER" href="#coolipy.enums.ServiceType.TRIGGER">TRIGGER</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.TRIGGER_WITH_EXTERNAL_DATABASE" href="#coolipy.enums.ServiceType.TRIGGER_WITH_EXTERNAL_DATABASE">TRIGGER_WITH_EXTERNAL_DATABASE</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.TWENTY" href="#coolipy.enums.ServiceType.TWENTY">TWENTY</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.UMAMI" href="#coolipy.enums.ServiceType.UMAMI">UMAMI</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.UNLEASH_WITHOUT_DATABASE" href="#coolipy.enums.ServiceType.UNLEASH_WITHOUT_DATABASE">UNLEASH_WITHOUT_DATABASE</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.UNLEASH_WITH_POSTGRESQL" href="#coolipy.enums.ServiceType.UNLEASH_WITH_POSTGRESQL">UNLEASH_WITH_POSTGRESQL</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.UPTIME_KUMA" href="#coolipy.enums.ServiceType.UPTIME_KUMA">UPTIME_KUMA</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.VAULTWARDEN" href="#coolipy.enums.ServiceType.VAULTWARDEN">VAULTWARDEN</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.VIKUNJA" href="#coolipy.enums.ServiceType.VIKUNJA">VIKUNJA</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.WEBLATE" href="#coolipy.enums.ServiceType.WEBLATE">WEBLATE</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.WHOOGLE" href="#coolipy.enums.ServiceType.WHOOGLE">WHOOGLE</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.WORDPRESS_WITHOUT_DATABASE" href="#coolipy.enums.ServiceType.WORDPRESS_WITHOUT_DATABASE">WORDPRESS_WITHOUT_DATABASE</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.WORDPRESS_WITH_MARIADB" href="#coolipy.enums.ServiceType.WORDPRESS_WITH_MARIADB">WORDPRESS_WITH_MARIADB</a></code></li>
+<li><code><a title="coolipy.enums.ServiceType.WORDPRESS_WITH_MYSQL" href="#coolipy.enums.ServiceType.WORDPRESS_WITH_MYSQL">WORDPRESS_WITH_MYSQL</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>
