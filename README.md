@@ -19,21 +19,6 @@ pip install coolipy
 uv add coolipy
 ```
 
-To use `uv`, install it first:
-
-```bash
-# macOS / Linux
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# Windows (PowerShell)
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-
-# or via pip
-pip install uv
-```
-
-See the [uv docs](https://docs.astral.sh/uv/) for more installation options.
-
 Requires **Python 3.10+**. Runtime dependencies: [`httpx`](https://github.com/encode/httpx) and [`pydantic`](https://docs.pydantic.dev/).
 
 ## Features
