@@ -8,6 +8,9 @@ from coolipy._http import SyncTransport, build_base_url, parse_response
 from coolipy._response import CoolipyAPIResponse
 from coolipy.exceptions import CoolipyConfigError
 from coolipy.models.system import SystemMessage
+from coolipy.resources.applications import Applications
+from coolipy.resources.databases import Databases
+from coolipy.resources.services import Services
 
 
 class Coolipy:
@@ -39,6 +42,9 @@ class Coolipy:
         self._transport = SyncTransport(
             base_url, coolify_api_key, timeout=timeout, transport=transport
         )
+        self.applications = Applications(self._transport)
+        self.databases = Databases(self._transport)
+        self.services = Services(self._transport)
 
     def version(self) -> CoolipyAPIResponse[str]:
         """Get the Coolify version."""

@@ -61,6 +61,17 @@ class ResourceBase:
         response = self._transport.request("DELETE", path, params=params, json=json)
         return parse_response(response, response_model)
 
+    def _put(
+        self,
+        path: str,
+        *,
+        params: dict[str, Any] | None = None,
+        json: Any = None,
+        response_model: Any = None,
+    ) -> CoolipyAPIResponse:
+        response = self._transport.request("PUT", path, params=params, json=json)
+        return parse_response(response, response_model)
+
 
 class AsyncResourceBase:
     """Base class for asynchronous resource clients.
@@ -113,4 +124,15 @@ class AsyncResourceBase:
         response_model: Any = None,
     ) -> CoolipyAPIResponse:
         response = await self._transport.request("DELETE", path, params=params, json=json)
+        return parse_response(response, response_model)
+
+    async def _put(
+        self,
+        path: str,
+        *,
+        params: dict[str, Any] | None = None,
+        json: Any = None,
+        response_model: Any = None,
+    ) -> CoolipyAPIResponse:
+        response = await self._transport.request("PUT", path, params=params, json=json)
         return parse_response(response, response_model)

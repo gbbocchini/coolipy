@@ -8,6 +8,9 @@ from coolipy._http import AsyncTransport, build_base_url, parse_response
 from coolipy._response import CoolipyAPIResponse
 from coolipy.exceptions import CoolipyConfigError
 from coolipy.models.system import SystemMessage
+from coolipy.resources.applications import AsyncApplications
+from coolipy.resources.databases import AsyncDatabases
+from coolipy.resources.services import AsyncServices
 
 
 class AsyncCoolipy:
@@ -39,6 +42,9 @@ class AsyncCoolipy:
         self._transport = AsyncTransport(
             base_url, coolify_api_key, timeout=timeout, transport=transport
         )
+        self.applications = AsyncApplications(self._transport)
+        self.databases = AsyncDatabases(self._transport)
+        self.services = AsyncServices(self._transport)
 
     async def version(self) -> CoolipyAPIResponse[str]:
         """Get the Coolify version."""
