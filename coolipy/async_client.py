@@ -8,6 +8,16 @@ from coolipy._http import AsyncTransport, build_base_url, parse_response
 from coolipy._response import CoolipyAPIResponse
 from coolipy.exceptions import CoolipyConfigError
 from coolipy.models.system import SystemMessage
+from coolipy.resources.applications import AsyncApplications
+from coolipy.resources.databases import AsyncDatabases
+from coolipy.resources.deployments import AsyncDeployments
+from coolipy.resources.projects import AsyncProjects
+from coolipy.resources.s3_storages import AsyncS3Storages
+from coolipy.resources.security import AsyncSecurity
+from coolipy.resources.servers import AsyncServers
+from coolipy.resources.services import AsyncServices
+from coolipy.resources.tags import AsyncTags
+from coolipy.resources.teams import AsyncTeams
 
 
 class AsyncCoolipy:
@@ -39,6 +49,16 @@ class AsyncCoolipy:
         self._transport = AsyncTransport(
             base_url, coolify_api_key, timeout=timeout, transport=transport
         )
+        self.applications = AsyncApplications(self._transport)
+        self.databases = AsyncDatabases(self._transport)
+        self.services = AsyncServices(self._transport)
+        self.servers = AsyncServers(self._transport)
+        self.projects = AsyncProjects(self._transport)
+        self.teams = AsyncTeams(self._transport)
+        self.deployments = AsyncDeployments(self._transport)
+        self.tags = AsyncTags(self._transport)
+        self.s3_storages = AsyncS3Storages(self._transport)
+        self.security = AsyncSecurity(self._transport)
 
     async def version(self) -> CoolipyAPIResponse[str]:
         """Get the Coolify version."""

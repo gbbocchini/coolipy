@@ -116,6 +116,77 @@ BuildPack.RAILPACK.value  # "railpack"
 ProxyType.NONE.value      # "none"
 ```
 
+## Usage examples
+
+Each resource is a sub-client on `Coolipy`/`AsyncCoolipy` (`client.projects`, `client.servers`, `client.applications`, …). Requests take a typed model; responses come back as a `CoolipyAPIResponse` with a validated model in `.data`.
+
+### Projects
+
+```python
+from coolipy.models.projects import ProjectCreateModel
+
+resp = client.projects.create(
+    ProjectCreateModel(name="My Project", description="Created with Coolipy")
+)
+print(resp.status_code)  # 201
+print(resp.data)         # UUIDResponse(uuid='og888os')
+
+resp = client.projects.list()
+print(resp.data)
+# [
+#   ProjectModel(id=1, uuid='og888os', name='My Project', description='Created with Coolipy'),
+# ]
+```
+
+### Servers
+
+```python
+resp = client.servers.list()
+for server in resp.data:
+    print(server.name, server.ip, server.proxy_type)
+```
+
+### Applications, databases, and services
+
+```python
+resp = client.applications.list()
+print([app.name for app in resp.data])
+
+resp = client.databases.list()
+print([db.name for db in resp.data])
+
+resp = client.services.list()
+print([svc.name for svc in resp.data])
+```
+
+### Creating an application
+
+```python
+from coolipy.enums import BuildPack
+from coolipy.models.applications import ApplicationPublicModelCreate
+
+app = ApplicationPublicModelCreate(
+    project_uuid="your_project_uuid",
+    server_uuid="your_server_uuid",
+    environment_name="production",
+    git_repository="https://github.com/your/repo",
+    git_branch="main",
+    build_pack=BuildPack.NIXPACKS,
+    name="My App",
+    instant_deploy=True,
+)
+resp = client.applications.create(app)
+print(resp.data)  # UUIDResponse(uuid='...')
+```
+
+### Async
+
+```python
+async with AsyncCoolipy("YOUR_API_TOKEN", "your-coolify-instance.com") as client:
+    resp = await client.projects.list()
+    print(resp.data)
+```
+
 ## Configuration
 
 Both clients take the same arguments:
@@ -131,7 +202,7 @@ Both clients take the same arguments:
 
 ## Status
 
-Coolipy **1.0.0** is under active development. The foundation — sync/async clients, dependency-injected transports, typed models, exceptions, and enums — is in place. Resource endpoints (applications, servers, projects, databases, services, deployments, teams, and the rest of the Coolify API surface) are being added incrementally.
+Coolipy **1.0.0** covers the full token-gated Coolify API surface — applications, databases, services, servers, projects, environments, teams, deployments, tags, S3 storages, private keys, shared envs, and the system endpoints — in both sync and async flavours. Real-world smoke tests in [`tests/smoke/`](tests/smoke/) exercise these against a live instance (skipped unless credentials are provided).
 
 ## Development
 
@@ -140,6 +211,12 @@ uv sync --extra dev
 uv run pytest
 uv run ruff check . && uv run ruff format --check .
 uv run mypy coolipy
+```
+
+Run the real-world smoke tests against a live instance (no secrets committed — provided via env vars):
+
+```bash
+COOLIPY_API_KEY=... COOLIPY_ENDPOINT=... uv run pytest -m smoke
 ```
 
 ## Contributing
