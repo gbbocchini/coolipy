@@ -1,17 +1,24 @@
-# Coolipy
+<h1 align="center">coolipy</h1>
 
-**The (un)official Python client for [Coolify](https://coolify.io/).**
+<p align="center">
+  <strong>The (un)official Python client for <a href="https://coolify.io">Coolify</a></strong><br />
+  Synchronous <em>and</em> asynchronous · typed <a href="https://docs.pydantic.dev/">pydantic</a> models · no raw dicts, no manual JSON
+</p>
 
-Coolipy wraps the [Coolify REST API](https://coolify.io/docs/api) with typed models and ships **synchronous** and **asynchronous** clients in a single package. Every request body and every response body is a [`pydantic`](https://docs.pydantic.dev/) model — no raw dicts, no manual JSON.
+<p align="center">
+  <a href="https://pypi.org/project/coolipy/"><img src="https://img.shields.io/pypi/v/coolipy" alt="PyPI" /></a>
+  <a href="https://pypi.org/project/coolipy/"><img src="https://img.shields.io/pypi/pyversions/coolipy" alt="Python versions" /></a>
+  <a href="https://pypi.org/project/coolipy/"><img src="https://img.shields.io/pypi/dm/coolipy" alt="Downloads" /></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License" /></a>
+  <a href="https://github.com/gbbocchini/coolipy/actions/workflows/ci.yml"><img src="https://github.com/gbbocchini/coolipy/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+</p>
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE)
-[![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
-[![CI](https://github.com/gbbocchini/coolipy/actions/workflows/ci.yml/badge.svg)](https://github.com/gbbocchini/coolipy/actions/workflows/ci.yml)
+---
 
-- Lib docs: https://coolipydocs.gabrielbocchini.com.br/
-- Coolify API docs: https://coolify.io/docs/api
+- 📚 **Lib docs:** https://coolipydocs.gabrielbocchini.com.br/
+- 🧭 **Coolify API docs:** https://coolify.io/docs/api
 
-## Installation
+## 🚀 Installation
 
 ```bash
 pip install coolipy
@@ -21,15 +28,17 @@ uv add coolipy
 
 Requires **Python 3.10+**. Runtime dependencies: [`httpx`](https://github.com/encode/httpx) and [`pydantic`](https://docs.pydantic.dev/).
 
-## Features
+## ✨ Features
 
-- **Sync and async** clients in one package (`Coolipy` / `AsyncCoolipy`).
-- **Typed models** for every request and response body.
-- A single `CoolipyAPIResponse[T]` envelope: `status_code`, validated `data`, and `headers`.
-- **Typed exceptions** that carry the API's validation errors.
-- Built on `httpx` with a dependency-injected transport (easy to mock in tests).
+| | |
+| --- | --- |
+| ⚡ **Sync + async** | One package, two clients — `Coolipy` and `AsyncCoolipy` |
+| 🧱 **Typed models** | Every request and response is a `pydantic` model |
+| 📦 **One envelope** | `CoolipyAPIResponse[T]` → `status_code`, validated `data`, `headers` |
+| 🚨 **Typed errors** | `CoolipyHTTPError` carries the API's validation details |
+| 🔌 **httpx + DI** | Dependency-injected transport — trivial to mock in tests |
 
-## Quick start
+## ⚡ Quick start
 
 ### Synchronous
 
@@ -72,7 +81,7 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
-## Resources
+## 🧰 Resources
 
 Each resource is a sub-client on the client instance:
 
@@ -89,7 +98,7 @@ Each resource is a sub-client on the client instance:
 | `client.s3_storages` | S3 storage backends |
 | `client.security` | Private keys |
 
-## Responses
+## 📦 Responses
 
 Every method returns a [`CoolipyAPIResponse`](coolipy/_response.py) with three fields:
 
@@ -105,7 +114,7 @@ print(resp.data)          # SystemMessage(message='API enabled.')
 print(resp.data.message)  # 'API enabled.'
 ```
 
-## Models
+## 🧱 Models
 
 Every request and response body is a `pydantic` model deriving from [`CoolipyBaseModel`](coolipy/models/base.py). Response models are tolerant: every field is optional and unknown fields are ignored, so they never fail against a live instance.
 
@@ -122,7 +131,7 @@ BuildPack.RAILPACK.value   # 'railpack'
 ProxyType.NONE.value       # 'none'
 ```
 
-## Usage examples
+## 💡 Usage examples
 
 All examples below were captured against a live Coolify instance (`v4.3.17`).
 
@@ -268,7 +277,7 @@ async with AsyncCoolipy("YOUR_API_TOKEN", "your-coolify-instance.com") as client
     print(resp.data)
 ```
 
-## Errors
+## 🚨 Errors
 
 Non-2xx responses raise [`CoolipyHTTPError`](coolipy/exceptions.py), which carries the API's error details:
 
@@ -285,7 +294,7 @@ except CoolipyHTTPError as exc:
 
 `CoolipyError` is the base class; `CoolipyConfigError` and `CoolipyValidationError` cover client-side problems.
 
-## Configuration
+## ⚙️ Configuration
 
 Both clients take the same arguments:
 
@@ -298,11 +307,11 @@ Both clients take the same arguments:
 | `http_protocol` | `str` | `"http"` | `"http"` or `"https"`. |
 | `timeout` | `float` | `30.0` | Request timeout in seconds. |
 
-## Status
+## 📈 Status
 
 Coolipy **1.0.0** covers the full token-gated Coolify API surface — applications, databases, services, servers, projects, environments, teams, deployments, tags, S3 storages, private keys, shared envs, and the system endpoints — in both sync and async flavours. The suite is verified against a live Coolify instance via the smoke tests in [`tests/smoke/`](tests/smoke/).
 
-## Development
+## 🛠️ Development
 
 ```bash
 uv sync --extra dev
@@ -333,7 +342,7 @@ pdoc coolipy \
   -o html
 ```
 
-## Contributing
+## 🤝 Contributing
 
 - Before opening a pull request or issue, check whether it belongs at this client level or the Coolify REST API.
 - Fork this repo and submit a pull request.
@@ -341,6 +350,6 @@ pdoc coolipy \
 - Ship unit tests with any change.
 - No breaking changes unless required by the Coolify REST API.
 
-## License
+## 📄 License
 
 Apache License 2.0 — see [LICENSE](./LICENSE).
