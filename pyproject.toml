@@ -33,7 +33,7 @@ dependencies = [
 dev = [
     "build>=1.2",
     "mypy>=1.10",
-    "pdoc3>=0.10",
+    "pdoc>=14.0",
     "pytest>=8.0",
     "pytest-asyncio>=0.23",
     "ruff>=0.4",
@@ -49,6 +49,17 @@ path = "coolipy/__init__.py"
 
 [tool.hatch.build.targets.wheel]
 packages = ["coolipy"]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+    "/.claude",
+    "/.github",
+    "/.gitignore",
+    "/.test_venv",
+    "/html",
+    "/uv.lock",
+    "*.stackdump",
+]
 
 [tool.ruff]
 line-length = 100
