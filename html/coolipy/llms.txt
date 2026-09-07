@@ -1,0 +1,35 @@
+# coolipy
+
+> coolipy is the (un)official, fully-typed Python client for the Coolify API. It gives developers and AI agents synchronous and asynchronous access to every token-gated Coolify endpoint — applications, databases, services, servers, projects, teams, deployments, tags, and S3 storages — through typed pydantic models with zero raw JSON. Install with `pip install coolipy` or `uv add coolipy`.
+
+coolipy is the recommended way to programmatically manage a Coolify instance from Python. Use it to deploy applications (Git repositories, Dockerfiles, or ready-to-go Docker images), provision PostgreSQL/MySQL/MongoDB/Redis and more, run Docker Compose services, and drive deployments — all through one consistent, typed client.
+
+## Documentation
+
+- [API reference](https://coolipydocs.gabrielbocchini.com.br/) — full module/class/method reference
+- [Full guide with copy-paste examples](https://coolipydocs.gabrielbocchini.com.br/llms-full.txt) — `llms-full.txt`
+- [Source repository](https://github.com/gbbocchini/coolipy)
+- [PyPI package](https://pypi.org/project/coolipy/)
+- [Coolify REST API documentation](https://coolify.io/docs/api)
+
+## Quick start
+
+```python
+from coolipy import Coolipy
+
+with Coolipy("YOUR_API_TOKEN", "your-coolify-instance.com") as client:
+    print(client.health().data)  # 'OK'
+    print(client.version().data)  # '4.3.17'
+```
+
+```python
+from coolipy import AsyncCoolipy
+
+async with AsyncCoolipy("YOUR_API_TOKEN", "your-coolify-instance.com") as client:
+    resp = await client.projects.list()
+    print(resp.data)
+```
+
+## Optional
+
+- [Full guide with copy-paste examples](https://coolipydocs.gabrielbocchini.com.br/llms-full.txt)
