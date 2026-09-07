@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://coolipydocs.gabrielbocchini.com.br/sitemap.xml
