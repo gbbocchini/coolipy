@@ -332,8 +332,18 @@ Regenerate the API documentation (rendered with [pdoc3](https://pdoc3.github.io/
 uv run python docs/build_docs.py
 ```
 
-This runs `pdoc` with the `docs/templates` overrides (SEO/social/LLM metadata) and
-writes `sitemap.xml`, `robots.txt`, `llms.txt` and `llms-full.txt` into `html/coolipy/`.
+[`docs/`](docs/) is the **source** for the documentation site; [`html/coolipy/`](html/coolipy/) is the **generated output** that nginx serves. The build script runs `pdoc` with the `docs/templates` overrides, then writes the search/LLM discovery assets into `html/coolipy/`:
+
+| Source — edit these | Output — generated, don't hand-edit |
+| --- | --- |
+| [`docs/templates/head.mako`](docs/templates/head.mako) — SEO head (meta, Open Graph, Twitter, JSON-LD, APM) | `html/coolipy/**/*.html` |
+| [`docs/templates/html.mako`](docs/templates/html.mako) — page heading + titles | `html/coolipy/**/*.html` |
+| [`docs/templates/config.mako`](docs/templates/config.mako) — markdown extensions + highlight theme | `html/coolipy/**/*.html` |
+| [`docs/llms.txt`](docs/llms.txt) / [`docs/llms-full.txt`](docs/llms-full.txt) — LLM/AI-agent guides | `html/coolipy/llms.txt`, `html/coolipy/llms-full.txt` |
+| [`docs/robots.txt`](docs/robots.txt) | `html/coolipy/robots.txt` |
+| *(generated from the actual pages)* | `html/coolipy/sitemap.xml` |
+
+To change how the site looks or is discovered, edit the `docs/` source and re-run the build — editing `html/` directly will be lost on the next regeneration.
 
 ## 🤝 Contributing
 
