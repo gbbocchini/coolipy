@@ -83,7 +83,7 @@ def build_html() -> None:
 
 def write_sitemap() -> None:
     """Emit ``sitemap.xml`` from the pages that actually exist on disk."""
-    pages = sorted(WEB_ROOT.rglob("*.html"))
+    pages = sorted(p for p in WEB_ROOT.rglob("*.html") if p.name not in {"404.html", "50x.html"})
 
     def url_for(path: Path) -> str:
         rel = path.relative_to(WEB_ROOT).as_posix()
@@ -121,7 +121,7 @@ def write_sitemap() -> None:
 
 def copy_assets() -> None:
     """Copy the discovery assets that live at the site root."""
-    for name in ("robots.txt", "llms.txt", "llms-full.txt"):
+    for name in ("robots.txt", "llms.txt", "llms-full.txt", "404.html", "50x.html"):
         src = DOCS_DIR / name
         if src.exists():
             (WEB_ROOT / name).write_bytes(src.read_bytes())
