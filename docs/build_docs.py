@@ -8,6 +8,11 @@ then writes the search-engine + LLM discovery assets next to the HTML:
 * ``robots.txt``   — copied from ``docs/robots.txt``
 * ``llms.txt``     — concise LLM guide, copied from ``docs/llms.txt``
 * ``llms-full.txt``— full guide with examples, copied from ``docs/llms-full.txt``
+* ``favicon.ico`` / ``apple-touch-icon.png`` — from ``docs/assets``
+
+``docs/nginx/nginx.conf`` is deliberately *not* copied here. It is the complete
+server block you paste into Coolify, versioned only so the routing rules stay
+reviewable alongside the pages they serve.
 
 Run from the repository root::
 
@@ -121,8 +126,14 @@ def write_sitemap() -> None:
 
 def copy_assets() -> None:
     """Copy the discovery assets that live at the site root."""
-    for name in ("robots.txt", "llms.txt", "llms-full.txt", "404.html", "50x.html"):
-        src = DOCS_DIR / name
+    sources = {
+        name: DOCS_DIR / name
+        for name in ("robots.txt", "llms.txt", "llms-full.txt", "404.html", "50x.html")
+    }
+    sources["favicon.ico"] = DOCS_DIR / "assets" / "favicon.ico"
+    sources["apple-touch-icon.png"] = DOCS_DIR / "assets" / "apple-touch-icon.png"
+
+    for name, src in sources.items():
         if src.exists():
             (WEB_ROOT / name).write_bytes(src.read_bytes())
             print(f"Copied {name}")

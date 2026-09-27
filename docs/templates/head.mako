@@ -21,9 +21,21 @@
 <meta name="keywords" content="${keywords}" />
 <meta name="author" content="Gabriel Bocchini" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
-% if 'module' in context.keys() and module.name == 'coolipy':
-<link rel="canonical" href="${site_url}" />
-% endif
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<%
+    # Every page needs a canonical: nginx serves /models/common, /models/common.html
+    # and /models/ as the same document, so without one the crawlers index three
+    # copies of every page. Derive the URL from the module's own dotted name,
+    # which mirrors the layout pdoc writes (packages become <path>/index.html).
+    _parts = module.name.split('.', 1) if 'module' in context.keys() else []
+    _rel = _parts[1].replace('.', '/') if len(_parts) > 1 else ''
+    if _rel:
+        _rel += '/' if module.is_package else '.html'
+    canonical = site_url + _rel
+%>\
+<link rel="canonical" href="${canonical}" />
+
 
 <!-- Open Graph -->
 <meta property="og:site_name" content="coolipy" />
