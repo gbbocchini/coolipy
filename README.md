@@ -341,9 +341,19 @@ uv run python docs/build_docs.py
 | [`docs/templates/config.mako`](docs/templates/config.mako) — markdown extensions + highlight theme | `html/coolipy/**/*.html` |
 | [`docs/llms.txt`](docs/llms.txt) / [`docs/llms-full.txt`](docs/llms-full.txt) — LLM/AI-agent guides | `html/coolipy/llms.txt`, `html/coolipy/llms-full.txt` |
 | [`docs/robots.txt`](docs/robots.txt) | `html/coolipy/robots.txt` |
+| [`docs/assets/`](docs/assets/) — `favicon.ico`, `apple-touch-icon.png` | `html/coolipy/favicon.ico`, `html/coolipy/apple-touch-icon.png` |
 | *(generated from the actual pages)* | `html/coolipy/sitemap.xml` |
 
 To change how the site looks or is discovered, edit the `docs/` source and re-run the build — editing `html/` directly will be lost on the next regeneration.
+
+### nginx config
+
+[`docs/nginx/nginx.conf`](docs/nginx/nginx.conf) is the **complete** server block for `coolipydocs.gabrielbocchini.com.br` — self-contained, with no `include`. Paste it into Coolify's nginx config; the build does not copy it anywhere.
+
+It carries two things beyond the stock static-file routing:
+
+- **301s for pre-1.0.0 URLs**, so `/constants.html` → `/enums.html` and `/services/coolify_api/*` → `/resources/*` keep working instead of 404ing.
+- **A filter that rejects spoofed `PetalBot` traffic** — requests whose User-Agent claims `(HTML, like Gecko)`, which no real browser or crawler ever sends. This traffic was generating ~98% of the 404s in the access log.
 
 ## 🤝 Contributing
 
