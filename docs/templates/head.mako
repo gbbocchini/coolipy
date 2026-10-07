@@ -1,8 +1,7 @@
 <%!
     # Custom <head> additions for coolipy documentation.
     # Included at the end of <head> by html.mako — owns the SEO/social/LLM
-    # metadata and the Elastic APM real-user-monitoring snippet so that every
-    # regenerated page ships with discoverability built in.
+    # metadata so that every regenerated page ships with discoverability built in.
     description = (
         "coolipy is the (un)official, fully-typed Python client for the "
         "Coolify API — synchronous and asynchronous, wrapping every token-gated "
@@ -91,13 +90,4 @@
     "Typed errors and dependency-injected HTTP transport"
   ]
 }
-</script>
-
-<!-- Elastic APM real-user monitoring -->
-<script src="https://coolipy-rum.s3.us-east-1.amazonaws.com/elastic-apm-rum.umd.min.js" crossorigin></script>
-<script>
-  elasticApm.init({
-    serviceName: 'coolipy-docs',
-    serverUrl: 'https://84b3afd273634acabe46950fe95c9687.apm.southamerica-east1.gcp.elastic-cloud.com:443',
-  })
 </script>
