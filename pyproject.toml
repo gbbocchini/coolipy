@@ -44,6 +44,9 @@ Homepage = "https://github.com/gbbocchini/coolipy"
 Documentation = "https://coolipydocs.gabrielbocchini.com.br/"
 Repository = "https://github.com/gbbocchini/coolipy"
 
+[tool.uv]
+constraint-dependencies = ["certifi>=2026.10.19"]
+
 [tool.hatch.version]
 path = "coolipy/__init__.py"
 
