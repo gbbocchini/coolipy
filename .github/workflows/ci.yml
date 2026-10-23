@@ -15,8 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
+        with:
+          version: "0.13.5"
       - name: Install dependencies
-        run: uv sync --extra dev
+        run: uv sync --extra dev --locked
       - name: Lint
         run: uv run ruff check .
       - name: Format check
@@ -31,7 +33,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
+        with:
+          version: "0.13.5"
       - name: Install dependencies
-        run: uv sync --extra dev
+        run: uv sync --extra dev --locked
       - name: Type check
         run: uv run mypy coolipy
+
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          version: "0.13.5"
+      - name: Audit dependencies
+        run: uv audit --locked
